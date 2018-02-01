@@ -2,7 +2,7 @@
 session_start();
 ?>
 <!-- 
-William F
+I EAT
 CS IV
 O'NEAL
 Senior Elimination/tag userpage -->
