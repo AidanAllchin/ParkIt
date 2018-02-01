@@ -2,7 +2,7 @@
 session_start();
 ?>
 <!-- 
-William F
+Aidan Allchin AAYYYY
 CS IV
 O'NEAL
 Senior Elimination/tag userpage -->
