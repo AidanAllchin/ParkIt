@@ -1,0 +1,227 @@
+<?php
+session_start();
+?>
+<!-- 
+William F
+CS IV
+O'NEAL
+Senior Elimination/tag userpage -->
+<!DOCTYPE html>
+<html>
+<link rel = "stylesheet" type = "text/css" href="assasin.css"/>
+  <head>
+  <head>
+
+    <title>User Page</title>
+    <?php
+
+      require("config.php");
+      try
+      {
+        // Setting up the server
+        $db = new PDO("mysql:dbname=" . $GLOBALS["database"] .          
+        ";host=" . $GLOBALS["hostname"] . ";port=" . $GLOBALS["port"], 
+        $GLOBALS["username"], $GLOBALS["password"]);
+        $db->setAttribute(PDO::ATTR_ERRMODE, 
+                     PDO::ERRMODE_EXCEPTION);
+      }
+
+      //If the database can't be accessed
+      catch (PDOException $ex)
+      {
+        print ("Database error: " . $ex->getMessage());
+      }
+    ?> 
+  </head>
+  <body>
+ <!-- The Menu bar which links to pages -->
+    <ul>
+      <li><a href="index.php">About</a></li>
+      <li><a class = "active" href="login.php">Login</a></li>
+      <li><a href="create.php">Create an Account</a></li>
+      <li><a href="admin.php">Admin</a></li>
+   </ul>
+
+    <?php
+      $user = $_SESSION["name"];
+
+      $query4 = "SELECT id FROM wfrohlich_assasin WHERE name = :user";
+      $statement4 = $db->prepare($query4);
+      $statement4->execute(array("user" => $user));
+      $result4= $statement4->fetchAll();
+      $id = ($result4[0][0]); 
+
+      //get the current users target
+      $query = "SELECT target FROM wfrohlich_assasin WHERE id = $id";
+      $statement = $db->query($query);
+      $result= $statement->fetchAll();
+      $targetid = ($result[0][0]); 
+
+      //Get 1 if the user has said they have been tagged
+      $query14 = "SELECT beentagged FROM wfrohlich_assasin WHERE id = $id";
+      $statement14 = $db->query($query14);
+      $result14= $statement14->fetchAll();
+      $isout = ($result14[0][0]); 
+
+      //Get 1 if the users assalient has marked the user as tagged
+      $query19 = "SELECT tagged FROM wfrohlich_assasin WHERE id = $id";
+      $statement19 = $db->query($query19);
+      $result19= $statement19->fetchAll();
+      $istagged = ($result19[0][0]); 
+      ?>      
+
+        <!-- Prints the pretty header-->
+        <h1 class="chrome">ELIMINATION</h1>
+        <h3 class="dreams">2018</h3>
+
+    <div class="center">
+      <?php
+
+        print("Welcome User: " . $user);
+
+        //Gets all of the users in the game where people have targets
+        $query16 = "SELECT COUNT(*) FROM wfrohlich_assasin WHERE target IS NOT NULL";
+        $statement16 = $db->query($query16);
+        $result16= $statement16->fetchAll();
+        $countleft = ($result16[0][0]);
+        print("<br> There are: $countleft/");
+
+        //Gets all the users in the database
+        $query15 = "SELECT COUNT(*)FROM wfrohlich_assasin";
+        $statement15 = $db->query($query15);
+        $result15= $statement15->fetchAll();
+        $count = ($result15[0][0]);
+        print("$count players left");
+
+        //if the user is still in the game
+      if ($targetid != NULL and $targetid != $id and $isout != 1)
+      {
+        //get the name of the users target
+        $query5 = "SELECT name FROM wfrohlich_assasin WHERE id = $targetid";
+        $statement5 = $db->query($query5);
+        $result5= $statement5->fetchAll();
+        $targetname = ($result5[0][0]);
+        print("<br>Your current Target: $targetname<br>");
+
+        ?>
+    </div>
+
+    <!-- Form for user to check if they have been tagged or have tagged -->
+    <div class="lower">
+        <form action="userpage.php" method="post" class = "container">
+          <input type="checkbox" name="tagged"  value="tag"> I have eliminated my target<br>
+          <input type="checkbox" name="beentagged" value="beentag"> I have been eliminated<br>
+           <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+        <?php
+      }
+      else if ($targetid == $id) 
+      {
+        //user is targeting themself when they are the only user left
+        print("<br> YOU WIN! <br>");
+        $query18 = "UPDATE wfrohlich_assasin SET place = 1 WHERE id = $id"; 
+        $statement18 = $db->prepare($query18);
+        $statement18->execute();
+        // From: http://php.net/manual/en/pdostatement.closecursor.php
+        $statement18->closeCursor();
+      }
+      else
+      {
+        //get the place the user is in
+        $query17 = "SELECT place FROM wfrohlich_assasin WHERE id = $id";
+        $statement17 = $db->query($query17);
+        $result17= $statement17->fetchAll();
+        $place = ($result17[0][0]); 
+          print("<br><br> You have either been tagged, or the game has not started. Please wait for the next game to start. <br>");
+          if($place != 0)
+          {
+            print("<br>Your place: $place");
+          }
+      }
+    ?>
+
+
+    <?php
+
+      if ($_SERVER['REQUEST_METHOD'] === 'POST')
+      {
+        if(isset($_POST["tagged"]) != NULL and ($_POST["tagged"] == "tag")) //if the player has tagged their target
+        {
+          //Update the target's database colum to tagged = 1
+          $query6 = "UPDATE wfrohlich_assasin SET tagged = 1 WHERE id = $targetid";
+          $statement6 = $db->prepare($query6);
+          $statement6->execute();
+          $statement6->closeCursor();
+
+          //checks if the target has verified that they have been tagged
+          $query7 = "SELECT beentagged FROM wfrohlich_assasin WHERE id = $targetid";
+          $statement7 = $db->query($query7);
+          $result7= $statement7->fetchAll();
+          $beentagged = ($result7[0][0]);
+
+          //if the target is tagged
+          if ($beentagged == 1)
+          {
+            //get targets target
+            $query2 = "SELECT target FROM wfrohlich_assasin WHERE id = $targetid";
+            $statement2 = $db->query($query2);
+            $result2= $statement2->fetchAll();
+            $newtargetid = ($result2[0][0]);
+
+            //Set target's target to null gives the user a new target and removes target from the game
+            $query3 = "UPDATE wfrohlich_assasin SET target = $newtargetid WHERE id = $id; UPDATE wfrohlich_assasin SET taggedby = '$user' WHERE id = $targetid; UPDATE wfrohlich_assasin SET target = NULL WHERE id = $targetid; UPDATE wfrohlich_assasin SET place = $countleft WHERE id = $targetid";
+            $statement3 = $db->prepare($query3);
+            $statement3->execute();
+            $statement3->closeCursor();
+
+          } 
+        }
+        if(isset($_POST["beentagged"]) != NULL and ($_POST["beentagged"] == "beentag")) //if the user marks they have been tagged
+          {
+            //marks that the user has been tagged
+            $query8 = "UPDATE wfrohlich_assasin SET beentagged = 1 WHERE id = $id";
+            $statement8 = $db->prepare($query8);
+            $statement8->execute();
+            $statement8->closeCursor();
+
+            //checks if their assalient has marked them as tagged
+            $query9 = "SELECT tagged FROM wfrohlich_assasin WHERE id = $id";
+            $statement9 = $db->query($query9);
+            $result9= $statement9->fetchAll();
+            $tagged = ($result9[0][0]);
+
+            if($tagged == 1)//if the user is out of the game
+            {
+              //get the name of the person who tagged the user
+              $query11 = "SELECT id FROM wfrohlich_assasin WHERE target = $id";
+              $statement11 = $db->query($query11);
+              $result11= $statement11->fetchAll();
+              $tagger = ($result11[0][0]);
+
+              //gets the target of the user
+              $query12 = "SELECT target FROM wfrohlich_assasin WHERE id = $id";
+              $statement12 = $db->query($query12);
+              $result12= $statement12->fetchAll();
+              $newtargetid = ($result12[0][0]);
+
+              //removes the user from the game
+              $query13 = "UPDATE wfrohlich_assasin SET target = $newtargetid WHERE id = $tagger; UPDATE wfrohlich_assasin SET taggedby = $tagger WHERE id = $id; UPDATE wfrohlich_assasin SET target = NULL WHERE id = $id; UPDATE wfrohlich_assasin SET place = $countleft WHERE id = $id"; 
+              $statement13 = $db->prepare($query13);
+              $statement13->execute();
+              $statement13->closeCursor();
+            }
+      }
+
+        //reload the page
+        ?>
+        <script>
+          window.location = 'userpage.php';
+        </script>
+
+    <?php
+      }
+    ?>
+      
+  </body>
+</html>
