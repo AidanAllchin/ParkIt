@@ -2,7 +2,7 @@
 session_start();
 ?>
 <!-- 
-Aidan Allchin AAYYYY
+I EAT
 CS IV
 O'NEAL
 Senior Elimination/tag userpage -->
