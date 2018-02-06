@@ -16,6 +16,7 @@
 		DD3DCBF62024D3FB00B17206 /* MessagingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3DCBF52024D3FB00B17206 /* MessagingAppTests.swift */; };
 		DD3DCC012024D3FB00B17206 /* MessagingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3DCC002024D3FB00B17206 /* MessagingAppUITests.swift */; };
 		DD3DCC0F2024D46300B17206 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3DCC0E2024D46300B17206 /* GoogleService-Info.plist */; };
+		DDA4B4A2202A0DFB00A333DB /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4B4A1202A0DFB00A333DB /* ComposeViewController.swift */; };
 		DDFFCE1D2024DB250041811B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFFCE1C2024DB250041811B /* AppDelegate.swift */; };
 		F8E91544C0B86B96B6C70DAC /* Pods_MessagingAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CFD8D3B7C2B38044373E94 /* Pods_MessagingAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		DD3DCC002024D3FB00B17206 /* MessagingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingAppUITests.swift; sourceTree = "<group>"; };
 		DD3DCC022024D3FB00B17206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD3DCC0E2024D46300B17206 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DDA4B4A1202A0DFB00A333DB /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		DDFFCE1C2024DB250041811B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +148,7 @@
 				DD3DCBE92024D3FB00B17206 /* LaunchScreen.storyboard */,
 				DD3DCBEC2024D3FB00B17206 /* Info.plist */,
 				DD3DCC0E2024D46300B17206 /* GoogleService-Info.plist */,
+				DDA4B4A1202A0DFB00A333DB /* ComposeViewController.swift */,
 			);
 			path = MessagingApp;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA4B4A2202A0DFB00A333DB /* ComposeViewController.swift in Sources */,
 				DDFFCE1D2024DB250041811B /* AppDelegate.swift in Sources */,
 				DD3DCBE32024D3FB00B17206 /* ViewController.swift in Sources */,
 			);
