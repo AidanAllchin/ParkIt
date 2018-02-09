@@ -1,0 +1,6 @@
+framework module Pods_CustomEmailLogin {
+  umbrella header "Pods-CustomEmailLogin-umbrella.h"
+
+  export *
+  module * { export * }
+}
