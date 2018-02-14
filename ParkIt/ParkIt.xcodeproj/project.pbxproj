@@ -10,6 +10,8 @@
 		82135399F97880D166741015 /* Pods_ParkItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7768B97DE0F4271D0B9F4480 /* Pods_ParkItTests.framework */; };
 		CAC58B628EFCA70AC385027C /* Pods_ParkItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE28106BA5591F0B3114968 /* Pods_ParkItUITests.framework */; };
 		CD43455B6D359716BEFED282 /* Pods_ParkIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250CDFFBA075A76DB0991A90 /* Pods_ParkIt.framework */; };
+		DD2B3AE72033B7300012CE0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2B3AE62033B7300012CE0D /* LoginViewController.swift */; };
+		DD2B3AE92033BC840012CE0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD2B3AE82033BC830012CE0D /* GoogleService-Info.plist */; };
 		DD631B6A202379520095A1BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD631B69202379520095A1BC /* AppDelegate.swift */; };
 		DD631B6C202379520095A1BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD631B6B202379520095A1BC /* ViewController.swift */; };
 		DD631B6F202379520095A1BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD631B6D202379520095A1BC /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		77F0CF2EDDF923B1D8A75BDA /* Pods-ParkItUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkItUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkItUITests/Pods-ParkItUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D360818B6817DD20CA5DFABF /* Pods-ParkIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkIt/Pods-ParkIt.release.xcconfig"; sourceTree = "<group>"; };
 		DCE28106BA5591F0B3114968 /* Pods_ParkItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD2B3AE62033B7300012CE0D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DD2B3AE82033BC830012CE0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD631B66202379520095A1BC /* ParkIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD631B69202379520095A1BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD631B6B202379520095A1BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,10 +143,12 @@
 			children = (
 				DD631B69202379520095A1BC /* AppDelegate.swift */,
 				DD631B6B202379520095A1BC /* ViewController.swift */,
+				DD2B3AE62033B7300012CE0D /* LoginViewController.swift */,
 				DD631B6D202379520095A1BC /* Main.storyboard */,
 				DD631B70202379520095A1BC /* Assets.xcassets */,
 				DD631B72202379520095A1BC /* LaunchScreen.storyboard */,
 				DD631B75202379520095A1BC /* Info.plist */,
+				DD2B3AE82033BC830012CE0D /* GoogleService-Info.plist */,
 			);
 			path = ParkIt;
 			sourceTree = "<group>";
@@ -284,6 +290,7 @@
 				DD631B74202379520095A1BC /* LaunchScreen.storyboard in Resources */,
 				DD631B71202379520095A1BC /* Assets.xcassets in Resources */,
 				DD631B6F202379520095A1BC /* Main.storyboard in Resources */,
+				DD2B3AE92033BC840012CE0D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD2B3AE72033B7300012CE0D /* LoginViewController.swift in Sources */,
 				DD631B6C202379520095A1BC /* ViewController.swift in Sources */,
 				DD631B6A202379520095A1BC /* AppDelegate.swift in Sources */,
 			);
@@ -635,6 +643,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75M525RTAZ;
 				INFOPLIST_FILE = ParkIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ParkIt.ParkIt;
@@ -650,6 +659,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75M525RTAZ;
 				INFOPLIST_FILE = ParkIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ParkIt.ParkIt;
