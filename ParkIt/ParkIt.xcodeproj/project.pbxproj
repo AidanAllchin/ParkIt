@@ -19,6 +19,8 @@
 		DD631B74202379520095A1BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD631B72202379520095A1BC /* LaunchScreen.storyboard */; };
 		DD631B7F202379520095A1BC /* ParkItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD631B7E202379520095A1BC /* ParkItTests.swift */; };
 		DD631B8A202379520095A1BC /* ParkItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD631B89202379520095A1BC /* ParkItUITests.swift */; };
+		DDC279C62045D0480057304A /* blackiii_thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDC279C52045D0480057304A /* blackiii_thumbnail.jpg */; };
+		DDC279C82045D5A50057304A /* AddPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC279C72045D5A50057304A /* AddPinViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		DD631B85202379520095A1BC /* ParkItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD631B89202379520095A1BC /* ParkItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkItUITests.swift; sourceTree = "<group>"; };
 		DD631B8B202379520095A1BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDC279C52045D0480057304A /* blackiii_thumbnail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = blackiii_thumbnail.jpg; path = ../../blackiii_thumbnail.jpg; sourceTree = "<group>"; };
+		DDC279C72045D5A50057304A /* AddPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPinViewController.swift; sourceTree = "<group>"; };
 		F78A5730D9AEEFA4DA3813AF /* Pods-ParkItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkItTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkItTests/Pods-ParkItTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,9 +146,11 @@
 			isa = PBXGroup;
 			children = (
 				DD631B69202379520095A1BC /* AppDelegate.swift */,
+				DDC279C52045D0480057304A /* blackiii_thumbnail.jpg */,
 				DD631B6B202379520095A1BC /* ViewController.swift */,
 				DD2B3AE62033B7300012CE0D /* LoginViewController.swift */,
 				DD631B6D202379520095A1BC /* Main.storyboard */,
+				DDC279C72045D5A50057304A /* AddPinViewController.swift */,
 				DD631B70202379520095A1BC /* Assets.xcassets */,
 				DD631B72202379520095A1BC /* LaunchScreen.storyboard */,
 				DD631B75202379520095A1BC /* Info.plist */,
@@ -287,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC279C62045D0480057304A /* blackiii_thumbnail.jpg in Resources */,
 				DD631B74202379520095A1BC /* LaunchScreen.storyboard in Resources */,
 				DD631B71202379520095A1BC /* Assets.xcassets in Resources */,
 				DD631B6F202379520095A1BC /* Main.storyboard in Resources */,
@@ -473,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC279C82045D5A50057304A /* AddPinViewController.swift in Sources */,
 				DD2B3AE72033B7300012CE0D /* LoginViewController.swift in Sources */,
 				DD631B6C202379520095A1BC /* ViewController.swift in Sources */,
 				DD631B6A202379520095A1BC /* AppDelegate.swift in Sources */,
