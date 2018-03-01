@@ -10,11 +10,6 @@ import UIKit
 
 class AddPinViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-    @IBOutlet weak var pageControl: UIPageControl!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
