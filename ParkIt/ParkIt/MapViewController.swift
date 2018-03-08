@@ -31,7 +31,8 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
+    @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var mapView: MKMapView!
     //Initialize all the artwork pieces!
@@ -104,6 +105,11 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         checkLocationAuthorizationStatus()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //Dismiss the keyboard when the view is tapped on
+        searchBar.resignFirstResponder()
     }
 
 }
