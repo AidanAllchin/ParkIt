@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
-    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +19,5 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //Dismiss the keyboard when the view is tapped on
-        searchBar.resignFirstResponder()
     }
 }
