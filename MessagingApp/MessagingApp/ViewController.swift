@@ -36,9 +36,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             //Try to convert value of data to String
             let post = snapshot.value as? String
             
-            if let actualPost = post {
+            if let newPost = post {
                 //Append data to array
-                self.postData.append(actualPost)
+                self.postData.append(newPost)
                 
                 //Reload tableView
                 self.tableView.reloadData()

@@ -30,6 +30,7 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
@@ -82,7 +83,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let works = dictionary["data"] as? [[Any]]
             else { return }
         // 5
-        let validWorks = works.flatMap { ParkingSpot(json: $0) }
+        let validWorks = works.flatMap {ParkingSpot(spot: DatabaseHandle) }
+        var databaseHandle: DatabaseHandle = spot.observe(DataEventType.value, with: { (snapshot) in
+            let postDict = snapshot.value as? String ?? "No Title"
+            spot.title = postDict
+        })
         parkingspots.append(contentsOf: validWorks)
   }
     
