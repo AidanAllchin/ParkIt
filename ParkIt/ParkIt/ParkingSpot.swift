@@ -17,43 +17,30 @@ class ParkingSpot: NSObject, MKAnnotation {
     let locationName: String
     var isAvailable: Bool
     var coordinate: CLLocationCoordinate2D
+    var periods: [[String]]
+    var timeLeft: Float
+    var userBuying: String?
+    var userSelling: String
     
-    init(title: String, locationName: String, isAvailable: Bool, coordinate: CLLocationCoordinate2D) {
+    init(title: String, locationName: String, isAvailable: Bool, coordinate: CLLocationCoordinate2D, periods: [[String]], timeLeft: Float, userBuying: String, userSelling: String) {
         
         self.title = title
         self.locationName = locationName
         self.isAvailable = isAvailable
         self.coordinate = coordinate
-        
-        //ref = Database.database().reference()
+        self.periods = periods
+        self.timeLeft = timeLeft
+        self.userBuying = userBuying
+        self.userSelling = userSelling
         
         super.init()
     }
     
-    init?(spot: DatabaseReference) {
-        /*databaseHandle = ref?.child("Spots").child("Spot-0x0000").observe(.childAdded, with: { (snapshot) in
-            let title = snapshot.value as? String
-        }*/
-        
-        //databaseHandle = ref?.child("Spots").child("Spot-0x0000")
-
-        
+    /*init?(json:[Any]) {
         self.title = "No Title"
         self.locationName = "No Name"
         self.isAvailable = true
         self.coordinate = CLLocationCoordinate2D()
-        
-        /*ref?.child("Spots").child("Spot-0x0000").observe(DataEventType.value, with: { (snapshot) in
-            let postDict = snapshot.value as? Int ?? 1
-            if postDict == 1
-            {
-                self.isAvailable = true
-            }
-            else
-            {
-                self.isAvailable = false
-            }
-        })*/
         
         /*ref?.child("Spots").child("Spot-0x0000").observe(DataEventType.value, with: { (snapshot) in
             let postDict = snapshot.value as? [Double] ?? [50.0, 50.0]
@@ -74,7 +61,7 @@ class ParkingSpot: NSObject, MKAnnotation {
         } else {
             self.coordinate = CLLocationCoordinate2D()
         }*/
-    }
+    }*/
     
     // markerTintColor for if the spot is open or not
     var markerTintColor: UIColor  {
