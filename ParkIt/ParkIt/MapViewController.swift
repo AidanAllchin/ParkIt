@@ -73,7 +73,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     func loadInitialData() {
         ref?.child("Spots").observe(.value, with: { (snapshot) in
             //Code
-            print(snapshot)
+            print(snapshot.value)
         })
         
         // 1
