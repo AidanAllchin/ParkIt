@@ -54,10 +54,11 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZn-FF-miR">
-                                <rect key="frame" x="164" y="185" width="46" height="30"/>
+                                <rect key="frame" x="0.0" y="627" width="71" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
+                                    <action selector="zoomIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BVG-KD-vuG"/>
                                     <segue destination="neP-u6-TKG" kind="show" id="Hc0-1U-R5B"/>
                                 </connections>
                             </button>

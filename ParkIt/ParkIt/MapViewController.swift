@@ -30,6 +30,7 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     @IBAction func onGoButton(_ sender: Any) {
@@ -39,20 +40,27 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var mapView: MKMapView!
+    
+    var ref:DatabaseReference?
+    var databaseHandle:DatabaseHandle?
+    
     //Initialize all the artwork pieces!
     var parkingspots: [ParkingSpot] = []
     let regionRadius: CLLocationDistance = 1000
     
   override func viewDidLoad() {
     super.viewDidLoad()
-    //  set initial location to honolulu... change to user location eventually
-
-    let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+    
+    ref = Database.database().reference()
+    
+    //  set initial location to Seattle... change to user location eventually
+    let initialLocation = CLLocation(latitude: 47.6062, longitude: -122.3321)
     //call zoom in function
     centerMapOnLocation(location: initialLocation)
     
     //setting ViewController as the delegate of the map view.
     mapView.delegate = self
+    mapView.showsUserLocation = true
     
     //Create an artwork point
     //let artwork = Artwork(title: "King David Kalakaua",locationName: "Waikiki Gateway Park",discipline: "Sculpture",coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
@@ -64,13 +72,23 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     //Loads in the annotations!
     loadInitialData()
     mapView.addAnnotations(parkingspots)
-    
     }
     
     
+    @IBAction func zoomIn(_ sender: Any) {
+        let userLocation = mapView.userLocation
+        let region = MKCoordinateRegionMakeWithDistance((userLocation.location?.coordinate)!, regionRadius, regionRadius)
+        
+        mapView.setRegion(region, animated: true)
+    }
     
     //loads in the locations and their stuff
     func loadInitialData() {
+        ref?.child("Spots").observe(.value, with: { (snapshot) in
+            //Code
+            print(snapshot)
+        })
+        
         // 1
         guard let fileName = Bundle.main.path(forResource: "PublicArt", ofType: "json")
             else { return }
@@ -86,8 +104,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let works = dictionary["data"] as? [[Any]]
             else { return }
         // 5
-        let validWorks = works.flatMap { ParkingSpot(json: $0) }
-        parkingspots.append(contentsOf: validWorks)
+        //let validWorks = works.flatMap {ParkingSpot(spot: DatabaseHandle) }
+        /*var databaseHandle: DatabaseHandle = spot.observe(DataEventType.value, with: { (snapshot) in
+            let postDict = snapshot.value as? String ?? "No Title"
+            spot.title = postDict
+        })*/
+        //parkingspots.append(contentsOf: validWorks)
   }
     
     //Function which zooms in on passed in location
