@@ -32,6 +32,10 @@ import UIKit
 import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
+    @IBAction func onGoButton(_ sender: Any) {
+        performSegue(withIdentifier: "toBuySpot", sender: self)
+    }
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var mapView: MKMapView!
