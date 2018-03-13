@@ -71,32 +71,50 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     //loads in the locations and their stuff
     func loadInitialData() {
-        ref?.child("Spots").observe(.value, with: { (snapshot) in
+        var title: String
+        title = ""
+        var isAvailable: Bool
+        isAvailable = true
+        var location: CLLocationCoordinate2D
+        location = CLLocationCoordinate2D()
+        var timeLeft: Double
+        timeLeft = 0.0
+        
+        //title
+        ref?.child("Spots").child("Spot-0x0000").child("title").observe(.value, with: { (snapshot) in
             //Code
-            print(snapshot.value)
+            title = snapshot.value as! String
+            
+            print(snapshot.value!)
         })
         
-        // 1
-        guard let fileName = Bundle.main.path(forResource: "PublicArt", ofType: "json")
-            else { return }
-        let optionalData = try? Data(contentsOf: URL(fileURLWithPath: fileName))
+        //location
+        ref?.child("Spots").child("Spot-0x0000").child("location").observe(.value, with: { (snapshot) in
+            //Code
+            var test = ""
+            test = snapshot.value as! String
+            let coordArr = test.components(separatedBy: ", ")
+            
+            location = CLLocationCoordinate2D(latitude: Double(coordArr[0])!, longitude: Double(coordArr[1])!)
+            
+            print(snapshot.value!)
+        })
         
-        guard
-            let data = optionalData,
-            // 2
-            let json = try? JSONSerialization.jsonObject(with: data),
-            // 3
-            let dictionary = json as? [String: Any],
-            // 4
-            let works = dictionary["data"] as? [[Any]]
-            else { return }
-        // 5
-        //let validWorks = works.flatMap {ParkingSpot(spot: DatabaseHandle) }
-        /*var databaseHandle: DatabaseHandle = spot.observe(DataEventType.value, with: { (snapshot) in
-            let postDict = snapshot.value as? String ?? "No Title"
-            spot.title = postDict
-        })*/
-        //parkingspots.append(contentsOf: validWorks)
+        //timeLeft
+        ref?.child("Spots").child("Spot-0x0000").child("timeLeft").observe(.value, with: { (snapshot) in
+            //Code
+            timeLeft = snapshot.value as! Double
+        })
+        
+        //isAvailable
+        ref?.child("Spots").child("Spot-0x0000").child("isAvailable").observe(.value, with: { (snapshot) in
+            let temp = snapshot.value as! Int
+            if(temp == 1) {
+                isAvailable = true
+            } else {
+                isAvailable = false
+            }
+        })
   }
     
     //Function which zooms in on passed in location
