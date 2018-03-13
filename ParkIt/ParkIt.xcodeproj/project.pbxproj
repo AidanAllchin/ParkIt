@@ -22,7 +22,6 @@
 		DDC279C82045D5A50057304A /* AddPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC279C72045D5A50057304A /* AddPinViewController.swift */; };
 		DDEA9B9B2051A6E0002FCA6C /* ParkingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9B9A2051A6E0002FCA6C /* ParkingSpot.swift */; };
 		DDEA9B9D2051A6E7002FCA6C /* ParkingSpotMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9B9C2051A6E7002FCA6C /* ParkingSpotMarkerView.swift */; };
-		DDEA9BA22051A720002FCA6C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDEA9BA12051A720002FCA6C /* Info.plist */; };
 		DDEA9BA42051A73B002FCA6C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9BA32051A73B002FCA6C /* MapViewController.swift */; };
 		DDEA9BA62051A747002FCA6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9BA52051A747002FCA6C /* ViewController.swift */; };
 		DDEA9BA82051A96A002FCA6C /* PublicArt.json in Resources */ = {isa = PBXBuildFile; fileRef = DDEA9BA72051A96A002FCA6C /* PublicArt.json */; };
@@ -309,7 +308,6 @@
 				DDC279C62045D0480057304A /* blackiii_thumbnail.jpg in Resources */,
 				DDEA9BA82051A96A002FCA6C /* PublicArt.json in Resources */,
 				DD631B74202379520095A1BC /* LaunchScreen.storyboard in Resources */,
-				DDEA9BA22051A720002FCA6C /* Info.plist in Resources */,
 				DD631B71202379520095A1BC /* Assets.xcassets in Resources */,
 				DD631B6F202379520095A1BC /* Main.storyboard in Resources */,
 				DD2B3AE92033BC840012CE0D /* GoogleService-Info.plist in Resources */,
