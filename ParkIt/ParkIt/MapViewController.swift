@@ -33,6 +33,10 @@ import MapKit
 import Firebase
 
 class MapViewController: UIViewController, MKMapViewDelegate {
+    @IBAction func onGoButton(_ sender: Any) {
+        performSegue(withIdentifier: "toBuySpot", sender: self)
+    }
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var mapView: MKMapView!
@@ -56,6 +60,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     //setting ViewController as the delegate of the map view.
     mapView.delegate = self
+    mapView.showsUserLocation = true
     
     //Create an artwork point
     //let artwork = Artwork(title: "King David Kalakaua",locationName: "Waikiki Gateway Park",discipline: "Sculpture",coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
@@ -67,6 +72,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     //Loads in the annotations!
     loadInitialData()
     mapView.addAnnotations(parkingspots)
+    }
+    
+    
+    @IBAction func zoomIn(_ sender: Any) {
+        let userLocation = mapView.userLocation
+        let region = MKCoordinateRegionMakeWithDistance((userLocation.location?.coordinate)!, regionRadius, regionRadius)
+        
+        mapView.setRegion(region, animated: true)
     }
     
     //loads in the locations and their stuff
