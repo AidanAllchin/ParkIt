@@ -84,14 +84,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     //loads in the locations and their stuff
     func loadInitialData() {
-        var title: String
-        title = ""
-        var isAvailable: Bool
-        isAvailable = true
-        var location: CLLocationCoordinate2D
-        location = CLLocationCoordinate2D()
-        var timeLeft: Double
-        timeLeft = 0.0
+        var title: String = ""
+        var isAvailable: Bool = true
+        var location: CLLocationCoordinate2D = CLLocationCoordinate2D()
+        var period: [[String]] = [[String]]()
+        var timeLeft: Double = 0.0
+        var userBuying: String = ""
+        var userSelling: String = ""
         
         //title
         ref?.child("Spots").child("Spot-0x0000").child("title").observe(.value, with: { (snapshot) in
@@ -99,6 +98,16 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             title = snapshot.value as! String
             
             print(snapshot.value!)
+        })
+        
+        //isAvailable
+        ref?.child("Spots").child("Spot-0x0000").child("isAvailable").observe(.value, with: { (snapshot) in
+            let temp = snapshot.value as! Int
+            if(temp == 1) {
+                isAvailable = true
+            } else {
+                isAvailable = false
+            }
         })
         
         //location
@@ -119,15 +128,19 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             timeLeft = snapshot.value as! Double
         })
         
-        //isAvailable
-        ref?.child("Spots").child("Spot-0x0000").child("isAvailable").observe(.value, with: { (snapshot) in
-            let temp = snapshot.value as! Int
-            if(temp == 1) {
-                isAvailable = true
-            } else {
-                isAvailable = false
-            }
+        //userBuying
+        ref?.child("Spots").child("Spot-0x0000").child("userBuying").observe(.value, with: { (snapshot) in
+            //Code
+            userBuying = snapshot.value as! String
         })
+        
+        //userSelling
+        ref?.child("Spots").child("Spot-0x0000").child("userSelling").observe(.value, with: { (snapshot) in
+            //Code
+            userSelling = snapshot.value as! String
+        })
+        
+        
   }
     
     //Function which zooms in on passed in location
