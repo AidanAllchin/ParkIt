@@ -36,7 +36,7 @@ class ParkingSpot: NSObject, MKAnnotation {
         super.init()
     }
     
-    /*init?(spot: DatabaseReference) {
+    /*init?(json:[Any]) {
         self.title = "No Title"
         self.locationName = "No Name"
         self.isAvailable = true

@@ -71,10 +71,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     //loads in the locations and their stuff
     func loadInitialData() {
-        ref?.child("Spots").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref?.child("Spots").observe(.value, with: { (snapshot) in
             //Code
-            snapshot.value = 
-            
+            print(snapshot)
         })
         
         // 1

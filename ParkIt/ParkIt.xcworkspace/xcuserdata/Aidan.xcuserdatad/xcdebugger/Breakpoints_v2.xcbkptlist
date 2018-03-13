@@ -10,45 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkIt/MapViewController.swift"
-            timestampString = "542502245.314003"
+            timestampString = "542650757.171757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
             endingLineNumber = "76"
             landmarkName = "loadInitialData()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ParkIt.MapViewController.loadInitialData() -&gt; ()"
-                  moduleName = "ParkIt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Aidan/Desktop/School/12th%20Grade/Computer%20Science/ParkIt/ParkIt/ParkIt/MapViewController.swift"
-                  timestampString = "542502245.337013"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "371">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in ParkIt.MapViewController.loadInitialData() -&gt; ()"
-                  moduleName = "ParkIt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Aidan/Desktop/School/12th%20Grade/Computer%20Science/ParkIt/ParkIt/ParkIt/MapViewController.swift"
-                  timestampString = "542502245.347862"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
