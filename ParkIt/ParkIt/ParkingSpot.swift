@@ -14,7 +14,7 @@ class ParkingSpot: NSObject, MKAnnotation {
     var databaseHandle:DatabaseHandle?
     
     var title: String?
-    let locationName: String
+    //let locationName: String
     var isAvailable: Bool
     var coordinate: CLLocationCoordinate2D
     var periods: [[String]]
@@ -22,10 +22,10 @@ class ParkingSpot: NSObject, MKAnnotation {
     var userBuying: String?
     var userSelling: String
     
-    init(title: String, locationName: String, isAvailable: Bool, coordinate: CLLocationCoordinate2D, periods: [[String]], timeLeft: Float, userBuying: String, userSelling: String) {
+    init(title: String, isAvailable: Bool, coordinate: CLLocationCoordinate2D, periods: [[String]], timeLeft: Float, userBuying: String, userSelling: String) {
         
         self.title = title
-        self.locationName = locationName
+        //self.locationName = locationName
         self.isAvailable = isAvailable
         self.coordinate = coordinate
         self.periods = periods
@@ -35,33 +35,6 @@ class ParkingSpot: NSObject, MKAnnotation {
         
         super.init()
     }
-    
-    /*init?(json:[Any]) {
-        self.title = "No Title"
-        self.locationName = "No Name"
-        self.isAvailable = true
-        self.coordinate = CLLocationCoordinate2D()
-        
-        /*ref?.child("Spots").child("Spot-0x0000").observe(DataEventType.value, with: { (snapshot) in
-            let postDict = snapshot.value as? [Double] ?? [50.0, 50.0]
-            self.coordinate = CLLocationCoordinate2D(latitude: postDict[0], longitude: postDict[1])
-            
-        })*/
-        
-        // 1
-        //self.title = json[16] as? String ?? "No Title"
-        //self.locationName = json[12] as! String
-        //self.locationName = json[11] as! String
-        //self.discipline = json[15] as! String
-        //self.isAvailable = true
-        // 2
-        /*if let latitude = Double(json[18] as! String),
-            let longitude = Double(json[19] as! String) {
-            self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        } else {
-            self.coordinate = CLLocationCoordinate2D()
-        }*/
-    }*/
     
     // markerTintColor for if the spot is open or not
     var markerTintColor: UIColor  {
@@ -78,7 +51,7 @@ class ParkingSpot: NSObject, MKAnnotation {
 
     
     var subtitle: String? {
-        return locationName
+        return String(timeLeft)
     }
     
     // Annotation right callout accessory opens this mapItem in Maps app

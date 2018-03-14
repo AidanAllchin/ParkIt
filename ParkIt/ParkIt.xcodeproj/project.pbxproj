@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		82135399F97880D166741015 /* Pods_ParkItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7768B97DE0F4271D0B9F4480 /* Pods_ParkItTests.framework */; };
+		C338EA3C2055C8D70031F487 /* BuySpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C338EA3B2055C8D70031F487 /* BuySpotViewController.swift */; };
 		CAC58B628EFCA70AC385027C /* Pods_ParkItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE28106BA5591F0B3114968 /* Pods_ParkItUITests.framework */; };
 		CD43455B6D359716BEFED282 /* Pods_ParkIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250CDFFBA075A76DB0991A90 /* Pods_ParkIt.framework */; };
 		DD2B3AE72033B7300012CE0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2B3AE62033B7300012CE0D /* LoginViewController.swift */; };
@@ -22,7 +23,6 @@
 		DDC279C82045D5A50057304A /* AddPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC279C72045D5A50057304A /* AddPinViewController.swift */; };
 		DDEA9B9B2051A6E0002FCA6C /* ParkingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9B9A2051A6E0002FCA6C /* ParkingSpot.swift */; };
 		DDEA9B9D2051A6E7002FCA6C /* ParkingSpotMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9B9C2051A6E7002FCA6C /* ParkingSpotMarkerView.swift */; };
-		DDEA9BA22051A720002FCA6C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDEA9BA12051A720002FCA6C /* Info.plist */; };
 		DDEA9BA42051A73B002FCA6C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9BA32051A73B002FCA6C /* MapViewController.swift */; };
 		DDEA9BA62051A747002FCA6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9BA52051A747002FCA6C /* ViewController.swift */; };
 		DDEA9BA82051A96A002FCA6C /* PublicArt.json in Resources */ = {isa = PBXBuildFile; fileRef = DDEA9BA72051A96A002FCA6C /* PublicArt.json */; };
@@ -52,6 +52,7 @@
 		755633ED5D4BADDC832FB6FC /* Pods-ParkItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkItUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkItUITests/Pods-ParkItUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7768B97DE0F4271D0B9F4480 /* Pods_ParkItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F0CF2EDDF923B1D8A75BDA /* Pods-ParkItUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkItUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkItUITests/Pods-ParkItUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C338EA3B2055C8D70031F487 /* BuySpotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySpotViewController.swift; sourceTree = "<group>"; };
 		D360818B6817DD20CA5DFABF /* Pods-ParkIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkIt/Pods-ParkIt.release.xcconfig"; sourceTree = "<group>"; };
 		DCE28106BA5591F0B3114968 /* Pods_ParkItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2B3AE62033B7300012CE0D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +165,7 @@
 				DD631B6D202379520095A1BC /* Main.storyboard */,
 				DDC279C72045D5A50057304A /* AddPinViewController.swift */,
 				DDEA9BA32051A73B002FCA6C /* MapViewController.swift */,
+				C338EA3B2055C8D70031F487 /* BuySpotViewController.swift */,
 				DD631B70202379520095A1BC /* Assets.xcassets */,
 				DD631B72202379520095A1BC /* LaunchScreen.storyboard */,
 				DDEA9BA12051A720002FCA6C /* Info.plist */,
@@ -309,7 +311,6 @@
 				DDC279C62045D0480057304A /* blackiii_thumbnail.jpg in Resources */,
 				DDEA9BA82051A96A002FCA6C /* PublicArt.json in Resources */,
 				DD631B74202379520095A1BC /* LaunchScreen.storyboard in Resources */,
-				DDEA9BA22051A720002FCA6C /* Info.plist in Resources */,
 				DD631B71202379520095A1BC /* Assets.xcassets in Resources */,
 				DD631B6F202379520095A1BC /* Main.storyboard in Resources */,
 				DD2B3AE92033BC840012CE0D /* GoogleService-Info.plist in Resources */,
@@ -498,6 +499,7 @@
 				DDEA9B9B2051A6E0002FCA6C /* ParkingSpot.swift in Sources */,
 				DDEA9B9D2051A6E7002FCA6C /* ParkingSpotMarkerView.swift in Sources */,
 				DDC279C82045D5A50057304A /* AddPinViewController.swift in Sources */,
+				C338EA3C2055C8D70031F487 /* BuySpotViewController.swift in Sources */,
 				DD2B3AE72033B7300012CE0D /* LoginViewController.swift in Sources */,
 				DD631B6A202379520095A1BC /* AppDelegate.swift in Sources */,
 				DDEA9BA62051A747002FCA6C /* ViewController.swift in Sources */,
