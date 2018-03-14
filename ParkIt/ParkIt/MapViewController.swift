@@ -109,7 +109,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             userSelling = snapshot.value as! String
         })
         
-        ParkingSpot(title: title, isAvailable: isAvailable, coordinate: location, periods: period, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling)
+        let temp: ParkingSpot = ParkingSpot(title: title, isAvailable: isAvailable, coordinate: location, periods: period, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling)
+        parkingspots.append(temp)
+        mapView.addAnnotations(parkingspots)
   }
     
     //Function which zooms in on passed in location
