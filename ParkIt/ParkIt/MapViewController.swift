@@ -57,7 +57,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var isAvailable: Bool = true
         var location: CLLocationCoordinate2D = CLLocationCoordinate2D()
         var period: [[String]] = [[String]]()
-        var timeLeft: Double = 0.0
+        var timeLeft: Float = 0.0
         var userBuying: String = ""
         var userSelling: String = ""
         
@@ -94,7 +94,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         //timeLeft
         ref?.child("Spots").child("Spot-0x0000").child("timeLeft").observe(.value, with: { (snapshot) in
             //Code
-            timeLeft = snapshot.value as! Double
+            timeLeft = snapshot.value as! Float
         })
         
         //userBuying
@@ -109,7 +109,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             userSelling = snapshot.value as! String
         })
         
-        
+        ParkingSpot(title: title, isAvailable: isAvailable, coordinate: location, periods: period, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling)
   }
     
     //Function which zooms in on passed in location
