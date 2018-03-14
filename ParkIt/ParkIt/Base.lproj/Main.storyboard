@@ -54,12 +54,22 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZn-FF-miR">
-                                <rect key="frame" x="0.0" y="627" width="71" height="40"/>
+                                <rect key="frame" x="172" y="342" width="71" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="zoomIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BVG-KD-vuG"/>
                                     <segue destination="neP-u6-TKG" kind="show" id="Hc0-1U-R5B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyb-9h-o9v">
+                                <rect key="frame" x="0.0" y="610" width="70" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="aqj-1r-fkJ"/>
+                                    <constraint firstAttribute="width" constant="104" id="dc3-Kf-bgO"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="directionarrow"/>
+                                <connections>
+                                    <action selector="zoomIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OUG-Tf-O8S"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -72,7 +82,9 @@
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PAg-c7-9PP"/>
                             <constraint firstItem="5HV-R6-aRz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ufk-Sz-5AB"/>
                             <constraint firstItem="5HV-R6-aRz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XaF-9l-dnZ"/>
+                            <constraint firstItem="uyb-9h-o9v" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Y3U-Wj-rvD"/>
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bBZ-NU-mpF"/>
+                            <constraint firstItem="uyb-9h-o9v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dPK-n9-PCf"/>
                             <constraint firstItem="gtX-hW-nNF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="k5t-5I-gl3"/>
                             <constraint firstItem="gtX-hW-nNF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="moc-Dc-Cwp"/>
                             <constraint firstItem="5HV-R6-aRz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qHh-i5-gC2"/>
@@ -205,6 +217,9 @@
             <point key="canvasLocation" x="832.79999999999995" y="28.335832083958024"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="directionarrow" width="512" height="512"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IHc-c9-FG0"/>
     </inferredMetricsTieBreakers>
