@@ -11,6 +11,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBAction func ViewSpot(_ sender: Any) {
+        self.performSegue(withIdentifier: "toViewSpot", sender:nil);
+    }
     var ref:DatabaseReference?
     var databaseHandle:DatabaseHandle?
     
