@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="ParkIt" id="Iim-Zc-yb8">
-                                        <barButtonItem key="leftBarButtonItem" title="Settings" id="PVN-Fy-QtJ">
+                                        <barButtonItem key="leftBarButtonItem" title="View Spot" id="PVN-Fy-QtJ">
                                             <connections>
                                                 <action selector="ViewSpot:" destination="BYZ-38-t0r" id="whx-wn-oYT"/>
                                             </connections>
