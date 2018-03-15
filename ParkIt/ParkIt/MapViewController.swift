@@ -28,8 +28,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     super.viewDidLoad()
     
     ref = Database.database().reference()
-    ref.child("Spots").child("Spot-0x0000").child("title").setValue("stupid")
-    ref.child("Spots").child("Spot-0x0000").child("title").observe(.value, with: { (snapshot) in
+    //ref.child("Spots").child("Spot-0x0000").child("title").setValue("stupid")
+    /*ref.child("Spots").child("Spot-0x0000").child("title").observe(.value, with: { (snapshot) in
         //Code
         if snapshot.value is NSNull {
             print("snapshot does not exist")
@@ -41,7 +41,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         print(snapshot.value!)
     }) { (error) in
         print(error.localizedDescription)
-    }
+    }*/
     
     print (ref)
     
@@ -109,7 +109,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var userBuying: String = ""
         var userSelling: String = ""
         
-//       print (
         //title
         ref?.child("Spots").child("Spot-0x0000").child("title").observe(.value, with: { (snapshot) in
             //Code
