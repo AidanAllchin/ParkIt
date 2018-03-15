@@ -17,12 +17,12 @@ class ParkingSpot: NSObject, MKAnnotation {
     //let locationName: String
     var isAvailable: Bool
     var coordinate: CLLocationCoordinate2D
-    var periods: [[String]]
+    var periods: [[Int]]
     var timeLeft: Float
     var userBuying: String?
     var userSelling: String
     
-    init(title: String, isAvailable: Bool, coordinate: CLLocationCoordinate2D, periods: [[String]], timeLeft: Float, userBuying: String, userSelling: String) {
+    init(title: String, isAvailable: Bool, coordinate: CLLocationCoordinate2D, periods: [[Int]], timeLeft: Float, userBuying: String, userSelling: String) {
         
         self.title = title
         //self.locationName = locationName
@@ -51,7 +51,7 @@ class ParkingSpot: NSObject, MKAnnotation {
 
     
     var subtitle: String? {
-        return String(timeLeft)
+        return "Time left: " + String(timeLeft)
     }
     
     // Annotation right callout accessory opens this mapItem in Maps app
