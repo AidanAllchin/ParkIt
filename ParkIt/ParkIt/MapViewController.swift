@@ -2,6 +2,7 @@ import UIKit
 import MapKit
 import Firebase
 import FirebaseDatabase
+import Foundation
 
 
 class MapViewController: UIViewController, MKMapViewDelegate {
@@ -77,28 +78,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var numSpots: Int = 0
         var spotName: String = ""
         
-        //numSpots
-        ref?.child("spotCount").observe(.value, with: { (snapshot) in
-            numSpots = snapshot.value as! Int
-        })
-        
-        if(numSpots == 0)
-        {
-            //TODO: Create dialogue box saying no spots found
-        }
-        else if(numSpots <= 10)
-        {
-            spotName = "Spot-0x000" + String(numSpots-1)
-        }
-        else if(numSpots <= 100)
-        {
-            spotName = "Spot-0x00" + String(numSpots-1)
-        }
-        else if(numSpots <= 1000)
-        {
-            spotName = "Spot-0x0" + String(numSpots-1)
-        }
-        
         var title: String = ""
         var isAvailable: Bool = true
         var location: CLLocationCoordinate2D = CLLocationCoordinate2D()
@@ -109,64 +88,82 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var userSelling: String = ""
         
         //title
-        ref?.child("Spots").child("Spot-0x0000").observe(.value, with: { (snapshot) in
-            //title
-            var dict: NSDictionary = snapshot.value as! NSDictionary
-            title = dict.value(forKey: "title") as! String
+        ref?.observe(.value, with: { (snapshot) in
+            //We determine how many spots there are in the database and set the name of the spot
+            let wholeDatabase: NSDictionary = snapshot.value as! NSDictionary
+            let spots: NSDictionary = wholeDatabase.value(forKey: "Spots") as! NSDictionary
             
-            //isAvailable
-            let temp = dict.value(forKey: "isAvailable") as! Int
-            if(temp == 1) {
-                isAvailable = true
-            } else {
-                isAvailable = false
-            }
+            let numSpots = wholeDatabase.value(forKey: "spotCount") as! Int
+            var currentSpotNum = numSpots - 1
             
-            //location
-            var locCompString = ""
-            locCompString = dict.value(forKey: "location") as! String
-            let coordArr = locCompString.components(separatedBy: ", ")
             
-            location = CLLocationCoordinate2D(latitude: Double(coordArr[0])!, longitude: Double(coordArr[1])!)
-            
-            //periodCount
-            periodCount = dict.value(forKey: "periodCount") as! Int
-            
-            //Periods
-            var ii = 0
-            while ii < periodCount
+            let jj = 0
+            while jj < currentSpotNum
             {
-                let periodName: String = "Period-0x000" + String(ii)
-                var periodArray: [Int] = [Int]()
+                spotName = "Spot-0x" + String(format: "%04d", currentSpotNum)
                 
-                var perCompString = ""
-                let periodsTempDict = dict.value(forKey: "Periods") as! NSDictionary
-                let periodTempDict = periodsTempDict.value(forKey: periodName) as! NSDictionary
-                perCompString = periodTempDict.value(forKey: "openHours") as! String
+                //Now we know which spot we're accessing, we can get all the information for it...
+                let dict: NSDictionary = spots.value(forKey: spotName) as! NSDictionary
+                title = dict.value(forKey: "title") as! String
                 
-                let tempArray = perCompString.components(separatedBy: ",")
-                periodArray.append(Int(tempArray[0])!)
-                periodArray.append(Int(tempArray[1])!)
+                //isAvailable
+                let temp = dict.value(forKey: "isAvailable") as! Int
+                if(temp == 1) {
+                    isAvailable = true
+                } else {
+                    isAvailable = false
+                }
                 
-                periodArray.append(Int(periodTempDict.value(forKey: "price") as! Int))
+                //location
+                var locCompString = ""
+                locCompString = dict.value(forKey: "location") as! String
+                let coordArr = locCompString.components(separatedBy: ", ")
                 
-                period.append(periodArray)
+                location = CLLocationCoordinate2D(latitude: Double(coordArr[0])!, longitude: Double(coordArr[1])!)
                 
-                ii = ii + 1
+                //periodCount
+                periodCount = dict.value(forKey: "periodCount") as! Int
+                
+                //Periods
+                var ii = 0
+                while ii < periodCount
+                {
+                    let periodName: String = "Period-0x000" + String(ii)
+                    var periodArray: [Int] = [Int]()
+                    
+                    var perCompString = ""
+                    let periodsTempDict = dict.value(forKey: "Periods") as! NSDictionary
+                    let periodTempDict = periodsTempDict.value(forKey: periodName) as! NSDictionary
+                    perCompString = periodTempDict.value(forKey: "openHours") as! String
+                    
+                    let tempArray = perCompString.components(separatedBy: ",")
+                    periodArray.append(Int(tempArray[0])!)
+                    periodArray.append(Int(tempArray[1])!)
+                    
+                    periodArray.append(Int(periodTempDict.value(forKey: "price") as! Int))
+                    
+                    period.append(periodArray)
+                    
+                    ii = ii + 1
+                }
+                
+                //timeLeft
+                timeLeft = dict.value(forKey: "timeLeft") as! Float
+                
+                //userBuying
+                userBuying = dict.value(forKey: "userBuying") as! String
+                
+                //userSelling
+                userSelling = dict.value(forKey: "userSelling") as! String
+                
+                let currentSpot: ParkingSpot = ParkingSpot(title: title, isAvailable: isAvailable, coordinate: location, periods: period, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling)
+                
+                self.mapView.addAnnotation(currentSpot)
+                
+                currentSpotNum = currentSpotNum - 1
+            
             }
             
-            //timeLeft
-            timeLeft = dict.value(forKey: "timeLeft") as! Float
-            
-            //userBuying
-            userBuying = dict.value(forKey: "userBuying") as! String
-            
-            //userSelling
-            userSelling = dict.value(forKey: "userSelling") as! String
-            
-            let currentSpot: ParkingSpot = ParkingSpot(title: title, isAvailable: isAvailable, coordinate: location, periods: period, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling)
-            
-            self.mapView.addAnnotation(currentSpot)
         })
         //parkingspots.append(currentSpot)
         //mapView.addAnnotations(parkingspots)
