@@ -110,94 +110,63 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var userSelling: String = ""
         
         //title
-        ref?.child("Spots").child("Spot-0x0000").child("title").observe(.value, with: { (snapshot) in
-            //Code
-            title = snapshot.value as! String
+        ref?.child("Spots").child("Spot-0x0000").observe(.value, with: { (snapshot) in
+            //title
+            var dict: NSDictionary = snapshot.value as! NSDictionary
+            title = dict.value(forKey: "title") as! String
             
-            print(snapshot.value!)
-        })
-        
-        //isAvailable
-        ref?.child("Spots").child("Spot-0x0000").child("isAvailable").observe(.value, with: { (snapshot) in
-            let temp = snapshot.value as! Int
+            //isAvailable
+            let temp = dict.value(forKey: "isAvailable") as! Int
             if(temp == 1) {
                 isAvailable = true
             } else {
                 isAvailable = false
             }
-        })
-        
-        //location
-        ref?.child("Spots").child("Spot-0x0000").child("location").observe(.value, with: { (snapshot) in
-            //Code
-            var componentString = ""
-            componentString = snapshot.value as! String
-            let coordArr = componentString.components(separatedBy: ", ")
+            
+            //location
+            var locCompString = ""
+            locCompString = dict.value(forKey: "location") as! String
+            let coordArr = locCompString.components(separatedBy: ", ")
             
             location = CLLocationCoordinate2D(latitude: Double(coordArr[0])!, longitude: Double(coordArr[1])!)
             
-            print(snapshot.value!)
-        })
-        
-        ref?.child("Spots").child("Spot-0x0000").child("periodCount").observe(.value, with: { (snapshot) in
-            //Code
-            periodCount = snapshot.value as! Int
-        })
-        var ii = 0
-        while ii < periodCount
-        {
-            let periodName: String = "Period-0x000" + String(periodCount-1)
-            var periodArray: [Int] = [Int]()
-        ref?.child("Spots").child("Spot-0x0000").child("Periods").child(periodName).child("openHours").observe(.value, with: { (snapshot) in
-                //Code
-                var componentString = ""
-                componentString = snapshot.value as! String
-                let tempArray = componentString.components(separatedBy: ",")
+            //periodCount
+            periodCount = dict.value(forKey: "periodCount") as! Int
+            
+            //Periods
+            var ii = 0
+            while ii < periodCount
+            {
+                let periodName: String = "Period-0x000" + String(ii)
+                var periodArray: [Int] = [Int]()
+                
+                var perCompString = ""
+                perCompString = dict.value(forKey: "Periods/\(periodName)") as! String
+                
+                let tempArray = perCompString.components(separatedBy: ",")
                 periodArray.append(Int(tempArray[0])!)
                 periodArray.append(Int(tempArray[1])!)
-            })
+                
+                periodArray.append(dict.value(forKey: "Periods/" + periodName + "/openHours") as! Int)
+                
+                period.append(periodArray)
+                
+                ii = ii + 1
+            }
             
-        ref?.child("Spots").child("Spot-0x0000").child("Periods").child(periodName).child("price").observe(.value, with: { (snapshot) in
-                periodArray.append(snapshot.value as! Int)
-            })
+            //timeLeft
+            timeLeft = dict.value(forKey: "timeLeft") as! Float
             
-            period.append(periodArray)
+            //userBuying
+            userBuying = dict.value(forKey: "userBuying") as! String
             
-            ii = ii + 1
-        }
-        
-        /*//period
-        ref?.child("Spots").child("Spot-0x0000").child("Periods").observe(.value, with: { (snapshot) in
-            //Code
-            var test = ""
-            test = snapshot.value as! String
-            let coordArr = test.components(separatedBy: ", ")
+            //userSelling
+            userSelling = dict.value(forKey: "userSelling") as! String
             
-            period = [[12, 16, 1], [18, 20, 5]]
+            let currentSpot: ParkingSpot = ParkingSpot(title: title, isAvailable: isAvailable, coordinate: location, periods: period, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling)
             
-            print(snapshot.value!)
-        })*/
-        
-        //timeLeft
-        ref?.child("Spots").child("Spot-0x0000").child("timeLeft").observe(.value, with: { (snapshot) in
-            //Code
-            timeLeft = snapshot.value as! Float
+            self.mapView.addAnnotation(currentSpot)
         })
-        
-        //userBuying
-        ref?.child("Spots").child("Spot-0x0000").child("userBuying").observe(.value, with: { (snapshot) in
-            //Code
-            userBuying = snapshot.value as! String
-        })
-        
-        //userSelling
-        ref?.child("Spots").child("Spot-0x0000").child("userSelling").observe(.value, with: { (snapshot) in
-            //Code
-            userSelling = snapshot.value as! String
-        })
-        
-        let currentSpot: ParkingSpot = ParkingSpot(title: title, isAvailable: isAvailable, coordinate: location, periods: period, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling)
-        mapView.addAnnotation(currentSpot)
         //parkingspots.append(currentSpot)
         //mapView.addAnnotations(parkingspots)
   }
