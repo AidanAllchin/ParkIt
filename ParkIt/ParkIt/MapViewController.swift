@@ -98,7 +98,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             
             
             let jj = 0
-            while jj < currentSpotNum
+            while jj <= currentSpotNum
             {
                 spotName = "Spot-0x" + String(format: "%04d", currentSpotNum)
                 
