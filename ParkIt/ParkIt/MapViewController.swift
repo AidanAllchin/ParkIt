@@ -1,6 +1,8 @@
 import UIKit
 import MapKit
 import Firebase
+import FirebaseDatabase
+
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     @IBAction func onGoButton(_ sender: Any) {
@@ -11,7 +13,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    var ref:DatabaseReference?
+    @IBAction func ViewSpot(_ sender: Any) {
+        self.performSegue(withIdentifier: "toViewSpot", sender:nil);
+    }
+    
+    var ref:DatabaseReference!
     var databaseHandle:DatabaseHandle?
     
     //Initialize all the artwork pieces!
@@ -22,6 +28,22 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     super.viewDidLoad()
     
     ref = Database.database().reference()
+    //ref.child("Spots").child("Spot-0x0000").child("title").setValue("stupid")
+    /*ref.child("Spots").child("Spot-0x0000").child("title").observe(.value, with: { (snapshot) in
+        //Code
+        if snapshot.value is NSNull {
+            print("snapshot does not exist")
+        } else {
+            print("snapshot exists")
+        }
+        var title = snapshot.value as! String
+        
+        print(snapshot.value!)
+    }) { (error) in
+        print(error.localizedDescription)
+    }*/
+    
+    print (ref)
     
     //  set initial location to Seattle... change to user location eventually
     let initialLocation = CLLocation(latitude: 47.6062, longitude: -122.3321)
@@ -52,65 +74,100 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     //loads in the locations and their stuff
     func loadInitialData() {
+        var numSpots: Int = 0
+        var spotName: String = ""
+        
+        //numSpots
+        ref?.child("spotCount").observe(.value, with: { (snapshot) in
+            numSpots = snapshot.value as! Int
+        })
+        
+        if(numSpots == 0)
+        {
+            //TODO: Create dialogue box saying no spots found
+        }
+        else if(numSpots <= 10)
+        {
+            spotName = "Spot-0x000" + String(numSpots-1)
+        }
+        else if(numSpots <= 100)
+        {
+            spotName = "Spot-0x00" + String(numSpots-1)
+        }
+        else if(numSpots <= 1000)
+        {
+            spotName = "Spot-0x0" + String(numSpots-1)
+        }
+        
         var title: String = ""
         var isAvailable: Bool = true
         var location: CLLocationCoordinate2D = CLLocationCoordinate2D()
-        var period: [[String]] = [[String]]()
+        var periodCount: Int = 0
+        var period: [[Int]] = [[Int]]()
         var timeLeft: Float = 0.0
         var userBuying: String = ""
         var userSelling: String = ""
         
         //title
-        ref?.child("Spots").child("Spot-0x0000").child("title").observe(.value, with: { (snapshot) in
-            //Code
-            title = snapshot.value as! String
+        ref?.child("Spots").child("Spot-0x0000").observe(.value, with: { (snapshot) in
+            //title
+            var dict: NSDictionary = snapshot.value as! NSDictionary
+            title = dict.value(forKey: "title") as! String
             
-            print(snapshot.value!)
-        })
-        
-        //isAvailable
-        ref?.child("Spots").child("Spot-0x0000").child("isAvailable").observe(.value, with: { (snapshot) in
-            let temp = snapshot.value as! Int
+            //isAvailable
+            let temp = dict.value(forKey: "isAvailable") as! Int
             if(temp == 1) {
                 isAvailable = true
             } else {
                 isAvailable = false
             }
-        })
-        
-        //location
-        ref?.child("Spots").child("Spot-0x0000").child("location").observe(.value, with: { (snapshot) in
-            //Code
-            var test = ""
-            test = snapshot.value as! String
-            let coordArr = test.components(separatedBy: ", ")
+            
+            //location
+            var locCompString = ""
+            locCompString = dict.value(forKey: "location") as! String
+            let coordArr = locCompString.components(separatedBy: ", ")
             
             location = CLLocationCoordinate2D(latitude: Double(coordArr[0])!, longitude: Double(coordArr[1])!)
             
-            print(snapshot.value!)
+            //periodCount
+            periodCount = dict.value(forKey: "periodCount") as! Int
+            
+            //Periods
+            var ii = 0
+            while ii < periodCount
+            {
+                let periodName: String = "Period-0x000" + String(ii)
+                var periodArray: [Int] = [Int]()
+                
+                var perCompString = ""
+                perCompString = dict.value(forKey: "Periods/\(periodName)") as! String
+                
+                let tempArray = perCompString.components(separatedBy: ",")
+                periodArray.append(Int(tempArray[0])!)
+                periodArray.append(Int(tempArray[1])!)
+                
+                periodArray.append(dict.value(forKey: "Periods/" + periodName + "/openHours") as! Int)
+                
+                period.append(periodArray)
+                
+                ii = ii + 1
+            }
+            
+            //timeLeft
+            timeLeft = dict.value(forKey: "timeLeft") as! Float
+            
+            //userBuying
+            userBuying = dict.value(forKey: "userBuying") as! String
+            
+            //userSelling
+            userSelling = dict.value(forKey: "userSelling") as! String
+            
+            let currentSpot: ParkingSpot = ParkingSpot(title: title, isAvailable: isAvailable, coordinate: location, periods: period, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling)
+            
+            self.mapView.addAnnotation(currentSpot)
         })
-        
-        //timeLeft
-        ref?.child("Spots").child("Spot-0x0000").child("timeLeft").observe(.value, with: { (snapshot) in
-            //Code
-            timeLeft = snapshot.value as! Float
-        })
-        
-        //userBuying
-        ref?.child("Spots").child("Spot-0x0000").child("userBuying").observe(.value, with: { (snapshot) in
-            //Code
-            userBuying = snapshot.value as! String
-        })
-        
-        //userSelling
-        ref?.child("Spots").child("Spot-0x0000").child("userSelling").observe(.value, with: { (snapshot) in
-            //Code
-            userSelling = snapshot.value as! String
-        })
-        
-        let temp: ParkingSpot = ParkingSpot(title: title, isAvailable: isAvailable, coordinate: location, periods: period, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling)
-        parkingspots.append(temp)
-        mapView.addAnnotations(parkingspots)
+        //parkingspots.append(currentSpot)
+        //mapView.addAnnotations(parkingspots)
   }
     
     //Function which zooms in on passed in location
