@@ -70,7 +70,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func zoomIn(_ sender: Any) {
-       mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
+       mapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
     }
     
     //loads in the locations and their stuff
