@@ -56,12 +56,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     mapView.showsUserLocation = true
     mapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
     
-    //Create an artwork point
-    //let artwork = Artwork(title: "King David Kalakaua",locationName: "Waikiki Gateway Park",discipline: "Sculpture",coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
-      //  mapView.addAnnotation(artwork)
-    
-    mapView.register(ParkingSpotMarkerView.self,
-                     forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+    mapView.register(ParkingSpotMarkerView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
     
 
     //Loads in the annotations!
@@ -236,9 +231,9 @@ extension ViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
-        let location = view.annotation as! ParkingSpot
+        let position = view.annotation as! ParkingSpot
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-        location.mapItem().openInMaps(launchOptions: launchOptions)
+        position.mapItem().openInMaps(launchOptions: launchOptions)
     }
     
     
