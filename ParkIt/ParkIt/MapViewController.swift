@@ -2,6 +2,7 @@ import UIKit
 import MapKit
 import Firebase
 import FirebaseDatabase
+import Foundation
 
 
 class MapViewController: UIViewController, MKMapViewDelegate {
@@ -53,6 +54,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     //setting ViewController as the delegate of the map view.
     mapView.delegate = self
     mapView.showsUserLocation = true
+    mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
     
     //Create an artwork point
     //let artwork = Artwork(title: "King David Kalakaua",locationName: "Waikiki Gateway Park",discipline: "Sculpture",coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
@@ -61,44 +63,20 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     mapView.register(ParkingSpotMarkerView.self,
                      forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
     
+
     //Loads in the annotations!
     loadInitialData()
     mapView.addAnnotations(parkingspots)
     }
     
     @IBAction func zoomIn(_ sender: Any) {
-        let userLocation = mapView.userLocation
-        let region = MKCoordinateRegionMakeWithDistance((userLocation.location?.coordinate)!, regionRadius, regionRadius)
-        
-        mapView.setRegion(region, animated: true)
+       mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
     }
     
     //loads in the locations and their stuff
     func loadInitialData() {
         var numSpots: Int = 0
         var spotName: String = ""
-        
-        //numSpots
-        ref?.child("spotCount").observe(.value, with: { (snapshot) in
-            numSpots = snapshot.value as! Int
-        })
-        
-        if(numSpots == 0)
-        {
-            //TODO: Create dialogue box saying no spots found
-        }
-        else if(numSpots <= 10)
-        {
-            spotName = "Spot-0x000" + String(numSpots-1)
-        }
-        else if(numSpots <= 100)
-        {
-            spotName = "Spot-0x00" + String(numSpots-1)
-        }
-        else if(numSpots <= 1000)
-        {
-            spotName = "Spot-0x0" + String(numSpots-1)
-        }
         
         var title: String = ""
         var isAvailable: Bool = true
@@ -110,94 +88,83 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var userSelling: String = ""
         
         //title
-        ref?.child("Spots").child("Spot-0x0000").child("title").observe(.value, with: { (snapshot) in
-            //Code
-            title = snapshot.value as! String
+        ref?.observe(.value, with: { (snapshot) in
+            //We determine how many spots there are in the database and set the name of the spot
+            let wholeDatabase: NSDictionary = snapshot.value as! NSDictionary
+            let spots: NSDictionary = wholeDatabase.value(forKey: "Spots") as! NSDictionary
             
-            print(snapshot.value!)
-        })
-        
-        //isAvailable
-        ref?.child("Spots").child("Spot-0x0000").child("isAvailable").observe(.value, with: { (snapshot) in
-            let temp = snapshot.value as! Int
-            if(temp == 1) {
-                isAvailable = true
-            } else {
-                isAvailable = false
+            let numSpots = wholeDatabase.value(forKey: "spotCount") as! Int
+            var currentSpotNum = numSpots - 1
+            
+            
+            let jj = 0
+            while jj <= currentSpotNum
+            {
+                spotName = "Spot-0x" + String(format: "%04d", currentSpotNum)
+                
+                //Now we know which spot we're accessing, we can get all the information for it...
+                let dict: NSDictionary = spots.value(forKey: spotName) as! NSDictionary
+                title = dict.value(forKey: "title") as! String
+                
+                //isAvailable
+                let temp = dict.value(forKey: "isAvailable") as! Int
+                if(temp == 1) {
+                    isAvailable = true
+                } else {
+                    isAvailable = false
+                }
+                
+                //location
+                var locCompString = ""
+                locCompString = dict.value(forKey: "location") as! String
+                let coordArr = locCompString.components(separatedBy: ", ")
+                
+                location = CLLocationCoordinate2D(latitude: Double(coordArr[0])!, longitude: Double(coordArr[1])!)
+                
+                //periodCount
+                periodCount = dict.value(forKey: "periodCount") as! Int
+                
+                //Periods
+                var ii = 0
+                while ii < periodCount
+                {
+                    let periodName: String = "Period-0x000" + String(ii)
+                    var periodArray: [Int] = [Int]()
+                    
+                    var perCompString = ""
+                    let periodsTempDict = dict.value(forKey: "Periods") as! NSDictionary
+                    let periodTempDict = periodsTempDict.value(forKey: periodName) as! NSDictionary
+                    perCompString = periodTempDict.value(forKey: "openHours") as! String
+                    
+                    let tempArray = perCompString.components(separatedBy: ",")
+                    periodArray.append(Int(tempArray[0])!)
+                    periodArray.append(Int(tempArray[1])!)
+                    
+                    periodArray.append(Int(periodTempDict.value(forKey: "price") as! Int))
+                    
+                    period.append(periodArray)
+                    
+                    ii = ii + 1
+                }
+                
+                //timeLeft
+                timeLeft = dict.value(forKey: "timeLeft") as! Float
+                
+                //userBuying
+                userBuying = dict.value(forKey: "userBuying") as! String
+                
+                //userSelling
+                userSelling = dict.value(forKey: "userSelling") as! String
+                
+                let currentSpot: ParkingSpot = ParkingSpot(title: title, isAvailable: isAvailable, coordinate: location, periods: period, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling)
+                
+                self.mapView.addAnnotation(currentSpot)
+                
+                currentSpotNum = currentSpotNum - 1
+            
             }
+            
         })
-        
-        //location
-        ref?.child("Spots").child("Spot-0x0000").child("location").observe(.value, with: { (snapshot) in
-            //Code
-            var componentString = ""
-            componentString = snapshot.value as! String
-            let coordArr = componentString.components(separatedBy: ", ")
-            
-            location = CLLocationCoordinate2D(latitude: Double(coordArr[0])!, longitude: Double(coordArr[1])!)
-            
-            print(snapshot.value!)
-        })
-        
-        ref?.child("Spots").child("Spot-0x0000").child("periodCount").observe(.value, with: { (snapshot) in
-            //Code
-            periodCount = snapshot.value as! Int
-        })
-        var ii = 0
-        while ii < periodCount
-        {
-            let periodName: String = "Period-0x000" + String(periodCount-1)
-            var periodArray: [Int] = [Int]()
-        ref?.child("Spots").child("Spot-0x0000").child("Periods").child(periodName).child("openHours").observe(.value, with: { (snapshot) in
-                //Code
-                var componentString = ""
-                componentString = snapshot.value as! String
-                let tempArray = componentString.components(separatedBy: ",")
-                periodArray.append(Int(tempArray[0])!)
-                periodArray.append(Int(tempArray[1])!)
-            })
-            
-        ref?.child("Spots").child("Spot-0x0000").child("Periods").child(periodName).child("price").observe(.value, with: { (snapshot) in
-                periodArray.append(snapshot.value as! Int)
-            })
-            
-            period.append(periodArray)
-            
-            ii = ii + 1
-        }
-        
-        /*//period
-        ref?.child("Spots").child("Spot-0x0000").child("Periods").observe(.value, with: { (snapshot) in
-            //Code
-            var test = ""
-            test = snapshot.value as! String
-            let coordArr = test.components(separatedBy: ", ")
-            
-            period = [[12, 16, 1], [18, 20, 5]]
-            
-            print(snapshot.value!)
-        })*/
-        
-        //timeLeft
-        ref?.child("Spots").child("Spot-0x0000").child("timeLeft").observe(.value, with: { (snapshot) in
-            //Code
-            timeLeft = snapshot.value as! Float
-        })
-        
-        //userBuying
-        ref?.child("Spots").child("Spot-0x0000").child("userBuying").observe(.value, with: { (snapshot) in
-            //Code
-            userBuying = snapshot.value as! String
-        })
-        
-        //userSelling
-        ref?.child("Spots").child("Spot-0x0000").child("userSelling").observe(.value, with: { (snapshot) in
-            //Code
-            userSelling = snapshot.value as! String
-        })
-        
-        let currentSpot: ParkingSpot = ParkingSpot(title: title, isAvailable: isAvailable, coordinate: location, periods: period, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling)
-        mapView.addAnnotation(currentSpot)
         //parkingspots.append(currentSpot)
         //mapView.addAnnotations(parkingspots)
   }
@@ -260,6 +227,8 @@ extension ViewController: MKMapViewDelegate {
         //}
        // return view
     //}
+    
+    
     //launches apple maps!
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
