@@ -79,6 +79,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var spotName: String = ""
         
         var title: String = ""
+        var address: String = ""
         var isAvailable: Bool = true
         var location: CLLocationCoordinate2D = CLLocationCoordinate2D()
         var periodCount: Int = 0
@@ -105,6 +106,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 //Now we know which spot we're accessing, we can get all the information for it...
                 let dict: NSDictionary = spots.value(forKey: spotName) as! NSDictionary
                 title = dict.value(forKey: "title") as! String
+                
+                address = dict.value(forKey: "address") as! String
                 
                 //isAvailable
                 let temp = dict.value(forKey: "isAvailable") as! Int
@@ -156,7 +159,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 //userSelling
                 userSelling = dict.value(forKey: "userSelling") as! String
                 
-                let currentSpot: ParkingSpot = ParkingSpot(title: title, isAvailable: isAvailable, coordinate: location, periods: period, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling)
+                let currentSpot: ParkingSpot = ParkingSpot(title: title, address: address, isAvailable: isAvailable, coordinate: location, periods: period, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling)
                 
                 self.mapView.addAnnotation(currentSpot)
                 
