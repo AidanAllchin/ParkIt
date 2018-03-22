@@ -54,7 +54,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     //setting ViewController as the delegate of the map view.
     mapView.delegate = self
     mapView.showsUserLocation = true
-    mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
+    mapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
     
     //Create an artwork point
     //let artwork = Artwork(title: "King David Kalakaua",locationName: "Waikiki Gateway Park",discipline: "Sculpture",coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
@@ -70,7 +70,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func zoomIn(_ sender: Any) {
-       mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
+       mapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
     }
     
     //loads in the locations and their stuff

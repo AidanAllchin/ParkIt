@@ -53,12 +53,12 @@ class ParkingSpot: NSObject, MKAnnotation {
 
     
     var subtitle: String? {
-        return "Time left: " + String(timeLeft)
+        return "Time left: " + String(timeLeft) + "\nUser Selling: " + String(userSelling)
     }
     
     // Annotation right callout accessory opens this mapItem in Maps app
     func mapItem() -> MKMapItem {
-        let addressDict = [CNPostalAddressStreetKey: subtitle!]
+        let addressDict = [CNPostalAddressStreetKey: address]
         let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDict)
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = title

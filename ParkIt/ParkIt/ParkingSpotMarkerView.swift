@@ -35,7 +35,6 @@ class ParkingSpotMarkerView: MKMarkerAnnotationView {
             detailLabel.numberOfLines = 0
             detailLabel.font = detailLabel.font.withSize(12)
             detailLabel.text = parkingspot.subtitle
-            detailLabel.text = parkingspot.userBuying
             detailCalloutAccessoryView = detailLabel
             
         }
