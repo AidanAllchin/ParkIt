@@ -14,6 +14,7 @@ class ParkingSpot: NSObject, MKAnnotation {
     var databaseHandle:DatabaseHandle?
     
     var title: String?
+    var address: String
     //let locationName: String
     var isAvailable: Bool
     var coordinate: CLLocationCoordinate2D
@@ -22,9 +23,10 @@ class ParkingSpot: NSObject, MKAnnotation {
     var userBuying: String?
     var userSelling: String
     
-    init(title: String, isAvailable: Bool, coordinate: CLLocationCoordinate2D, periods: [[Int]], timeLeft: Float, userBuying: String, userSelling: String) {
+    init(title: String, address: String, isAvailable: Bool, coordinate: CLLocationCoordinate2D, periods: [[Int]], timeLeft: Float, userBuying: String, userSelling: String) {
         
         self.title = title
+        self.address = address
         //self.locationName = locationName
         self.isAvailable = isAvailable
         self.coordinate = coordinate
