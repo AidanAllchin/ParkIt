@@ -6,17 +6,11 @@ import Foundation
 
 
 class MapViewController: UIViewController, MKMapViewDelegate {
-    @IBAction func onGoButton(_ sender: Any) {
-        performSegue(withIdentifier: "toBuySpot", sender: self)
-    }
-    
-    @IBOutlet weak var searchBar: UISearchBar!
+
+        @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var mapView: MKMapView!
     
-    @IBAction func ViewSpot(_ sender: Any) {
-        self.performSegue(withIdentifier: "toViewSpot", sender:nil);
-    }
     
     var ref:DatabaseReference!
     var databaseHandle:DatabaseHandle?
@@ -193,14 +187,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
 
 
-
-
 extension ViewController: MKMapViewDelegate {
     //launches Apple Maps!
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
-        let position = view.annotation as! ParkingSpot
-        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-        position.mapItem().openInMaps(launchOptions: launchOptions)
+        performSegue(withIdentifier: "ViewSpotFromAnnotation", sender: self)
+       // let location = view.annotation as! ParkingSpot
+        //let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        //location.mapItem().openInMaps(launchOptions: launchOptions)
     }
 }
