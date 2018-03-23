@@ -29,20 +29,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     super.viewDidLoad()
     
     ref = Database.database().reference()
-    //ref.child("Spots").child("Spot-0x0000").child("title").setValue("stupid")
-    /*ref.child("Spots").child("Spot-0x0000").child("title").observe(.value, with: { (snapshot) in
-        //Code
-        if snapshot.value is NSNull {
-            print("snapshot does not exist")
-        } else {
-            print("snapshot exists")
-        }
-        var title = snapshot.value as! String
-        
-        print(snapshot.value!)
-    }) { (error) in
-        print(error.localizedDescription)
-    }*/
     
     print (ref)
     
@@ -57,7 +43,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     mapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
     
     mapView.register(ParkingSpotMarkerView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
-    
 
     //Loads in the annotations!
     loadInitialData()
@@ -89,10 +74,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let wholeDatabase: NSDictionary = snapshot.value as! NSDictionary
             let spots: NSDictionary = wholeDatabase.value(forKey: "Spots") as! NSDictionary
             
-            let numSpots = wholeDatabase.value(forKey: "spotCount") as! Int
+            numSpots = spots.count
             var currentSpotNum = numSpots - 1
             
-            
+            //Start cycling through all the spots and get their info from Firebase.Database
             let jj = 0
             while jj <= currentSpotNum
             {
@@ -119,10 +104,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 
                 location = CLLocationCoordinate2D(latitude: Double(coordArr[0])!, longitude: Double(coordArr[1])!)
                 
-                //periodCount
-                periodCount = dict.value(forKey: "periodCount") as! Int
-                
                 //Periods
+                let periodsTempDict = dict.value(forKey: "Periods") as! NSDictionary
+                
+                //periodCount
+                periodCount = periodsTempDict.count
+                
+                //Individual periods
                 var ii = 0
                 while ii < periodCount
                 {
@@ -130,7 +118,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                     var periodArray: [Int] = [Int]()
                     
                     var perCompString = ""
-                    let periodsTempDict = dict.value(forKey: "Periods") as! NSDictionary
                     let periodTempDict = periodsTempDict.value(forKey: periodName) as! NSDictionary
                     perCompString = periodTempDict.value(forKey: "openHours") as! String
                     
@@ -159,13 +146,21 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 self.mapView.addAnnotation(currentSpot)
                 
                 currentSpotNum = currentSpotNum - 1
-            
             }
-            
         })
-        //parkingspots.append(currentSpot)
-        //mapView.addAnnotations(parkingspots)
   }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
+            //Code
+        //})
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        //Auth.auth().removeStateDidChangeListener(handle!)
+    }
     
     //Function which zooms in on passed in location
     //1000 is about a half mile
@@ -173,6 +168,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius, regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
     }
+    
     //Acessing user lcation
     let locationManager = CLLocationManager()
     func checkLocationAuthorizationStatus() {
@@ -199,44 +195,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
 
 
-
-
-
 extension ViewController: MKMapViewDelegate {
-    // 1
-    //func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        // 2 Checks to make sure the annotation to animate is an Artwork annotation
-        //Must change later!
-        //guard let annotation = annotation as? Artwork else { return nil }
-        // 3
-       // let identifier = "marker"
-       // var view: MKMarkerAnnotationView
-        // 4
-       // if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-        //    as? MKMarkerAnnotationView {
-        //    dequeuedView.annotation = annotation
-         //   view = dequeuedView
-       // } else {
-            // 5
-         //   view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-         //   view.canShowCallout = true
-         //   view.calloutOffset = CGPoint(x: -5, y: 5)
-         //   view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-        //}
-       // return view
-    //}
-    
-    
-    //launches apple maps!
-    
+    //launches Apple Maps!
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
         let position = view.annotation as! ParkingSpot
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
         position.mapItem().openInMaps(launchOptions: launchOptions)
     }
-    
-    
-    
 }
-

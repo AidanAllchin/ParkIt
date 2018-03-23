@@ -38,13 +38,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQv-rp-wtq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZn-FF-miR">
-                                <rect key="frame" x="172" y="342" width="71" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="zoomIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BVG-KD-vuG"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyb-9h-o9v">
                                 <rect key="frame" x="0.0" y="610" width="70" height="75"/>
                                 <constraints>
@@ -299,7 +292,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="l9L-7D-uCs"/>
-        <segue reference="VeS-VX-0mz"/>
+        <segue reference="baZ-Th-xbJ"/>
         <segue reference="liC-UB-kvT"/>
     </inferredMetricsTieBreakers>
 </document>
