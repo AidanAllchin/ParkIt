@@ -65,10 +65,26 @@ class LoginViewController: UIViewController {
                     if let u = user {
                         //User is found, go to home screen
                         UserInformation.userEmail = u.email!
+        
+                        let def = UserDefaults.standard
+                        def.set(String(UserInformation.userEmail), forKey: "userEmail")
+                        def.synchronize()
+                        
                         //UserInformation.user = u
                         self.performSegue(withIdentifier: "loginComplete", sender: self)
                     }
                     else {
+                        let alert = UIAlertController(title: "Login Failed", message: "Login failed: " + (error?.localizedDescription)!, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                            switch action.style{
+                            case .default:
+                                print("default")
+                            case .cancel:
+                                print("cancel")
+                            case .destructive:
+                                print("destructive")
+                            }}))
+                        self.present(alert, animated: true, completion: nil)
                         //Error: Check error and show message
                     }
                 })
@@ -78,11 +94,27 @@ class LoginViewController: UIViewController {
                 Auth.auth().createUser(withEmail: email, password: pass, completion: { (user, error) in
                     if let u = user {
                         //User is found, go to home screen
+                        UserInformation.userEmail = u.email!
+                        
+                        let def = UserDefaults.standard
+                        def.set(String(UserInformation.userEmail), forKey: "userEmail")
+                        def.synchronize()
+                        
                         self.performSegue(withIdentifier: "loginComplete", sender: self)
                     }
                     else {
                         //Error: Check error and show message
-                        print("Password didn't work or email didn't work.")
+                        let alert = UIAlertController(title: "Creation Failed", message: "Account creation failed: " + (error?.localizedDescription)!, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                            switch action.style{
+                            case .default:
+                                print("default")
+                            case .cancel:
+                                print("cancel")
+                            case .destructive:
+                                print("destructive")
+                            }}))
+                        self.present(alert, animated: true, completion: nil)
                     }
                 })
             }
