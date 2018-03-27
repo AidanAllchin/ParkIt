@@ -74,6 +74,7 @@ class LoginViewController: UIViewController {
                         self.performSegue(withIdentifier: "loginComplete", sender: self)
                     }
                     else {
+                        //Show error message when it doesn't work
                         let alert = UIAlertController(title: "Login Failed", message: "Login failed: " + (error?.localizedDescription)!, preferredStyle: UIAlertControllerStyle.alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                             switch action.style{
@@ -104,6 +105,7 @@ class LoginViewController: UIViewController {
                     }
                     else {
                         //Error: Check error and show message
+                        //Show error message when it doesn't work
                         let alert = UIAlertController(title: "Creation Failed", message: "Account creation failed: " + (error?.localizedDescription)!, preferredStyle: UIAlertControllerStyle.alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                             switch action.style{
