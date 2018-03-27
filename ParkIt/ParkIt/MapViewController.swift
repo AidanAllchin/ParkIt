@@ -6,9 +6,23 @@ import Foundation
 
 
 class MapViewController: UIViewController, MKMapViewDelegate {
-    @IBAction func onGoButton(_ sender: Any) {
-        performSegue(withIdentifier: "toBuySpot", sender: self)
+    
+    @IBOutlet var sideBarConstraint: NSLayoutConstraint!
+    
+    @IBAction func sideBarButtonPressed(_ sender: UIBarButtonItem) {
+        if isSideBarHidden {
+            sideBarConstraint.constant = 0
+            UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
+        }
+        else {
+            sideBarConstraint.constant = -160
+            
+            UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
+        }
+        isSideBarHidden = !isSideBarHidden
     }
+    
+    var isSideBarHidden = true
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -27,6 +41,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    //initialize constant with 0
+    sideBarConstraint.constant = -160
     
     ref = Database.database().reference()
     //ref.child("Spots").child("Spot-0x0000").child("title").setValue("stupid")
