@@ -38,13 +38,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQv-rp-wtq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZn-FF-miR">
-                                <rect key="frame" x="172" y="342" width="71" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="zoomIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BVG-KD-vuG"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyb-9h-o9v">
                                 <rect key="frame" x="0.0" y="610" width="70" height="75"/>
                                 <constraints>
@@ -133,11 +126,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="mapView" destination="sQv-rp-wtq" id="vZn-tx-bw8"/>
+                        <outlet property="mapView" destination="sQv-rp-wtq" id="F7L-dY-B2j"/>
                         <outlet property="searchBar" destination="gtX-hW-nNF" id="uyF-ve-NZq"/>
                         <outlet property="sideBarConstraint" destination="Kp2-8F-s9Z" id="5JK-Op-Rm4"/>
                         <segue destination="ADo-O8-fvx" kind="show" id="zQW-D0-1ph"/>
                         <segue destination="bwk-ta-Zvu" kind="show" id="VeS-VX-0mz"/>
+                        <segue destination="bwk-ta-Zvu" kind="presentation" identifier="ViewSpotFromAnnotation" id="FQu-n2-wMY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -343,7 +337,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="l9L-7D-uCs"/>
-        <segue reference="VeS-VX-0mz"/>
-        <segue reference="zQW-D0-1ph"/>
+        <segue reference="FQu-n2-wMY"/>
+        <segue reference="liC-UB-kvT"/>
     </inferredMetricsTieBreakers>
 </document>

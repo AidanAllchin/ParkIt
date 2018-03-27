@@ -17,6 +17,7 @@ class ParkingSpotMarkerView: MKMarkerAnnotationView {
             canShowCallout = true
             calloutOffset = CGPoint(x: -5, y: 5)
             //rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            
             //apple maps button
             let mapsButton = UIButton(frame: CGRect(origin: CGPoint.zero,
                                                     size: CGSize(width: 40, height: 40)))
