@@ -6,7 +6,6 @@ import Foundation
 
 
 class MapViewController: UIViewController, MKMapViewDelegate {
-    
     @IBOutlet var sideBarConstraint: NSLayoutConstraint!
     
     @IBAction func sideBarButtonPressed(_ sender: UIBarButtonItem) {
