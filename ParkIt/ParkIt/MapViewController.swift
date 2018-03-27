@@ -6,8 +6,7 @@ import Foundation
 
 
 class MapViewController: UIViewController, MKMapViewDelegate {
-
-        @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var mapView: MKMapView!
     
