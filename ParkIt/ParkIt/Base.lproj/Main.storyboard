@@ -53,6 +53,51 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebK-hB-Rwy">
+                                <rect key="frame" x="0.0" y="64" width="160" height="603"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhR-Wt-hxS">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="hhB-71-v67"/>
+                                        </constraints>
+                                        <state key="normal" title="Login"/>
+                                        <connections>
+                                            <segue destination="ADo-O8-fvx" kind="show" id="RYz-o8-Vht"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fu-e7-NuB">
+                                        <rect key="frame" x="0.0" y="45" width="160" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="RR7-da-yAq"/>
+                                        </constraints>
+                                        <state key="normal" title="Settings"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLb-gF-Tal">
+                                        <rect key="frame" x="0.0" y="90" width="160" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Xib-9H-aly"/>
+                                        </constraints>
+                                        <state key="normal" title="View Spot"/>
+                                        <connections>
+                                            <segue destination="bwk-ta-Zvu" kind="show" id="J2f-Ho-4O8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dhR-Wt-hxS" secondAttribute="trailing" id="3aH-LW-sK0"/>
+                                    <constraint firstItem="6fu-e7-NuB" firstAttribute="leading" secondItem="ebK-hB-Rwy" secondAttribute="leading" id="ANU-Xy-Eoe"/>
+                                    <constraint firstItem="dhR-Wt-hxS" firstAttribute="leading" secondItem="ebK-hB-Rwy" secondAttribute="leading" id="DX3-xB-q6y"/>
+                                    <constraint firstItem="fLb-gF-Tal" firstAttribute="leading" secondItem="ebK-hB-Rwy" secondAttribute="leading" id="Kp2-8F-s9Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="6fu-e7-NuB" secondAttribute="trailing" id="Trv-ST-aJI"/>
+                                    <constraint firstItem="6fu-e7-NuB" firstAttribute="top" secondItem="dhR-Wt-hxS" secondAttribute="bottom" id="bTg-1u-Yag"/>
+                                    <constraint firstAttribute="trailing" secondItem="fLb-gF-Tal" secondAttribute="trailing" id="d5N-nx-cBN"/>
+                                    <constraint firstItem="dhR-Wt-hxS" firstAttribute="top" secondItem="ebK-hB-Rwy" secondAttribute="top" id="dXC-sn-BCL"/>
+                                    <constraint firstItem="fLb-gF-Tal" firstAttribute="top" secondItem="6fu-e7-NuB" secondAttribute="bottom" id="pmN-iw-PPa"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="rLg-ba-LAJ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -64,27 +109,26 @@
                             <constraint firstItem="uyb-9h-o9v" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Y3U-Wj-rvD"/>
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bBZ-NU-mpF"/>
                             <constraint firstItem="uyb-9h-o9v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dPK-n9-PCf"/>
+                            <constraint firstItem="ebK-hB-Rwy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gQL-xq-sna"/>
                             <constraint firstItem="gtX-hW-nNF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="k5t-5I-gl3"/>
                             <constraint firstItem="gtX-hW-nNF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="moc-Dc-Cwp"/>
+                            <constraint firstItem="ebK-hB-Rwy" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="msm-0w-eVT"/>
+                            <constraint firstItem="ebK-hB-Rwy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ra4-ih-7x6"/>
                             <constraint firstAttribute="bottom" secondItem="sQv-rp-wtq" secondAttribute="bottom" id="vfe-4p-CYO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="ParkIt" id="6Df-Ot-4Hb">
-                        <barButtonItem key="leftBarButtonItem" title="View Spot" id="Nki-Ne-VvH">
+                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="sF8-HQ-0rM">
                             <connections>
-                                <segue destination="bwk-ta-Zvu" kind="show" id="baZ-Th-xbJ"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Login" id="Tam-Zc-mgJ">
-                            <connections>
-                                <segue destination="ADo-O8-fvx" kind="show" id="liC-UB-kvT"/>
+                                <action selector="sideBarButtonPressed:" destination="BYZ-38-t0r" id="yCE-IF-rf0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="sQv-rp-wtq" id="F7L-dY-B2j"/>
                         <outlet property="searchBar" destination="gtX-hW-nNF" id="uyF-ve-NZq"/>
+                        <outlet property="sideBarConstraint" destination="ra4-ih-7x6" id="ike-Ez-dNL"/>
                         <segue destination="ADo-O8-fvx" kind="show" id="zQW-D0-1ph"/>
                         <segue destination="bwk-ta-Zvu" kind="show" id="VeS-VX-0mz"/>
                         <segue destination="bwk-ta-Zvu" kind="presentation" identifier="ViewSpotFromAnnotation" id="FQu-n2-wMY"/>
@@ -92,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="196" y="-93"/>
+            <point key="canvasLocation" x="196" y="-93.103448275862078"/>
         </scene>
         <!--Login-->
         <scene sceneID="vuk-j6-14S">
@@ -294,6 +338,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="l9L-7D-uCs"/>
         <segue reference="FQu-n2-wMY"/>
-        <segue reference="liC-UB-kvT"/>
+        <segue reference="zQW-D0-1ph"/>
     </inferredMetricsTieBreakers>
 </document>
