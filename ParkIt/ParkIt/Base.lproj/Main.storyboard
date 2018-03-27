@@ -128,7 +128,7 @@
                     <connections>
                         <outlet property="mapView" destination="sQv-rp-wtq" id="F7L-dY-B2j"/>
                         <outlet property="searchBar" destination="gtX-hW-nNF" id="uyF-ve-NZq"/>
-                        <outlet property="sideBarConstraint" destination="Kp2-8F-s9Z" id="5JK-Op-Rm4"/>
+                        <outlet property="sideBarConstraint" destination="ra4-ih-7x6" id="ike-Ez-dNL"/>
                         <segue destination="ADo-O8-fvx" kind="show" id="zQW-D0-1ph"/>
                         <segue destination="bwk-ta-Zvu" kind="show" id="VeS-VX-0mz"/>
                         <segue destination="bwk-ta-Zvu" kind="presentation" identifier="ViewSpotFromAnnotation" id="FQu-n2-wMY"/>
@@ -338,5 +338,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="l9L-7D-uCs"/>
         <segue reference="FQu-n2-wMY"/>
+        <segue reference="zQW-D0-1ph"/>
     </inferredMetricsTieBreakers>
 </document>
