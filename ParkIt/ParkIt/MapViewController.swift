@@ -4,7 +4,6 @@ import Firebase
 import FirebaseDatabase
 import Foundation
 
-
 class MapViewController: UIViewController, MKMapViewDelegate {
     
     var isSideBarHidden = true
@@ -36,7 +35,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    
     var ref:DatabaseReference!
     var databaseHandle:DatabaseHandle?
     
@@ -54,7 +52,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     print (ref)
     
-    //  set initial location to Seattle... change to user location eventually
+    //set initial location to Seattle... change to user location eventually
     let initialLocation = CLLocation(latitude: 47.6062, longitude: -122.3321)
     //call zoom in function
     centerMapOnLocation(location: initialLocation)
