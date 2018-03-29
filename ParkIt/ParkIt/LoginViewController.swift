@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 class LoginViewController: UIViewController {
+    
     @IBOutlet weak var signinSelector: UISegmentedControl!
     
     @IBOutlet weak var signinLabel: UILabel!
@@ -19,12 +20,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var signinButton: UIButton!
-    
-    struct UserInformation {
-        //static var user: //type
-        static var userEmail = ""
-        static let userName = ""
-    }
     
     var isSignIn:Bool = true
     
@@ -64,8 +59,6 @@ class LoginViewController: UIViewController {
                     //If login was successful, we should get a user. Check that user isn't nil.
                     if let u = user {
                         //User is found, go to home screen
-                        UserInformation.userEmail = u.email!
-                        //UserInformation.user = u
                         self.performSegue(withIdentifier: "loginComplete", sender: self)
                     }
                     else {
