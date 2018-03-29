@@ -7,22 +7,30 @@ import Foundation
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
+    var isSideBarHidden = true
+    
     @IBOutlet var sideBarConstraint: NSLayoutConstraint!
     
-    @IBAction func sideBarButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction func sideBarButtonPressed(_ sender: AnyObject) {
         if isSideBarHidden {
-            sideBarConstraint.constant = 0
-            UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
+            openSideBar()
         }
         else {
-            sideBarConstraint.constant = -160
-            
-            UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
+            closeSideBar()
         }
         isSideBarHidden = !isSideBarHidden
     }
     
-    var isSideBarHidden = true
+    func openSideBar() {
+        sideBarConstraint.constant = 0
+        UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
+    }
+    
+    func closeSideBar() {
+        sideBarConstraint.constant = -160
+        
+        UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
+    }
     
     @IBOutlet weak var searchBar: UISearchBar!
     
