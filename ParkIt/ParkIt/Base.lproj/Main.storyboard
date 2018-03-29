@@ -144,7 +144,7 @@
         <!--Login-->
         <scene sceneID="vuk-j6-14S">
             <objects>
-                <viewController title="Login" id="ADo-O8-fvx" customClass="LoginViewController" customModule="ParkIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" title="Login" id="ADo-O8-fvx" customClass="LoginViewController" customModule="ParkIt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1aW-LS-Zao">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

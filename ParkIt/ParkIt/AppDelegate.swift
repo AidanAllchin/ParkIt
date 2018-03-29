@@ -21,19 +21,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //checks to see if the user is logged in
         let def = UserDefaults.standard
-        let userEmail:String = def.object(forKey: "userEmail") as! String
+        let userEmail:String? = def.string(forKey: "userEmail")
         
-        if userEmail != ""
+        var mainController = UIViewController()
+        
+        if userEmail != nil
         {
-            let mainController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeScreen") as UIViewController //Create an instance of MapViewController
-            
-            window?.rootViewController = mainController //change the starting window to the MapViewController
-            window?.makeKeyAndVisible() //show the window
+            mainController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeScreen") as UIViewController //Create an instance of MapViewController
         }
         else
         {
-            
+            mainController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as UIViewController //Make the user login first
         }
+        
+        window?.rootViewController = mainController //change the starting window to the MapViewController
+        window?.makeKeyAndVisible() //show the window
         return true
     }
 
