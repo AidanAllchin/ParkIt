@@ -20,13 +20,13 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var signinButton: UIButton!
     
+    var isSignIn:Bool = true
+    
     struct UserInformation {
         //static var user: //type
         static var userEmail = ""
         static let userName = ""
     }
-    
-    var isSignIn:Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()

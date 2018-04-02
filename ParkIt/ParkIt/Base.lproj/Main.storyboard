@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1P-WJ-Rle" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="196" y="-790"/>
+            <point key="canvasLocation" x="-199" y="-790"/>
         </scene>
         <!--ParkIt-->
         <scene sceneID="tne-QT-ifu">
@@ -62,10 +62,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="hhB-71-v67"/>
                                         </constraints>
-                                        <state key="normal" title="Login"/>
-                                        <connections>
-                                            <segue destination="ADo-O8-fvx" kind="show" id="RYz-o8-Vht"/>
-                                        </connections>
+                                        <state key="normal" title="Account"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fu-e7-NuB">
                                         <rect key="frame" x="0.0" y="45" width="160" height="45"/>
@@ -132,7 +129,6 @@
                         <outlet property="mapView" destination="sQv-rp-wtq" id="F7L-dY-B2j"/>
                         <outlet property="searchBar" destination="gtX-hW-nNF" id="uyF-ve-NZq"/>
                         <outlet property="sideBarConstraint" destination="ra4-ih-7x6" id="ike-Ez-dNL"/>
-                        <segue destination="ADo-O8-fvx" kind="show" id="zQW-D0-1ph"/>
                         <segue destination="bwk-ta-Zvu" kind="show" id="VeS-VX-0mz"/>
                         <segue destination="bwk-ta-Zvu" kind="presentation" identifier="ViewSpotFromAnnotation" id="FQu-n2-wMY"/>
                     </connections>
@@ -140,6 +136,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="196" y="-93.103448275862078"/>
+        </scene>
+        <!--Account View Controller-->
+        <scene sceneID="NUZ-7O-Fog">
+            <objects>
+                <viewController id="Dfi-F3-L9J" customClass="AccountViewController" customModule="ParkIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="czT-UM-kNZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOB-fv-Jjg">
+                                <rect key="frame" x="147.5" y="70" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NOB-fv-Jjg" firstAttribute="centerX" secondItem="czT-UM-kNZ" secondAttribute="centerX" id="3OR-se-LKf"/>
+                            <constraint firstItem="NOB-fv-Jjg" firstAttribute="top" secondItem="myT-S5-IkV" secondAttribute="top" constant="50" id="xqI-N9-VKW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="myT-S5-IkV"/>
+                    </view>
+                    <connections>
+                        <outlet property="usernameLabel" destination="NOB-fv-Jjg" id="47f-K8-WX8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gBq-Ki-e60" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1014" y="-93"/>
         </scene>
         <!--Login-->
         <scene sceneID="vuk-j6-14S">
@@ -237,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCZ-4O-162" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1007" y="-93"/>
+            <point key="canvasLocation" x="602" y="-790"/>
         </scene>
         <!--View Spot-->
         <scene sceneID="jZW-1r-W2A">
@@ -354,7 +380,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="l9L-7D-uCs"/>
         <segue reference="FQu-n2-wMY"/>
-        <segue reference="zQW-D0-1ph"/>
         <segue reference="EDz-Ne-HVZ"/>
     </inferredMetricsTieBreakers>
 </document>
