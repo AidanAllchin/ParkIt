@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="87o-Wy-LZo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="87o-Wy-LZo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -50,12 +50,8 @@
                                     <action selector="zoomIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OUG-Tf-O8S"/>
                                 </connections>
                             </button>
-                            <searchBar contentMode="redraw" ambiguous="YES" searchBarStyle="minimal" placeholder="Find a spot" translatesAutoresizingMaskIntoConstraints="NO" id="gtX-hW-nNF">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebK-hB-Rwy">
-                                <rect key="frame" x="0.0" y="20" width="160" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="160" height="603"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhR-Wt-hxS">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="45"/>
@@ -63,6 +59,9 @@
                                             <constraint firstAttribute="height" constant="45" id="hhB-71-v67"/>
                                         </constraints>
                                         <state key="normal" title="Account"/>
+                                        <connections>
+                                            <segue destination="Dfi-F3-L9J" kind="show" id="hsv-Vz-g4V"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fu-e7-NuB">
                                         <rect key="frame" x="0.0" y="45" width="160" height="45"/>
@@ -104,30 +103,26 @@
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="345-t5-psk"/>
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3ko-Wn-f9f"/>
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7un-4n-1Fe"/>
-                            <constraint firstItem="gtX-hW-nNF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ELM-5o-yHb"/>
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PAg-c7-9PP"/>
                             <constraint firstItem="uyb-9h-o9v" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Y3U-Wj-rvD"/>
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bBZ-NU-mpF"/>
                             <constraint firstItem="uyb-9h-o9v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dPK-n9-PCf"/>
                             <constraint firstItem="ebK-hB-Rwy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gQL-xq-sna"/>
-                            <constraint firstItem="gtX-hW-nNF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="k5t-5I-gl3"/>
-                            <constraint firstItem="gtX-hW-nNF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="moc-Dc-Cwp"/>
                             <constraint firstItem="ebK-hB-Rwy" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="msm-0w-eVT"/>
                             <constraint firstItem="ebK-hB-Rwy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ra4-ih-7x6"/>
                             <constraint firstAttribute="bottom" secondItem="sQv-rp-wtq" secondAttribute="bottom" id="vfe-4p-CYO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ParkIt" id="6Df-Ot-4Hb">
-                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="sF8-HQ-0rM">
+                    <navigationItem key="navigationItem" title="ParkIt" id="DsP-bW-1wj">
+                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="dVu-4J-hHX">
                             <connections>
-                                <action selector="sideBarButtonPressed:" destination="BYZ-38-t0r" id="yCE-IF-rf0"/>
+                                <action selector="sideBarButtonPressed:" destination="BYZ-38-t0r" id="lYi-UW-azy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="sQv-rp-wtq" id="F7L-dY-B2j"/>
-                        <outlet property="searchBar" destination="gtX-hW-nNF" id="uyF-ve-NZq"/>
                         <outlet property="sideBarConstraint" destination="ra4-ih-7x6" id="ike-Ez-dNL"/>
                         <segue destination="bwk-ta-Zvu" kind="show" id="VeS-VX-0mz"/>
                         <segue destination="bwk-ta-Zvu" kind="presentation" identifier="ViewSpotFromAnnotation" id="FQu-n2-wMY"/>
@@ -146,7 +141,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOB-fv-Jjg">
-                                <rect key="frame" x="147.5" y="70" width="79" height="21"/>
+                                <rect key="frame" x="147.5" y="114" width="79" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -380,6 +375,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="l9L-7D-uCs"/>
         <segue reference="FQu-n2-wMY"/>
-        <segue reference="EDz-Ne-HVZ"/>
+        <segue reference="uuz-xX-oof"/>
     </inferredMetricsTieBreakers>
 </document>

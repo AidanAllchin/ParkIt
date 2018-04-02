@@ -31,8 +31,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
     }
     
-    @IBOutlet weak var searchBar: UISearchBar!
-    
     @IBOutlet weak var mapView: MKMapView!
     
     var ref:DatabaseReference!
@@ -203,12 +201,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidAppear(animated)
         checkLocationAuthorizationStatus()
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //Dismiss the keyboard when the view is tapped on
-        searchBar.resignFirstResponder()
-    }
-
 }
 
 
