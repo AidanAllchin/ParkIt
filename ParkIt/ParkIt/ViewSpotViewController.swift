@@ -8,17 +8,19 @@
 import UIKit
 
 class ViewSpotViewController: UIViewController {
-
-
-    @IBAction func BuySpot(_ sender: Any) {
-        self.performSegue(withIdentifier: "toBuySpot", sender:nil);
-    }
-    @IBOutlet var ImageScrollView: UIScrollView!
+//    @IBAction func BuySpot(_ sender: Any) {
+//        self.performSegue(withIdentifier: "toBuySpot", sender:nil);
+//    }
+//    @IBOutlet var ImageScrollView: UIScrollView!
+    
+    //var spot : ParkingSpot = ParkingSpot()
     
     var imageArray = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       // let currentSpot: ParkingSpot? = nil
         
         imageArray = [#imageLiteral(resourceName: "autos-technology-vw-multi-storey-car-park-63295"), #imageLiteral(resourceName: "car-race-ferrari-racing-car-pirelli-50704"), #imageLiteral(resourceName: "pexels-photo-170811")]
         
@@ -26,9 +28,9 @@ class ViewSpotViewController: UIViewController {
             let imageView = UIImageView()
             imageView.image = imageArray[i]
             let xposition = self.view.frame.width * CGFloat(i)
-            imageView.frame = CGRect(x: xposition, y: 0, width: self.ImageScrollView.frame.width, height: self.ImageScrollView.frame.height)
-            ImageScrollView.contentSize.width = ImageScrollView.frame.width * CGFloat(i + 1)
-            ImageScrollView.addSubview(imageView)
+            //imageView.frame = CGRect(x: xposition, y: 0, width: self.ImageScrollView.frame.width, height: self.ImageScrollView.frame.height)
+//            ImageScrollView.contentSize.width = ImageScrollView.frame.width * CGFloat(i + 1)
+//            ImageScrollView.addSubview(imageView)
         }
         
         

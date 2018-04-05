@@ -21,7 +21,7 @@ class ParkingSpotMarkerView: MKMarkerAnnotationView {
             //apple maps button
             let mapsButton = UIButton(frame: CGRect(origin: CGPoint.zero,
                                                     size: CGSize(width: 40, height: 40)))
-            mapsButton.setBackgroundImage(UIImage(named: "Maps-icon"), for: UIControlState())
+            mapsButton.setBackgroundImage(UIImage(named: "info"), for: UIControlState())
             rightCalloutAccessoryView = mapsButton
             // 2
             markerTintColor = parkingspot.markerTintColor

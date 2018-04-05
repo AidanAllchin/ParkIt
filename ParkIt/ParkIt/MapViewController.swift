@@ -202,18 +202,24 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         //Dismiss the keyboard when the view is tapped on
         searchBar.resignFirstResponder()
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.destination is ViewSpotViewController
+//        {
+//            let vc = segue.destination as? ViewSpotViewController
+//            //vc?.spot = sender
+//        }
+//    }
 
-}
-
-
-
-extension ViewController: MKMapViewDelegate {
-    //launches Apple Maps!
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
-        performSegue(withIdentifier: "ViewSpotFromAnnotation", sender: self)
-       // let location = view.annotation as! ParkingSpot
+        performSegue(withIdentifier: "ViewSpotFromAnnotation", sender: view.annotation as! ParkingSpot)
+        // let location = view.annotation as! ParkingSpot
         //let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
         //location.mapItem().openInMaps(launchOptions: launchOptions)
     }
 }
+
+
+
+
