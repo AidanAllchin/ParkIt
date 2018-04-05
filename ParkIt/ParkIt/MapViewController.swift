@@ -4,30 +4,34 @@ import Firebase
 import FirebaseDatabase
 import Foundation
 
-
 class MapViewController: UIViewController, MKMapViewDelegate {
+    
+    var isSideBarHidden = true
     
     @IBOutlet var sideBarConstraint: NSLayoutConstraint!
     
-    @IBAction func sideBarButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction func sideBarButtonPressed(_ sender: AnyObject) {
         if isSideBarHidden {
-            sideBarConstraint.constant = 0
-            UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
+            openSideBar()
         }
         else {
-            sideBarConstraint.constant = -160
-            
-            UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
+            closeSideBar()
         }
         isSideBarHidden = !isSideBarHidden
     }
     
-    var isSideBarHidden = true
+    func openSideBar() {
+        sideBarConstraint.constant = 0
+        UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
+    }
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    func closeSideBar() {
+        sideBarConstraint.constant = -160
+        
+        UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
+    }
     
     @IBOutlet weak var mapView: MKMapView!
-    
     
     var ref:DatabaseReference!
     var databaseHandle:DatabaseHandle?
@@ -46,7 +50,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     print (ref)
     
-    //  set initial location to Seattle... change to user location eventually
+    //set initial location to Seattle... change to user location eventually
     let initialLocation = CLLocation(latitude: 47.6062, longitude: -122.3321)
     //call zoom in function
     centerMapOnLocation(location: initialLocation)
@@ -197,11 +201,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidAppear(animated)
         checkLocationAuthorizationStatus()
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //Dismiss the keyboard when the view is tapped on
-        searchBar.resignFirstResponder()
-    }
+
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.destination is ViewSpotViewController
@@ -211,6 +211,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 //        }
 //    }
 
+}
+
+
+
+extension ViewController: MKMapViewDelegate {
+    //launches Apple Maps!
+>>>>>>> 465d40e52ab94aeca879ccf18d23d3c2218e0390
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
         performSegue(withIdentifier: "ViewSpotFromAnnotation", sender: view.annotation as! ParkingSpot)

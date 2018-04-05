@@ -14,10 +14,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        //checks to see if the user is logged in
+        let def = UserDefaults.standard
+        let userEmail:String? = def.string(forKey: "userEmail")
+        
+        var mainController = UIViewController()
+        
+        if userEmail != nil
+        {
+            mainController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeScreen") as UIViewController //Create an instance of MapViewController
+        }
+        else
+        {
+            mainController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as UIViewController //Make the user login first
+        }
+        
+        window?.rootViewController = mainController //change the starting window to the MapViewController
+        window?.makeKeyAndVisible() //show the window
         return true
     }
 
