@@ -20,7 +20,7 @@ class ViewSpotViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // let currentSpot: ParkingSpot? = nil
+       //let currentSpot: ParkingSpot? = nil
         
         imageArray = [#imageLiteral(resourceName: "autos-technology-vw-multi-storey-car-park-63295"), #imageLiteral(resourceName: "car-race-ferrari-racing-car-pirelli-50704"), #imageLiteral(resourceName: "pexels-photo-170811")]
         

@@ -211,21 +211,25 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 //        }
 //    }
 
-}
-
-
-
-extension ViewController: MKMapViewDelegate {
-    //launches Apple Maps!
->>>>>>> 465d40e52ab94aeca879ccf18d23d3c2218e0390
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
         performSegue(withIdentifier: "ViewSpotFromAnnotation", sender: view.annotation as! ParkingSpot)
-        // let location = view.annotation as! ParkingSpot
-        //let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-        //location.mapItem().openInMaps(launchOptions: launchOptions)
-    }
+    
+        }
 }
+
+
+
+//extension ViewController: MKMapViewDelegate {
+//    //launches Apple Maps!
+//    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
+//                 calloutAccessoryControlTapped control: UIControl) {
+//        performSegue(withIdentifier: "ViewSpotFromAnnotation", sender: view.annotation as! ParkingSpot)
+//        // let location = view.annotation as! ParkingSpot
+//        //let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+//        //location.mapItem().openInMaps(launchOptions: launchOptions)
+//    }
+//}
 
 
 
