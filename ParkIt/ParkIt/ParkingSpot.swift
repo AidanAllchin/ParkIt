@@ -23,32 +23,32 @@ class ParkingSpot: NSObject, MKAnnotation {
     var userBuying: String?
     var userSelling: String
     
-//    override init()
-//    {
-//        self.title = ""
-//        self.address = ""
-//        self.isAvailable = false
-//        self.coordinate = CLLocationCoordinate2D()
-//        self.periods = [[Int]]()
-//        self.timeLeft = 0.0
-//        self.userBuying = ""
-//        self.userSelling = ""
-//        
-//        super.init()
-//    }
-//    
-//    init(title: String)
-//    {
-//        print("ugh")
-//        self.title = ""
-//        self.address = ""
-//        self.isAvailable = false
-//        self.coordinate = CLLocationCoordinate2D()
-//        self.periods = [[Int]]()
-//        self.timeLeft = 0.0
-//        self.userBuying = ""
-//        self.userSelling = ""
-//    }
+    override init()
+    {
+        self.title = ""
+        self.address = ""
+        self.isAvailable = false
+        self.coordinate = CLLocationCoordinate2D()
+        self.periods = [[Int]]()
+        self.timeLeft = 0.0
+        self.userBuying = ""
+        self.userSelling = ""
+        
+        super.init()
+    }
+    
+    init(title: String)
+    {
+        print("ugh")
+        self.title = ""
+        self.address = ""
+        self.isAvailable = false
+        self.coordinate = CLLocationCoordinate2D()
+        self.periods = [[Int]]()
+        self.timeLeft = 0.0
+        self.userBuying = ""
+        self.userSelling = ""
+    }
     
     init(title: String, address: String, isAvailable: Bool, coordinate: CLLocationCoordinate2D, periods: [[Int]], timeLeft: Float, userBuying: String, userSelling: String) {
         

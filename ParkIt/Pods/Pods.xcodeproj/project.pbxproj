@@ -169,7 +169,6 @@
 		C0C8DBA23FC57BBA2A14D0B2D8777BCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C10A31CD5CFA3EFE266394471B152E /* Foundation.framework */; };
 		C14D5C4335D506E9D97E71608A06963D /* hash.h in Headers */ = {isa = PBXBuildFile; fileRef = D872E7FB680206BE35ECA0DA3604FBD9 /* hash.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C1C04D3667EEE8AE5619F69BA83A8B23 /* GPBMessage_PackagePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = BE1D1639C3BC9A98A3F0F56796B9B2B9 /* GPBMessage_PackagePrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C33AE2DC205A2C8F0038BE40 /* ViewSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33AE2DB205A2C8F0038BE40 /* ViewSpotViewController.swift */; };
 		C43DF6C7E1E7F3148A016F5D278717A8 /* format.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD72171ADC604E71BB9346A11BF8751 /* format.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C501E17E9E8501752B99011E17E41412 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A73DC2E109853E1064981D7F5268307 /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C5EDB4F9E628DBAD3E5FD8372232B152 /* GPBCodedOutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D41BCE009F99FAF868678678EDD0C12 /* GPBCodedOutputStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -458,7 +457,6 @@
 		BEB90BE7A0F0BFF69DD6B91CB5C98F58 /* Pods-ParkItUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ParkItUITests.modulemap"; sourceTree = "<group>"; };
 		C085E02FF89804F50ADDA04F5A586E94 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		C2E4A2296DF043D7E7DDC1B5E46FEEDC /* table_cache.cc */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = table_cache.cc; path = db/table_cache.cc; sourceTree = "<group>"; };
-		C33AE2DB205A2C8F0038BE40 /* ViewSpotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewSpotViewController.swift; path = ../ParkIt/ViewSpotViewController.swift; sourceTree = "<group>"; };
 		C399760A94CB03ED8BAD2E502ECD29FA /* testutil.cc */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = testutil.cc; path = util/testutil.cc; sourceTree = "<group>"; };
 		C3DA9E24959B163CF14C4D2BF7D8146D /* builder.cc */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = builder.cc; path = db/builder.cc; sourceTree = "<group>"; };
 		C444020E753D6234BEC037F257F1F268 /* arena.cc */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = arena.cc; path = util/arena.cc; sourceTree = "<group>"; };
@@ -812,7 +810,6 @@
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				C33AE2DB205A2C8F0038BE40 /* ViewSpotViewController.swift */,
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				6F696BE15B54135829BE93720F3D05B3 /* Pods */,
@@ -1586,7 +1583,6 @@
 				6B4F19D8BD01EAF45CA1FE09294B7E12 /* GTMNSData+zlib.m in Sources */,
 				450E5A090328E7D1BD167496E80DFA1F /* GTMNSDictionary+URLArguments.m in Sources */,
 				EE3D7A9094F92C691B7CBA93868152B5 /* GTMNSString+URLArguments.m in Sources */,
-				C33AE2DC205A2C8F0038BE40 /* ViewSpotViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

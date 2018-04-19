@@ -203,13 +203,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
 
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.destination is ViewSpotViewController
-//        {
-//            let vc = segue.destination as? ViewSpotViewController
-//            //vc?.spot = sender
-//        }
-//    }
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ViewSpotViewController
+        {
+            let vc = segue.destination as? ViewSpotViewController
+            vc?.spot = sender as! ParkingSpot
+        }
+    }
 
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
