@@ -1,6 +1,0 @@
-framework module Pods_CustomEmailLoginTests {
-  umbrella header "Pods-CustomEmailLoginTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
