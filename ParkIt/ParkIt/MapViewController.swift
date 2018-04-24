@@ -27,7 +27,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     func closeSideBar() {
         sideBarConstraint.constant = -160
-        
         UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
     }
     
