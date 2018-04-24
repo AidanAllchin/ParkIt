@@ -384,7 +384,6 @@
         <image name="directionarrow" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dz5-39-Abo"/>
         <segue reference="RGV-Gc-H1t"/>
         <segue reference="VeS-VX-0mz"/>
     </inferredMetricsTieBreakers>
