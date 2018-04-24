@@ -36,15 +36,33 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var ref:DatabaseReference!
     var databaseHandle:DatabaseHandle?
     
-    //Initialize all the artwork pieces!
     var parkingspots: [ParkingSpot] = []
     let regionRadius: CLLocationDistance = 300
+    
+    //keep UISearch bar in memory
+    var resultSearchController:UISearchController? = nil
     
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    //Search bar
+    let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
+    
+    resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+    resultSearchController?.searchResultsUpdater = locationSearchTable
+    
+    let searchBar = resultSearchController!.searchBar
+    searchBar.sizeToFit()
+    searchBar.placeholder = "Search for places"
+    navigationItem.titleView = resultSearchController?.searchBar
+    
+    resultSearchController?.hidesNavigationBarDuringPresentation = false
+    resultSearchController?.dimsBackgroundDuringPresentation = true
+    definesPresentationContext = true
+    
+    
     //initialize constant with 0
-    sideBarConstraint.constant = -160
+   // sideBarConstraint.constant = -160
     
     ref = Database.database().reference()
     
@@ -65,6 +83,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     //Loads in the annotations!
     loadInitialData()
     mapView.addAnnotations(parkingspots)
+    
+    
     }
     
     @IBAction func zoomIn(_ sender: Any) {
