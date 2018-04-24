@@ -38,7 +38,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="sQv-rp-wtq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EDQ-NI-Lv2"/>
+                            <constraint firstAttribute="bottom" secondItem="sQv-rp-wtq" secondAttribute="bottom" id="Vca-Wb-oKJ"/>
                             <constraint firstItem="uyb-9h-o9v" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Y3U-Wj-rvD"/>
                             <constraint firstItem="uyb-9h-o9v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dPK-n9-PCf"/>
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lrT-r7-bhs"/>
