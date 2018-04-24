@@ -20,6 +20,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         isSideBarHidden = !isSideBarHidden
     }
     
+    @IBAction func logoutButtonPressed(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            UserDefaults.standard.set(nil, forKey: "userEmail")
+            performSegue(withIdentifier: "gotoLogin", sender: self)
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
+    
+    
     func openSideBar() {
         sideBarConstraint.constant = 0
         UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
@@ -42,6 +54,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var resultSearchController:UISearchController? = nil
     
   override func viewDidLoad() {
+    
     super.viewDidLoad()
     
     //Search bar
