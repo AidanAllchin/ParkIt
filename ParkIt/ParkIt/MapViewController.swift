@@ -4,9 +4,15 @@ import Firebase
 import FirebaseDatabase
 import Foundation
 
+protocol HandleMapSearch {
+    func dropPinZoomIn(placemark:MKPlacemark)
+}
+
+
 class MapViewController: UIViewController, MKMapViewDelegate {
     
     var isSideBarHidden = true
+    var selectedPin:MKPlacemark? = nil
     
     @IBOutlet var sideBarConstraint: NSLayoutConstraint!
     
@@ -52,16 +58,17 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     let searchBar = resultSearchController!.searchBar
     searchBar.sizeToFit()
-    searchBar.placeholder = "Search for places"
+    searchBar.placeholder = "Search a place for parking!"
     navigationItem.titleView = resultSearchController?.searchBar
     
     resultSearchController?.hidesNavigationBarDuringPresentation = false
     resultSearchController?.dimsBackgroundDuringPresentation = true
     definesPresentationContext = true
     
+    locationSearchTable.mapView = mapView
     
+    locationSearchTable.handleMapSearchDelegate = self
     
-     locationSearchTable.mapView = mapView
     
     
     
@@ -243,6 +250,24 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 }
 
 
+extension MapViewController: HandleMapSearch {
+    func dropPinZoomIn(placemark:MKPlacemark){
+        // cache the pin
+        selectedPin = placemark
+        let span = MKCoordinateSpanMake(0.005, 0.005)
+        let region = MKCoordinateRegionMake(placemark.coordinate, span)
+        mapView.setRegion(region, animated: true)
+    }
+}
+
+extension LocationSearchTable {
+    //    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let selectedItem = matchingItems[indexPath.row].placemark
+        handleMapSearchDelegate?.dropPinZoomIn(placemark: selectedItem)
+        dismiss(animated: true, completion: nil)
+    }
+}
 
 
 
