@@ -27,7 +27,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     func closeSideBar() {
         sideBarConstraint.constant = -160
-        
         UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
     }
     
@@ -59,6 +58,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     resultSearchController?.hidesNavigationBarDuringPresentation = false
     resultSearchController?.dimsBackgroundDuringPresentation = true
     definesPresentationContext = true
+    
+    
+    
+     locationSearchTable.mapView = mapView
+    
     
     
     //initialize constant with 0
@@ -238,18 +242,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
 }
 
-
-
-//extension ViewController: MKMapViewDelegate {
-//    //launches Apple Maps!
-//    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
-//                 calloutAccessoryControlTapped control: UIControl) {
-//        performSegue(withIdentifier: "ViewSpotFromAnnotation", sender: view.annotation as! ParkingSpot)
-//        // let location = view.annotation as! ParkingSpot
-//        //let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-//        //location.mapItem().openInMaps(launchOptions: launchOptions)
-//    }
-//}
 
 
 
