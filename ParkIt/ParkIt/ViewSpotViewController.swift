@@ -18,34 +18,106 @@ class ViewSpotViewController: UIViewController {
     @IBOutlet weak var spotLabel: UILabel!
     var spot:ParkingSpot = ParkingSpot()
     
-    
+    var start1:String = ""
+    var end1:String = ""
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         spotLabel?.text = spot.address
-        var start1:String
-        var end1:String
+        
+        let periodNum = spot.periods.count
+        periodSwitcher.removeAllSegments()
+        if(periodNum == 1)
+        {
+            periodSwitcher.isHidden = true
+        }
+        else
+        {
+            var i = 0
+            while(i < periodNum)
+            {
+                periodSwitcher.insertSegment(withTitle: "Period " + String(i + 1), at: i, animated: true)
+                i = i + 1
+            }
+            periodSwitcher.selectedSegmentIndex = 0
+        }
+        var j = 0
+        if(periodSwitcher.numberOfSegments != 0)
+        {
+            j = periodSwitcher.selectedSegmentIndex
+        }
+        
+        if(spot.periods[j][0] > 12)
+        {
+            start1 = String(spot.periods[j][0] - 12) + " p.m."
+        }
+        else if(spot.periods[j][0] < 12)
+        {
+            start1 = String(spot.periods[j][0]) + " a.m."
+        }
+        else
+        {
+            start1 = String(spot.periods[j][0]) + " p.m."
+        }
+        if(spot.periods[j][1] > 12)
+        {
+            end1 = String(spot.periods[j][1] - 12) + " p.m."
+        }
+        else if(spot.periods[j][1] < 12)
+        {
+            end1 = String(spot.periods[j][1]) + " a.m."
+        }
+        else
+        {
+            end1 = String(spot.periods[j][1]) + " p.m."
+        }
+        
         var price1 = String(spot.periods[0][2])
-        if(spot.periods[0][0] > 12)
-        {
-            start1 = String(spot.periods[0][0] - 12) + " p.m."
-        }
-        else
-        {
-            start1 = String(spot.periods[0][0])
-        }
-        if(spot.periods[0][1] > 12)
-        {
-            end1 = String(spot.periods[0][1] - 12) + " p.m."
-        }
-        else
-        {
-            end1 = String(spot.periods[0][1])
-        }
+        
+        
         startTimeLabel?.text = start1
         endTimeLabel?.text = end1
         startTimeLabel.sizeToFit()
         endTimeLabel.sizeToFit()
 
+    }
+    @IBAction func periodSwitched(_ sender: UISegmentedControl) {
+        var j = 0
+        if(periodSwitcher.numberOfSegments != 0)
+        {
+            j = periodSwitcher.selectedSegmentIndex
+        }
+        
+        if(spot.periods[j][0] > 12)
+        {
+            start1 = String(spot.periods[j][0] - 12) + " p.m."
+        }
+        else if(spot.periods[j][0] < 12)
+        {
+            start1 = String(spot.periods[j][0]) + " a.m."
+        }
+        else
+        {
+            start1 = String(spot.periods[j][0]) + " p.m."
+        }
+        if(spot.periods[j][1] > 12)
+        {
+            end1 = String(spot.periods[j][1] - 12) + " p.m."
+        }
+        else if(spot.periods[j][1] < 12)
+        {
+            end1 = String(spot.periods[j][1]) + " a.m."
+        }
+        else
+        {
+            end1 = String(spot.periods[j][1]) + " p.m."
+        }
+        
+        startTimeLabel?.text = start1
+        endTimeLabel?.text = end1
+        startTimeLabel.sizeToFit()
+        endTimeLabel.sizeToFit()
     }
     
     @IBAction func getDirections(_ sender: Any) {

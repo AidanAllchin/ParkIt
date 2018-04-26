@@ -1,3 +1,11 @@
+//
+//  MapViewController.swift
+//  ParkIt
+//
+//  Created by Aidan Allchin on 2/13/18.
+//  Copyright © 2018 ParkIt. All rights reserved.
+//
+
 import UIKit
 import MapKit
 import Firebase
@@ -81,9 +89,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     locationSearchTable.mapView = mapView
     locationSearchTable.handleMapSearchDelegate = self
     
-        
-        
-    //Database setup
     ref = Database.database().reference()
     
     print (ref)
@@ -143,6 +148,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let jj = 0
             while jj <= currentSpotNum
             {
+                period = [[Int]]()
                 spotName = "Spot-0x" + String(format: "%04d", currentSpotNum)
                 
                 //Now we know which spot we're accessing, we can get all the information for it...
@@ -260,7 +266,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
         performSegue(withIdentifier: "ViewSpotFromAnnotation", sender: view.annotation as! ParkingSpot)
-    
         }
 }
 
