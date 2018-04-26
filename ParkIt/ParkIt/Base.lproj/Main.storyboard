@@ -290,8 +290,8 @@
                                     <action selector="getDirections:" destination="bwk-ta-Zvu" eventType="touchUpInside" id="d5n-G9-bHo"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="spotLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jve-gP-OQM">
-                                <rect key="frame" x="107" y="153" width="161" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="spotLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jve-gP-OQM">
+                                <rect key="frame" x="107" y="144" width="161" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -331,11 +331,15 @@
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
+                                <connections>
+                                    <action selector="periodSwitched:" destination="bwk-ta-Zvu" eventType="valueChanged" id="gKV-Pe-chu"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="trailing" secondItem="l54-Ia-0JU" secondAttribute="trailing" id="5XQ-IZ-Kwd"/>
+                            <constraint firstItem="jve-gP-OQM" firstAttribute="top" secondItem="l54-Ia-0JU" secondAttribute="top" constant="80" id="DVC-xm-e6d"/>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="bottom" secondItem="l54-Ia-0JU" secondAttribute="bottom" constant="10" id="DjT-9I-xSK"/>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" id="Ki1-iI-Jkt"/>
                             <constraint firstItem="vjZ-bO-Otr" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" constant="20" id="agL-fg-wNp"/>
