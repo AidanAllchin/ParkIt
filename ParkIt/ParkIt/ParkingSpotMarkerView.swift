@@ -33,6 +33,7 @@ class ParkingSpotMarkerView: MKMarkerAnnotationView {
                 glyphImage = nil
             }
             let detailLabel = UILabel()
+            //Label on the annotation
             detailLabel.numberOfLines = 0
             detailLabel.font = detailLabel.font.withSize(12)
             detailLabel.text = parkingspot.subtitle

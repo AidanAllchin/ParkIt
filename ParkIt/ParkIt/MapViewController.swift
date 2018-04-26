@@ -13,6 +13,15 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     var isSideBarHidden = true
     var selectedPin:MKPlacemark? = nil
+    var ref:DatabaseReference!
+    var databaseHandle:DatabaseHandle?
+    
+    var parkingspots: [ParkingSpot] = []
+    let regionRadius: CLLocationDistance = 300
+    @IBOutlet weak var mapView: MKMapView!
+    
+    //keep UISearch bar in memory
+    var resultSearchController:UISearchController? = nil
     
     @IBOutlet var sideBarConstraint: NSLayoutConstraint!
     
@@ -26,6 +35,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         isSideBarHidden = !isSideBarHidden
     }
     
+    //Logs out when logout button pressed
     @IBAction func logoutButtonPressed(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {
@@ -37,7 +47,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
-    
+    //WIll A please comment your code
     func openSideBar() {
         sideBarConstraint.constant = 0
         UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
@@ -48,22 +58,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
     }
     
-    @IBOutlet weak var mapView: MKMapView!
     
-    var ref:DatabaseReference!
-    var databaseHandle:DatabaseHandle?
-    
-    var parkingspots: [ParkingSpot] = []
-    let regionRadius: CLLocationDistance = 300
-    
-    //keep UISearch bar in memory
-    var resultSearchController:UISearchController? = nil
-    
-  override func viewDidLoad() {
+    override func viewDidLoad() {
     
     super.viewDidLoad()
     
-    //Search bar
+    //Instantiates the Search bar
     let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
     
     resultSearchController = UISearchController(searchResultsController: locationSearchTable)
@@ -79,15 +79,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     definesPresentationContext = true
     
     locationSearchTable.mapView = mapView
-    
     locationSearchTable.handleMapSearchDelegate = self
     
-    
-    
-    
-    //initialize constant with 0
-   // sideBarConstraint.constant = -160
-    
+        
+        
+    //Database setup
     ref = Database.database().reference()
     
     print (ref)
@@ -107,13 +103,17 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     //Loads in the annotations!
     loadInitialData()
     mapView.addAnnotations(parkingspots)
-    
-    
     }
     
+    
+    //Zoom in button(re center)
     @IBAction func zoomIn(_ sender: Any) {
        mapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
     }
+    
+    
+
+    
     
     //loads in the locations and their stuff
     func loadInitialData() {
@@ -246,7 +246,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         checkLocationAuthorizationStatus()
     }
 
-    
+
+    //Segue that transfers information about the spot to viewspotcontroller
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is ViewSpotViewController
         {
@@ -255,6 +256,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
     }
 
+    //Preforming the above segue
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
         performSegue(withIdentifier: "ViewSpotFromAnnotation", sender: view.annotation as! ParkingSpot)
@@ -262,7 +264,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
 }
 
-
+//Zoom in on the location searched for in the table view
 extension MapViewController: HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark){
         // cache the pin
@@ -273,8 +275,8 @@ extension MapViewController: HandleMapSearch {
     }
 }
 
+//calls the dropPinZoomIn function for the selected location in the tableview
 extension LocationSearchTable {
-    //    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let selectedItem = matchingItems[indexPath.row].placemark
         handleMapSearchDelegate?.dropPinZoomIn(placemark: selectedItem)

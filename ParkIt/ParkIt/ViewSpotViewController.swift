@@ -18,7 +18,7 @@ class ViewSpotViewController: UIViewController {
     @IBOutlet weak var spotLabel: UILabel!
     var spot:ParkingSpot = ParkingSpot()
     
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         spotLabel?.text = spot.address
@@ -63,6 +63,19 @@ class ViewSpotViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //Segue that transfers information about the spot to viewspotcontroller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ViewSpotViewController
+        {
+            let vc = segue.destination as? ViewSpotViewController
+            vc?.spot = sender as! ParkingSpot
+        }
+    }
+    
+    @IBAction func buySpot(_ sender: Any) {
+        performSegue(withIdentifier: "BuySpotSegue", sender: self.spot)
     }
     
 }
