@@ -23,22 +23,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyb-9h-o9v">
-                                <rect key="frame" x="0.0" y="610" width="70" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="aqj-1r-fkJ"/>
-                                    <constraint firstAttribute="width" constant="104" id="dc3-Kf-bgO"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="directionarrow"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyb-9h-o9v">
+                                <rect key="frame" x="0.0" y="625" width="39" height="42"/>
+                                <state key="normal" title="Button" image="re-center"/>
                                 <connections>
                                     <action selector="zoomIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OUG-Tf-O8S"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjy-0D-pKQ">
-                                <rect key="frame" x="-160" y="0.0" width="160" height="667"/>
+                                <rect key="frame" x="-160" y="64" width="160" height="603"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Y6-AS-6Tm">
-                                        <rect key="frame" x="0.0" y="603" width="160" height="64"/>
+                                        <rect key="frame" x="0.0" y="539" width="160" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="V1P-Vg-wFB"/>
                                         </constraints>
@@ -64,12 +60,25 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="yjy-0D-pKQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-160" id="3pH-ed-1rK"/>
+<<<<<<< HEAD
+                            <constraint firstItem="uyb-9h-o9v" firstAttribute="leading" secondItem="sQv-rp-wtq" secondAttribute="leading" id="BiY-Ei-f8N"/>
+                            <constraint firstItem="sQv-rp-wtq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EDQ-NI-Lv2"/>
+                            <constraint firstItem="yjy-0D-pKQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Fgd-HZ-JSi"/>
+                            <constraint firstItem="uyb-9h-o9v" firstAttribute="bottom" secondItem="yjy-0D-pKQ" secondAttribute="bottom" id="T6T-6J-wIm"/>
+                            <constraint firstItem="uyb-9h-o9v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="561" id="UHK-Y1-Mpc"/>
+                            <constraint firstItem="yjy-0D-pKQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="edu-CK-6Sa"/>
+                            <constraint firstItem="uyb-9h-o9v" firstAttribute="leading" secondItem="yjy-0D-pKQ" secondAttribute="trailing" id="hSP-sg-48t"/>
+=======
                             <constraint firstAttribute="bottom" secondItem="sQv-rp-wtq" secondAttribute="bottom" id="MTy-dX-KP9"/>
                             <constraint firstItem="uyb-9h-o9v" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Y3U-Wj-rvD"/>
                             <constraint firstItem="uyb-9h-o9v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dPK-n9-PCf"/>
                             <constraint firstItem="yjy-0D-pKQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="edu-CK-6Sa"/>
                             <constraint firstAttribute="bottom" secondItem="yjy-0D-pKQ" secondAttribute="bottom" id="jjX-1c-hUn"/>
+>>>>>>> da64a650d62f81eaa6f9ad21a97f39cd4e37b2b4
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lrT-r7-bhs"/>
+                            <constraint firstItem="uyb-9h-o9v" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="p6J-aM-SPp"/>
+                            <constraint firstItem="yjy-0D-pKQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uMx-bp-3R4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uyb-9h-o9v" secondAttribute="trailing" constant="336" id="v9i-i7-4VC"/>
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="x2d-PQ-AYL"/>
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xEY-mN-kYm"/>
                         </constraints>
@@ -424,7 +433,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="directionarrow" width="512" height="512"/>
+        <image name="re-center" width="378" height="379"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="RGV-Gc-H1t"/>

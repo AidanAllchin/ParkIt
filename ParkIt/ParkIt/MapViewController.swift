@@ -79,7 +79,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     let searchBar = resultSearchController!.searchBar
     searchBar.sizeToFit()
-    searchBar.placeholder = "Search a place for parking!"
+    searchBar.placeholder = "Search for parking"
     navigationItem.titleView = resultSearchController?.searchBar
     
     resultSearchController?.hidesNavigationBarDuringPresentation = false
