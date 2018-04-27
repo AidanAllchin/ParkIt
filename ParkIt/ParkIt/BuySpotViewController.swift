@@ -2,7 +2,7 @@
 //  BuySpotViewController.swift
 //  ParkIt
 //
-//  Created by Guest User  on 3/11/18.
+//  Created by Aidan Allchin on 3/11/18.
 //  Copyright © 2018 ParkIt. All rights reserved.
 //
 
@@ -12,7 +12,7 @@ class BuySpotViewController: UIViewController {
 
     @IBOutlet weak var spotLabel: UILabel!
     
-    let picker = UIDatePicker()
+    //let picker = UIDatePicker()
     
     var spot:ParkingSpot = ParkingSpot()
     
