@@ -26,6 +26,9 @@ class ViewSpotViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //let gesture = UITapGestureRecognizer(target: self, action: #selector(onTapGesture(_:))
+        
+            
         spotLabel?.text = spot.address
         
         let periodNum = spot.periods.count
@@ -139,7 +142,6 @@ class ViewSpotViewController: UIViewController {
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = spot.title
         mapItem.openInMaps(launchOptions: options)
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -149,10 +151,13 @@ class ViewSpotViewController: UIViewController {
     
     //Segue that transfers information about the spot to viewspotcontroller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is ViewSpotViewController
+        if segue.destination is BuySpotViewController
         {
-            let vc = segue.destination as? ViewSpotViewController
-            vc?.spot = sender as! ParkingSpot
+            //vc = instance of BuySpotViewController
+            let vc = segue.destination as? BuySpotViewController
+            //Set the spot variable of the BuySpotViewController to self.spot
+            vc!.spot = sender as! ParkingSpot
+            print("test")
         }
     }
     

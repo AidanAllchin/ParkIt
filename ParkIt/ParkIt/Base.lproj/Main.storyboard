@@ -86,7 +86,6 @@
                     <connections>
                         <outlet property="mapView" destination="sQv-rp-wtq" id="F7L-dY-B2j"/>
                         <outlet property="sideBarConstraint" destination="3pH-ed-1rK" id="5Cz-jc-SEc"/>
-                        <segue destination="bwk-ta-Zvu" kind="show" id="VeS-VX-0mz"/>
                         <segue destination="bwk-ta-Zvu" kind="presentation" identifier="ViewSpotFromAnnotation" id="FQu-n2-wMY"/>
                         <segue destination="ADo-O8-fvx" kind="show" identifier="gotoLogin" id="N9B-xv-J67"/>
                     </connections>
@@ -292,7 +291,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="spotLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jve-gP-OQM">
-                                <rect key="frame" x="107" y="144" width="161" height="21"/>
+                                <rect key="frame" x="107" y="100" width="161" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -343,8 +342,6 @@
                                 <state key="normal" title="Buy This Spot"/>
                                 <connections>
                                     <action selector="buySpot:" destination="bwk-ta-Zvu" eventType="touchUpInside" id="eVt-H6-SaD"/>
-                                    <action selector="buySpotButton:" destination="bwk-ta-Zvu" eventType="touchUpInside" id="JOR-4m-lhP"/>
-                                    <segue destination="9ct-Du-UdI" kind="presentation" identifier="BuySpotSegue" id="klQ-iG-KZd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -371,6 +368,7 @@
                         <outlet property="periodSwitcher" destination="cna-NL-Yoc" id="voY-7h-Tyn"/>
                         <outlet property="spotLabel" destination="jve-gP-OQM" id="suG-iI-htK"/>
                         <outlet property="startTimeLabel" destination="LXg-Mt-sIC" id="af9-Lj-8Uz"/>
+                        <segue destination="9ct-Du-UdI" kind="presentation" identifier="BuySpotSegue" id="zcn-aZ-IZS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72D-hv-JEw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -385,30 +383,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03z-NJ-igw">
-                                <rect key="frame" x="24" y="270" width="76" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbb-Z6-hvr">
-                                <rect key="frame" x="32" y="375" width="68" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iyJ-cX-hZx">
-                                <rect key="frame" x="125" y="232" width="226" height="97"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="56e-GJ-F2Y">
-                                <rect key="frame" x="125" y="337" width="226" height="97"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="spotLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BY-ps-XQy">
-                                <rect key="frame" x="0.0" y="106" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="103" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -450,6 +426,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="RGV-Gc-H1t"/>
-        <segue reference="VeS-VX-0mz"/>
     </inferredMetricsTieBreakers>
 </document>
