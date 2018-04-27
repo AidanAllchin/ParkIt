@@ -18,8 +18,10 @@ class ViewSpotViewController: UIViewController {
     @IBOutlet weak var spotLabel: UILabel!
     var spot:ParkingSpot = ParkingSpot()
     
-    var start1:String = ""
-    var end1:String = ""
+    //the start time of the spot period
+    var start:String = ""
+    //the end time of the spot period
+    var end:String = ""
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,11 @@ class ViewSpotViewController: UIViewController {
         spotLabel?.text = spot.address
         
         let periodNum = spot.periods.count
+        
+        //Deletes the default 2 segments
         periodSwitcher.removeAllSegments()
+        
+        //If there's only one period for the spot, don't show a switcher
         if(periodNum == 1)
         {
             periodSwitcher.isHidden = true
@@ -42,46 +48,50 @@ class ViewSpotViewController: UIViewController {
             }
             periodSwitcher.selectedSegmentIndex = 0
         }
+        
+        //Select the first period by default
         var j = 0
         if(periodSwitcher.numberOfSegments != 0)
         {
             j = periodSwitcher.selectedSegmentIndex
         }
         
+        //Change the periods to a user-friendly time format
         if(spot.periods[j][0] > 12)
         {
-            start1 = String(spot.periods[j][0] - 12) + " p.m."
+            start = String(spot.periods[j][0] - 12) + " p.m."
         }
         else if(spot.periods[j][0] < 12)
         {
-            start1 = String(spot.periods[j][0]) + " a.m."
+            start = String(spot.periods[j][0]) + " a.m."
         }
         else
         {
-            start1 = String(spot.periods[j][0]) + " p.m."
+            start = String(spot.periods[j][0]) + " p.m."
         }
         if(spot.periods[j][1] > 12)
         {
-            end1 = String(spot.periods[j][1] - 12) + " p.m."
+            end = String(spot.periods[j][1] - 12) + " p.m."
         }
         else if(spot.periods[j][1] < 12)
         {
-            end1 = String(spot.periods[j][1]) + " a.m."
+            end = String(spot.periods[j][1]) + " a.m."
         }
         else
         {
-            end1 = String(spot.periods[j][1]) + " p.m."
+            end = String(spot.periods[j][1]) + " p.m."
         }
         
-        var price1 = String(spot.periods[0][2])
+        var price = String(spot.periods[0][2])
         
-        
-        startTimeLabel?.text = start1
-        endTimeLabel?.text = end1
+        //Setting the text itself
+        startTimeLabel?.text = start
+        endTimeLabel?.text = end
         startTimeLabel.sizeToFit()
         endTimeLabel.sizeToFit()
-
     }
+    
+    //When the selected period changes, this code runs and changes the time it's available
     @IBAction func periodSwitched(_ sender: UISegmentedControl) {
         var j = 0
         if(periodSwitcher.numberOfSegments != 0)
@@ -91,31 +101,31 @@ class ViewSpotViewController: UIViewController {
         
         if(spot.periods[j][0] > 12)
         {
-            start1 = String(spot.periods[j][0] - 12) + " p.m."
+            start = String(spot.periods[j][0] - 12) + " p.m."
         }
         else if(spot.periods[j][0] < 12)
         {
-            start1 = String(spot.periods[j][0]) + " a.m."
+            start = String(spot.periods[j][0]) + " a.m."
         }
         else
         {
-            start1 = String(spot.periods[j][0]) + " p.m."
+            start = String(spot.periods[j][0]) + " p.m."
         }
         if(spot.periods[j][1] > 12)
         {
-            end1 = String(spot.periods[j][1] - 12) + " p.m."
+            end = String(spot.periods[j][1] - 12) + " p.m."
         }
         else if(spot.periods[j][1] < 12)
         {
-            end1 = String(spot.periods[j][1]) + " a.m."
+            end = String(spot.periods[j][1]) + " a.m."
         }
         else
         {
-            end1 = String(spot.periods[j][1]) + " p.m."
+            end = String(spot.periods[j][1]) + " p.m."
         }
         
-        startTimeLabel?.text = start1
-        endTimeLabel?.text = end1
+        startTimeLabel?.text = start
+        endTimeLabel?.text = end
         startTimeLabel.sizeToFit()
         endTimeLabel.sizeToFit()
     }
