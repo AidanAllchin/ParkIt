@@ -117,9 +117,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     
-
-    
-    
     //loads in the locations and their stuff
     func loadInitialData() {
         var numSpots: Int = 0
