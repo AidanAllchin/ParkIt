@@ -19,6 +19,7 @@
 		DD631B74202379520095A1BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD631B72202379520095A1BC /* LaunchScreen.storyboard */; };
 		DD631B7F202379520095A1BC /* ParkItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD631B7E202379520095A1BC /* ParkItTests.swift */; };
 		DD631B8A202379520095A1BC /* ParkItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD631B89202379520095A1BC /* ParkItUITests.swift */; };
+		DD634D3120977A34002E63D2 /* HourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD634D3020977A34002E63D2 /* HourCollectionViewCell.swift */; };
 		DD6CC028205A2AF900B697BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD6CC027205A2AF900B697BE /* GoogleService-Info.plist */; };
 		DDC279C62045D0480057304A /* blackiii_thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDC279C52045D0480057304A /* blackiii_thumbnail.jpg */; };
 		DDEA9B9B2051A6E0002FCA6C /* ParkingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9B9A2051A6E0002FCA6C /* ParkingSpot.swift */; };
@@ -70,6 +71,7 @@
 		DD631B85202379520095A1BC /* ParkItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD631B89202379520095A1BC /* ParkItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkItUITests.swift; sourceTree = "<group>"; };
 		DD631B8B202379520095A1BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD634D3020977A34002E63D2 /* HourCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD6CC027205A2AF900B697BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DDC279C52045D0480057304A /* blackiii_thumbnail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = blackiii_thumbnail.jpg; path = ../../blackiii_thumbnail.jpg; sourceTree = "<group>"; };
 		DDEA9B9A2051A6E0002FCA6C /* ParkingSpot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingSpot.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				DDEA9B9C2051A6E7002FCA6C /* ParkingSpotMarkerView.swift */,
 				DDEA9BA32051A73B002FCA6C /* MapViewController.swift */,
 				DD631B6D202379520095A1BC /* Main.storyboard */,
+				DD634D3020977A34002E63D2 /* HourCollectionViewCell.swift */,
 				F69FF1F1208CFDBB006F03EA /* LocationSearchTable.swift */,
 				DD5B01A9206E9EBB00CB7653 /* AccountViewController.swift */,
 				C338EA3B2055C8D70031F487 /* BuySpotViewController.swift */,
@@ -503,6 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDEA9B9B2051A6E0002FCA6C /* ParkingSpot.swift in Sources */,
+				DD634D3120977A34002E63D2 /* HourCollectionViewCell.swift in Sources */,
 				F69FF1F2208CFDBB006F03EA /* LocationSearchTable.swift in Sources */,
 				DDEA9B9D2051A6E7002FCA6C /* ParkingSpotMarkerView.swift in Sources */,
 				C338EA3C2055C8D70031F487 /* BuySpotViewController.swift in Sources */,
