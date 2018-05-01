@@ -22,12 +22,16 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQv-rp-wtq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="qib-04-U3m" appends="YES" id="CuM-QM-g0S"/>
+                                    <outletCollection property="gestureRecognizers" destination="aLR-i5-dlD" appends="YES" id="tAr-Fo-Em2"/>
+                                </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyb-9h-o9v" userLabel="Recenter">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyb-9h-o9v" userLabel="Recenter">
                                 <rect key="frame" x="16" y="580" width="56" height="67"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="67" id="cck-GV-Npg"/>
-                                    <constraint firstAttribute="width" constant="56" id="hHe-Qq-Nof"/>
+                                    <constraint firstAttribute="width" constant="56" id="WBx-xf-Lac"/>
+                                    <constraint firstAttribute="height" constant="67" id="hfD-6t-gem"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="re-center"/>
                                 <connections>
@@ -55,6 +59,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Y6-AS-6Tm">
                                         <rect key="frame" x="0.0" y="539" width="160" height="64"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="6dI-8F-x0S"/>
+                                            <constraint firstAttribute="width" constant="160" id="D1q-Y9-ev3"/>
                                             <constraint firstAttribute="height" constant="64" id="V1P-Vg-wFB"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -68,22 +74,23 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="5Y6-AS-6Tm" secondAttribute="trailing" id="4Uc-A4-LX1"/>
-                                    <constraint firstAttribute="bottom" secondItem="5Y6-AS-6Tm" secondAttribute="bottom" id="CEf-oV-8ga"/>
-                                    <constraint firstItem="5Y6-AS-6Tm" firstAttribute="leading" secondItem="yjy-0D-pKQ" secondAttribute="leading" id="ClJ-Ud-7qt"/>
-                                    <constraint firstAttribute="width" constant="160" id="wWr-Me-gdK"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Y6-AS-6Tm" secondAttribute="bottom" id="GZn-fU-wCz"/>
+                                    <constraint firstAttribute="height" constant="603" id="icC-6B-c0v"/>
+                                    <constraint firstItem="5Y6-AS-6Tm" firstAttribute="leading" secondItem="yjy-0D-pKQ" secondAttribute="leading" id="mMC-ll-wUX"/>
+                                    <constraint firstAttribute="width" constant="160" id="uhA-Ab-VAL"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="yjy-0D-pKQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-160" id="3pH-ed-1rK"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="uyb-9h-o9v" secondAttribute="bottom" constant="20" id="9Ih-gf-KDc"/>
+                            <constraint firstItem="yjy-0D-pKQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IfS-RQ-Oai"/>
                             <constraint firstAttribute="bottom" secondItem="sQv-rp-wtq" secondAttribute="bottom" id="MTy-dX-KP9"/>
-                            <constraint firstItem="yjy-0D-pKQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="edu-CK-6Sa"/>
-                            <constraint firstAttribute="bottom" secondItem="yjy-0D-pKQ" secondAttribute="bottom" id="jjX-1c-hUn"/>
+                            <constraint firstItem="yjy-0D-pKQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-160" id="Tyc-EJ-zCo"/>
+                            <constraint firstItem="uyb-9h-o9v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="V5X-9t-aPu"/>
+                            <constraint firstItem="yjy-0D-pKQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kEY-wG-Pbb"/>
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lrT-r7-bhs"/>
-                            <constraint firstItem="yjy-0D-pKQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uMx-bp-3R4"/>
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="x2d-PQ-AYL"/>
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xEY-mN-kYm"/>
                         </constraints>
@@ -98,12 +105,22 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="sQv-rp-wtq" id="F7L-dY-B2j"/>
-                        <outlet property="sideBarConstraint" destination="3pH-ed-1rK" id="5Cz-jc-SEc"/>
+                        <outlet property="sideBarConstraint" destination="Tyc-EJ-zCo" id="aMP-Z5-i0X"/>
                         <segue destination="bwk-ta-Zvu" kind="presentation" identifier="ViewSpotFromAnnotation" id="FQu-n2-wMY"/>
                         <segue destination="ADo-O8-fvx" kind="show" identifier="gotoLogin" id="N9B-xv-J67"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="qib-04-U3m">
+                    <connections>
+                        <action selector="openSwipe:" destination="BYZ-38-t0r" id="7bQ-Ob-65X"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="aLR-i5-dlD">
+                    <connections>
+                        <action selector="closeSwipe:" destination="BYZ-38-t0r" id="Nmn-fx-MdH"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="535.20000000000005" y="-93.103448275862078"/>
         </scene>
@@ -629,9 +646,10 @@
     </scenes>
     <resources>
         <image name="Logo-without-background" width="32" height="38"/>
-        <image name="re-center" width="378" height="379"/>
+        <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="y9F-Ek-Y1T"/>
+        <segue reference="FQu-n2-wMY"/>
+        <segue reference="RGV-Gc-H1t"/>
     </inferredMetricsTieBreakers>
 </document>
