@@ -552,6 +552,7 @@
                         <viewLayoutGuide key="safeArea" id="6mv-Cf-1Ra"/>
                     </view>
                     <connections>
+                        <outlet property="locationLabel" destination="xB8-kh-gup" id="iqF-ZL-12Z"/>
                         <outlet property="mapView" destination="1Et-ct-rfh" id="TmE-ZY-T2h"/>
                     </connections>
                 </viewController>
