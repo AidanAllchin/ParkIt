@@ -12,6 +12,8 @@ import MapKit
 
 class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    var newSpot: ParkingSpot = ParkingSpot()
+    
     let regionRadius: CLLocationDistance = 1000
     var locationManager:CLLocationManager!
     @IBOutlet weak var mapView: MKMapView!
