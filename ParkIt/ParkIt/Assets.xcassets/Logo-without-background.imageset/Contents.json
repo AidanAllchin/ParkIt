@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "LognNobackgroundCropped.png",
+      "filename" : "LogoNobackgroundCropped.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "LogoNobackgroundCropped-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "LogoNobackgroundCropped-2.png",
       "scale" : "3x"
     }
   ],
