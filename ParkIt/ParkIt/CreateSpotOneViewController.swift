@@ -18,10 +18,8 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
     var locationManager:CLLocationManager!
     @IBOutlet weak var mapView: MKMapView!
     var currentLocation: CLLocationCoordinate2D = CLLocationCoordinate2D()
-    //var address: String = String()
     
     @IBOutlet weak var addressField: UITextField!
-    @IBOutlet weak var button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,17 +80,26 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
     }
     
     @IBAction func nextButton(_ sender: Any) {
-        locationManager.stopUpdatingLocation()
-        newSpot.coordinate = currentLocation
-        performSegue(withIdentifier: "NextCreatePage", sender: self.newSpot)
+        if(addressField.text != "")
+        {
+            newSpot.address = addressField.text!
+            locationManager.stopUpdatingLocation()
+            newSpot.coordinate = currentLocation
+            performSegue(withIdentifier: "NextCreatePage", sender: self.newSpot)
+        }
+        else
+        {
+            let alert = UIAlertController(title: "Address Missing", message: "Please enter an address before continuing", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
     }
     
-    @IBAction func textFieldEdited(_ sender: UITextField) {
-        print(sender.text!)
+    //Gets rid of the keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //Dismiss the keyboard when the view is tapped on
+        addressField.resignFirstResponder()
     }
-    
-    @IBAction func buttonPressed(_ sender: Any) {
-    }
-    
-    
 }

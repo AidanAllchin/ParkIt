@@ -621,18 +621,7 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="textFieldEdited:" destination="mue-lN-skz" eventType="editingDidEnd" id="Eb0-qO-zW8"/>
-                                </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mG-xE-UiX">
-                                <rect key="frame" x="174" y="155" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Enter"/>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="mue-lN-skz" eventType="touchUpInside" id="7mL-cr-PLn"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -647,7 +636,6 @@
                     </view>
                     <connections>
                         <outlet property="addressField" destination="BC4-Z1-4jm" id="GhW-49-efU"/>
-                        <outlet property="button" destination="2mG-xE-UiX" id="ExN-9t-0Fb"/>
                         <outlet property="mapView" destination="1Et-ct-rfh" id="TmE-ZY-T2h"/>
                         <segue destination="5Lr-qo-12t" kind="presentation" identifier="NextCreatePage" id="HOd-Ui-W0G"/>
                     </connections>
@@ -733,7 +721,6 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pFQ-vL-Na3"/>
         <segue reference="xIb-RA-VAk"/>
     </inferredMetricsTieBreakers>
 </document>

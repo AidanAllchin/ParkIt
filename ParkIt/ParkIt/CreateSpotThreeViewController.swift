@@ -33,7 +33,26 @@ class CreateSpotThreeViewController: UIViewController {
         }
     }
     
+    //This sets the title to the spot title, and prompts the user if there isn't text there.
     @IBAction func nextButton(_ sender: Any) {
-        performSegue(withIdentifier: "NextCreatePage", sender: self.spot)
+        if(titleField.text != "")
+        {
+            spot.title = titleField.text
+            performSegue(withIdentifier: "NextCreatePage", sender: self.spot)
+        }
+        else
+        {
+            let alert = UIAlertController(title: "Title Missing", message: "Please enter a spot title before continuing", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
+    }
+    
+    //Gets rid of the keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //Dismiss the keyboard when the view is tapped on
+        titleField.resignFirstResponder()
     }
 }
