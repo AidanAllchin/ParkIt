@@ -529,9 +529,6 @@
                                 <rect key="frame" x="0.0" y="602" width="375" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Next"/>
-                                <connections>
-                                    <segue destination="5Lr-qo-12t" kind="presentation" id="grE-kb-Mh1"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select spot location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8z-lg-O63">
                                 <rect key="frame" x="40" y="20" width="295" height="37"/>
@@ -552,8 +549,8 @@
                         <viewLayoutGuide key="safeArea" id="6mv-Cf-1Ra"/>
                     </view>
                     <connections>
-                        <outlet property="locationLabel" destination="xB8-kh-gup" id="iqF-ZL-12Z"/>
                         <outlet property="mapView" destination="1Et-ct-rfh" id="TmE-ZY-T2h"/>
+                        <segue destination="5Lr-qo-12t" kind="presentation" customClass="NextCreatePage" id="HOd-Ui-W0G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CaU-UR-CZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
