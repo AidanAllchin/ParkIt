@@ -1,20 +1,21 @@
 //
-//  CreateSpotTwoViewController.swift
+//  CreateSpotThreeViewController.swift
 //  ParkIt
 //
-//  Created by Will Frohlich on 5/1/18.
+//  Created by Aidan Allchin on 5/1/18.
 //  Copyright © 2018 ParkIt. All rights reserved.
 //
 
 import UIKit
 
-class CreateSpotTwoViewController: UIViewController {
-
-    var spot:ParkingSpot = ParkingSpot()
+class CreateSpotThreeViewController: UIViewController {
+    @IBOutlet weak var titleField: UITextField!
     
+    var spot:ParkingSpot = ParkingSpot()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -25,9 +26,9 @@ class CreateSpotTwoViewController: UIViewController {
     
     //To send the ParkingSpot to the next page of creation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is CreateSpotThreeViewController
+        if segue.destination is CreateSpotFinishedViewController
         {
-            let vc = segue.destination as? CreateSpotThreeViewController
+            let vc = segue.destination as? CreateSpotFinishedViewController
             vc!.spot = sender as! ParkingSpot
         }
     }
@@ -35,5 +36,4 @@ class CreateSpotTwoViewController: UIViewController {
     @IBAction func nextButton(_ sender: Any) {
         performSegue(withIdentifier: "NextCreatePage", sender: self.spot)
     }
-
 }
