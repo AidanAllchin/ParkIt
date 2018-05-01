@@ -1,5 +1,5 @@
 //
-//  AddSpotViewController.swift
+//  CreateSpotOneViewController.swift
 //  ParkIt
 //
 //  Created by Will Frohlich on 5/1/18.
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MapKit
 
-class CreateSpotViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     let regionRadius: CLLocationDistance = 1000
     var locationManager:CLLocationManager!
@@ -42,6 +42,11 @@ class CreateSpotViewController: UIViewController, MKMapViewDelegate, CLLocationM
             locationManager.startUpdatingLocation()
             //locationManager.startUpdatingHeading()
         }
+    }
+
+    func centerMapOnLocation(location: MKUserLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius, regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
