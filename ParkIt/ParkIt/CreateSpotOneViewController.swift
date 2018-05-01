@@ -17,7 +17,7 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
     let regionRadius: CLLocationDistance = 1000
     var locationManager:CLLocationManager!
     @IBOutlet weak var mapView: MKMapView!
-    var currentLocation: CLLocation = CLLocation()
+    var currentLocation: CLLocationCoordinate2D = CLLocationCoordinate2D()
     
     
     override func viewDidLoad() {
@@ -35,10 +35,6 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
         determineMyCurrentLocation()
     }
     
-    //To send the ParkingSpot to the next page of creation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //Code
-    }
     
     func determineMyCurrentLocation() {
         locationManager = CLLocationManager()
@@ -65,11 +61,26 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
         
         // manager.stopUpdatingLocation()
         
-        currentLocation = CLLocation(latitude: (userLocation.coordinate.latitude), longitude: (userLocation.coordinate.longitude))
+        currentLocation = CLLocationCoordinate2D(latitude: (userLocation.coordinate.latitude), longitude: (userLocation.coordinate.longitude))
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     {
         print("Error \(error)")
+    }
+    
+    //To send the ParkingSpot to the next page of creation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is CreateSpotTwoViewController
+        {
+            let vc = segue.destination as? CreateSpotTwoViewController
+            vc!.spot = sender as! ParkingSpot
+        }
+    }
+    
+    @IBAction func nextButton(_ sender: Any) {
+        locationManager.stopUpdatingLocation()
+        newSpot.coordinate = currentLocation
+        performSegue(withIdentifier: "NextCreatePage", sender: self.newSpot)
     }
 }
