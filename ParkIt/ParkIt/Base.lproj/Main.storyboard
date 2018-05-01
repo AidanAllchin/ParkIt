@@ -445,9 +445,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="spotTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLV-3g-li6" userLabel="spotTitle">
-                                <rect key="frame" x="110" y="107" width="155" height="37"/>
+                                <rect key="frame" x="16" y="107" width="343" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -459,9 +459,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdM-0q-Qnl">
-                                <rect key="frame" x="110" y="205" width="155" height="37"/>
+                                <rect key="frame" x="16" y="205" width="343" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -627,14 +627,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5f-AA-YsB">
+                                <rect key="frame" x="10" y="20" width="40" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="QkX-eT-15s"/>
+                                    <constraint firstAttribute="height" constant="35" id="foK-EX-e1e"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="backbutton"/>
+                                <connections>
+                                    <segue destination="4V9-Be-pho" kind="presentation" id="vyW-UG-Zrl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6mv-Cf-1Ra" firstAttribute="trailing" secondItem="m8z-lg-O63" secondAttribute="trailing" constant="40" id="4UW-3t-KJ7"/>
                             <constraint firstItem="m8z-lg-O63" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" constant="40" id="73I-xU-EDU"/>
                             <constraint firstItem="6mv-Cf-1Ra" firstAttribute="bottom" secondItem="oOd-GK-sIZ" secondAttribute="bottom" constant="20" id="SIR-zg-aAR"/>
+                            <constraint firstItem="b5f-AA-YsB" firstAttribute="top" secondItem="6mv-Cf-1Ra" secondAttribute="top" id="WsO-8f-vtF"/>
                             <constraint firstItem="oOd-GK-sIZ" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" id="r1j-cf-PO9"/>
                             <constraint firstItem="oOd-GK-sIZ" firstAttribute="trailing" secondItem="6mv-Cf-1Ra" secondAttribute="trailing" id="sLy-v7-30H"/>
+                            <constraint firstItem="b5f-AA-YsB" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" constant="10" id="unU-GZ-pju"/>
                             <constraint firstItem="m8z-lg-O63" firstAttribute="top" secondItem="6mv-Cf-1Ra" secondAttribute="top" id="ysC-fE-Kb2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6mv-Cf-1Ra"/>
@@ -723,10 +736,10 @@
     </scenes>
     <resources>
         <image name="Button Logo" width="50" height="50"/>
+        <image name="backbutton" width="256" height="256"/>
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="f9p-V3-baU"/>
-        <segue reference="xIb-RA-VAk"/>
+        <segue reference="vyW-UG-Zrl"/>
     </inferredMetricsTieBreakers>
 </document>
