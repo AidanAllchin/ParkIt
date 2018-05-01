@@ -16,6 +16,8 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
     var locationManager:CLLocationManager!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationLabel: UILabel!
+    var currentLocation: CLLocation = CLLocation()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +61,8 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
         
         print("user latitude = \(userLocation.coordinate.latitude)")
         print("user longitude = \(userLocation.coordinate.longitude)")
+        
+        currentLocation = CLLocation(latitude: (userLocation.coordinate.latitude), longitude: (userLocation.coordinate.longitude))
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
