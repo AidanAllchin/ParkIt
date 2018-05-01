@@ -22,12 +22,16 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQv-rp-wtq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="qib-04-U3m" appends="YES" id="CuM-QM-g0S"/>
+                                    <outletCollection property="gestureRecognizers" destination="aLR-i5-dlD" appends="YES" id="tAr-Fo-Em2"/>
+                                </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyb-9h-o9v" userLabel="Recenter">
-                                <rect key="frame" x="176" y="580" width="56" height="67"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyb-9h-o9v" userLabel="Recenter">
+                                <rect key="frame" x="16" y="580" width="56" height="67"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="56" id="0A5-eB-wgR"/>
-                                    <constraint firstAttribute="height" constant="67" id="ZbR-9R-v2h"/>
+                                    <constraint firstAttribute="width" constant="56" id="WBx-xf-Lac"/>
+                                    <constraint firstAttribute="height" constant="67" id="hfD-6t-gem"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="re-center"/>
                                 <connections>
@@ -35,7 +39,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjy-0D-pKQ">
-                                <rect key="frame" x="0.0" y="64" width="160" height="603"/>
+                                <rect key="frame" x="-160" y="64" width="160" height="603"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFW-io-VA6">
                                         <rect key="frame" x="8" y="0.0" width="144" height="65"/>
@@ -48,6 +52,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Create a Spot"/>
+                                        <connections>
+                                            <segue destination="mue-lN-skz" kind="presentation" id="f9p-V3-baU"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Y6-AS-6Tm">
                                         <rect key="frame" x="0.0" y="539" width="160" height="64"/>
@@ -77,14 +84,15 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="uyb-9h-o9v" secondAttribute="bottom" constant="20" id="9Ih-gf-KDc"/>
                             <constraint firstItem="yjy-0D-pKQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IfS-RQ-Oai"/>
                             <constraint firstAttribute="bottom" secondItem="sQv-rp-wtq" secondAttribute="bottom" id="MTy-dX-KP9"/>
-                            <constraint firstItem="yjy-0D-pKQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tyc-EJ-zCo"/>
+                            <constraint firstItem="yjy-0D-pKQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-160" id="Tyc-EJ-zCo"/>
+                            <constraint firstItem="uyb-9h-o9v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="V5X-9t-aPu"/>
                             <constraint firstItem="yjy-0D-pKQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kEY-wG-Pbb"/>
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lrT-r7-bhs"/>
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="x2d-PQ-AYL"/>
                             <constraint firstItem="sQv-rp-wtq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xEY-mN-kYm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uyb-9h-o9v" secondAttribute="bottom" constant="20" id="ztM-hE-qhJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -97,11 +105,22 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="sQv-rp-wtq" id="F7L-dY-B2j"/>
+                        <outlet property="sideBarConstraint" destination="Tyc-EJ-zCo" id="aMP-Z5-i0X"/>
                         <segue destination="bwk-ta-Zvu" kind="presentation" identifier="ViewSpotFromAnnotation" id="FQu-n2-wMY"/>
                         <segue destination="ADo-O8-fvx" kind="show" identifier="gotoLogin" id="N9B-xv-J67"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="qib-04-U3m">
+                    <connections>
+                        <action selector="openSwipe:" destination="BYZ-38-t0r" id="7bQ-Ob-65X"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="aLR-i5-dlD">
+                    <connections>
+                        <action selector="closeSwipe:" destination="BYZ-38-t0r" id="Nmn-fx-MdH"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="535.20000000000005" y="-93.103448275862078"/>
         </scene>
@@ -386,6 +405,30 @@
             </objects>
             <point key="canvasLocation" x="-452" y="-93.103448275862078"/>
         </scene>
+        <!--AddSpotViewController-->
+        <scene sceneID="D0v-vF-VRR">
+            <objects>
+                <viewController title="AddSpotViewController" id="mue-lN-skz" customClass="CreateSpotViewController" customModule="ParkIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2oQ-St-Krw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1Et-ct-rfh">
+                                <rect key="frame" x="16" y="219" width="343" height="365"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6mv-Cf-1Ra"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="1Et-ct-rfh" id="TmE-ZY-T2h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CaU-UR-CZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1245.5999999999999" y="-938.68065967016503"/>
+        </scene>
         <!--Buy Spot-->
         <scene sceneID="Ty0-hA-6xp">
             <objects>
@@ -406,64 +449,50 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="X"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="QVm-eJ-Ymb"/>
+                                    <segue destination="4V9-Be-pho" kind="presentation" id="y9F-Ek-Y1T"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0NI-lg-gnz">
-                                <rect key="frame" x="40" y="211" width="295" height="291"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ca2-Bg-kgk">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="QBS-id-PLA" customClass="HourCollectionViewCell" customModule="ParkIt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRc-iv-VEn">
-                                                    <rect key="frame" x="4" y="15" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <connections>
-                                            <outlet property="timeLabel" destination="VRc-iv-VEn" id="7aC-J3-PTg"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Start Hour &amp; End Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfs-a6-218">
-                                <rect key="frame" x="75" y="170" width="224" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Start Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfs-a6-218">
+                                <rect key="frame" x="121.5" y="170" width="132" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select End Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqi-jw-MPw">
+                                <rect key="frame" x="125" y="377" width="124" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="BJD-vL-OhE">
+                                <rect key="frame" x="0.0" y="199" width="375" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="546882685.42137897">
+                                    <!--2018-05-01 15:51:25 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gVG-B6-iQF">
+                                <rect key="frame" x="0.0" y="406" width="375" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="546882685.42137897">
+                                    <!--2018-05-01 15:51:25 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="0NI-lg-gnz" firstAttribute="leading" secondItem="mQz-U2-idK" secondAttribute="leading" constant="40" id="DxF-BO-GOb"/>
                             <constraint firstItem="Cfs-a6-218" firstAttribute="centerX" secondItem="kPJ-eg-865" secondAttribute="centerX" id="VGP-sw-odO"/>
                             <constraint firstItem="0BY-ps-XQy" firstAttribute="top" secondItem="mQz-U2-idK" secondAttribute="top" constant="80" id="Xkn-fq-kSh"/>
-                            <constraint firstItem="mQz-U2-idK" firstAttribute="bottom" secondItem="0NI-lg-gnz" secondAttribute="bottom" constant="165" id="Z5u-ed-ehC"/>
-                            <constraint firstItem="0NI-lg-gnz" firstAttribute="top" secondItem="Cfs-a6-218" secondAttribute="bottom" constant="20" id="dcl-3P-Qbp"/>
                             <constraint firstItem="0BY-ps-XQy" firstAttribute="centerX" secondItem="kPJ-eg-865" secondAttribute="centerX" id="kV9-iG-AT1"/>
                             <constraint firstItem="Cfs-a6-218" firstAttribute="top" secondItem="mQz-U2-idK" secondAttribute="top" constant="150" id="njl-H6-6WA"/>
-                            <constraint firstItem="mQz-U2-idK" firstAttribute="trailing" secondItem="0NI-lg-gnz" secondAttribute="trailing" constant="40" id="rFr-lt-slr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mQz-U2-idK"/>
                     </view>
                     <connections>
-                        <outlet property="hourCollectionView" destination="0NI-lg-gnz" id="Foh-7D-DQ8"/>
+                        <outlet property="endTimePicker" destination="gVG-B6-iQF" id="eKt-eM-Hwo"/>
                         <outlet property="spotLabel" destination="0BY-ps-XQy" id="v5O-DE-ErW"/>
+                        <outlet property="startTimePicker" destination="BJD-vL-OhE" id="F6h-4L-DzE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRB-p8-TWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -496,6 +525,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="FQu-n2-wMY"/>
         <segue reference="RGV-Gc-H1t"/>
-        <segue reference="dz5-39-Abo"/>
     </inferredMetricsTieBreakers>
 </document>

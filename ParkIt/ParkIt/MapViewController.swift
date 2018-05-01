@@ -33,6 +33,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var sideBarConstraint: NSLayoutConstraint!
     
+    @IBAction func openSwipe(_ sender: UIScreenEdgePanGestureRecognizer) {
+        openSideBar()
+    }
+    @IBAction func closeSwipe(_ sender: UISwipeGestureRecognizer) {
+        if isSideBarHidden{
+            closeSideBar()
+        }
+    }
     @IBAction func sideBarButtonPressed(_ sender: AnyObject) {
         if isSideBarHidden {
             openSideBar()

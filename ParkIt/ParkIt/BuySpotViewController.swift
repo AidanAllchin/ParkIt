@@ -9,15 +9,20 @@
 import UIKit
 
 class BuySpotViewController: UIViewController {
-
+    @IBOutlet weak var startTimePicker: UIDatePicker!
+    @IBOutlet weak var endTimePicker: UIDatePicker!
     @IBOutlet weak var spotLabel: UILabel!
-    @IBOutlet weak var hourCollectionView: UICollectionView!
+    
+    let items = ["0","1","2","3","4","5","6","7","8","9","10"]
+    
     var startTimes: [String] = [String]()
     
     var spot:ParkingSpot = ParkingSpot()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         spotLabel.text = "Spot: " + spot.title!
     }
