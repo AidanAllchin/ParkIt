@@ -483,10 +483,10 @@
             </objects>
             <point key="canvasLocation" x="-1068" y="-919"/>
         </scene>
-        <!--View Controller-->
+        <!--CreateSpotTwoViewController-->
         <scene sceneID="xSC-5C-3f7">
             <objects>
-                <viewController id="5Lr-qo-12t" sceneMemberID="viewController">
+                <viewController title="CreateSpotTwoViewController" id="5Lr-qo-12t" customClass="CreateSpotTwoViewController" customModule="ParkIt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ncz-al-OEH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -546,6 +546,9 @@
                                 <rect key="frame" x="0.0" y="602" width="375" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButton:" destination="mue-lN-skz" eventType="touchUpInside" id="eQs-O8-nyl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select spot location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8z-lg-O63">
                                 <rect key="frame" x="40" y="20" width="295" height="37"/>
@@ -567,7 +570,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="1Et-ct-rfh" id="TmE-ZY-T2h"/>
-                        <segue destination="5Lr-qo-12t" kind="presentation" customClass="NextCreatePage" id="HOd-Ui-W0G"/>
+                        <segue destination="5Lr-qo-12t" kind="presentation" identifier="NextCreatePage" id="HOd-Ui-W0G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CaU-UR-CZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
