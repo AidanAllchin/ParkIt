@@ -12,7 +12,7 @@ import MapKit
 
 class CreateSpotViewController: UIViewController, MKMapViewDelegate {
     
-    let regionRadius: CLLocationDistance = 300
+    let regionRadius: CLLocationDistance = 1000
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -21,5 +21,12 @@ class CreateSpotViewController: UIViewController, MKMapViewDelegate {
         mapView.delegate = self
         mapView.showsUserLocation = true
         mapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
+        
+        centerMapOnLocation(location: mapView.userLocation)
+    }
+    
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius, regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
     }
 }

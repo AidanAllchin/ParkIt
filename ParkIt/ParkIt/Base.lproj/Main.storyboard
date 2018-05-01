@@ -48,6 +48,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Create a Spot"/>
+                                        <connections>
+                                            <segue destination="mue-lN-skz" kind="presentation" id="f9p-V3-baU"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Y6-AS-6Tm">
                                         <rect key="frame" x="0.0" y="539" width="160" height="64"/>
@@ -504,6 +507,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FQu-n2-wMY"/>
-        <segue reference="X3i-Mn-syn"/>
+        <segue reference="RGV-Gc-H1t"/>
     </inferredMetricsTieBreakers>
 </document>
