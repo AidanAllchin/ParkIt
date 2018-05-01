@@ -1,7 +1,7 @@
 //
 //  ViewSpotViewController.swift
 //  ParkIt
-//
+//  *** CONSIDER REPLACING WITH BUTTONS FOR EACH PERIOD THAT THE USER CAN SELECT ***
 //  Created by Will Frohlich on 4/16/18.
 //  Copyright © 2018 ParkIt. All rights reserved.
 //

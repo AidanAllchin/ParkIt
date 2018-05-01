@@ -21,6 +21,8 @@
 		DD631B8A202379520095A1BC /* ParkItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD631B89202379520095A1BC /* ParkItUITests.swift */; };
 		DD6CC028205A2AF900B697BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD6CC027205A2AF900B697BE /* GoogleService-Info.plist */; };
 		DDB157372098C4FF005F75EB /* BuyDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB157362098C4FF005F75EB /* BuyDatePicker.swift */; };
+		DDB157392098FDF7005F75EB /* CreateSpotThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB157382098FDF7005F75EB /* CreateSpotThreeViewController.swift */; };
+		DDB1573B2099041D005F75EB /* CreateSpotFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB1573A2099041D005F75EB /* CreateSpotFinishedViewController.swift */; };
 		DDC279C62045D0480057304A /* blackiii_thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDC279C52045D0480057304A /* blackiii_thumbnail.jpg */; };
 		DDEA9B9B2051A6E0002FCA6C /* ParkingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9B9A2051A6E0002FCA6C /* ParkingSpot.swift */; };
 		DDEA9B9D2051A6E7002FCA6C /* ParkingSpotMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9B9C2051A6E7002FCA6C /* ParkingSpotMarkerView.swift */; };
@@ -74,6 +76,8 @@
 		DD631B8B202379520095A1BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD6CC027205A2AF900B697BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DDB157362098C4FF005F75EB /* BuyDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyDatePicker.swift; sourceTree = "<group>"; };
+		DDB157382098FDF7005F75EB /* CreateSpotThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSpotThreeViewController.swift; sourceTree = "<group>"; };
+		DDB1573A2099041D005F75EB /* CreateSpotFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSpotFinishedViewController.swift; sourceTree = "<group>"; };
 		DDC279C52045D0480057304A /* blackiii_thumbnail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = blackiii_thumbnail.jpg; path = ../../blackiii_thumbnail.jpg; sourceTree = "<group>"; };
 		DDEA9B9A2051A6E0002FCA6C /* ParkingSpot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingSpot.swift; sourceTree = "<group>"; };
 		DDEA9B9C2051A6E7002FCA6C /* ParkingSpotMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingSpotMarkerView.swift; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 				F618E79A2085A33300F5692E /* ViewSpotViewController.swift */,
 				F646A8462098C3B100B186E2 /* CreateSpotOneViewController.swift */,
 				F646A8482098E8D900B186E2 /* CreateSpotTwoViewController.swift */,
+				DDB157382098FDF7005F75EB /* CreateSpotThreeViewController.swift */,
+				DDB1573A2099041D005F75EB /* CreateSpotFinishedViewController.swift */,
 				DDEA9B9C2051A6E7002FCA6C /* ParkingSpotMarkerView.swift */,
 				DDEA9BA32051A73B002FCA6C /* MapViewController.swift */,
 				DD631B6D202379520095A1BC /* Main.storyboard */,
@@ -508,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDEA9B9B2051A6E0002FCA6C /* ParkingSpot.swift in Sources */,
+				DDB1573B2099041D005F75EB /* CreateSpotFinishedViewController.swift in Sources */,
 				F69FF1F2208CFDBB006F03EA /* LocationSearchTable.swift in Sources */,
 				DDEA9B9D2051A6E7002FCA6C /* ParkingSpotMarkerView.swift in Sources */,
 				C338EA3C2055C8D70031F487 /* BuySpotViewController.swift in Sources */,
@@ -518,6 +525,7 @@
 				DDEA9BA62051A747002FCA6C /* ViewController.swift in Sources */,
 				DDEA9BA42051A73B002FCA6C /* MapViewController.swift in Sources */,
 				F646A8492098E8D900B186E2 /* CreateSpotTwoViewController.swift in Sources */,
+				DDB157392098FDF7005F75EB /* CreateSpotThreeViewController.swift in Sources */,
 				DD5B01AA206E9EBB00CB7653 /* AccountViewController.swift in Sources */,
 				DDB157372098C4FF005F75EB /* BuyDatePicker.swift in Sources */,
 			);
