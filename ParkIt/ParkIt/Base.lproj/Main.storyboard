@@ -646,7 +646,6 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FQu-n2-wMY"/>
         <segue reference="RGV-Gc-H1t"/>
     </inferredMetricsTieBreakers>
 </document>

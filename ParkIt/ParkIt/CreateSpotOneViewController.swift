@@ -65,9 +65,6 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
         
         // manager.stopUpdatingLocation()
         
-        //print("user latitude = \(userLocation.coordinate.latitude)")
-        //print("user longitude = \(userLocation.coordinate.longitude)")
-        
         currentLocation = CLLocation(latitude: (userLocation.coordinate.latitude), longitude: (userLocation.coordinate.longitude))
     }
     
@@ -75,6 +72,4 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
     {
         print("Error \(error)")
     }
-    
-    
 }
