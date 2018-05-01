@@ -17,7 +17,6 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
     let regionRadius: CLLocationDistance = 1000
     var locationManager:CLLocationManager!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var locationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +31,11 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
         super.viewWillAppear(animated)
         
         determineMyCurrentLocation()
+    }
+    
+    //To send the ParkingSpot to the next page of creation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Code
     }
     
     func determineMyCurrentLocation() {
