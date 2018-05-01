@@ -27,6 +27,7 @@
 		DDEA9BA42051A73B002FCA6C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9BA32051A73B002FCA6C /* MapViewController.swift */; };
 		DDEA9BA62051A747002FCA6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9BA52051A747002FCA6C /* ViewController.swift */; };
 		F618E79B2085A33300F5692E /* ViewSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F618E79A2085A33300F5692E /* ViewSpotViewController.swift */; };
+		F646A8472098C3B100B186E2 /* CreateSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646A8462098C3B100B186E2 /* CreateSpotViewController.swift */; };
 		F69FF1F2208CFDBB006F03EA /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69FF1F1208CFDBB006F03EA /* LocationSearchTable.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		DDEA9BA32051A73B002FCA6C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DDEA9BA52051A747002FCA6C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F618E79A2085A33300F5692E /* ViewSpotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSpotViewController.swift; sourceTree = "<group>"; };
+		F646A8462098C3B100B186E2 /* CreateSpotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSpotViewController.swift; sourceTree = "<group>"; };
 		F69FF1F1208CFDBB006F03EA /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 		F78A5730D9AEEFA4DA3813AF /* Pods-ParkItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkItTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkItTests/Pods-ParkItTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +167,7 @@
 				DD2B3AE62033B7300012CE0D /* LoginViewController.swift */,
 				DDEA9B9A2051A6E0002FCA6C /* ParkingSpot.swift */,
 				F618E79A2085A33300F5692E /* ViewSpotViewController.swift */,
+				F646A8462098C3B100B186E2 /* CreateSpotViewController.swift */,
 				DDEA9B9C2051A6E7002FCA6C /* ParkingSpotMarkerView.swift */,
 				DDEA9BA32051A73B002FCA6C /* MapViewController.swift */,
 				DD631B6D202379520095A1BC /* Main.storyboard */,
@@ -508,6 +511,7 @@
 				DD2B3AE72033B7300012CE0D /* LoginViewController.swift in Sources */,
 				DD631B6A202379520095A1BC /* AppDelegate.swift in Sources */,
 				F618E79B2085A33300F5692E /* ViewSpotViewController.swift in Sources */,
+				F646A8472098C3B100B186E2 /* CreateSpotViewController.swift in Sources */,
 				DDEA9BA62051A747002FCA6C /* ViewController.swift in Sources */,
 				DDEA9BA42051A73B002FCA6C /* MapViewController.swift in Sources */,
 				DD5B01AA206E9EBB00CB7653 /* AccountViewController.swift in Sources */,

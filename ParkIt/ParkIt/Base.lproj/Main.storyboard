@@ -385,6 +385,30 @@
             </objects>
             <point key="canvasLocation" x="-452" y="-93.103448275862078"/>
         </scene>
+        <!--AddSpotViewController-->
+        <scene sceneID="D0v-vF-VRR">
+            <objects>
+                <viewController title="AddSpotViewController" id="mue-lN-skz" customClass="CreateSpotViewController" customModule="ParkIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2oQ-St-Krw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1Et-ct-rfh">
+                                <rect key="frame" x="16" y="219" width="343" height="365"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6mv-Cf-1Ra"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="1Et-ct-rfh" id="TmE-ZY-T2h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CaU-UR-CZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1245.5999999999999" y="-938.68065967016503"/>
+        </scene>
         <!--Buy Spot-->
         <scene sceneID="Ty0-hA-6xp">
             <objects>
@@ -405,7 +429,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="X"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="QVm-eJ-Ymb"/>
+                                    <segue destination="4V9-Be-pho" kind="presentation" id="X3i-Mn-syn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Start Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfs-a6-218">
@@ -479,7 +503,7 @@
         <image name="re-center" width="378" height="379"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RGV-Gc-H1t"/>
-        <segue reference="dz5-39-Abo"/>
+        <segue reference="FQu-n2-wMY"/>
+        <segue reference="X3i-Mn-syn"/>
     </inferredMetricsTieBreakers>
 </document>
