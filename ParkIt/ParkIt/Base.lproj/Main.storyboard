@@ -432,7 +432,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="X"/>
                                 <connections>
-                                    <segue destination="4V9-Be-pho" kind="presentation" id="X3i-Mn-syn"/>
+                                    <segue destination="4V9-Be-pho" kind="presentation" id="y9F-Ek-Y1T"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Start Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfs-a6-218">
@@ -506,7 +506,6 @@
         <image name="re-center" width="378" height="379"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FQu-n2-wMY"/>
-        <segue reference="RGV-Gc-H1t"/>
+        <segue reference="y9F-Ek-Y1T"/>
     </inferredMetricsTieBreakers>
 </document>
