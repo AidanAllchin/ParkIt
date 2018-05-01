@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MapKit
 
-class CreateSpotViewController: UIViewController, MKMapViewDelegate {
+class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     let regionRadius: CLLocationDistance = 1000
     @IBOutlet weak var mapView: MKMapView!
