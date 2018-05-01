@@ -556,6 +556,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="Address" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the address where this spot is located" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BC4-Z1-4jm">
+                                <rect key="frame" x="40" y="117" width="305" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldEdited:" destination="mue-lN-skz" eventType="editingDidEnd" id="Eb0-qO-zW8"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mG-xE-UiX">
+                                <rect key="frame" x="174" y="155" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enter"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="mue-lN-skz" eventType="touchUpInside" id="7mL-cr-PLn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -569,13 +587,15 @@
                         <viewLayoutGuide key="safeArea" id="6mv-Cf-1Ra"/>
                     </view>
                     <connections>
+                        <outlet property="addressField" destination="BC4-Z1-4jm" id="GhW-49-efU"/>
+                        <outlet property="button" destination="2mG-xE-UiX" id="ExN-9t-0Fb"/>
                         <outlet property="mapView" destination="1Et-ct-rfh" id="TmE-ZY-T2h"/>
                         <segue destination="5Lr-qo-12t" kind="presentation" identifier="NextCreatePage" id="HOd-Ui-W0G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CaU-UR-CZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="535" y="-920"/>
+            <point key="canvasLocation" x="533.60000000000002" y="-920.68965517241384"/>
         </scene>
         <!--Buy Spot-->
         <scene sceneID="Ty0-hA-6xp">
@@ -653,7 +673,6 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FQu-n2-wMY"/>
         <segue reference="RGV-Gc-H1t"/>
     </inferredMetricsTieBreakers>
 </document>

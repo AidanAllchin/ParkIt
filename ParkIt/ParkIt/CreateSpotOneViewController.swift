@@ -18,7 +18,10 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
     var locationManager:CLLocationManager!
     @IBOutlet weak var mapView: MKMapView!
     var currentLocation: CLLocationCoordinate2D = CLLocationCoordinate2D()
+    //var address: String = String()
     
+    @IBOutlet weak var addressField: UITextField!
+    @IBOutlet weak var button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,4 +86,13 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
         newSpot.coordinate = currentLocation
         performSegue(withIdentifier: "NextCreatePage", sender: self.newSpot)
     }
+    
+    @IBAction func textFieldEdited(_ sender: UITextField) {
+        print(sender.text!)
+    }
+    
+    @IBAction func buttonPressed(_ sender: Any) {
+    }
+    
+    
 }
