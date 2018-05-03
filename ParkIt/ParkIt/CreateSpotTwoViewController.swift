@@ -10,11 +10,21 @@ import UIKit
 
 class CreateSpotTwoViewController: UIViewController {
 
+    @IBOutlet weak var hoursTableView: UITableView!
+    
+    var times = [String]()
     var spot:ParkingSpot = ParkingSpot()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        var i = 0
+        while i <= 12
+        {
+            times.append(String(i))
+            times.append(String(i) + ":30")
+            i = i + 1
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -23,15 +33,17 @@ class CreateSpotTwoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //To send the ParkingSpot to the next page of creation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.destination is CreateSpotThreeViewController
+        {
+            let vc = segue.destination as? CreateSpotThreeViewController
+            vc!.spot = sender as! ParkingSpot
+        }
     }
-    */
+    
+    @IBAction func nextButton(_ sender: Any) {
+        performSegue(withIdentifier: "NextCreatePage", sender: self.spot)
+    }
 
 }
