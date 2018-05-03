@@ -10,11 +10,21 @@ import UIKit
 
 class CreateSpotTwoViewController: UIViewController {
 
+    @IBOutlet weak var hoursTableView: UITableView!
+    
+    var times = [String]()
     var spot:ParkingSpot = ParkingSpot()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        var i = 0
+        while i <= 12
+        {
+            times.append(String(i))
+            times.append(String(i) + ":30")
+            i = i + 1
+        }
         // Do any additional setup after loading the view.
     }
 

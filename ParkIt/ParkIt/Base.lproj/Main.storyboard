@@ -111,6 +111,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="sQv-rp-wtq" id="F7L-dY-B2j"/>
+                        <outlet property="sideBar" destination="yjy-0D-pKQ" id="5Nc-Ic-Xli"/>
                         <outlet property="sideBarConstraint" destination="Tyc-EJ-zCo" id="aMP-Z5-i0X"/>
                         <segue destination="bwk-ta-Zvu" kind="presentation" identifier="ViewSpotFromAnnotation" id="FQu-n2-wMY"/>
                         <segue destination="ADo-O8-fvx" kind="show" identifier="gotoLogin" id="N9B-xv-J67"/>
@@ -396,7 +397,6 @@
                         <constraints>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="trailing" secondItem="l54-Ia-0JU" secondAttribute="trailing" id="5XQ-IZ-Kwd"/>
                             <constraint firstItem="jve-gP-OQM" firstAttribute="top" secondItem="l54-Ia-0JU" secondAttribute="top" constant="80" id="DVC-xm-e6d"/>
-                            <constraint firstItem="ODY-1w-bl1" firstAttribute="bottom" secondItem="l54-Ia-0JU" secondAttribute="bottom" constant="10" id="DjT-9I-xSK"/>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" id="Ki1-iI-Jkt"/>
                             <constraint firstItem="vjZ-bO-Otr" firstAttribute="top" secondItem="l54-Ia-0JU" secondAttribute="top" id="T0f-vi-6YL"/>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" id="cFr-vF-5eg"/>
@@ -445,9 +445,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="spotTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLV-3g-li6" userLabel="spotTitle">
-                                <rect key="frame" x="110" y="107" width="155" height="37"/>
+                                <rect key="frame" x="16" y="107" width="343" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -459,12 +459,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdM-0q-Qnl">
-                                <rect key="frame" x="110" y="205" width="155" height="37"/>
+                                <rect key="frame" x="16" y="205" width="343" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDV-ZK-JdP">
+                                <rect key="frame" x="7" y="15" width="40" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="2Qx-rs-QsW"/>
+                                    <constraint firstAttribute="width" constant="40" id="P5B-hq-WwF"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="backbutton"/>
+                                <connections>
+                                    <segue destination="2Ma-fx-9iI" kind="presentation" id="d4g-Nk-4pn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -485,7 +496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SON-4f-wNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1871.2" y="-921.58920539730138"/>
+            <point key="canvasLocation" x="-535" y="-920"/>
         </scene>
         <!--CreateSpotThreeViewController-->
         <scene sceneID="BML-pu-nbd">
@@ -523,6 +534,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-L8-tvE">
+                                <rect key="frame" x="10" y="20" width="40" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="1AP-PT-r5F"/>
+                                    <constraint firstAttribute="width" constant="40" id="4ci-x4-2ir"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="backbutton"/>
+                                <connections>
+                                    <segue destination="5Lr-qo-12t" kind="presentation" id="P9f-jL-eJP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -542,7 +564,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TwK-L7-ecZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1068" y="-919.79010494752629"/>
+            <point key="canvasLocation" x="-1295" y="-920"/>
         </scene>
         <!--CreateSpotTwoViewController-->
         <scene sceneID="xSC-5C-3f7">
@@ -570,6 +592,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iY0-Z0-6h2">
+                                <rect key="frame" x="0.0" y="19" width="40" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="KfA-yP-cz4"/>
+                                    <constraint firstAttribute="width" constant="40" id="gjC-DR-nMm"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="backbutton"/>
+                                <connections>
+                                    <segue destination="mue-lN-skz" kind="presentation" id="w4G-Qb-0cq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -587,12 +620,13 @@
                         <viewLayoutGuide key="safeArea" id="W0s-98-jdo"/>
                     </view>
                     <connections>
+                        <outlet property="hoursTableView" destination="MGQ-Sb-RPE" id="TsH-RF-me1"/>
                         <segue destination="2Ma-fx-9iI" kind="presentation" identifier="NextCreatePage" id="CV6-vC-sjA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PnF-tk-T6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-289" y="-918"/>
+            <point key="canvasLocation" x="-2089" y="-922"/>
         </scene>
         <!--CreateSpotOneViewController-->
         <scene sceneID="D0v-vF-VRR">
@@ -627,14 +661,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5f-AA-YsB">
+                                <rect key="frame" x="10" y="20" width="40" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="QkX-eT-15s"/>
+                                    <constraint firstAttribute="height" constant="35" id="foK-EX-e1e"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="backbutton"/>
+                                <connections>
+                                    <segue destination="4V9-Be-pho" kind="presentation" id="vyW-UG-Zrl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6mv-Cf-1Ra" firstAttribute="trailing" secondItem="m8z-lg-O63" secondAttribute="trailing" constant="40" id="4UW-3t-KJ7"/>
                             <constraint firstItem="m8z-lg-O63" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" constant="40" id="73I-xU-EDU"/>
                             <constraint firstItem="6mv-Cf-1Ra" firstAttribute="bottom" secondItem="oOd-GK-sIZ" secondAttribute="bottom" constant="20" id="SIR-zg-aAR"/>
+                            <constraint firstItem="b5f-AA-YsB" firstAttribute="top" secondItem="6mv-Cf-1Ra" secondAttribute="top" id="WsO-8f-vtF"/>
                             <constraint firstItem="oOd-GK-sIZ" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" id="r1j-cf-PO9"/>
                             <constraint firstItem="oOd-GK-sIZ" firstAttribute="trailing" secondItem="6mv-Cf-1Ra" secondAttribute="trailing" id="sLy-v7-30H"/>
+                            <constraint firstItem="b5f-AA-YsB" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" constant="10" id="unU-GZ-pju"/>
                             <constraint firstItem="m8z-lg-O63" firstAttribute="top" secondItem="6mv-Cf-1Ra" secondAttribute="top" id="ysC-fE-Kb2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6mv-Cf-1Ra"/>
@@ -647,7 +694,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CaU-UR-CZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="533.60000000000002" y="-920.68965517241384"/>
+            <point key="canvasLocation" x="-2815" y="-919"/>
         </scene>
         <!--Buy Spot-->
         <scene sceneID="Ty0-hA-6xp">
@@ -723,10 +770,13 @@
     </scenes>
     <resources>
         <image name="Button Logo" width="50" height="50"/>
+        <image name="backbutton" width="256" height="256"/>
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="f9p-V3-baU"/>
-        <segue reference="xIb-RA-VAk"/>
+        <segue reference="vyW-UG-Zrl"/>
+        <segue reference="w4G-Qb-0cq"/>
+        <segue reference="HOd-Ui-W0G"/>
+        <segue reference="d4g-Nk-4pn"/>
     </inferredMetricsTieBreakers>
 </document>
