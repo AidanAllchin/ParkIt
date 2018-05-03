@@ -27,6 +27,7 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
         mapView.delegate = self
         mapView.showsUserLocation = true
         mapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
+        mapView.mapType = .hybrid
 
     }
     
@@ -63,6 +64,16 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
         // manager.stopUpdatingLocation()
         
         currentLocation = CLLocationCoordinate2D(latitude: (userLocation.coordinate.latitude), longitude: (userLocation.coordinate.longitude))
+        
+        centerMapOnLocation(currentLocation, mapView: mapView)
+        
+    }
+    
+    func centerMapOnLocation(_ location: CLLocationCoordinate2D, mapView: MKMapView) {
+        let regionRadius: CLLocationDistance = 50
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location,
+                                                                  regionRadius * 2.0, regionRadius * 2.0)
+        mapView.setRegion(coordinateRegion, animated: true)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
