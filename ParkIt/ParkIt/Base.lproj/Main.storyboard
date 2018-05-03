@@ -111,6 +111,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="sQv-rp-wtq" id="F7L-dY-B2j"/>
+                        <outlet property="sideBar" destination="yjy-0D-pKQ" id="5Nc-Ic-Xli"/>
                         <outlet property="sideBarConstraint" destination="Tyc-EJ-zCo" id="aMP-Z5-i0X"/>
                         <segue destination="bwk-ta-Zvu" kind="presentation" identifier="ViewSpotFromAnnotation" id="FQu-n2-wMY"/>
                         <segue destination="ADo-O8-fvx" kind="show" identifier="gotoLogin" id="N9B-xv-J67"/>
@@ -740,6 +741,7 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="FQu-n2-wMY"/>
         <segue reference="RGV-Gc-H1t"/>
     </inferredMetricsTieBreakers>
 </document>

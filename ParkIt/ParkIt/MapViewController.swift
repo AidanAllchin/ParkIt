@@ -33,6 +33,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var sideBarConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var sideBar: UIView!
     @IBAction func openSwipe(_ sender: UIScreenEdgePanGestureRecognizer) {
         openSideBar()
     }
