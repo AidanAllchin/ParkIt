@@ -464,6 +464,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDV-ZK-JdP">
+                                <rect key="frame" x="7" y="15" width="40" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="2Qx-rs-QsW"/>
+                                    <constraint firstAttribute="width" constant="40" id="P5B-hq-WwF"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="backbutton"/>
+                                <connections>
+                                    <segue destination="2Ma-fx-9iI" kind="presentation" id="d4g-Nk-4pn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -484,7 +495,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SON-4f-wNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1871.2" y="-921.58920539730138"/>
+            <point key="canvasLocation" x="-535" y="-920"/>
         </scene>
         <!--CreateSpotThreeViewController-->
         <scene sceneID="BML-pu-nbd">
@@ -522,6 +533,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-L8-tvE">
+                                <rect key="frame" x="10" y="20" width="40" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="1AP-PT-r5F"/>
+                                    <constraint firstAttribute="width" constant="40" id="4ci-x4-2ir"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="backbutton"/>
+                                <connections>
+                                    <segue destination="5Lr-qo-12t" kind="presentation" id="P9f-jL-eJP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -541,7 +563,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TwK-L7-ecZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1068" y="-919.79010494752629"/>
+            <point key="canvasLocation" x="-1295" y="-920"/>
         </scene>
         <!--CreateSpotTwoViewController-->
         <scene sceneID="xSC-5C-3f7">
@@ -569,6 +591,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iY0-Z0-6h2">
+                                <rect key="frame" x="0.0" y="19" width="40" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="KfA-yP-cz4"/>
+                                    <constraint firstAttribute="width" constant="40" id="gjC-DR-nMm"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="backbutton"/>
+                                <connections>
+                                    <segue destination="mue-lN-skz" kind="presentation" id="w4G-Qb-0cq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -592,7 +625,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PnF-tk-T6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-289" y="-918"/>
+            <point key="canvasLocation" x="-2089" y="-922"/>
         </scene>
         <!--CreateSpotOneViewController-->
         <scene sceneID="D0v-vF-VRR">
@@ -660,7 +693,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CaU-UR-CZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="533.60000000000002" y="-920.68965517241384"/>
+            <point key="canvasLocation" x="-2815" y="-919"/>
         </scene>
         <!--Buy Spot-->
         <scene sceneID="Ty0-hA-6xp">
@@ -740,6 +773,9 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RGV-Gc-H1t"/>
+        <segue reference="vyW-UG-Zrl"/>
+        <segue reference="w4G-Qb-0cq"/>
+        <segue reference="HOd-Ui-W0G"/>
+        <segue reference="d4g-Nk-4pn"/>
     </inferredMetricsTieBreakers>
 </document>
