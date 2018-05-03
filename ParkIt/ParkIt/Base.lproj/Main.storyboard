@@ -586,6 +586,7 @@
                         <viewLayoutGuide key="safeArea" id="W0s-98-jdo"/>
                     </view>
                     <connections>
+                        <outlet property="hoursTableView" destination="MGQ-Sb-RPE" id="TsH-RF-me1"/>
                         <segue destination="2Ma-fx-9iI" kind="presentation" identifier="NextCreatePage" id="CV6-vC-sjA"/>
                     </connections>
                 </viewController>
