@@ -1,6 +1,6 @@
 //
 //  CalendarController.swift
-//  
+//  ParkIt
 //
 //  Created by Aidan Allchin on 5/3/18.
 //
@@ -16,8 +16,8 @@ class CalendarController: UITableView, UITableViewDelegate, UITableViewDataSourc
         self.times = times
         
         /*for time in times {
-            reloadData()
-        }*/
+         reloadData()
+         }*/
         //for times.count, create a TimeCell with times[i] as the label
         super.init(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize()), style: UITableViewStyle.plain)
     }
