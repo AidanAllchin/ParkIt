@@ -74,6 +74,12 @@
                                             <action selector="logoutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Q3-Jm-e86"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxy-wC-rMt">
+                                        <rect key="frame" x="2" y="136" width="156" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Current Spots"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -816,7 +822,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vyW-UG-Zrl"/>
-        <segue reference="w4G-Qb-0cq"/>
+        <segue reference="f9p-V3-baU"/>
         <segue reference="HOd-Ui-W0G"/>
         <segue reference="CV6-vC-sjA"/>
     </inferredMetricsTieBreakers>
