@@ -447,7 +447,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
-                                    <segue destination="4V9-Be-pho" kind="presentation" id="xIb-RA-VAk"/>
+                                    <action selector="continueButton:" destination="qMe-xy-FMD" eventType="touchUpInside" id="3Iy-kT-J3a"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="spotTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLV-3g-li6" userLabel="spotTitle">
@@ -478,9 +478,6 @@
                                     <constraint firstAttribute="width" constant="40" id="P5B-hq-WwF"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="backbutton"/>
-                                <connections>
-                                    <segue destination="2Ma-fx-9iI" kind="presentation" id="d4g-Nk-4pn"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -495,9 +492,10 @@
                         <viewLayoutGuide key="safeArea" id="eRP-zL-qJz"/>
                     </view>
                     <connections>
-                        <outlet property="address" destination="FdM-0q-Qnl" id="tX8-GG-lLp"/>
-                        <outlet property="coordinate" destination="ah8-HG-qFi" id="Phj-Jk-fWi"/>
-                        <outlet property="spotTitle" destination="bLV-3g-li6" id="bEp-j5-7sq"/>
+                        <outlet property="addressLabel" destination="FdM-0q-Qnl" id="1FJ-5p-FpV"/>
+                        <outlet property="coordinateLabel" destination="ah8-HG-qFi" id="eOT-PH-7b4"/>
+                        <outlet property="spotTitleLabel" destination="bLV-3g-li6" id="1qg-GD-L6H"/>
+                        <segue destination="4V9-Be-pho" kind="presentation" identifier="BackHome" id="RBg-K3-R9I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SON-4f-wNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -821,9 +819,8 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vyW-UG-Zrl"/>
-        <segue reference="f9p-V3-baU"/>
-        <segue reference="HOd-Ui-W0G"/>
-        <segue reference="CV6-vC-sjA"/>
+        <segue reference="RBg-K3-R9I"/>
+        <segue reference="w4G-Qb-0cq"/>
+        <segue reference="P9f-jL-eJP"/>
     </inferredMetricsTieBreakers>
 </document>
