@@ -25,6 +25,12 @@ class CreateSpotTwoViewController: UIViewController {
             times.append(String(i) + ":30")
             i = i + 1
         }
+        
+        let calController = CalendarController(times: times)
+        hoursTableView.delegate = calController
+        hoursTableView.dataSource = calController
+        hoursTableView.register(TimeCell.self, forCellReuseIdentifier: "TimeCell")
+        hoursTableView.reloadData()
         // Do any additional setup after loading the view.
     }
 

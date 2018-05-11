@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateSpotThreeViewController: UIViewController {
     @IBOutlet weak var titleField: UITextField!
