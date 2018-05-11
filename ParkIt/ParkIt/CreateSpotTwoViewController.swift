@@ -10,34 +10,34 @@ import UIKit
 
 class CreateSpotTwoViewController: UIViewController {
 
-    @IBOutlet weak var hoursTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nextButton: UIButton?
+    var viewModel = ViewModel()
     
     var times = [String]()
     var spot:ParkingSpot = ParkingSpot()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        var i = 0
-        while i <= 12
-        {
-            times.append(String(i))
-            times.append(String(i) + ":30")
-            i = i + 1
+        tableView?.register(CustomCell.nib, forCellReuseIdentifier: CustomCell.identifier)
+        tableView?.estimatedRowHeight = 100
+        tableView?.rowHeight = UITableViewAutomaticDimension
+        tableView?.allowsMultipleSelection = true
+        tableView?.dataSource = viewModel
+        tableView?.delegate = viewModel
+        tableView?.separatorStyle = .none
+        
+        viewModel.didToggleSelection = { [weak self] hasSelection in
+            self?.nextButton?.isEnabled = hasSelection
         }
         
-        let calController = CalendarController(times: times)
-        hoursTableView.delegate = calController
-        hoursTableView.dataSource = calController
-        hoursTableView.register(TimeCell.self, forCellReuseIdentifier: "TimeCell")
-        hoursTableView.reloadData()
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     //To send the ParkingSpot to the next page of creation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,8 +48,10 @@ class CreateSpotTwoViewController: UIViewController {
         }
     }
     
-    @IBAction func nextButton(_ sender: Any) {
-        performSegue(withIdentifier: "NextCreatePage", sender: self.spot)
+    @IBAction func next(_ sender: Any) {
+        print(viewModel.selectedItems.map { $0.title })
+        tableView?.reloadData()
     }
+    
 
 }
