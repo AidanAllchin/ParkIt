@@ -19,7 +19,7 @@ class CreateSpotFinishedViewController: UIViewController {
     
     var spot:ParkingSpot = ParkingSpot()
     
-    
+    var uniqueId = 0
     
     var spotTitle = "Empty"
     var location = CLLocationCoordinate2D()
@@ -32,6 +32,10 @@ class CreateSpotFinishedViewController: UIViewController {
     override func viewDidLoad() {
         ref = Database.database().reference()
         super.viewDidLoad()
+        
+        for _ in 0...32 {
+            uniqueId = Int(arc4random_uniform(10))
+        }
         
         spotTitleLabel.text = spot.title
         addressLabel.text = spot.address
@@ -54,9 +58,11 @@ class CreateSpotFinishedViewController: UIViewController {
         {
             let spotNumber = String(format: "%04d", (self.numSpots - 1))
             self.ref.child("Spots").child("Spot-0x" + spotNumber).setValue(["title": self.title])
+            self.ref.child("Spots/Spot-0x\(spotNumber)/id").setValue(self.uniqueId)
             self.ref.child("Spots/Spot-0x\(spotNumber)/address").setValue(self.address)
             let coordinates = String(location.latitude) + "," + String(location.longitude)
             self.ref.child("Spots/Spot-0x\(spotNumber)/location").setValue(coordinates)
+            self.ref.child("Spots/Spot-0x\(spotNumber)/timeLeft").setValue("0")
         }
     }
     
