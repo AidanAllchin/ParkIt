@@ -12,7 +12,6 @@
 		CAC58B628EFCA70AC385027C /* Pods_ParkItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE28106BA5591F0B3114968 /* Pods_ParkItUITests.framework */; };
 		CD43455B6D359716BEFED282 /* Pods_ParkIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250CDFFBA075A76DB0991A90 /* Pods_ParkIt.framework */; };
 		DD2B3AE72033B7300012CE0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2B3AE62033B7300012CE0D /* LoginViewController.swift */; };
-		DD3F489D209B6957005E7225 /* TimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3F489C209B6957005E7225 /* TimeCell.swift */; };
 		DD5B01AA206E9EBB00CB7653 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B01A9206E9EBB00CB7653 /* AccountViewController.swift */; };
 		DD631B6A202379520095A1BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD631B69202379520095A1BC /* AppDelegate.swift */; };
 		DD631B6F202379520095A1BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD631B6D202379520095A1BC /* Main.storyboard */; };
@@ -31,6 +30,10 @@
 		F646A8472098C3B100B186E2 /* CreateSpotOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646A8462098C3B100B186E2 /* CreateSpotOneViewController.swift */; };
 		F646A8492098E8D900B186E2 /* CreateSpotTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646A8482098E8D900B186E2 /* CreateSpotTwoViewController.swift */; };
 		F69FF1F2208CFDBB006F03EA /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69FF1F1208CFDBB006F03EA /* LocationSearchTable.swift */; };
+		F6E012F320A5F8AF007F4B69 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E012F220A5F8AF007F4B69 /* CustomCell.swift */; };
+		F6E012F520A5F939007F4B69 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E012F420A5F938007F4B69 /* Model.swift */; };
+		F6E012F720A5F942007F4B69 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E012F620A5F942007F4B69 /* ViewModel.swift */; };
+		F6E012F920A5F9B2007F4B69 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E012F820A5F9B2007F4B69 /* CustomCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +64,6 @@
 		D360818B6817DD20CA5DFABF /* Pods-ParkIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkIt/Pods-ParkIt.release.xcconfig"; sourceTree = "<group>"; };
 		DCE28106BA5591F0B3114968 /* Pods_ParkItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2B3AE62033B7300012CE0D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		DD3F489C209B6957005E7225 /* TimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCell.swift; sourceTree = "<group>"; };
 		DD5B01A9206E9EBB00CB7653 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		DD631B66202379520095A1BC /* ParkIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD631B69202379520095A1BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,10 @@
 		F646A8462098C3B100B186E2 /* CreateSpotOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSpotOneViewController.swift; sourceTree = "<group>"; };
 		F646A8482098E8D900B186E2 /* CreateSpotTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSpotTwoViewController.swift; sourceTree = "<group>"; };
 		F69FF1F1208CFDBB006F03EA /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
+		F6E012F220A5F8AF007F4B69 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		F6E012F420A5F938007F4B69 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F6E012F620A5F942007F4B69 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		F6E012F820A5F9B2007F4B69 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		F78A5730D9AEEFA4DA3813AF /* Pods-ParkItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkItTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkItTests/Pods-ParkItTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,13 +177,16 @@
 				F618E79A2085A33300F5692E /* ViewSpotViewController.swift */,
 				F646A8462098C3B100B186E2 /* CreateSpotOneViewController.swift */,
 				F646A8482098E8D900B186E2 /* CreateSpotTwoViewController.swift */,
-				DD3F489C209B6957005E7225 /* TimeCell.swift */,
+				F6E012F620A5F942007F4B69 /* ViewModel.swift */,
+				F6E012F220A5F8AF007F4B69 /* CustomCell.swift */,
+				F6E012F420A5F938007F4B69 /* Model.swift */,
 				DDE62754209CC02900F13460 /* CalendarController.swift */,
 				DDB157382098FDF7005F75EB /* CreateSpotThreeViewController.swift */,
 				DDB1573A2099041D005F75EB /* CreateSpotFinishedViewController.swift */,
 				DDEA9B9C2051A6E7002FCA6C /* ParkingSpotMarkerView.swift */,
 				DDEA9BA32051A73B002FCA6C /* MapViewController.swift */,
 				DD631B6D202379520095A1BC /* Main.storyboard */,
+				F6E012F820A5F9B2007F4B69 /* CustomCell.xib */,
 				F69FF1F1208CFDBB006F03EA /* LocationSearchTable.swift */,
 				DD5B01A9206E9EBB00CB7653 /* AccountViewController.swift */,
 				C338EA3B2055C8D70031F487 /* BuySpotViewController.swift */,
@@ -323,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E012F920A5F9B2007F4B69 /* CustomCell.xib in Resources */,
 				DD631B74202379520095A1BC /* LaunchScreen.storyboard in Resources */,
 				DD631B71202379520095A1BC /* Assets.xcassets in Resources */,
 				DD631B6F202379520095A1BC /* Main.storyboard in Resources */,
@@ -515,10 +525,12 @@
 				F69FF1F2208CFDBB006F03EA /* LocationSearchTable.swift in Sources */,
 				DDEA9B9D2051A6E7002FCA6C /* ParkingSpotMarkerView.swift in Sources */,
 				C338EA3C2055C8D70031F487 /* BuySpotViewController.swift in Sources */,
+				F6E012F720A5F942007F4B69 /* ViewModel.swift in Sources */,
+				F6E012F320A5F8AF007F4B69 /* CustomCell.swift in Sources */,
+				F6E012F520A5F939007F4B69 /* Model.swift in Sources */,
 				DD2B3AE72033B7300012CE0D /* LoginViewController.swift in Sources */,
 				DD631B6A202379520095A1BC /* AppDelegate.swift in Sources */,
 				F618E79B2085A33300F5692E /* ViewSpotViewController.swift in Sources */,
-				DD3F489D209B6957005E7225 /* TimeCell.swift in Sources */,
 				F646A8472098C3B100B186E2 /* CreateSpotOneViewController.swift in Sources */,
 				DDEA9BA42051A73B002FCA6C /* MapViewController.swift in Sources */,
 				F646A8492098E8D900B186E2 /* CreateSpotTwoViewController.swift in Sources */,
