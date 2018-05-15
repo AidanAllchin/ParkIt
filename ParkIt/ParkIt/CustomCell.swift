@@ -8,7 +8,9 @@ class CustomCell: UITableViewCell {
         didSet {
             titleLabel?.text = item?.title
             if(item?.isOpen == false){
-                self.isUserInteractionEnabled = true
+                self.isUserInteractionEnabled = false
+                self.backgroundColor = UIColor.red
+                
             }
         }
     }

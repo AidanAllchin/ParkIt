@@ -28,16 +28,16 @@ class ViewModelItem {
 
 class ViewModelTwo: NSObject {
     var items = [ViewModelItem]()
-    var spotsAlwaysAvaliable: [String]
+    var spot:ParkingSpot = ParkingSpot()
     
     override init() {
-        self.spotsAlwaysAvaliable = [String]()
+        self.spot = ParkingSpot()
         items = dataArray2.map { ViewModelItem(item: $0) }
         super.init()
     }
     
-    init(spotsAlwaysAvaliable: [String]) {
-        self.spotsAlwaysAvaliable = spotsAlwaysAvaliable
+    init(spot: ParkingSpot) {
+        self.spot = ParkingSpot()
         items = dataArray2.map { ViewModelItem(item: $0) }
         super.init()
     }

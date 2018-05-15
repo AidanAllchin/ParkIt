@@ -614,7 +614,9 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="backbutton"/>
                                 <connections>
-                                    <segue destination="mue-lN-skz" kind="presentation" id="w4G-Qb-0cq"/>
+                                    <segue destination="mue-lN-skz" kind="popoverPresentation" popoverAnchorView="iY0-Z0-6h2" id="SQ4-oT-5iY">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8VE-V4-V1G">
@@ -803,8 +805,9 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="rXB-M4-fTR"/>
         <segue reference="RBg-K3-R9I"/>
-        <segue reference="w4G-Qb-0cq"/>
+        <segue reference="SQ4-oT-5iY"/>
         <segue reference="P9f-jL-eJP"/>
     </inferredMetricsTieBreakers>
 </document>
