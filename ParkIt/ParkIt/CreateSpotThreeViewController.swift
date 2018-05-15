@@ -8,14 +8,34 @@
 
 import UIKit
 import Firebase
+import MapKit
 
 class CreateSpotThreeViewController: UIViewController {
     @IBOutlet weak var titleField: UITextField!
     
+    var ref:DatabaseReference!
+    var databaseHandle:DatabaseHandle?
+    
+    var numSpots = 0
+    var uniqueId = "0"
+    
     var spot:ParkingSpot = ParkingSpot()
 
     override func viewDidLoad() {
+        ref = Database.database().reference()
         super.viewDidLoad()
+        
+        for _ in 0...32 {
+            uniqueId = uniqueId + String(Int(arc4random_uniform(10)))
+        }
+        
+        ref?.observe(.value, with: { (snapshot) in
+            //We determine how many spots there are in the database and set the name of the spot
+            let wholeDatabase: NSDictionary = snapshot.value as! NSDictionary
+            let spots: NSDictionary = wholeDatabase.value(forKey: "Spots") as! NSDictionary
+            
+            self.numSpots = spots.count
+        })
         
         // Do any additional setup after loading the view.
     }
@@ -31,6 +51,18 @@ class CreateSpotThreeViewController: UIViewController {
         {
             let vc = segue.destination as? CreateSpotFinishedViewController
             vc!.spot = sender as! ParkingSpot
+            
+            let spotNumber = String(format: "%04d", (self.numSpots))
+            self.ref.child("Spots").child("Spot-0x" + spotNumber).setValue(["title": spot.title])
+            self.ref.child("Spots/Spot-0x\(spotNumber)/id").setValue(uniqueId)
+            self.ref.child("Spots/Spot-0x\(spotNumber)/address").setValue(spot.address)
+            let coordinates = String(spot.coordinate.latitude) + ", " + String(spot.coordinate.longitude)
+            self.ref.child("Spots/Spot-0x\(spotNumber)/location").setValue(coordinates)
+            self.ref.child("Spots/Spot-0x\(spotNumber)/timeLeft").setValue(0)
+            self.ref.child("Spots/Spot-0x\(spotNumber)/isAvailable").setValue(0)
+            let userSelling = UserDefaults.standard.value(forKey: "userEmail") as! String
+            self.ref.child("Spots/Spot-0x\(spotNumber)/userSelling").setValue(userSelling)
+            self.ref.child("Spots/Spot-0x\(spotNumber)/userBuying").setValue("")
         }
     }
     

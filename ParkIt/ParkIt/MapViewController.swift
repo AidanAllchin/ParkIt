@@ -78,45 +78,45 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
     
-    super.viewDidLoad()
-    
-    //Instantiates the Search bar
-    let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
-    
-    resultSearchController = UISearchController(searchResultsController: locationSearchTable)
-    resultSearchController?.searchResultsUpdater = locationSearchTable
-    
-    let searchBar = resultSearchController!.searchBar
-    searchBar.sizeToFit()
-    searchBar.placeholder = "Search for parking"
-    navigationItem.titleView = resultSearchController?.searchBar
-    
-    resultSearchController?.hidesNavigationBarDuringPresentation = false
-    resultSearchController?.dimsBackgroundDuringPresentation = true
-    definesPresentationContext = true
-    
-    locationSearchTable.mapView = mapView
-    locationSearchTable.handleMapSearchDelegate = self
-    
-    ref = Database.database().reference()
-    
-    print (ref)
-    
-    //set initial location to Seattle... change to user location eventually
-    let initialLocation = CLLocation(latitude: 47.6062, longitude: -122.3321)
-    //call zoom in function
-    centerMapOnLocation(location: initialLocation)
-    
-    //setting ViewController as the delegate of the map view.
-    mapView.delegate = self
-    mapView.showsUserLocation = true
-    mapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
-    
-    mapView.register(ParkingSpotMarkerView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        super.viewDidLoad()
+        
+        //Instantiates the Search bar
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
+        
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
+        
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Search for parking"
+        navigationItem.titleView = resultSearchController?.searchBar
+        
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        resultSearchController?.dimsBackgroundDuringPresentation = true
+        definesPresentationContext = true
+        
+        locationSearchTable.mapView = mapView
+        locationSearchTable.handleMapSearchDelegate = self
+        
+        ref = Database.database().reference()
+        
+        print (ref)
+        
+        //set initial location to Seattle... change to user location eventually
+        let initialLocation = CLLocation(latitude: 47.6062, longitude: -122.3321)
+        //call zoom in function
+        centerMapOnLocation(location: initialLocation)
+        
+        //setting ViewController as the delegate of the map view.
+        mapView.delegate = self
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
+        
+        mapView.register(ParkingSpotMarkerView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
 
-    //Loads in the annotations!
-    loadInitialData()
-    mapView.addAnnotations(parkingspots)
+        //Loads in the annotations!
+        loadInitialData()
+        mapView.addAnnotations(parkingspots)
     }
     
     
