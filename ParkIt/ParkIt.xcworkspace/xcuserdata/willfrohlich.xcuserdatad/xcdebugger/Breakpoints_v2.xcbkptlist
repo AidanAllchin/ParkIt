@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkIt/ParkingSpot.swift"
-            timestampString = "544633733.746182"
+            timestampString = "548098932.577733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "markerTintColor"
             landmarkType = "24">
          </BreakpointContent>

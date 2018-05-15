@@ -50,6 +50,7 @@ class CreateSpotTwoViewController: UIViewController {
     
     @IBAction func next(_ sender: Any) {
         print(viewModel.selectedItems.map { $0.title })
+        spot.spotsAlwaysAvaliable = viewModel.selectedItems.map { $0.title }
         tableView?.reloadData()
     }
     

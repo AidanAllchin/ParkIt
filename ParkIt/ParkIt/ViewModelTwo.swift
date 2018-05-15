@@ -4,9 +4,9 @@
 import Foundation
 import UIKit
 
-let dataArray = [Model(title: "12:00 am"), Model(title: "12:30 am"), Model(title: "1:00 am"), Model(title: "1:30 am"), Model(title: "2:00 am"), Model(title: "2:30 am"), Model(title: "3:00 am"), Model(title: "3:30 am"), Model(title: "4:00 am"), Model(title: "4:30 am"), Model(title: "5:00 am"), Model(title: "5:30 am"), Model(title: "6:00 am"), Model(title: "6:30 am"), Model(title: "7:00 am"), Model(title: "7:30 am"), Model(title: "8:00 am"), Model(title: "8:30 am"), Model(title: "9:00 am"), Model(title: "9:30 am"), Model(title: "10:00 am"), Model(title: "10:30 am"), Model(title: "11:00 am"), Model(title: "11:30 am"), Model(title: "12:00 pm")]
+let dataArray2 = [Model(title: "12:00 am"), Model(title: "12:30 am"), Model(title: "1:00 am"), Model(title: "1:30 am"), Model(title: "2:00 am"), Model(title: "2:30 am"), Model(title: "3:00 am"), Model(title: "3:30 am"), Model(title: "4:00 am"), Model(title: "4:30 am"), Model(title: "5:00 am"), Model(title: "5:30 am"), Model(title: "6:00 am"), Model(title: "6:30 am"), Model(title: "7:00 am"), Model(title: "7:30 am"), Model(title: "8:00 am"), Model(title: "8:30 am"), Model(title: "9:00 am"), Model(title: "9:30 am"), Model(title: "10:00 am"), Model(title: "10:30 am"), Model(title: "11:00 am"), Model(title: "11:30 am"), Model(title: "12:00 pm")]
 
-class ViewModelItem {
+class ViewModelTwoItem {
     private var item: Model
     
     var isSelected = false
@@ -20,7 +20,7 @@ class ViewModelItem {
     }
 }
 
-class ViewModel: NSObject {
+class ViewModelTwo: NSObject {
     var items = [ViewModelItem]()
     
     var didToggleSelection: ((_ hasSelection: Bool) -> ())? {
@@ -35,11 +35,11 @@ class ViewModel: NSObject {
     
     override init() {
         super.init()
-        items = dataArray.map { ViewModelItem(item: $0) }
+        items = dataArray2.map { ViewModelItem(item: $0) }
     }
 }
 
-extension ViewModel: UITableViewDataSource {
+extension ViewModelTwo: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -65,9 +65,9 @@ extension ViewModel: UITableViewDataSource {
     }
 }
 
-extension ViewModel: UITableViewDelegate {
+extension ViewModelTwo: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
- 
+        
         // update ViewModel item
         items[indexPath.row].isSelected = true
         
@@ -78,7 +78,7 @@ extension ViewModel: UITableViewDelegate {
         
         // update ViewModel item
         items[indexPath.row].isSelected = false
-
+        
         didToggleSelection?(!selectedItems.isEmpty)
     }
     
