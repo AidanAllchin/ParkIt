@@ -140,7 +140,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var timeLeft: Float = 0.0
         var userBuying: String = ""
         var userSelling: String = ""
-        let spotsAlwaysAvaliable: [String] = [String]()
+        let timesAvailable: [String] = [String]()
         
         //title
         ref?.observe(.value, with: { (snapshot) in
@@ -216,7 +216,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 //userSelling
                 userSelling = dict.value(forKey: "userSelling") as! String
                 
-                let currentSpot: ParkingSpot = ParkingSpot(title: title, address: address, isAvailable: isAvailable, coordinate: location, periods: period, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling, spotsAlwaysAvaliable: spotsAlwaysAvaliable)
+                let currentSpot: ParkingSpot = ParkingSpot(title: title, address: address, isAvailable: isAvailable, coordinate: location, periods: period, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling, timesAvailable: timesAvailable)
                 
                 self.mapView.addAnnotation(currentSpot)
                 
