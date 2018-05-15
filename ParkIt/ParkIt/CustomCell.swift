@@ -9,7 +9,7 @@ class CustomCell: UITableViewCell {
             titleLabel?.text = item?.title
             if(item?.isOpen == false){
                 self.isUserInteractionEnabled = false
-                self.backgroundColor = UIColor.red
+                self.backgroundColor = UIColor.gray
                 
             }
         }

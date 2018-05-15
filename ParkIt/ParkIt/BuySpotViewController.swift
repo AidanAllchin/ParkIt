@@ -18,6 +18,7 @@ class BuySpotViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = ViewModelTwo(spot: spot)
         spotLabel.text = "Spot: " + spot.title!
         tableView?.register(CustomCell.nib, forCellReuseIdentifier: CustomCell.identifier)
         tableView?.estimatedRowHeight = 100
