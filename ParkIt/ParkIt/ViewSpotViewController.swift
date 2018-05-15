@@ -14,7 +14,6 @@ class ViewSpotViewController: UIViewController {
     @IBOutlet weak var periodSwitcher: UISegmentedControl!
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
-    
     @IBOutlet weak var spotLabel: UILabel!
     var spot:ParkingSpot = ParkingSpot()
     

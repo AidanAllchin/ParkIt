@@ -4,10 +4,6 @@
 import Foundation
 import UIKit
 
-let dataArray2 = [Model(title: "12:00 am", isOpen: true), Model(title: "12:30 am", isOpen: true)]
-
-//, Model(title: "12:30 am"), Model(title: "1:00 am"), Model(title: "1:30 am"), Model(title: "2:00 am"), Model(title: "2:30 am"), Model(title: "3:00 am"), Model(title: "3:30 am"), Model(title: "4:00 am"), Model(title: "4:30 am"), Model(title: "5:00 am"), Model(title: "5:30 am"), Model(title: "6:00 am"), Model(title: "6:30 am"), Model(title: "7:00 am"), Model(title: "7:30 am"), Model(title: "8:00 am"), Model(title: "8:30 am"), Model(title: "9:00 am"), Model(title: "9:30 am"), Model(title: "10:00 am"), Model(title: "10:30 am"), Model(title: "11:00 am"), Model(title: "11:30 am"), Model(title: "12:00 pm")]
-
 class ViewModelItem {
     private var item: Model
     
@@ -26,19 +22,25 @@ class ViewModelItem {
     }
 }
 
+
+
+
+
+
 class ViewModelTwo: NSObject {
     var items = [ViewModelItem]()
     var spot:ParkingSpot = ParkingSpot()
     
     override init() {
         self.spot = ParkingSpot()
-        items = dataArray2.map { ViewModelItem(item: $0) }
+        //items = dataArray.map { ViewModelItem(item: $0) }
+        getDataArray(spot: spot)
         super.init()
     }
     
     init(spot: ParkingSpot) {
         self.spot = ParkingSpot()
-        items = dataArray2.map { ViewModelItem(item: $0) }
+        getDataArray(spot: spot)
         super.init()
     }
     
@@ -47,6 +49,22 @@ class ViewModelTwo: NSObject {
             didToggleSelection?(!selectedItems.isEmpty)
         }
     }
+    
+    func getDataArray(spot: ParkingSpot) {
+        var avaliableTimes: [String] = spot.spotsAlwaysAvaliable
+        var dataArray = [Model(title: "12:00 am", isOpen: false), Model(title: "12:30 am", isOpen: false), Model(title: "1:00 am", isOpen: false), Model(title: "1:30 am", isOpen: false), Model(title: "2:00 am", isOpen: false), Model(title: "2:30 am", isOpen: false), Model(title: "3:00 am", isOpen: false), Model(title: "3:30 am", isOpen: false), Model(title: "4:00 am", isOpen: false), Model(title: "4:30 am", isOpen: false),  Model(title: "5:00 am", isOpen: false), Model(title: "5:30 am", isOpen: false), Model(title: "6:00 am", isOpen: false), Model(title: "6:30 am", isOpen: false), Model(title: "7:00 am", isOpen: false), Model(title: "7:30 am", isOpen: false), Model(title: "8:00 am", isOpen: false), Model(title: "8:30 am", isOpen: false), Model(title: "9:00 am", isOpen: false), Model(title: "9:30 am", isOpen: false), Model(title: "10:00 am", isOpen: false), Model(title: "10:30 am", isOpen: false), Model(title: "11:00 am", isOpen: false), Model(title: "11:30 am", isOpen: false), Model(title: "12:00 pm", isOpen: false), Model(title: "12:30 pm", isOpen: false), Model(title: "1:00 pm", isOpen: false), Model(title: "1:30 pm", isOpen: false), Model(title: "2:00 pm", isOpen: false), Model(title: "2:30 pm", isOpen: false), Model(title: "3:00 pm", isOpen: false), Model(title: "3:30 pm", isOpen: false), Model(title: "4:00 pm", isOpen: false), Model(title: "4:30 pm", isOpen: false), Model(title: "5:00 pm", isOpen: false), Model(title: "5:30 pm", isOpen: false), Model(title: "6:00 pm", isOpen: false), Model(title: "6:30 pm", isOpen: false), Model(title: "7:00 pm", isOpen: false), Model(title: "7:30 pm", isOpen: false), Model(title: "8:00 pm", isOpen: false), Model(title: "8:30 pm", isOpen: false), Model(title: "9:00 pm", isOpen: false), Model(title: "9:30 pm", isOpen: false), Model(title: "10:00 pm", isOpen: false), Model(title: "10:30 pm", isOpen: false), Model(title: "11:00 pm", isOpen: false), Model(title: "11:30 pm", isOpen: false)]
+        
+        for model in dataArray {
+            for time in avaliableTimes{
+                if (time == model.title){
+                    model.isOpen = true
+                }
+            }
+            
+            items = dataArray.map { ViewModelItem(item: $0)
+
+        }
+    
     
     var selectedItems: [ViewModelItem] {
         return items.filter { return $0.isSelected }
