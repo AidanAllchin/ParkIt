@@ -29,6 +29,7 @@
 		F618E79B2085A33300F5692E /* ViewSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F618E79A2085A33300F5692E /* ViewSpotViewController.swift */; };
 		F646A8472098C3B100B186E2 /* CreateSpotOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646A8462098C3B100B186E2 /* CreateSpotOneViewController.swift */; };
 		F646A8492098E8D900B186E2 /* CreateSpotTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646A8482098E8D900B186E2 /* CreateSpotTwoViewController.swift */; };
+		F686964620AB4E830044C8D5 /* ViewModelTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686964520AB4E820044C8D5 /* ViewModelTwo.swift */; };
 		F69FF1F2208CFDBB006F03EA /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69FF1F1208CFDBB006F03EA /* LocationSearchTable.swift */; };
 		F6E012F320A5F8AF007F4B69 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E012F220A5F8AF007F4B69 /* CustomCell.swift */; };
 		F6E012F520A5F939007F4B69 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E012F420A5F938007F4B69 /* Model.swift */; };
@@ -87,6 +88,7 @@
 		F618E79A2085A33300F5692E /* ViewSpotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSpotViewController.swift; sourceTree = "<group>"; };
 		F646A8462098C3B100B186E2 /* CreateSpotOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSpotOneViewController.swift; sourceTree = "<group>"; };
 		F646A8482098E8D900B186E2 /* CreateSpotTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSpotTwoViewController.swift; sourceTree = "<group>"; };
+		F686964520AB4E820044C8D5 /* ViewModelTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTwo.swift; sourceTree = "<group>"; };
 		F69FF1F1208CFDBB006F03EA /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 		F6E012F220A5F8AF007F4B69 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		F6E012F420A5F938007F4B69 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -178,6 +180,8 @@
 				F646A8462098C3B100B186E2 /* CreateSpotOneViewController.swift */,
 				F646A8482098E8D900B186E2 /* CreateSpotTwoViewController.swift */,
 				F6E012F620A5F942007F4B69 /* ViewModel.swift */,
+				C338EA3B2055C8D70031F487 /* BuySpotViewController.swift */,
+				F686964520AB4E820044C8D5 /* ViewModelTwo.swift */,
 				F6E012F220A5F8AF007F4B69 /* CustomCell.swift */,
 				F6E012F420A5F938007F4B69 /* Model.swift */,
 				DDE62754209CC02900F13460 /* CalendarController.swift */,
@@ -189,7 +193,6 @@
 				F6E012F820A5F9B2007F4B69 /* CustomCell.xib */,
 				F69FF1F1208CFDBB006F03EA /* LocationSearchTable.swift */,
 				DD5B01A9206E9EBB00CB7653 /* AccountViewController.swift */,
-				C338EA3B2055C8D70031F487 /* BuySpotViewController.swift */,
 				DD631B70202379520095A1BC /* Assets.xcassets */,
 				DD631B72202379520095A1BC /* LaunchScreen.storyboard */,
 				DDEA9BA12051A720002FCA6C /* Info.plist */,
@@ -446,6 +449,7 @@
 				DDEA9B9D2051A6E7002FCA6C /* ParkingSpotMarkerView.swift in Sources */,
 				C338EA3C2055C8D70031F487 /* BuySpotViewController.swift in Sources */,
 				F6E012F720A5F942007F4B69 /* ViewModel.swift in Sources */,
+				F686964620AB4E830044C8D5 /* ViewModelTwo.swift in Sources */,
 				F6E012F320A5F8AF007F4B69 /* CustomCell.swift in Sources */,
 				F6E012F520A5F939007F4B69 /* Model.swift in Sources */,
 				DD2B3AE72033B7300012CE0D /* LoginViewController.swift in Sources */,

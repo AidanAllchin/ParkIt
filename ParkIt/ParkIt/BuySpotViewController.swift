@@ -9,21 +9,29 @@
 import UIKit
 
 class BuySpotViewController: UIViewController {
-    @IBOutlet weak var startTimePicker: UIDatePicker!
-    @IBOutlet weak var endTimePicker: UIDatePicker!
     @IBOutlet weak var spotLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nextButton: UIButton?
+    var viewModel = ViewModelTwo()
     
-    let items = ["0","1","2","3","4","5","6","7","8","9","10"]
-    
-    var startTimes: [String] = [String]()
-    
+    var times = [String]()
     var spot:ParkingSpot = ParkingSpot()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         spotLabel.text = "Spot: " + spot.title!
+        tableView?.register(CustomCell.nib, forCellReuseIdentifier: CustomCell.identifier)
+        tableView?.estimatedRowHeight = 100
+        tableView?.rowHeight = UITableViewAutomaticDimension
+        tableView?.allowsMultipleSelection = true
+        tableView?.dataSource = viewModel
+        tableView?.delegate = viewModel
+        tableView?.separatorStyle = .none
+        
+        viewModel.didToggleSelection = { [weak self] hasSelection in
+            self?.nextButton?.isEnabled = hasSelection
+        }
+        
     }
+
 }
