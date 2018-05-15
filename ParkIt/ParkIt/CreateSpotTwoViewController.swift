@@ -52,6 +52,7 @@ class CreateSpotTwoViewController: UIViewController {
         print(viewModel.selectedItems.map { $0.title })
         spot.spotsAlwaysAvaliable = viewModel.selectedItems.map { $0.title }
         tableView?.reloadData()
+        performSegue(withIdentifier: "CreateThreeSegue", sender: self.spot)
     }
     
 

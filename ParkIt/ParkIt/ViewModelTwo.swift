@@ -22,6 +22,13 @@ class ViewModelTwoItem {
 
 class ViewModelTwo: NSObject {
     var items = [ViewModelItem]()
+    var spotsAlwaysAvaliable: [String]
+    
+    override init() {
+        self.spotsAlwaysAvaliable = [String]()
+        items = dataArray2.map { ViewModelItem(item: $0) }
+        super.init()
+    }
     
     var didToggleSelection: ((_ hasSelection: Bool) -> ())? {
         didSet {
@@ -31,11 +38,6 @@ class ViewModelTwo: NSObject {
     
     var selectedItems: [ViewModelItem] {
         return items.filter { return $0.isSelected }
-    }
-    
-    override init() {
-        super.init()
-        items = dataArray2.map { ViewModelItem(item: $0) }
     }
 }
 
