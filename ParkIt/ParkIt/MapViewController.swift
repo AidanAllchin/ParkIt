@@ -178,34 +178,34 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 let coordArr = locCompString.components(separatedBy: ", ")
                 
                 location = CLLocationCoordinate2D(latitude: Double(coordArr[0])!, longitude: Double(coordArr[1])!)
-                
-                //Periods
-                let periodsTempDict = dict.value(forKey: "Periods") as! NSDictionary
-                
-                //periodCount
-                periodCount = periodsTempDict.count
-                
-                //Individual periods
-                var ii = 0
-                while ii < periodCount
-                {
-                    let periodName: String = "Period-0x000" + String(ii)
-                    var periodArray: [Int] = [Int]()
-                    
-                    var perCompString = ""
-                    let periodTempDict = periodsTempDict.value(forKey: periodName) as! NSDictionary
-                    perCompString = periodTempDict.value(forKey: "openHours") as! String
-                    
-                    let tempArray = perCompString.components(separatedBy: ",")
-                    periodArray.append(Int(tempArray[0])!)
-                    periodArray.append(Int(tempArray[1])!)
-                    
-                    periodArray.append(Int(periodTempDict.value(forKey: "price") as! Int))
-                    
-                    period.append(periodArray)
-                    
-                    ii = ii + 1
-                }
+//
+//                //Periods
+//                let periodsTempDict = dict.value(forKey: "Periods") as! NSDictionary
+//
+//                //periodCount
+//                periodCount = periodsTempDict.count
+//
+//                //Individual periods
+//                var ii = 0
+//                while ii < periodCount
+//                {
+//                    let periodName: String = "Period-0x000" + String(ii)
+//                    var periodArray: [Int] = [Int]()
+//
+//                    var perCompString = ""
+//                    let periodTempDict = periodsTempDict.value(forKey: periodName) as! NSDictionary
+//                    perCompString = periodTempDict.value(forKey: "openHours") as! String
+//
+//                    let tempArray = perCompString.components(separatedBy: ",")
+//                    periodArray.append(Int(tempArray[0])!)
+//                    periodArray.append(Int(tempArray[1])!)
+//
+//                    periodArray.append(Int(periodTempDict.value(forKey: "price") as! Int))
+//
+//                    period.append(periodArray)
+//
+//                    ii = ii + 1
+//                }
                 
                 //timeLeft
                 timeLeft = dict.value(forKey: "timeLeft") as! Float

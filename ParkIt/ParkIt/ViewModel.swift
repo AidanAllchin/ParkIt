@@ -4,21 +4,10 @@
 import Foundation
 import UIKit
 
-let dataArray = [Model(title: "12:00 am"), Model(title: "12:30 am"), Model(title: "1:00 am"), Model(title: "1:30 am"), Model(title: "2:00 am"), Model(title: "2:30 am"), Model(title: "3:00 am"), Model(title: "3:30 am"), Model(title: "4:00 am"), Model(title: "4:30 am"), Model(title: "5:00 am"), Model(title: "5:30 am"), Model(title: "6:00 am"), Model(title: "6:30 am"), Model(title: "7:00 am"), Model(title: "7:30 am"), Model(title: "8:00 am"), Model(title: "8:30 am"), Model(title: "9:00 am"), Model(title: "9:30 am"), Model(title: "10:00 am"), Model(title: "10:30 am"), Model(title: "11:00 am"), Model(title: "11:30 am"), Model(title: "12:00 pm"), Model(title: "12:30 pm"), Model(title: "1:00 pm"), Model(title: "1:30 pm"), Model(title: "2:00 pm"), Model(title: "2:30 pm"), Model(title: "3:00 pm"), Model(title: "3:30 pm"), Model(title: "4:00 pm"), Model(title: "4:30 pm"), Model(title: "5:00 pm"), Model(title: "5:30 pm"), Model(title: "6:00 pm"), Model(title: "6:30 pm"), Model(title: "7:00 pm"), Model(title: "7:30 pm"), Model(title: "8:00 pm"), Model(title: "8:30 pm"), Model(title: "9:00 pm"), Model(title: "9:30 pm"), Model(title: "10:00 pm"), Model(title: "10:30 pm"), Model(title: "11:00 pm"), Model(title: "11:30 pm")]
+let dataArray = [Model(title: "12:00 am", isOpen: true), Model(title: "12:30 am", isOpen: true), Model(title: "1:00 am", isOpen: true), Model(title: "1:30 am", isOpen: true), Model(title: "2:00 am", isOpen: true), Model(title: "2:30 am", isOpen: true), Model(title: "3:00 am", isOpen: true), Model(title: "3:30 am", isOpen: true), Model(title: "4:00 am", isOpen: true), Model(title: "4:30 am", isOpen: true),  Model(title: "5:00 am", isOpen: true), Model(title: "5:30 am", isOpen: true)]
 
-class ViewModelItem {
-    private var item: Model
-    
-    var isSelected = false
-    
-    var title: String {
-        return item.title
-    }
-    
-    init(item: Model) {
-        self.item = item
-    }
-}
+//, Model(title: "6:00 am"), Model(title: "6:30 am"), Model(title: "7:00 am"), Model(title: "7:30 am"), Model(title: "8:00 am"), Model(title: "8:30 am"), Model(title: "9:00 am"), Model(title: "9:30 am"), Model(title: "10:00 am"), Model(title: "10:30 am"), Model(title: "11:00 am"), Model(title: "11:30 am"), Model(title: "12:00 pm"), Model(title: "12:30 pm"), Model(title: "1:00 pm"), Model(title: "1:30 pm"), Model(title: "2:00 pm"), Model(title: "2:30 pm"), Model(title: "3:00 pm"), Model(title: "3:30 pm"), Model(title: "4:00 pm"), Model(title: "4:30 pm"), Model(title: "5:00 pm"), Model(title: "5:30 pm"), Model(title: "6:00 pm"), Model(title: "6:30 pm"), Model(title: "7:00 pm"), Model(title: "7:30 pm"), Model(title: "8:00 pm"), Model(title: "8:30 pm"), Model(title: "9:00 pm"), Model(title: "9:30 pm"), Model(title: "10:00 pm"), Model(title: "10:30 pm"), Model(title: "11:00 pm"), Model(title: "11:30 pm")]
+
 
 class ViewModel: NSObject {
     var items = [ViewModelItem]()

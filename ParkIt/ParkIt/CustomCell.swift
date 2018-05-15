@@ -7,6 +7,9 @@ class CustomCell: UITableViewCell {
     var item: ViewModelItem? {
         didSet {
             titleLabel?.text = item?.title
+            if(item?.isOpen == false){
+                self.isUserInteractionEnabled = true
+            }
         }
     }
     
