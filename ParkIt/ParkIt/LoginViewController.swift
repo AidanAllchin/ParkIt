@@ -67,8 +67,7 @@ class LoginViewController: UIViewController {
                     //If login was successful, we should get a user. Check that user isn't nil.
                     if let u = user {
                         //User is found, go to home screen
-            //THIS BROKE TOO
-                      // UserInformation.userEmail = u.email!
+                        UserInformation.userEmail = u.user.email!
         
                         let def = UserDefaults.standard
                         def.set(String(UserInformation.userEmail), forKey: "userEmail")
@@ -99,9 +98,7 @@ class LoginViewController: UIViewController {
                 Auth.auth().createUser(withEmail: email, password: pass, completion: { (user, error) in
                     if let u = user {
                         //User is found, go to home screen
-                        
-            //COMMENTED THIS OUT CAUSE IT BROKE
-                        //UserInformation.userEmail = u.email!
+                        UserInformation.userEmail = u.user.email!
                         
                         let def = UserDefaults.standard
                         def.set(String(UserInformation.userEmail), forKey: "userEmail")
