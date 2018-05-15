@@ -17,6 +17,9 @@ class ViewModelTwoItem {
     
     init(item: Model) {
         self.item = item
+        //if (self.item.isNotOpen == true){
+          //  item.userInteractionEnabled = NO;
+        //}
     }
 }
 
@@ -26,6 +29,12 @@ class ViewModelTwo: NSObject {
     
     override init() {
         self.spotsAlwaysAvaliable = [String]()
+        items = dataArray2.map { ViewModelItem(item: $0) }
+        super.init()
+    }
+    
+    init(spotsAlwaysAvaliable: [String]) {
+        self.spotsAlwaysAvaliable = spotsAlwaysAvaliable
         items = dataArray2.map { ViewModelItem(item: $0) }
         super.init()
     }
