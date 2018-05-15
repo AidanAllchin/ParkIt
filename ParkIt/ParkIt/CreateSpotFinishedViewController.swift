@@ -11,43 +11,18 @@ import Firebase
 import MapKit
 
 class CreateSpotFinishedViewController: UIViewController {
-    
-    var ref:DatabaseReference!
-    var databaseHandle:DatabaseHandle?
-    
-    var numSpots = 0
-    
     var spot:ParkingSpot = ParkingSpot()
-    
-    var uniqueId = 0
-    
-    var spotTitle = "Empty"
-    var location = CLLocationCoordinate2D()
-    var address = "Address"
 
     @IBOutlet weak var spotTitleLabel: UILabel!
     @IBOutlet weak var coordinateLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     
     override func viewDidLoad() {
-        ref = Database.database().reference()
         super.viewDidLoad()
-        
-        for _ in 0...32 {
-            uniqueId = Int(arc4random_uniform(10))
-        }
         
         spotTitleLabel.text = spot.title
         addressLabel.text = spot.address
         coordinateLabel.text = "\(spot.coordinate.latitude)" + ", \(spot.coordinate.longitude)"
-        
-        ref?.observe(.value, with: { (snapshot) in
-            //We determine how many spots there are in the database and set the name of the spot
-            let wholeDatabase: NSDictionary = snapshot.value as! NSDictionary
-            let spots: NSDictionary = wholeDatabase.value(forKey: "Spots") as! NSDictionary
-            
-            self.numSpots = spots.count
-        })
         
         // Do any additional setup after loading the view.
     }
@@ -56,13 +31,7 @@ class CreateSpotFinishedViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is UINavigationController
         {
-            let spotNumber = String(format: "%04d", (self.numSpots - 1))
-            self.ref.child("Spots").child("Spot-0x" + spotNumber).setValue(["title": self.title])
-            self.ref.child("Spots/Spot-0x\(spotNumber)/id").setValue(self.uniqueId)
-            self.ref.child("Spots/Spot-0x\(spotNumber)/address").setValue(self.address)
-            let coordinates = String(location.latitude) + "," + String(location.longitude)
-            self.ref.child("Spots/Spot-0x\(spotNumber)/location").setValue(coordinates)
-            self.ref.child("Spots/Spot-0x\(spotNumber)/timeLeft").setValue("0")
+            
         }
     }
     
