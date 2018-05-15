@@ -34,6 +34,7 @@ class ViewModelTwo: NSObject {
     override init() {
         self.spot = ParkingSpot()
         //items = dataArray.map { ViewModelItem(item: $0) }
+        getDataArray(spot: spot)
         super.init()
     }
     
@@ -60,11 +61,10 @@ class ViewModelTwo: NSObject {
                 }
             }
             
+            items = dataArray.map { ViewModelItem(item: $0)
+
         }
-        
-        items = dataArray.map { ViewModelItem(item: $0)
-        
-    }
+    
     
     var selectedItems: [ViewModelItem] {
         return items.filter { return $0.isSelected }
