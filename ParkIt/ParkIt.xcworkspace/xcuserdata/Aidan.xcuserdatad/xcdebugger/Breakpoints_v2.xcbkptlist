@@ -19,5 +19,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ParkIt/ViewModelTwo.swift"
+            timestampString = "548192928.979331"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "getDataArray(spot:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ParkIt/ViewModelTwo.swift"
+            timestampString = "548192928.979661"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "getDataArray(spot:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ParkIt.ViewModelTwo.getDataArray(spot: ParkIt.ParkingSpot) -&gt; ()"
+                  moduleName = "ParkIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Aidan/Desktop/School/12th%20Grade/Computer%20Science/ParkIt/ParkIt/ParkIt/ViewModelTwo.swift"
+                  timestampString = "548192930.2895859"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "10492">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ParkIt.Model) -&gt; ParkIt.ViewModelItem in ParkIt.ViewModelTwo.getDataArray(spot: ParkIt.ParkingSpot) -&gt; ()"
+                  moduleName = "ParkIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Aidan/Desktop/School/12th%20Grade/Computer%20Science/ParkIt/ParkIt/ParkIt/ViewModelTwo.swift"
+                  timestampString = "548192930.293507"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
