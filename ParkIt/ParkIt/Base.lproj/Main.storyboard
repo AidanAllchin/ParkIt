@@ -336,33 +336,31 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="spotLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jve-gP-OQM">
-                                <rect key="frame" x="107" y="100" width="161" height="21"/>
+                                <rect key="frame" x="16" y="100" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Start time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qS-8b-hL0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qS-8b-hL0">
                                 <rect key="frame" x="57" y="256" width="76" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXg-Mt-sIC" userLabel="startTimeLabel">
-                                <rect key="frame" x="254" y="255" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXg-Mt-sIC" userLabel="startTimeLabel">
+                                <rect key="frame" x="253" y="255" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="End time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5V-Yc-iFY">
-                                <rect key="frame" x="61" y="311" width="68" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5V-Yc-iFY">
+                                <rect key="frame" x="65" y="311" width="68" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-Nd-lPO" userLabel="endTimeLabel">
-                                <rect key="frame" x="254" y="310" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-Nd-lPO" userLabel="endTimeLabel">
+                                <rect key="frame" x="253" y="310" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -405,6 +403,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="xKY-Nd-lPO" firstAttribute="leading" secondItem="g5V-Yc-iFY" secondAttribute="trailing" constant="120" id="0g1-Ai-W6G"/>
                             <constraint firstItem="l54-Ia-0JU" firstAttribute="trailing" secondItem="cna-NL-Yoc" secondAttribute="trailing" constant="127" id="2nO-mI-xml"/>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="trailing" secondItem="l54-Ia-0JU" secondAttribute="trailing" id="5XQ-IZ-Kwd"/>
                             <constraint firstItem="jve-gP-OQM" firstAttribute="top" secondItem="l54-Ia-0JU" secondAttribute="top" constant="80" id="DVC-xm-e6d"/>
@@ -413,14 +412,20 @@
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" id="Ki1-iI-Jkt"/>
                             <constraint firstItem="cna-NL-Yoc" firstAttribute="top" secondItem="jve-gP-OQM" secondAttribute="bottom" constant="83" id="LBY-Nl-86Q"/>
                             <constraint firstItem="vjZ-bO-Otr" firstAttribute="top" secondItem="l54-Ia-0JU" secondAttribute="top" id="T0f-vi-6YL"/>
+                            <constraint firstItem="jve-gP-OQM" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" constant="16" id="VL9-th-xN4"/>
                             <constraint firstItem="g5V-Yc-iFY" firstAttribute="top" secondItem="8qS-8b-hL0" secondAttribute="bottom" constant="34" id="XiT-xg-Rji"/>
+                            <constraint firstItem="l54-Ia-0JU" firstAttribute="trailing" secondItem="jve-gP-OQM" secondAttribute="trailing" constant="16" id="YuU-yZ-N8U"/>
                             <constraint firstItem="cna-NL-Yoc" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" constant="127" id="Zga-Ys-2aA"/>
+                            <constraint firstItem="LXg-Mt-sIC" firstAttribute="top" secondItem="jve-gP-OQM" secondAttribute="bottom" constant="134" id="c2a-XL-Ctl"/>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" id="cFr-vF-5eg"/>
                             <constraint firstItem="jve-gP-OQM" firstAttribute="centerX" secondItem="ODY-1w-bl1" secondAttribute="centerX" id="gYH-yb-TRx"/>
-                            <constraint firstItem="jve-gP-OQM" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" constant="107" id="hQ4-fB-ELX"/>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="trailing" secondItem="l54-Ia-0JU" secondAttribute="trailing" id="hqi-yU-HzJ"/>
+                            <constraint firstItem="l54-Ia-0JU" firstAttribute="trailing" secondItem="LXg-Mt-sIC" secondAttribute="trailing" constant="80" id="ixZ-YX-6Ka"/>
                             <constraint firstItem="Ee8-gG-xUx" firstAttribute="top" secondItem="g5V-Yc-iFY" secondAttribute="bottom" constant="39" id="jHK-ah-nos"/>
                             <constraint firstItem="8qS-8b-hL0" firstAttribute="top" secondItem="cna-NL-Yoc" secondAttribute="bottom" constant="24" id="o4K-By-6VN"/>
+                            <constraint firstItem="LXg-Mt-sIC" firstAttribute="leading" secondItem="8qS-8b-hL0" secondAttribute="trailing" constant="120" id="qBG-O3-GKo"/>
+                            <constraint firstItem="l54-Ia-0JU" firstAttribute="trailing" secondItem="xKY-Nd-lPO" secondAttribute="trailing" constant="80" id="qFU-YT-Spn"/>
+                            <constraint firstItem="xKY-Nd-lPO" firstAttribute="top" secondItem="LXg-Mt-sIC" secondAttribute="bottom" constant="34" id="t1u-lN-g4g"/>
                             <constraint firstItem="vjZ-bO-Otr" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" constant="15" id="tZe-ve-TG0"/>
                             <constraint firstItem="Ee8-gG-xUx" firstAttribute="trailing" secondItem="l54-Ia-0JU" secondAttribute="trailing" id="xEL-4n-Uf7"/>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="bottom" secondItem="l54-Ia-0JU" secondAttribute="bottom" id="zpS-dg-umG"/>
@@ -439,7 +444,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72D-hv-JEw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-241" y="-72"/>
+            <point key="canvasLocation" x="-242.40000000000001" y="-72.413793103448285"/>
         </scene>
         <!--CreateSpotFinishedViewController-->
         <scene sceneID="H83-tS-on2">
@@ -807,7 +812,7 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="y9F-Ek-Y1T"/>
+        <segue reference="RGV-Gc-H1t"/>
         <segue reference="SQ4-oT-5iY"/>
         <segue reference="P9f-jL-eJP"/>
     </inferredMetricsTieBreakers>

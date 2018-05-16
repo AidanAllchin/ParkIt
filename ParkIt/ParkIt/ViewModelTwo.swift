@@ -27,16 +27,15 @@ class ViewModelTwo: NSObject {
     var spot:ParkingSpot = ParkingSpot()
     
     override init() {
-        self.spot = ParkingSpot()
-        items = dataArray.map { ViewModelItem(item: $0) }
         super.init()
+        self.spot = ParkingSpot()
         getDataArray(spot: spot)
         items = dataArray.map { ViewModelItem(item: $0) }
     }
     
     init(spot: ParkingSpot) {
-        self.spot = ParkingSpot()
         super.init()
+        self.spot = ParkingSpot()
         getDataArray(spot: spot)
         items = dataArray.map { ViewModelItem(item: $0) }
     }
