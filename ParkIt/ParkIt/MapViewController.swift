@@ -33,7 +33,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var sideBarConstraint: NSLayoutConstraint!
     
+    //Sidebar code
     @IBOutlet weak var sideBar: UIView!
+    
     @IBAction func openSwipe(_ sender: UIScreenEdgePanGestureRecognizer) {
         openSideBar()
     }
@@ -52,6 +54,16 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         isSideBarHidden = !isSideBarHidden
     }
     
+    func openSideBar() {
+        sideBarConstraint.constant = 0
+        UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
+    }
+    
+    func closeSideBar() {
+        sideBarConstraint.constant = -160
+        UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
+    }
+    
     //Logs out when logout button pressed
     @IBAction func logoutButtonPressed(_ sender: Any) {
         let firebaseAuth = Auth.auth()
@@ -63,18 +75,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             print("Error signing out: %@", signOutError)
         }
     }
-    
-    //WIll A please comment your code
-    func openSideBar() {
-        sideBarConstraint.constant = 0
-        UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
-    }
-    
-    func closeSideBar() {
-        sideBarConstraint.constant = -160
-        UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
-    }
-    
     
     override func viewDidLoad() {
     
@@ -100,8 +100,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         ref = Database.database().reference()
         
-        print (ref)
-        
         //set initial location to Seattle... change to user location eventually
         let initialLocation = CLLocation(latitude: 47.6062, longitude: -122.3321)
         //call zoom in function
@@ -125,8 +123,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
        mapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
     }
     
-    
-    //loads in the locations and their stuff
+    //Grabs every ParkingSpot from database and adds them to the map as annotations
     func loadInitialData() {
         var numSpots: Int = 0
         var spotName: String = ""
@@ -135,12 +132,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var address: String = ""
         var isAvailable: Bool = true
         var location: CLLocationCoordinate2D = CLLocationCoordinate2D()
-        var periodCount: Int = 0
-        var period: [[Int]] = [[Int]]()
         var timeLeft: Float = 0.0
         var userBuying: String = ""
         var userSelling: String = ""
-        let timesAvailable: [String] = [String]()
+        var timesAvailable: [String] = [String]()
         
         //title
         ref?.observe(.value, with: { (snapshot) in
@@ -155,7 +150,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let jj = 0
             while jj <= currentSpotNum
             {
-                period = [[Int]]()
                 spotName = "Spot-0x" + String(format: "%04d", currentSpotNum)
                 
                 //Now we know which spot we're accessing, we can get all the information for it...
@@ -178,7 +172,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 let coordArr = locCompString.components(separatedBy: ", ")
                 
                 location = CLLocationCoordinate2D(latitude: Double(coordArr[0])!, longitude: Double(coordArr[1])!)
-//
+
 //                //Periods
 //                let periodsTempDict = dict.value(forKey: "Periods") as! NSDictionary
 //
@@ -216,7 +210,22 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 //userSelling
                 userSelling = dict.value(forKey: "userSelling") as! String
                 
-                let currentSpot: ParkingSpot = ParkingSpot(title: title, address: address, isAvailable: isAvailable, coordinate: location, periods: period, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling, timesAvailable: timesAvailable)
+                //timesAvailabe
+                let timesDict = dict.value(forKey: "TimesAvailable") as! NSDictionary
+                
+                let timesCount = timesDict.count
+                
+                var ii = 0
+                while ii < timesCount
+                {
+                    let timeName: String = "Time-" + String(format: "%02d", (ii))
+                    let currentTime = timesDict.value(forKey: timeName)
+                    timesAvailable.append(currentTime as! String)
+                    
+                    ii = ii + 1
+                }
+                
+                let currentSpot: ParkingSpot = ParkingSpot(title: title, address: address, isAvailable: isAvailable, coordinate: location, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling, timesAvailable: timesAvailable)
                 
                 self.mapView.addAnnotation(currentSpot)
                 
