@@ -391,7 +391,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buySpot:" destination="bwk-ta-Zvu" eventType="touchUpInside" id="eVt-H6-SaD"/>
+                                    <action selector="buySpot:" destination="bwk-ta-Zvu" eventType="touchUpInside" id="ed6-Uq-QMP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjZ-bO-Otr">
@@ -434,12 +434,12 @@
                         <outlet property="periodSwitcher" destination="cna-NL-Yoc" id="voY-7h-Tyn"/>
                         <outlet property="spotLabel" destination="jve-gP-OQM" id="suG-iI-htK"/>
                         <outlet property="startTimeLabel" destination="LXg-Mt-sIC" id="af9-Lj-8Uz"/>
-                        <segue destination="9ct-Du-UdI" kind="presentation" identifier="BuySpotSegue" id="zcn-aZ-IZS"/>
+                        <segue destination="9ct-Du-UdI" kind="presentation" identifier="BuySpotSegue" id="KVc-dN-KkF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72D-hv-JEw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-290.39999999999998" y="-93.103448275862078"/>
+            <point key="canvasLocation" x="-241" y="-72"/>
         </scene>
         <!--CreateSpotFinishedViewController-->
         <scene sceneID="H83-tS-on2">

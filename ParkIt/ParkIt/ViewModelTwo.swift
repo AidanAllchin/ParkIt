@@ -31,12 +31,14 @@ class ViewModelTwo: NSObject {
         items = dataArray.map { ViewModelItem(item: $0) }
         super.init()
         getDataArray(spot: spot)
+        items = dataArray.map { ViewModelItem(item: $0) }
     }
     
     init(spot: ParkingSpot) {
         self.spot = ParkingSpot()
         super.init()
         getDataArray(spot: spot)
+        items = dataArray.map { ViewModelItem(item: $0) }
     }
     
     var didToggleSelection: ((_ hasSelection: Bool) -> ())? {
@@ -46,7 +48,7 @@ class ViewModelTwo: NSObject {
     }
     
     func getDataArray(spot: ParkingSpot) {
-        var avaliableTimes: [String] = spot.timesAvailable
+        let avaliableTimes: [String] = spot.timesAvailable
         var dataArray = [Model(title: "12:00 am", isOpen: false), Model(title: "12:30 am", isOpen: false), Model(title: "1:00 am", isOpen: false), Model(title: "1:30 am", isOpen: false), Model(title: "2:00 am", isOpen: false), Model(title: "2:30 am", isOpen: false), Model(title: "3:00 am", isOpen: false), Model(title: "3:30 am", isOpen: false), Model(title: "4:00 am", isOpen: false), Model(title: "4:30 am", isOpen: false), Model(title: "5:00 am", isOpen: false), Model(title: "5:30 am", isOpen: false), Model(title: "6:00 am", isOpen: false), Model(title: "6:30 am", isOpen: false), Model(title: "7:00 am", isOpen: false), Model(title: "7:30 am", isOpen: false), Model(title: "8:00 am", isOpen: false), Model(title: "8:30 am", isOpen: false), Model(title: "9:00 am", isOpen: false), Model(title: "9:30 am", isOpen: false), Model(title: "10:00 am", isOpen: false), Model(title: "10:30 am", isOpen: false), Model(title: "11:00 am", isOpen: false), Model(title: "11:30 am", isOpen: false), Model(title: "12:00 pm", isOpen: false), Model(title: "12:30 pm", isOpen: false), Model(title: "1:00 pm", isOpen: false), Model(title: "1:30 pm", isOpen: false), Model(title: "2:00 pm", isOpen: false), Model(title: "2:30 pm", isOpen: false), Model(title: "3:00 pm", isOpen: false), Model(title: "3:30 pm", isOpen: false), Model(title: "4:00 pm", isOpen: false), Model(title: "4:30 pm", isOpen: false), Model(title: "5:00 pm", isOpen: false), Model(title: "5:30 pm", isOpen: false), Model(title: "6:00 pm", isOpen: false), Model(title: "6:30 pm", isOpen: false), Model(title: "7:00 pm", isOpen: false), Model(title: "7:30 pm", isOpen: false), Model(title: "8:00 pm", isOpen: false), Model(title: "8:30 pm", isOpen: false), Model(title: "9:00 pm", isOpen: false), Model(title: "9:30 pm", isOpen: false), Model(title: "10:00 pm", isOpen: false), Model(title: "10:30 pm", isOpen: false), Model(title: "11:00 pm", isOpen: false), Model(title: "11:30 pm", isOpen: false)]
         
         var i = 0
@@ -56,10 +58,10 @@ class ViewModelTwo: NSObject {
                 if (time == dataArray[i].title){
                     dataArray[i].isOpen = true
                 }
-                i = i + 1
             }
-            items = dataArray.map { ViewModelItem(item: $0) }
+             i = i + 1
         }
+            items = dataArray.map { ViewModelItem(item: $0) }
     }
 
     var selectedItems: [ViewModelItem] {
