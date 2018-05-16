@@ -1,7 +1,7 @@
 //
 //  ViewSpotViewController.swift
 //  ParkIt
-//  *** CONSIDER REPLACING WITH BUTTONS FOR EACH PERIOD THAT THE USER CAN SELECT ***
+//
 //  Created by Will Frohlich on 4/16/18.
 //  Copyright © 2018 ParkIt. All rights reserved.
 //
@@ -27,8 +27,10 @@ class ViewSpotViewController: UIViewController {
         
         //let gesture = UITapGestureRecognizer(target: self, action: #selector(onTapGesture(_:))
         
-            
+        
         spotLabel?.text = spot.address
+        
+        
         
 //        let periodNum = spot.periods.count
 //
@@ -163,5 +165,4 @@ class ViewSpotViewController: UIViewController {
     @IBAction func buySpot(_ sender: Any) {
         performSegue(withIdentifier: "BuySpotSegue", sender: self.spot)
     }
-    
 }

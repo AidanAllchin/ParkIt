@@ -24,8 +24,8 @@ class BuySpotViewController: UIViewController {
         tableView?.estimatedRowHeight = 100
         tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.allowsMultipleSelection = true
-        tableView?.dataSource = viewModel
-        tableView?.delegate = viewModel
+        tableView?.dataSource = viewModel// as! UITableViewDataSource
+        tableView?.delegate = viewModel// as! UITableViewDelegate
         tableView?.separatorStyle = .none
         
         viewModel.didToggleSelection = { [weak self] hasSelection in
