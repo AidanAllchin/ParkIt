@@ -536,9 +536,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHv-le-qmd">
-                                <rect key="frame" x="0.0" y="602" width="375" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Done"/>
+                                <rect key="frame" x="16" y="557" width="343" height="90"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="YAR-1n-r1I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="46"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Done!">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="nextButton:" destination="2Ma-fx-9iI" eventType="touchUpInside" id="MYG-Ng-I1a"/>
                                 </connections>
@@ -572,12 +579,14 @@
                             <constraint firstItem="YRv-WQ-5QI" firstAttribute="leading" secondItem="hpT-Vt-Mkm" secondAttribute="leading" constant="110" id="1OU-OL-1Au"/>
                             <constraint firstItem="hpT-Vt-Mkm" firstAttribute="trailing" secondItem="FhY-U8-T5v" secondAttribute="trailing" constant="16" id="54B-mR-1b1"/>
                             <constraint firstItem="VHv-le-qmd" firstAttribute="trailing" secondItem="hpT-Vt-Mkm" secondAttribute="trailing" id="Hni-ak-JID"/>
+                            <constraint firstItem="hpT-Vt-Mkm" firstAttribute="trailing" secondItem="VHv-le-qmd" secondAttribute="trailing" constant="16" id="L8q-Lj-gFb"/>
                             <constraint firstItem="fyx-L8-tvE" firstAttribute="top" secondItem="hpT-Vt-Mkm" secondAttribute="top" id="OjN-1P-Eb2"/>
                             <constraint firstItem="FhY-U8-T5v" firstAttribute="leading" secondItem="hpT-Vt-Mkm" secondAttribute="leading" constant="16" id="T6q-pm-oRM"/>
                             <constraint firstItem="VHv-le-qmd" firstAttribute="leading" secondItem="hpT-Vt-Mkm" secondAttribute="leading" id="UUz-3z-OZi"/>
                             <constraint firstItem="hpT-Vt-Mkm" firstAttribute="bottom" secondItem="VHv-le-qmd" secondAttribute="bottom" constant="20" id="Zx8-QP-wn3"/>
                             <constraint firstItem="hpT-Vt-Mkm" firstAttribute="trailing" secondItem="YRv-WQ-5QI" secondAttribute="trailing" constant="110" id="gDw-iK-sFp"/>
                             <constraint firstItem="fyx-L8-tvE" firstAttribute="leading" secondItem="hpT-Vt-Mkm" secondAttribute="leading" id="lz4-dZ-o8O"/>
+                            <constraint firstItem="VHv-le-qmd" firstAttribute="leading" secondItem="hpT-Vt-Mkm" secondAttribute="leading" constant="16" id="qud-Kc-4NR"/>
                             <constraint firstItem="FhY-U8-T5v" firstAttribute="top" secondItem="YRv-WQ-5QI" secondAttribute="bottom" constant="250" id="t31-5F-WGE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hpT-Vt-Mkm"/>
@@ -589,7 +598,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TwK-L7-ecZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1295" y="-920"/>
+            <point key="canvasLocation" x="-1295.2" y="-920.68965517241384"/>
         </scene>
         <!--CreateSpotTwoViewController-->
         <scene sceneID="xSC-5C-3f7">
@@ -827,9 +836,8 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RGV-Gc-H1t"/>
+        <segue reference="RBg-K3-R9I"/>
         <segue reference="SQ4-oT-5iY"/>
-        <segue reference="HOd-Ui-W0G"/>
+        <segue reference="P9f-jL-eJP"/>
     </inferredMetricsTieBreakers>
 </document>
-
