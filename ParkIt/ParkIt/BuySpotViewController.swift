@@ -16,6 +16,7 @@ class BuySpotViewController: UIViewController {
     var spot:ParkingSpot = ParkingSpot()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         let viewModelTwo = ViewModelTwo(spot: spot)
         spotLabel.text = "Spot: " + spot.title!
         tableView?.register(CustomCell.nib, forCellReuseIdentifier: CustomCell.identifier)
@@ -23,20 +24,13 @@ class BuySpotViewController: UIViewController {
         tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.allowsMultipleSelection = true
         tableView?.dataSource = viewModelTwo// as! UITableViewDataSource
-        tableView?.delegate = viewModelTwo// as! UITableViewDelegate
+        tableView?.delegate = viewModel// as! UITableViewDelegate
         tableView?.separatorStyle = .none
         
-        viewModelTwo.didToggleSelection = { [weak self] hasSelection in
+        viewModel.didToggleSelection = { [weak self] hasSelection in
             self?.nextButton?.isEnabled = hasSelection
         }
         
-        super.viewDidLoad()
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

@@ -41,14 +41,14 @@ class ViewModelTwo: NSObject {
         self.spot = ParkingSpot()
         super.init()
         getDataArray(spot: spot)
-        items = dataArray.map { ViewModelItem(item: $0) }
+        //items = dataArray.map { ViewModelItem(item: $0) }
     }
     
     init(spot: ParkingSpot) {
         super.init()
         self.spot = ParkingSpot()
         getDataArray(spot: spot)
-        items = dataArray.map { ViewModelItem(item: $0) }
+       // items = dataArray.map { ViewModelItem(item: $0) }
     }
     
     
