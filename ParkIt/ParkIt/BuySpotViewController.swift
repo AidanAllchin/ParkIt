@@ -69,7 +69,7 @@ class BuySpotViewController: UIViewController {
         
         spot.reservations = times
         tableView?.reloadData()
-        //performSegue(withIdentifier: "NextCreatePage", sender: self.spot)
+        performSegue(withIdentifier: "SummarySegue", sender: self.spot)
     }
     
 }
