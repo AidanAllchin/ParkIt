@@ -10,7 +10,11 @@ class CustomCell: UITableViewCell {
             if(item?.isOpen == false){
                 self.isUserInteractionEnabled = false
                 self.backgroundColor = UIColor.gray
-                
+            }
+            else
+            {
+                self.isUserInteractionEnabled = true
+                self.backgroundColor = UIColor.white
             }
         }
     }
