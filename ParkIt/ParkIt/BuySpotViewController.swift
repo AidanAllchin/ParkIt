@@ -14,6 +14,7 @@ class BuySpotViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton?
     var times = [String]()
     var spot:ParkingSpot = ParkingSpot()
+    var viewModelTwo = ViewModelTwo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,7 @@ class BuySpotViewController: UIViewController {
         tableView?.delegate = viewModel// as! UITableViewDelegate
         tableView?.separatorStyle = .none
         
-        viewModel.didToggleSelection = { [weak self] hasSelection in
+        viewModelTwo.didToggleSelection = { [weak self] hasSelection in
             self?.nextButton?.isEnabled = hasSelection
         }
         
