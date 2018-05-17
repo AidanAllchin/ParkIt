@@ -30,9 +30,7 @@ class BuySpotViewController: UIViewController {
         viewModelTwo.didToggleSelection = { [weak self] hasSelection in
             self?.nextButton?.isEnabled = hasSelection
         }
-        
         super.viewDidLoad()
-        
     }
     
     override func didReceiveMemoryWarning() {
