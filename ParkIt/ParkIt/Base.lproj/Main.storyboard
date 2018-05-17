@@ -382,7 +382,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="dyP-PQ-1o6"/>
                                 </constraints>
-                                <state key="normal" title="Buy This Spot"/>
+                                <state key="normal" title="Rent This Spot"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="35"/>
@@ -813,7 +813,7 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vyW-UG-Zrl"/>
+        <segue reference="RGV-Gc-H1t"/>
         <segue reference="SQ4-oT-5iY"/>
         <segue reference="HOd-Ui-W0G"/>
     </inferredMetricsTieBreakers>
