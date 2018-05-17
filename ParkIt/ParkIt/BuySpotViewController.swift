@@ -14,9 +14,10 @@ class BuySpotViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton?
     var times = [String]()
     var spot:ParkingSpot = ParkingSpot()
+    var viewModelTwo = ViewModelTwo()
     
     override func viewDidLoad() {
-        let viewModelTwo = ViewModelTwo(spot: spot)
+        viewModelTwo = ViewModelTwo(spot: spot)
         spotLabel.text = "Spot: " + spot.title!
         tableView?.register(CustomCell.nib, forCellReuseIdentifier: CustomCell.identifier)
         tableView?.estimatedRowHeight = 80
