@@ -38,4 +38,32 @@ class BuySpotViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func next(_ sender: Any) {
+        var times = viewModelTwo.selectedItems.map { $0.title }
+        //Changing to 24 hour time for the server before pushing to spot
+        var i = 0
+        while i < times.count {
+            if times[i].range(of: " pm") != nil {
+                times[i] = times[i].replacingOccurrences(of: " pm", with: "", options: .regularExpression)
+                var hours = 0
+                if times[i].range(of: ":00") != nil {
+                    hours = Int(times[i].replacingOccurrences(of: ":00", with: ""))!
+                    times[i] = String(Int(hours) + 12) + ":00"
+                }
+                else {
+                    hours = Int(times[i].replacingOccurrences(of: ":30", with: ""))!
+                    times[i] = String(Int(hours) + 12) + ":30"
+                }
+            }
+            
+            times[i] = times[i].replacingOccurrences(of: " am", with: "", options: .regularExpression)
+            i = i + 1
+        }
+        
+        spot.reservations = times
+        print(times)
+        tableView?.reloadData()
+        //performSegue(withIdentifier: "NextCreatePage", sender: self.spot)
+    }
+    
 }
