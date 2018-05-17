@@ -341,42 +341,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qS-8b-hL0">
-                                <rect key="frame" x="57" y="256" width="76" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXg-Mt-sIC" userLabel="startTimeLabel">
-                                <rect key="frame" x="253" y="255" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5V-Yc-iFY">
-                                <rect key="frame" x="65" y="311" width="68" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-Nd-lPO" userLabel="endTimeLabel">
-                                <rect key="frame" x="253" y="310" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cna-NL-Yoc" userLabel="periodSwitcher">
-                                <rect key="frame" x="127" y="204" width="121" height="29"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="periodSwitched:" destination="bwk-ta-Zvu" eventType="valueChanged" id="gKV-Pe-chu"/>
-                                </connections>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ee8-gG-xUx">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ee8-gG-xUx">
                                 <rect key="frame" x="0.0" y="371" width="375" height="69"/>
                                 <color key="backgroundColor" red="0.084951482709999998" green="0.55922985079999998" blue="0.96199864150000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -409,17 +374,13 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xKY-Nd-lPO" firstAttribute="leading" secondItem="g5V-Yc-iFY" secondAttribute="trailing" constant="120" id="0g1-Ai-W6G"/>
-                            <constraint firstItem="l54-Ia-0JU" firstAttribute="trailing" secondItem="cna-NL-Yoc" secondAttribute="trailing" constant="127" id="2nO-mI-xml"/>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="trailing" secondItem="l54-Ia-0JU" secondAttribute="trailing" id="5XQ-IZ-Kwd"/>
                             <constraint firstItem="jve-gP-OQM" firstAttribute="top" secondItem="l54-Ia-0JU" secondAttribute="top" constant="80" id="DVC-xm-e6d"/>
                             <constraint firstItem="Ee8-gG-xUx" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" id="HxU-kM-xIh"/>
                             <constraint firstItem="jve-gP-OQM" firstAttribute="top" secondItem="l54-Ia-0JU" secondAttribute="top" constant="80" id="Iqx-7w-tcS"/>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" id="Ki1-iI-Jkt"/>
-                            <constraint firstItem="cna-NL-Yoc" firstAttribute="top" secondItem="jve-gP-OQM" secondAttribute="bottom" constant="83" id="LBY-Nl-86Q"/>
                             <constraint firstItem="vjZ-bO-Otr" firstAttribute="top" secondItem="l54-Ia-0JU" secondAttribute="top" id="T0f-vi-6YL"/>
                             <constraint firstItem="jve-gP-OQM" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" constant="16" id="VL9-th-xN4"/>
-                            <constraint firstItem="g5V-Yc-iFY" firstAttribute="top" secondItem="8qS-8b-hL0" secondAttribute="bottom" constant="34" id="XiT-xg-Rji"/>
                             <constraint firstItem="l54-Ia-0JU" firstAttribute="trailing" secondItem="jve-gP-OQM" secondAttribute="trailing" constant="16" id="YuU-yZ-N8U"/>
                             <constraint firstItem="cna-NL-Yoc" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" constant="127" id="Zga-Ys-2aA"/>
                             <constraint firstItem="l54-Ia-0JU" firstAttribute="trailing" secondItem="u5l-aZ-HNz" secondAttribute="trailing" constant="53" id="aT4-P5-rxi"/>
@@ -427,12 +388,6 @@
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" id="cFr-vF-5eg"/>
                             <constraint firstItem="jve-gP-OQM" firstAttribute="centerX" secondItem="ODY-1w-bl1" secondAttribute="centerX" id="gYH-yb-TRx"/>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="trailing" secondItem="l54-Ia-0JU" secondAttribute="trailing" id="hqi-yU-HzJ"/>
-                            <constraint firstItem="l54-Ia-0JU" firstAttribute="trailing" secondItem="LXg-Mt-sIC" secondAttribute="trailing" constant="80" id="ixZ-YX-6Ka"/>
-                            <constraint firstItem="Ee8-gG-xUx" firstAttribute="top" secondItem="g5V-Yc-iFY" secondAttribute="bottom" constant="39" id="jHK-ah-nos"/>
-                            <constraint firstItem="8qS-8b-hL0" firstAttribute="top" secondItem="cna-NL-Yoc" secondAttribute="bottom" constant="24" id="o4K-By-6VN"/>
-                            <constraint firstItem="LXg-Mt-sIC" firstAttribute="leading" secondItem="8qS-8b-hL0" secondAttribute="trailing" constant="120" id="qBG-O3-GKo"/>
-                            <constraint firstItem="l54-Ia-0JU" firstAttribute="trailing" secondItem="xKY-Nd-lPO" secondAttribute="trailing" constant="80" id="qFU-YT-Spn"/>
-                            <constraint firstItem="xKY-Nd-lPO" firstAttribute="top" secondItem="LXg-Mt-sIC" secondAttribute="bottom" constant="34" id="t1u-lN-g4g"/>
                             <constraint firstItem="vjZ-bO-Otr" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" constant="15" id="tZe-ve-TG0"/>
                             <constraint firstItem="Ee8-gG-xUx" firstAttribute="trailing" secondItem="l54-Ia-0JU" secondAttribute="trailing" id="xEL-4n-Uf7"/>
                             <constraint firstItem="u5l-aZ-HNz" firstAttribute="top" secondItem="l54-Ia-0JU" secondAttribute="top" constant="10" id="yWE-fD-C2t"/>
@@ -444,10 +399,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="endTimeLabel" destination="xKY-Nd-lPO" id="1eN-Jx-mcx"/>
-                        <outlet property="periodSwitcher" destination="cna-NL-Yoc" id="voY-7h-Tyn"/>
                         <outlet property="spotLabel" destination="jve-gP-OQM" id="suG-iI-htK"/>
-                        <outlet property="startTimeLabel" destination="LXg-Mt-sIC" id="af9-Lj-8Uz"/>
                         <segue destination="9ct-Du-UdI" kind="presentation" identifier="BuySpotSegue" id="KVc-dN-KkF"/>
                     </connections>
                 </viewController>
