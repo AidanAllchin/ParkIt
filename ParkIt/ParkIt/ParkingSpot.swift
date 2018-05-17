@@ -20,6 +20,7 @@ class ParkingSpot: NSObject, MKAnnotation {
     var userBuying: String?
     var userSelling: String
     var timesAvailable: [String]
+    var reservations: [String]
     
     override init()
     {
@@ -31,6 +32,7 @@ class ParkingSpot: NSObject, MKAnnotation {
         self.userBuying = ""
         self.userSelling = ""
         self.timesAvailable = [String]()
+        self.reservations = [String]()
         
         super.init()
     }
@@ -45,9 +47,10 @@ class ParkingSpot: NSObject, MKAnnotation {
         self.userBuying = ""
         self.userSelling = ""
         self.timesAvailable = [String]()
+        self.reservations = [String]()
     }
     
-    init(title: String, address: String, isAvailable: Bool, coordinate: CLLocationCoordinate2D, timeLeft: Float, userBuying: String, userSelling: String, timesAvailable: [String]) {
+    init(title: String, address: String, isAvailable: Bool, coordinate: CLLocationCoordinate2D, timeLeft: Float, userBuying: String, userSelling: String, timesAvailable: [String], reservations: [String]) {
         
         self.title = title
         self.address = address
@@ -57,6 +60,7 @@ class ParkingSpot: NSObject, MKAnnotation {
         self.userBuying = userBuying
         self.userSelling = userSelling
         self.timesAvailable = timesAvailable
+        self.reservations = reservations
         
         super.init()
     }
