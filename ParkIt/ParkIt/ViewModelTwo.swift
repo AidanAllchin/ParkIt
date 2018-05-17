@@ -28,17 +28,14 @@ class ViewModelTwo: NSObject {
     
     override init() {
         self.spot = ParkingSpot()
-        items = dataArray.map { ViewModelItem(item: $0) }
         super.init()
         getDataArray(spot: spot)
-        items = dataArray.map { ViewModelItem(item: $0) }
     }
     
     init(spot: ParkingSpot) {
         self.spot = ParkingSpot()
         super.init()
         getDataArray(spot: spot)
-        items = dataArray.map { ViewModelItem(item: $0) }
     }
     
     var didToggleSelection: ((_ hasSelection: Bool) -> ())? {
