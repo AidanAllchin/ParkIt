@@ -33,8 +33,8 @@ class ViewModelTwo: NSObject {
     }
     
     init(spot: ParkingSpot) {
-        self.spot = ParkingSpot()
         super.init()
+        self.spot = ParkingSpot()
         getDataArray(spot: spot)
     }
     
@@ -45,20 +45,51 @@ class ViewModelTwo: NSObject {
     }
     
     func getDataArray(spot: ParkingSpot) {
-        let avaliableTimes: [String] = spot.timesAvailable
+        var availableTimes: [String] = spot.timesAvailable
         var dataArray = [Model(title: "12:00 am", isOpen: false), Model(title: "12:30 am", isOpen: false), Model(title: "1:00 am", isOpen: false), Model(title: "1:30 am", isOpen: false), Model(title: "2:00 am", isOpen: false), Model(title: "2:30 am", isOpen: false), Model(title: "3:00 am", isOpen: false), Model(title: "3:30 am", isOpen: false), Model(title: "4:00 am", isOpen: false), Model(title: "4:30 am", isOpen: false), Model(title: "5:00 am", isOpen: false), Model(title: "5:30 am", isOpen: false), Model(title: "6:00 am", isOpen: false), Model(title: "6:30 am", isOpen: false), Model(title: "7:00 am", isOpen: false), Model(title: "7:30 am", isOpen: false), Model(title: "8:00 am", isOpen: false), Model(title: "8:30 am", isOpen: false), Model(title: "9:00 am", isOpen: false), Model(title: "9:30 am", isOpen: false), Model(title: "10:00 am", isOpen: false), Model(title: "10:30 am", isOpen: false), Model(title: "11:00 am", isOpen: false), Model(title: "11:30 am", isOpen: false), Model(title: "12:00 pm", isOpen: false), Model(title: "12:30 pm", isOpen: false), Model(title: "1:00 pm", isOpen: false), Model(title: "1:30 pm", isOpen: false), Model(title: "2:00 pm", isOpen: false), Model(title: "2:30 pm", isOpen: false), Model(title: "3:00 pm", isOpen: false), Model(title: "3:30 pm", isOpen: false), Model(title: "4:00 pm", isOpen: false), Model(title: "4:30 pm", isOpen: false), Model(title: "5:00 pm", isOpen: false), Model(title: "5:30 pm", isOpen: false), Model(title: "6:00 pm", isOpen: false), Model(title: "6:30 pm", isOpen: false), Model(title: "7:00 pm", isOpen: false), Model(title: "7:30 pm", isOpen: false), Model(title: "8:00 pm", isOpen: false), Model(title: "8:30 pm", isOpen: false), Model(title: "9:00 pm", isOpen: false), Model(title: "9:30 pm", isOpen: false), Model(title: "10:00 pm", isOpen: false), Model(title: "10:30 pm", isOpen: false), Model(title: "11:00 pm", isOpen: false), Model(title: "11:30 pm", isOpen: false)]
+        
+        //Set times back to 12-hour time before comparison
+        var currentTime = 0
+        while currentTime < availableTimes.count {
+            if (availableTimes[currentTime].range(of: ":00") != nil ) {
+                var hours = Int(availableTimes[currentTime].replacingOccurrences(of: ":00", with: ""))!
+                if (hours > 12) {
+                    hours = hours - 12
+                    availableTimes[currentTime] = String(hours) + ":00"
+                    availableTimes[currentTime] = availableTimes[currentTime] + " pm"
+                }
+                else {
+                    availableTimes[currentTime] = String(hours) + ":00"
+                    availableTimes[currentTime] = availableTimes[currentTime] + " am"
+                }
+            }
+            else if (availableTimes[currentTime].range(of: ":30") != nil) {
+                var hours = Int(availableTimes[currentTime].replacingOccurrences(of: ":30", with: ""))!
+                if (hours > 12) {
+                    hours = hours - 12
+                    availableTimes[currentTime] = String(hours) + ":30"
+                    availableTimes[currentTime] = availableTimes[currentTime] + " pm"
+                }
+                else {
+                    availableTimes[currentTime] = String(hours) + ":30"
+                    availableTimes[currentTime] = availableTimes[currentTime] + " am"
+                }
+            }
+            currentTime = currentTime + 1
+        }
         
         var i = 0
         while i < dataArray.count {
-            for time in avaliableTimes {
-                //TODO: Set times back to 12-hour time before comparison
-                if (time == dataArray[i].title){
+            var j = 0
+            while j < availableTimes.count {
+                if (availableTimes[j] == dataArray[i].title) {
                     dataArray[i].isOpen = true
                 }
+                j = j + 1
             }
-             i = i + 1
+            i = i + 1
         }
-            items = dataArray.map { ViewModelItem(item: $0) }
+        items = dataArray.map { ViewModelItem(item: $0) }
     }
 
     var selectedItems: [ViewModelItem] {

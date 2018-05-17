@@ -49,7 +49,6 @@ class CreateSpotTwoViewController: UIViewController {
     }
     
     @IBAction func next(_ sender: Any) {
-        print(viewModel.selectedItems.map { $0.title })
         var times = viewModel.selectedItems.map { $0.title }
         //Changing to 24 hour time for the server before pushing to spot
         var i = 0
