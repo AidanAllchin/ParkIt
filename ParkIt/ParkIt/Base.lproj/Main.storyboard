@@ -400,6 +400,12 @@
                                     <segue destination="4V9-Be-pho" kind="presentation" id="RGV-Gc-H1t"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="spotLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5l-aZ-HNz" userLabel="spotTitle">
+                                <rect key="frame" x="53" y="30" width="269" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -416,6 +422,7 @@
                             <constraint firstItem="g5V-Yc-iFY" firstAttribute="top" secondItem="8qS-8b-hL0" secondAttribute="bottom" constant="34" id="XiT-xg-Rji"/>
                             <constraint firstItem="l54-Ia-0JU" firstAttribute="trailing" secondItem="jve-gP-OQM" secondAttribute="trailing" constant="16" id="YuU-yZ-N8U"/>
                             <constraint firstItem="cna-NL-Yoc" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" constant="127" id="Zga-Ys-2aA"/>
+                            <constraint firstItem="l54-Ia-0JU" firstAttribute="trailing" secondItem="u5l-aZ-HNz" secondAttribute="trailing" constant="53" id="aT4-P5-rxi"/>
                             <constraint firstItem="LXg-Mt-sIC" firstAttribute="top" secondItem="jve-gP-OQM" secondAttribute="bottom" constant="134" id="c2a-XL-Ctl"/>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" id="cFr-vF-5eg"/>
                             <constraint firstItem="jve-gP-OQM" firstAttribute="centerX" secondItem="ODY-1w-bl1" secondAttribute="centerX" id="gYH-yb-TRx"/>
@@ -428,6 +435,8 @@
                             <constraint firstItem="xKY-Nd-lPO" firstAttribute="top" secondItem="LXg-Mt-sIC" secondAttribute="bottom" constant="34" id="t1u-lN-g4g"/>
                             <constraint firstItem="vjZ-bO-Otr" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" constant="15" id="tZe-ve-TG0"/>
                             <constraint firstItem="Ee8-gG-xUx" firstAttribute="trailing" secondItem="l54-Ia-0JU" secondAttribute="trailing" id="xEL-4n-Uf7"/>
+                            <constraint firstItem="u5l-aZ-HNz" firstAttribute="top" secondItem="l54-Ia-0JU" secondAttribute="top" constant="10" id="yWE-fD-C2t"/>
+                            <constraint firstItem="u5l-aZ-HNz" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" constant="53" id="z15-Iv-YFi"/>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="bottom" secondItem="l54-Ia-0JU" secondAttribute="bottom" id="zpS-dg-umG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l54-Ia-0JU"/>
