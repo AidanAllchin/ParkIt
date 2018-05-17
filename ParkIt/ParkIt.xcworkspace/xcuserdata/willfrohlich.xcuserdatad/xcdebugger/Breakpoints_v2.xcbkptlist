@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkIt/ViewModelTwo.swift"
-            timestampString = "548218896.081206"
+            timestampString = "548222465.177897"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "getDataArray(spot:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkIt/ViewModelTwo.swift"
-            timestampString = "548218896.081388"
+            timestampString = "548222465.178555"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "getDataArray(spot:)"
             landmarkType = "7">
             <Locations>
@@ -106,61 +106,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkIt/ViewModelTwo.swift"
-            timestampString = "548218896.081542"
+            timestampString = "548222465.179044"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "getDataArray(spot:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ParkIt/ViewModelTwo.swift"
-            timestampString = "548218896.081692"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "init(spot:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ParkIt.ViewModelTwo.init(spot: ParkIt.ParkingSpot) -&gt; ParkIt.ViewModelTwo"
-                  moduleName = "ParkIt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/willfrohlich/Desktop/School%2012/CS%20V/gitgood/ParkIt/ParkIt/ParkIt/ViewModelTwo.swift"
-                  timestampString = "548218126.03338"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "5312">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (ParkIt.Model) -&gt; ParkIt.ViewModelItem in ParkIt.ViewModelTwo.init(spot: ParkIt.ParkingSpot) -&gt; ParkIt.ViewModelTwo"
-                  moduleName = "ParkIt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/willfrohlich/Desktop/School%2012/CS%20V/gitgood/ParkIt/ParkIt/ParkIt/ViewModelTwo.swift"
-                  timestampString = "548218126.038489"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "35">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -170,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkIt/ViewModel.swift"
-            timestampString = "548218896.081843"
+            timestampString = "548222465.179577"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -186,7 +138,7 @@
                   moduleName = "ParkIt"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/willfrohlich/Desktop/School%2012/CS%20V/gitgood/ParkIt/ParkIt/ParkIt/ViewModel.swift"
-                  timestampString = "548218896.494409"
+                  timestampString = "548222465.544534"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
@@ -201,7 +153,7 @@
                   moduleName = "ParkIt"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/willfrohlich/Desktop/School%2012/CS%20V/gitgood/ParkIt/ParkIt/ParkIt/ViewModel.swift"
-                  timestampString = "548218896.4981509"
+                  timestampString = "548222465.548553"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
@@ -218,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkIt/ViewModelTwo.swift"
-            timestampString = "548218896.0819449"
+            timestampString = "548222465.179644"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "getDataArray(spot:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkIt/ViewModelTwo.swift"
-            timestampString = "548218896.0820301"
+            timestampString = "548222465.179931"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
@@ -250,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkIt/ViewModelTwo.swift"
-            timestampString = "548218896.0827349"
+            timestampString = "548222465.180207"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "ViewModelTwo"
             landmarkType = "21">
          </BreakpointContent>
@@ -266,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkIt/ViewModelTwo.swift"
-            timestampString = "548218896.082835"
+            timestampString = "548222465.180469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "ViewModelTwo"
             landmarkType = "21">
          </BreakpointContent>

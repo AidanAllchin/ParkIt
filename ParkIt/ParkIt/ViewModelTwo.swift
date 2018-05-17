@@ -51,7 +51,7 @@ class ViewModelTwo: NSObject {
         self.spot = spot
         availableTimes = spot.timesAvailable
         getDataArray(spot: spot)
-       // items = dataArray.map { ViewModelItem(item: $0) }
+        // items = dataArray.map { ViewModelItem(item: $0) }
     }
     
     func getDataArray(spot: ParkingSpot) {
