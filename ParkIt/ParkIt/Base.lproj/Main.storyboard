@@ -590,9 +590,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeR-V4-XqL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeR-V4-XqL">
                                 <rect key="frame" x="0.0" y="602" width="375" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
@@ -605,9 +604,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8VE-V4-V1G">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8VE-V4-V1G">
                                 <rect key="frame" x="0.0" y="62" width="375" height="532"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iY0-Z0-6h2">
@@ -627,10 +625,17 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="kQZ-p7-TgU" firstAttribute="leading" secondItem="iY0-Z0-6h2" secondAttribute="trailing" id="GM8-pG-VKY"/>
+                            <constraint firstItem="WeR-V4-XqL" firstAttribute="leading" secondItem="W0s-98-jdo" secondAttribute="leading" id="Tqg-oR-HjM"/>
+                            <constraint firstItem="WeR-V4-XqL" firstAttribute="top" secondItem="8VE-V4-V1G" secondAttribute="bottom" constant="8" id="WDp-vr-Ctp"/>
+                            <constraint firstItem="W0s-98-jdo" firstAttribute="bottom" secondItem="WeR-V4-XqL" secondAttribute="bottom" constant="20" id="Z0P-Kx-JC3"/>
+                            <constraint firstItem="WeR-V4-XqL" firstAttribute="trailing" secondItem="W0s-98-jdo" secondAttribute="trailing" id="bb8-fz-oxn"/>
                             <constraint firstItem="iY0-Z0-6h2" firstAttribute="top" secondItem="W0s-98-jdo" secondAttribute="top" id="eIK-Sj-bqf"/>
+                            <constraint firstItem="8VE-V4-V1G" firstAttribute="trailing" secondItem="W0s-98-jdo" secondAttribute="trailing" id="kha-02-xcG"/>
                             <constraint firstItem="W0s-98-jdo" firstAttribute="trailing" secondItem="kQZ-p7-TgU" secondAttribute="trailing" constant="40" id="lGs-8a-Eqx"/>
+                            <constraint firstItem="8VE-V4-V1G" firstAttribute="top" secondItem="kQZ-p7-TgU" secondAttribute="bottom" constant="5" id="pC5-X8-VLP"/>
                             <constraint firstItem="kQZ-p7-TgU" firstAttribute="top" secondItem="W0s-98-jdo" secondAttribute="top" id="qB9-HH-lOe"/>
                             <constraint firstItem="iY0-Z0-6h2" firstAttribute="leading" secondItem="W0s-98-jdo" secondAttribute="leading" id="tVq-ju-QQH"/>
+                            <constraint firstItem="8VE-V4-V1G" firstAttribute="leading" secondItem="W0s-98-jdo" secondAttribute="leading" id="xXQ-bZ-p8E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="W0s-98-jdo"/>
                     </view>
@@ -814,7 +819,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vyW-UG-Zrl"/>
-        <segue reference="SQ4-oT-5iY"/>
+        <segue reference="f9p-V3-baU"/>
         <segue reference="HOd-Ui-W0G"/>
     </inferredMetricsTieBreakers>
 </document>

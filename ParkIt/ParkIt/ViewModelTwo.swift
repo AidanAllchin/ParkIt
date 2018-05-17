@@ -25,6 +25,7 @@ class ViewModelItem {
 class ViewModelTwo: NSObject {
     var items = [ViewModelItem]()
     var spot:ParkingSpot = ParkingSpot()
+    var availableTimes = [String]()
     var dataArray = [Model(title: "12:00 am", isOpen: false), Model(title: "12:30 am", isOpen: false), Model(title: "1:00 am", isOpen: false), Model(title: "1:30 am", isOpen: false), Model(title: "2:00 am", isOpen: false), Model(title: "2:30 am", isOpen: false), Model(title: "3:00 am", isOpen: false), Model(title: "3:30 am", isOpen: false), Model(title: "4:00 am", isOpen: false), Model(title: "4:30 am", isOpen: false), Model(title: "5:00 am", isOpen: false), Model(title: "5:30 am", isOpen: false), Model(title: "6:00 am", isOpen: false), Model(title: "6:30 am", isOpen: false), Model(title: "7:00 am", isOpen: false), Model(title: "7:30 am", isOpen: false), Model(title: "8:00 am", isOpen: false), Model(title: "8:30 am", isOpen: false), Model(title: "9:00 am", isOpen: false), Model(title: "9:30 am", isOpen: false), Model(title: "10:00 am", isOpen: false), Model(title: "10:30 am", isOpen: false), Model(title: "11:00 am", isOpen: false), Model(title: "11:30 am", isOpen: false), Model(title: "12:00 pm", isOpen: false), Model(title: "12:30 pm", isOpen: false), Model(title: "1:00 pm", isOpen: false), Model(title: "1:30 pm", isOpen: false), Model(title: "2:00 pm", isOpen: false), Model(title: "2:30 pm", isOpen: false), Model(title: "3:00 pm", isOpen: false), Model(title: "3:30 pm", isOpen: false), Model(title: "4:00 pm", isOpen: false), Model(title: "4:30 pm", isOpen: false), Model(title: "5:00 pm", isOpen: false), Model(title: "5:30 pm", isOpen: false), Model(title: "6:00 pm", isOpen: false), Model(title: "6:30 pm", isOpen: false), Model(title: "7:00 pm", isOpen: false), Model(title: "7:30 pm", isOpen: false), Model(title: "8:00 pm", isOpen: false), Model(title: "8:30 pm", isOpen: false), Model(title: "9:00 pm", isOpen: false), Model(title: "9:30 pm", isOpen: false), Model(title: "10:00 pm", isOpen: false), Model(title: "10:30 pm", isOpen: false), Model(title: "11:00 pm", isOpen: false), Model(title: "11:30 pm", isOpen: false)]
     
     var didToggleSelection: ((_ hasSelection: Bool) -> ())? {
@@ -40,21 +41,20 @@ class ViewModelTwo: NSObject {
     override init() {
         self.spot = ParkingSpot()
         super.init()
+        availableTimes = spot.timesAvailable
         getDataArray(spot: spot)
         //items = dataArray.map { ViewModelItem(item: $0) }
     }
     
     init(spot: ParkingSpot) {
         super.init()
-        self.spot = ParkingSpot()
+        self.spot = spot
+        availableTimes = spot.timesAvailable
         getDataArray(spot: spot)
        // items = dataArray.map { ViewModelItem(item: $0) }
     }
     
-    
     func getDataArray(spot: ParkingSpot) {
-        var availableTimes: [String] = spot.timesAvailable
-        
         //Set times back to 12-hour time before comparison
         var currentTime = 0
         while currentTime < availableTimes.count {
@@ -64,20 +64,17 @@ class ViewModelTwo: NSObject {
                     hours = hours - 12
                     availableTimes[currentTime] = String(hours) + ":00"
                     availableTimes[currentTime] = availableTimes[currentTime] + " pm"
-                }
-                else {
+                } else {
                     availableTimes[currentTime] = String(hours) + ":00"
                     availableTimes[currentTime] = availableTimes[currentTime] + " am"
                 }
-            }
-            else if (availableTimes[currentTime].range(of: ":30") != nil) {
+            } else if (availableTimes[currentTime].range(of: ":30") != nil) {
                 var hours = Int(availableTimes[currentTime].replacingOccurrences(of: ":30", with: ""))!
                 if (hours > 12) {
                     hours = hours - 12
                     availableTimes[currentTime] = String(hours) + ":30"
                     availableTimes[currentTime] = availableTimes[currentTime] + " pm"
-                }
-                else {
+                } else {
                     availableTimes[currentTime] = String(hours) + ":30"
                     availableTimes[currentTime] = availableTimes[currentTime] + " am"
                 }
