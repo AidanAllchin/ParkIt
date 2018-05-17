@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class BuySpotViewController: UIViewController {
+    
+    var ref:DatabaseReference!
+    var databaseHandle:DatabaseHandle?
+    
     @IBOutlet weak var spotLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nextButton: UIButton?
@@ -60,8 +65,9 @@ class BuySpotViewController: UIViewController {
             i = i + 1
         }
         
+        
+        
         spot.reservations = times
-        print(times)
         tableView?.reloadData()
         //performSegue(withIdentifier: "NextCreatePage", sender: self.spot)
     }
