@@ -31,7 +31,7 @@ class AccountViewController: UIViewController {
         usernameLabel.text = UserDefaults.standard.value(forKey: "userEmail") as? String
         
         //Setting spots the user is selling
-        ref?.observeSingleEvent(of: .value, with: { (snapshot) in
+        ref?.observe(.value, with: { (snapshot) in
             let spots: NSDictionary = (snapshot.value as! NSDictionary).value(forKey: "Spots") as! NSDictionary
             
             var spotName = ""
@@ -67,11 +67,14 @@ class AccountViewController: UIViewController {
             }
             if (self.sellingOneButton.currentTitle == "SellingOne") {
                 self.sellingOneButton.setTitle("Not selling any spots currently.", for: UIControlState.normal)
-            } else if (self.sellingTwoButton.currentTitle == "SellingTwo") {
+            }
+            if (self.sellingTwoButton.currentTitle == "SellingTwo") {
                 self.sellingTwoButton.isHidden = true
-            } else if (self.sellingThreeButton.currentTitle == "SellingThree") {
+            }
+            if (self.sellingThreeButton.currentTitle == "SellingThree") {
                 self.sellingThreeButton.isHidden = true
-            } else if (self.sellingFourButton.currentTitle == "SellingFour") {
+            }
+            if (self.sellingFourButton.currentTitle == "SellingFour") {
                 self.sellingFourButton.isHidden = true
             }
         })

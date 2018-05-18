@@ -13,8 +13,10 @@ class ViewSpotViewController: UIViewController {
 
     @IBOutlet weak var spotTitle: UILabel!
     @IBOutlet weak var spotLabel: UILabel!
+    @IBOutlet weak var userSellingLabel: UILabel!
     var spot:ParkingSpot = ParkingSpot()
  
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +24,7 @@ class ViewSpotViewController: UIViewController {
         
         spotTitle?.text = spot.title
         spotLabel?.text = spot.address
+        userSellingLabel?.text = spot.userSelling
         
     }
     
