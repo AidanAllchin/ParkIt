@@ -113,10 +113,21 @@ class BuySpotViewController: UIViewController {
             var resCounter = 0
             while resCounter < times.count
             {
-                var resNumber = String(format: "%02d", numReservations+resCounter)
-                //if(((spots.value(forKey: changingSpotTitle) as! NSDictionary).value(forKey: "Reservations") as! NSDictionary).value(forKey: "Res-" + resNumber) as! String == "") {
-                //    resNumber = String(format: "%02d", numReservations+resCounter-1)
-                //}
+                let resNumber = String(format: "%02d", numReservations+resCounter)
+                //This cycles through the existing reservations and overwrites the ones that are ""
+                var blankResCount = 0
+                while blankResCount < numReservations
+                {
+                    let blankResNumber = String(format: "%02d", blankResCount)
+                    //if any spots have a value for a Res-## == "", set it = to times[resCounter] and cycle resCounter
+                    if(((spots.value(forKey: changingSpotTitle) as! NSDictionary).value(forKey: "Reservations") as! NSDictionary).value(forKey: "Res-" + blankResNumber) as! String == "") {
+                        self.ref.child("Spots/\(changingSpotTitle)/Reservations/Res-" + blankResNumber).setValue(times[resCounter])
+                        resCounter = resCounter + 1
+                    }
+                    blankResCount = blankResCount + 1
+                }
+                
+                //Now add the new values after the existing reservations
                 self.ref.child("Spots/\(changingSpotTitle)/Reservations/Res-" + resNumber).setValue(times[resCounter])
                 resCounter = resCounter + 1
             }
