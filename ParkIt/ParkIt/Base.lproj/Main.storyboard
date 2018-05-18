@@ -145,26 +145,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOB-fv-Jjg">
-                                <rect key="frame" x="147.5" y="70" width="79" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOB-fv-Jjg">
+                                <rect key="frame" x="53" y="30" width="269" height="30"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzq-sh-gG6">
-                                <rect key="frame" x="16" y="20" width="30" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzq-sh-gG6">
+                                <rect key="frame" x="15" y="20" width="30" height="49"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="X"/>
                                 <connections>
                                     <segue destination="4V9-Be-pho" kind="show" animates="NO" id="BSr-CF-NI9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spots Selling:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irC-fV-wiB">
+                                <rect key="frame" x="50" y="110" width="275" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.98780487804878048" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NOB-fv-Jjg" firstAttribute="centerX" secondItem="czT-UM-kNZ" secondAttribute="centerX" id="3OR-se-LKf"/>
-                            <constraint firstItem="NOB-fv-Jjg" firstAttribute="top" secondItem="myT-S5-IkV" secondAttribute="top" constant="50" id="xqI-N9-VKW"/>
+                            <constraint firstItem="irC-fV-wiB" firstAttribute="leading" secondItem="myT-S5-IkV" secondAttribute="leading" constant="50" id="GeK-4G-cQ2"/>
+                            <constraint firstItem="Mzq-sh-gG6" firstAttribute="leading" secondItem="myT-S5-IkV" secondAttribute="leading" constant="15" id="KL3-dh-Zs7"/>
+                            <constraint firstItem="Mzq-sh-gG6" firstAttribute="top" secondItem="myT-S5-IkV" secondAttribute="top" id="Not-bg-ovY"/>
+                            <constraint firstItem="myT-S5-IkV" firstAttribute="trailing" secondItem="irC-fV-wiB" secondAttribute="trailing" constant="50" id="Oyx-7c-pEl"/>
+                            <constraint firstItem="NOB-fv-Jjg" firstAttribute="top" secondItem="myT-S5-IkV" secondAttribute="top" constant="10" id="aWr-No-Q0h"/>
+                            <constraint firstItem="NOB-fv-Jjg" firstAttribute="leading" secondItem="myT-S5-IkV" secondAttribute="leading" constant="53" id="dcK-pb-clQ"/>
+                            <constraint firstItem="irC-fV-wiB" firstAttribute="top" secondItem="NOB-fv-Jjg" secondAttribute="bottom" constant="50" id="fUb-p7-G3G"/>
+                            <constraint firstItem="myT-S5-IkV" firstAttribute="trailing" secondItem="NOB-fv-Jjg" secondAttribute="trailing" constant="53" id="vnk-r4-69y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="myT-S5-IkV"/>
                     </view>
@@ -438,14 +449,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDV-ZK-JdP">
-                                <rect key="frame" x="7" y="15" width="40" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="2Qx-rs-QsW"/>
-                                    <constraint firstAttribute="width" constant="40" id="P5B-hq-WwF"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="backbutton"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7N-J6-ifd">
                                 <rect key="frame" x="16" y="602" width="343" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
@@ -504,7 +507,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="backbutton"/>
                                 <connections>
-                                    <segue destination="5Lr-qo-12t" kind="presentation" identifier="" id="P9f-jL-eJP"/>
+                                    <segue destination="5Lr-qo-12t" kind="push" identifier="" id="P9f-jL-eJP"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Spot title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRv-WQ-5QI">
@@ -572,9 +575,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="backbutton"/>
                                 <connections>
-                                    <segue destination="mue-lN-skz" kind="popoverPresentation" popoverAnchorView="iY0-Z0-6h2" id="SQ4-oT-5iY">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="mue-lN-skz" kind="show" id="SQ4-oT-5iY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -595,6 +596,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="W0s-98-jdo"/>
                     </view>
+                    <navigationItem key="navigationItem" id="waJ-lD-2yk"/>
                     <connections>
                         <outlet property="nextButton" destination="WeR-V4-XqL" id="6Z8-mH-H5F"/>
                         <outlet property="tableView" destination="8VE-V4-V1G" id="0CH-sJ-7dj"/>
@@ -644,7 +646,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="backbutton"/>
                                 <connections>
-                                    <segue destination="4V9-Be-pho" kind="presentation" id="vyW-UG-Zrl"/>
+                                    <segue destination="4V9-Be-pho" kind="show" id="vyW-UG-Zrl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walk to the exact location of the spot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdU-4E-NyE">
@@ -695,11 +697,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spot Rented!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ke-je-YSb">
-                                <rect key="frame" x="53" y="186" width="269" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spot Rented!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ke-je-YSb">
+                                <rect key="frame" x="53" y="170" width="269" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTv-An-ON4">
@@ -712,7 +713,12 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5Ke-je-YSb" firstAttribute="top" secondItem="KQL-t0-DqV" secondAttribute="top" constant="150" id="Oms-1L-AbT"/>
+                            <constraint firstItem="KQL-t0-DqV" firstAttribute="trailing" secondItem="5Ke-je-YSb" secondAttribute="trailing" constant="53" id="n3T-Uz-Hfs"/>
+                            <constraint firstItem="5Ke-je-YSb" firstAttribute="leading" secondItem="KQL-t0-DqV" secondAttribute="leading" constant="53" id="ur4-Tg-tsp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KQL-t0-DqV"/>
                     </view>
                 </viewController>
@@ -812,8 +818,8 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rCg-z4-jzG"/>
+        <segue reference="RBg-K3-R9I"/>
         <segue reference="SQ4-oT-5iY"/>
-        <segue reference="HOd-Ui-W0G"/>
+        <segue reference="P9f-jL-eJP"/>
     </inferredMetricsTieBreakers>
 </document>
