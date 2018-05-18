@@ -1,6 +1,10 @@
-//Wfrohllich
-
-
+//
+//  ViewModelTwo.Swift
+//  ParkIt
+//
+//  Created by Will Frohlich on 5/8/18.
+//  Copyright © 2018 ParkIt. All rights reserved.
+//
 import Foundation
 import UIKit
 

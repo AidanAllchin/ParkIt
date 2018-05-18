@@ -2,7 +2,7 @@
 //  MapViewController.swift
 //  ParkIt
 //
-//  Created by Aidan Allchin on 2/13/18.
+//  Created by Will Frohlich on 2/13/18.
 //  Copyright © 2018 ParkIt. All rights reserved.
 //
 

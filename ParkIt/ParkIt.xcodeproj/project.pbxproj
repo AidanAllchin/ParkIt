@@ -22,7 +22,6 @@
 		DD6CC028205A2AF900B697BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD6CC027205A2AF900B697BE /* GoogleService-Info.plist */; };
 		DDB157392098FDF7005F75EB /* CreateSpotThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB157382098FDF7005F75EB /* CreateSpotThreeViewController.swift */; };
 		DDB1573B2099041D005F75EB /* CreateSpotFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB1573A2099041D005F75EB /* CreateSpotFinishedViewController.swift */; };
-		DDE62755209CC02900F13460 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE62754209CC02900F13460 /* CalendarController.swift */; };
 		DDEA9B9B2051A6E0002FCA6C /* ParkingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9B9A2051A6E0002FCA6C /* ParkingSpot.swift */; };
 		DDEA9B9D2051A6E7002FCA6C /* ParkingSpotMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9B9C2051A6E7002FCA6C /* ParkingSpotMarkerView.swift */; };
 		DDEA9BA42051A73B002FCA6C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9BA32051A73B002FCA6C /* MapViewController.swift */; };
@@ -81,7 +80,6 @@
 		DD6CC027205A2AF900B697BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DDB157382098FDF7005F75EB /* CreateSpotThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSpotThreeViewController.swift; sourceTree = "<group>"; };
 		DDB1573A2099041D005F75EB /* CreateSpotFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSpotFinishedViewController.swift; sourceTree = "<group>"; };
-		DDE62754209CC02900F13460 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 		DDEA9B9A2051A6E0002FCA6C /* ParkingSpot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingSpot.swift; sourceTree = "<group>"; };
 		DDEA9B9C2051A6E7002FCA6C /* ParkingSpotMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingSpotMarkerView.swift; sourceTree = "<group>"; };
 		DDEA9BA12051A720002FCA6C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 				F686964520AB4E820044C8D5 /* ViewModelTwo.swift */,
 				F6E012F220A5F8AF007F4B69 /* CustomCell.swift */,
 				F6E012F420A5F938007F4B69 /* Model.swift */,
-				DDE62754209CC02900F13460 /* CalendarController.swift */,
 				DDB157382098FDF7005F75EB /* CreateSpotThreeViewController.swift */,
 				DDB1573A2099041D005F75EB /* CreateSpotFinishedViewController.swift */,
 				DDEA9B9C2051A6E7002FCA6C /* ParkingSpotMarkerView.swift */,
@@ -446,7 +443,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDEA9B9B2051A6E0002FCA6C /* ParkingSpot.swift in Sources */,
-				DDE62755209CC02900F13460 /* CalendarController.swift in Sources */,
 				DDB1573B2099041D005F75EB /* CreateSpotFinishedViewController.swift in Sources */,
 				F69FF1F2208CFDBB006F03EA /* LocationSearchTable.swift in Sources */,
 				DDEA9B9D2051A6E7002FCA6C /* ParkingSpotMarkerView.swift in Sources */,

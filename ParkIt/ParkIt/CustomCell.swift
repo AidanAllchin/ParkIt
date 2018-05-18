@@ -1,4 +1,10 @@
-
+//
+//  CustomCell.Swift
+//  ParkIt
+//
+//  Created by Will Frohlich on 3/6/18.
+//  Copyright © 2018 ParkIt. All rights reserved.
+//
 
 import UIKit
 

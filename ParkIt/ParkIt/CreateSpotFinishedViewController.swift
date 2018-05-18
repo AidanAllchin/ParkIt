@@ -2,7 +2,7 @@
 //  CreateSpotFinishedViewController.swift
 //  ParkIt
 //
-//  Created by Aidan Allchin on 5/1/18.
+//  Created by Aidan Allchin on 3/6/18.
 //  Copyright © 2018 ParkIt. All rights reserved.
 //
 

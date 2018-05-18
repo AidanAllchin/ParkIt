@@ -2,7 +2,7 @@
 //  BuySpotViewController.swift
 //  ParkIt
 //
-//  Created by Aidan Allchin on 3/11/18.
+//  Created by Will Frohlich on 3/11/18.
 //  Copyright © 2018 ParkIt. All rights reserved.
 //
 
