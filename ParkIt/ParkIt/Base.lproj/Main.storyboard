@@ -135,7 +135,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="535.20000000000005" y="-93.103448275862078"/>
+            <point key="canvasLocation" x="529" y="-62"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="NUZ-7O-Fog">
@@ -449,6 +449,14 @@
                                 <color key="textColor" red="0.98780487800000005" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACq-fb-eVY">
+                                <rect key="frame" x="320" y="30" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3HW-Vv-XFv"/>
+                                    <constraint firstAttribute="width" constant="40" id="dv2-un-CfI"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="info"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -467,10 +475,12 @@
                             <constraint firstItem="b4x-gF-Ft6" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" constant="40" id="Vlo-2Z-Yx3"/>
                             <constraint firstItem="u5l-aZ-HNz" firstAttribute="top" secondItem="l54-Ia-0JU" secondAttribute="top" constant="10" id="YG1-Xz-U5t"/>
                             <constraint firstItem="b4x-gF-Ft6" firstAttribute="top" secondItem="Ee8-gG-xUx" secondAttribute="bottom" constant="200" id="YKh-bF-W6E"/>
+                            <constraint firstItem="l54-Ia-0JU" firstAttribute="trailing" secondItem="ACq-fb-eVY" secondAttribute="trailing" constant="15" id="bDw-SC-62w"/>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" id="c1g-dk-nQf"/>
                             <constraint firstItem="Ee8-gG-xUx" firstAttribute="top" secondItem="l54-Ia-0JU" secondAttribute="top" constant="200" id="cWq-QJ-Yyd"/>
                             <constraint firstItem="Ee8-gG-xUx" firstAttribute="trailing" secondItem="l54-Ia-0JU" secondAttribute="trailing" id="fHV-wt-LWL"/>
                             <constraint firstItem="vjZ-bO-Otr" firstAttribute="leading" secondItem="l54-Ia-0JU" secondAttribute="leading" constant="15" id="j2v-fA-IOI"/>
+                            <constraint firstItem="ACq-fb-eVY" firstAttribute="top" secondItem="l54-Ia-0JU" secondAttribute="top" constant="10" id="jMp-1l-hwW"/>
                             <constraint firstItem="ODY-1w-bl1" firstAttribute="bottom" secondItem="l54-Ia-0JU" secondAttribute="bottom" id="oeB-z5-9qk"/>
                             <constraint firstItem="l54-Ia-0JU" firstAttribute="trailing" secondItem="b4x-gF-Ft6" secondAttribute="trailing" constant="40" id="rCr-6i-MIi"/>
                             <constraint firstItem="l54-Ia-0JU" firstAttribute="trailing" secondItem="aH1-Mi-egt" secondAttribute="trailing" constant="40" id="vcf-hL-iPH"/>
@@ -482,6 +492,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="spotLabel" destination="jve-gP-OQM" id="suG-iI-htK"/>
+                        <outlet property="spotOptions" destination="ACq-fb-eVY" id="Epi-Bw-bXc"/>
                         <outlet property="spotTitle" destination="u5l-aZ-HNz" id="lDO-3u-ODR"/>
                         <outlet property="userSellingLabel" destination="aH1-Mi-egt" id="6vE-Xz-ktt"/>
                         <segue destination="9ct-Du-UdI" kind="presentation" identifier="BuySpotSegue" id="KVc-dN-KkF"/>
@@ -489,7 +500,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72D-hv-JEw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242.40000000000001" y="-72.413793103448285"/>
+            <point key="canvasLocation" x="-252" y="-62.518740629685162"/>
         </scene>
         <!--CreateSpotFinishedViewController-->
         <scene sceneID="H83-tS-on2">
@@ -894,11 +905,12 @@
     <resources>
         <image name="Button Logo" width="50" height="50"/>
         <image name="backbutton" width="256" height="256"/>
+        <image name="info" width="225" height="225"/>
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rCg-z4-jzG"/>
-        <segue reference="SQ4-oT-5iY"/>
+        <segue reference="RGV-Gc-H1t"/>
+        <segue reference="f9p-V3-baU"/>
         <segue reference="P9f-jL-eJP"/>
         <segue reference="FQu-n2-wMY"/>
     </inferredMetricsTieBreakers>
