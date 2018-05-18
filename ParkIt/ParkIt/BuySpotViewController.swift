@@ -110,11 +110,13 @@ class BuySpotViewController: UIViewController {
                 self.present(alert, animated: true)
             }
             
-            //TODO: SETTING THIS TO 0 WILL OVERWRITE THE VALUES IN RESERVATIONS
             var resCounter = 0
             while resCounter < times.count
             {
-                let resNumber = String(format: "%02d", numReservations+resCounter)
+                var resNumber = String(format: "%02d", numReservations+resCounter)
+                //if(((spots.value(forKey: changingSpotTitle) as! NSDictionary).value(forKey: "Reservations") as! NSDictionary).value(forKey: "Res-" + resNumber) as! String == "") {
+                //    resNumber = String(format: "%02d", numReservations+resCounter-1)
+                //}
                 self.ref.child("Spots/\(changingSpotTitle)/Reservations/Res-" + resNumber).setValue(times[resCounter])
                 resCounter = resCounter + 1
             }
