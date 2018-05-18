@@ -68,7 +68,7 @@ class ParkingSpot: NSObject, MKAnnotation {
         let coordsArray = coords.components(separatedBy: ", ")
         self.coordinate = CLLocationCoordinate2D(latitude: Double(coordsArray[0])!, longitude: Double(coordsArray[1])!)
         self.timeLeft = dict.value(forKey: "timeLeft") as! Float
-        self.userBuying = dict.value(forKey: "userBuying") as! String
+        self.userBuying = dict.value(forKey: "userBuying") as? String
         self.userSelling = dict.value(forKey: "userSelling") as! String
         
         var timesArray = [String]()
