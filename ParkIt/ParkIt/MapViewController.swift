@@ -203,6 +203,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 }
                 
                 //reservations
+                //TODO: Make it so spots don't have to have a reservation to load
                 let resDict = dict.value(forKey: "Reservations") as! NSDictionary
                 
                 let resCount = resDict.count
