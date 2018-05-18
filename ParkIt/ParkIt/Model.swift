@@ -11,4 +11,5 @@ import Foundation
 struct Model {
     var title: String
     var isOpen: Bool
+    var isRented: Bool
 }

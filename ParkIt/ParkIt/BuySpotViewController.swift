@@ -32,6 +32,8 @@ class BuySpotViewController: UIViewController {
         tableView?.delegate = viewModelTwo// as! UITableViewDelegate
         tableView?.separatorStyle = .none
         
+        ref = Database.database().reference()
+        
         viewModelTwo.didToggleSelection = { [weak self] hasSelection in
             self?.nextButton?.isEnabled = hasSelection
         }
@@ -41,6 +43,15 @@ class BuySpotViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //To send the ParkingSpot to the next page of creation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is BuySpotSummaryViewController
+        {
+            let vc = segue.destination as? BuySpotSummaryViewController
+            vc!.spot = sender as! ParkingSpot
+        }
     }
     
     @IBAction func next(_ sender: Any) {
@@ -65,11 +76,52 @@ class BuySpotViewController: UIViewController {
             i = i + 1
         }
         
+        var numSpots = 0
+        var spotName = ""
+        var changingSpotTitle = ""
+        var numReservations = 0
         
-        
-        spot.reservations = times
-        tableView?.reloadData()
-        performSegue(withIdentifier: "SummarySegue", sender: self.spot)
+        ref?.observeSingleEvent(of: .value, with: { (snapshot) in
+            let wholeDatabase: NSDictionary = snapshot.value as! NSDictionary
+            let spots: NSDictionary = wholeDatabase.value(forKey: "Spots") as! NSDictionary
+            
+            numSpots = spots.count
+            var currentSpotNum = numSpots - 1
+            
+            //Start cycling through all the spots and find which one
+            let jj = 0
+            while jj <= currentSpotNum
+            {
+                spotName = "Spot-0x" + String(format: "%04d", currentSpotNum)
+                let dict: NSDictionary = spots.value(forKey: spotName) as! NSDictionary
+                let id = dict.value(forKey: "id") as! String
+                if (id == self.spot.uniqueId) {
+                    changingSpotTitle = spotName
+                    numReservations = (dict.value(forKey: "Reservations") as! NSDictionary).count
+                }
+                currentSpotNum = currentSpotNum - 1
+            }
+            
+            if (changingSpotTitle == "") {
+                let alert = UIAlertController(title: "ID Failure", message: "The id for the spot could not be found.", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Whoops", style: .default, handler: nil))
+                
+                self.present(alert, animated: true)
+            }
+            
+            //TODO: SETTING THIS TO 0 WILL OVERWRITE THE VALUES IN RESERVATIONS
+            var resCounter = 0
+            while resCounter < times.count
+            {
+                let resNumber = String(format: "%02d", numReservations+resCounter)
+                self.ref.child("Spots/\(changingSpotTitle)/Reservations/Res-" + resNumber).setValue(times[resCounter])
+                resCounter = resCounter + 1
+            }
+            
+            self.spot.reservations = times
+            self.tableView?.reloadData()
+            self.performSegue(withIdentifier: "SummarySegue", sender: self.spot)
+        })
     }
-    
 }

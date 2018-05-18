@@ -131,6 +131,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var title: String = ""
         var address: String = ""
         var isAvailable: Bool = true
+        var uniqueId: String = "0"
         var location: CLLocationCoordinate2D = CLLocationCoordinate2D()
         var timeLeft: Float = 0.0
         var userBuying: String = ""
@@ -166,6 +167,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 } else {
                     isAvailable = false
                 }
+                
+                //uniqueId
+                uniqueId = dict.value(forKey: "id") as! String
                 
                 //location
                 var locCompString = ""
@@ -213,7 +217,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                     jj = jj + 1
                 }
                 
-                let currentSpot: ParkingSpot = ParkingSpot(title: title, address: address, isAvailable: isAvailable, coordinate: location, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling, timesAvailable: timesAvailable, reservations: reservations)
+                let currentSpot: ParkingSpot = ParkingSpot(title: title, address: address, isAvailable: isAvailable, uniqueId: uniqueId, coordinate: location, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling, timesAvailable: timesAvailable, reservations: reservations)
                 
                 self.mapView.addAnnotation(currentSpot)
                 

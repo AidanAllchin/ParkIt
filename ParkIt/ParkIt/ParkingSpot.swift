@@ -15,6 +15,7 @@ class ParkingSpot: NSObject, MKAnnotation {
     var title: String?
     var address: String
     var isAvailable: Bool
+    var uniqueId: String
     var coordinate: CLLocationCoordinate2D
     var timeLeft: Float
     var userBuying: String?
@@ -27,6 +28,7 @@ class ParkingSpot: NSObject, MKAnnotation {
         self.title = ""
         self.address = ""
         self.isAvailable = false
+        self.uniqueId = "0"
         self.coordinate = CLLocationCoordinate2D()
         self.timeLeft = 0.0
         self.userBuying = ""
@@ -42,6 +44,7 @@ class ParkingSpot: NSObject, MKAnnotation {
         self.title = ""
         self.address = ""
         self.isAvailable = false
+        self.uniqueId = "0"
         self.coordinate = CLLocationCoordinate2D()
         self.timeLeft = 0.0
         self.userBuying = ""
@@ -50,11 +53,12 @@ class ParkingSpot: NSObject, MKAnnotation {
         self.reservations = [String]()
     }
     
-    init(title: String, address: String, isAvailable: Bool, coordinate: CLLocationCoordinate2D, timeLeft: Float, userBuying: String, userSelling: String, timesAvailable: [String], reservations: [String]) {
+    init(title: String, address: String, isAvailable: Bool, uniqueId: String, coordinate: CLLocationCoordinate2D, timeLeft: Float, userBuying: String, userSelling: String, timesAvailable: [String], reservations: [String]) {
         
         self.title = title
         self.address = address
         self.isAvailable = isAvailable
+        self.uniqueId = uniqueId
         self.coordinate = coordinate
         self.timeLeft = timeLeft
         self.userBuying = userBuying
