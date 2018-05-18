@@ -1,9 +1,9 @@
 //
 //  Model.swift
-//  TableViewWithMultipleSelection
+//  ParkIt
 //
-//  Created by Stanislav Ostrovskiy on 5/22/17.
-//  Copyright © 2017 Stanislav Ostrovskiy. All rights reserved.
+//  Created by Will Frohlich on 3/6/18.
+//  Copyright © 2018 ParkIt. All rights reserved.
 //
 
 import Foundation

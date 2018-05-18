@@ -1,6 +1,9 @@
 //
+//  ParkingSpot.Swift
+//  ParkIt
+//
 //  Created by Will Frohlich on 3/2/18.
-//  
+//  Copyright © 2018 ParkIt. All rights reserved.
 //
 
 import Foundation
