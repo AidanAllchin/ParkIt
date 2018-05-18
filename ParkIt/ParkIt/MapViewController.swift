@@ -204,18 +204,19 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 
                 //reservations
                 //TODO: Make it so spots don't have to have a reservation to load
-                let resDict = dict.value(forKey: "Reservations") as! NSDictionary
-                
-                let resCount = resDict.count
-                
-                var jj = 0
-                while jj < resCount
+                if let resDict: NSDictionary = dict.value(forKey: "Reservations") as? NSDictionary
                 {
-                    let resName: String = "Res-" + String(format: "%02d", (jj))
-                    let currentRes = resDict.value(forKey: resName)
-                    reservations.append(currentRes as! String)
+                    let resCount = resDict.count
                     
-                    jj = jj + 1
+                    var jj = 0
+                    while jj < resCount
+                    {
+                        let resName: String = "Res-" + String(format: "%02d", (jj))
+                        let currentRes = resDict.value(forKey: resName)
+                        reservations.append(currentRes as! String)
+                        
+                        jj = jj + 1
+                    }
                 }
                 
                 let currentSpot: ParkingSpot = ParkingSpot(title: title, address: address, isAvailable: isAvailable, uniqueId: uniqueId, coordinate: location, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling, timesAvailable: timesAvailable, reservations: reservations)

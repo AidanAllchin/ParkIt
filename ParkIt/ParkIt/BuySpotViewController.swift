@@ -97,7 +97,10 @@ class BuySpotViewController: UIViewController {
                 let id = dict.value(forKey: "id") as! String
                 if (id == self.spot.uniqueId) {
                     changingSpotTitle = spotName
-                    numReservations = (dict.value(forKey: "Reservations") as! NSDictionary).count
+                    if let res: NSDictionary = dict.value(forKey: "Reservations") as? NSDictionary
+                    {
+                        numReservations = res.count
+                    }
                 }
                 currentSpotNum = currentSpotNum - 1
             }
@@ -115,17 +118,18 @@ class BuySpotViewController: UIViewController {
             {
                 let resNumber = String(format: "%02d", numReservations+resCounter)
                 //This cycles through the existing reservations and overwrites the ones that are ""
-                var blankResCount = 0
+                /*var blankResCount = 0
                 while blankResCount < numReservations
                 {
                     let blankResNumber = String(format: "%02d", blankResCount)
                     //if any spots have a value for a Res-## == "", set it = to times[resCounter] and cycle resCounter
                     if(((spots.value(forKey: changingSpotTitle) as! NSDictionary).value(forKey: "Reservations") as! NSDictionary).value(forKey: "Res-" + blankResNumber) as! String == "") {
                         self.ref.child("Spots/\(changingSpotTitle)/Reservations/Res-" + blankResNumber).setValue(times[resCounter])
-                        resCounter = resCounter + 1
+                        //resCounter = resCounter + 1
+                        //blankResCount = blankResCount + 1
                     }
                     blankResCount = blankResCount + 1
-                }
+                }*/
                 
                 //Now add the new values after the existing reservations
                 self.ref.child("Spots/\(changingSpotTitle)/Reservations/Res-" + resNumber).setValue(times[resCounter])

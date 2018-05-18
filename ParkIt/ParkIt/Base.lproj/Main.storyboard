@@ -422,7 +422,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="X"/>
                                 <connections>
-                                    <segue destination="4V9-Be-pho" kind="presentation" id="RGV-Gc-H1t"/>
+                                    <segue destination="4V9-Be-pho" kind="show" id="RGV-Gc-H1t"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="spotTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5l-aZ-HNz" userLabel="spotTitle">
@@ -788,7 +788,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
-                                    <segue destination="4V9-Be-pho" kind="presentation" id="rCg-z4-jzG"/>
+                                    <segue destination="4V9-Be-pho" kind="showDetail" id="rCg-z4-jzG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -824,7 +824,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="X"/>
                                 <connections>
-                                    <segue destination="4V9-Be-pho" kind="presentation" id="y9F-Ek-Y1T"/>
+                                    <segue destination="4V9-Be-pho" kind="show" id="y9F-Ek-Y1T"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsv-Z0-y6G">
@@ -897,9 +897,9 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RGV-Gc-H1t"/>
+        <segue reference="rCg-z4-jzG"/>
         <segue reference="SQ4-oT-5iY"/>
         <segue reference="P9f-jL-eJP"/>
-        <segue reference="hMK-7t-Pj2"/>
+        <segue reference="FQu-n2-wMY"/>
     </inferredMetricsTieBreakers>
 </document>

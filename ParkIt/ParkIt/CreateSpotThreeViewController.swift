@@ -63,7 +63,6 @@ class CreateSpotThreeViewController: UIViewController {
             let userSelling = UserDefaults.standard.value(forKey: "userEmail") as! String
             self.ref.child("Spots/Spot-0x\(spotNumber)/userSelling").setValue(userSelling)
             self.ref.child("Spots/Spot-0x\(spotNumber)/userBuying").setValue("")
-            self.ref.child("Spots/Spot-0x\(spotNumber)/Reservations/Res-00").setValue("")
             
             //Setting timesAvailable
             var i = 0
