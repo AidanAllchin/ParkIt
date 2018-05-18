@@ -88,7 +88,7 @@ class BuySpotViewController: UIViewController {
             numSpots = spots.count
             var currentSpotNum = numSpots - 1
             
-            //Start cycling through all the spots and find which one
+            //Start cycling through all the spots and find which one has the same id as the spot that was clicked on for purchase
             let jj = 0
             while jj <= currentSpotNum
             {

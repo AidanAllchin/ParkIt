@@ -11,6 +11,7 @@ import MapKit
 
 class ViewSpotViewController: UIViewController {
 
+    @IBOutlet weak var spotTitle: UILabel!
     @IBOutlet weak var spotLabel: UILabel!
     var spot:ParkingSpot = ParkingSpot()
  
@@ -19,7 +20,7 @@ class ViewSpotViewController: UIViewController {
         
         //let gesture = UITapGestureRecognizer(target: self, action: #selector(onTapGesture(_:))
         
-        
+        spotTitle?.text = spot.title
         spotLabel?.text = spot.address
         
     }
