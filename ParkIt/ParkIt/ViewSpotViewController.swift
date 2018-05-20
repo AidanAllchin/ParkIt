@@ -58,11 +58,20 @@ class ViewSpotViewController: UIViewController {
             let vc = segue.destination as? BuySpotViewController
             //Set the spot variable of the BuySpotViewController to self.spot
             vc!.spot = sender as! ParkingSpot
-            print("test")
+        }
+        
+        if segue.destination is EditSpotViewController
+        {
+            let vc = segue.destination as? EditSpotViewController
+            vc!.spot = sender as! ParkingSpot
         }
     }
     
     @IBAction func buySpot(_ sender: Any) {
         performSegue(withIdentifier: "BuySpotSegue", sender: self.spot)
+    }
+    
+    @IBAction func toEditSpot(_ sender: Any) {
+        performSegue(withIdentifier: "ToEditSpot", sender: self.spot)
     }
 }
