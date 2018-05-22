@@ -432,30 +432,36 @@
             </objects>
             <point key="canvasLocation" x="2578" y="-999"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Spot View Controller-->
         <scene sceneID="Tt5-ue-67l">
             <objects>
-                <viewController id="7I7-6l-AgA" sceneMemberID="viewController">
+                <viewController id="7I7-6l-AgA" customClass="EditSpotViewController" customModule="ParkIt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nsU-Ug-Y64">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFi-O0-pf8">
-                                <rect key="frame" x="15" y="20" width="30" height="49"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <state key="normal" title="X"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcE-j0-JEF">
+                                <rect key="frame" x="16" y="20" width="40" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="1gL-wN-oqV"/>
+                                    <constraint firstAttribute="height" constant="35" id="WgX-5j-9dq"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="backbutton"/>
                                 <connections>
-                                    <segue destination="bwk-ta-Zvu" kind="show" id="eDa-gS-rxF"/>
+                                    <action selector="viewSpot:" destination="7I7-6l-AgA" eventType="touchUpInside" id="iCA-iE-0Xt"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bFi-O0-pf8" firstAttribute="leading" secondItem="CYU-6h-gO6" secondAttribute="leading" constant="15" id="4SM-Mc-t4o"/>
-                            <constraint firstItem="bFi-O0-pf8" firstAttribute="top" secondItem="CYU-6h-gO6" secondAttribute="top" id="HHG-Nz-T7a"/>
+                            <constraint firstItem="RcE-j0-JEF" firstAttribute="leading" secondItem="CYU-6h-gO6" secondAttribute="leading" constant="16" id="lN9-gi-bg9"/>
+                            <constraint firstItem="RcE-j0-JEF" firstAttribute="top" secondItem="CYU-6h-gO6" secondAttribute="top" id="ly9-3v-Xv0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CYU-6h-gO6"/>
                     </view>
+                    <connections>
+                        <segue destination="bwk-ta-Zvu" kind="show" identifier="ToViewSpot" id="Pvc-cM-L5f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWK-RW-Q1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -997,7 +1003,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="RGV-Gc-H1t"/>
         <segue reference="f9p-V3-baU"/>
-        <segue reference="HOd-Ui-W0G"/>
-        <segue reference="FQu-n2-wMY"/>
+        <segue reference="P9f-jL-eJP"/>
+        <segue reference="Pvc-cM-L5f"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -22,4 +22,19 @@ class EditSpotViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //ToViewSpot
+        if segue.destination is ViewSpotViewController
+        {
+            //vc = instance of ViewSpotViewController
+            let vc = segue.destination as? ViewSpotViewController
+            //Set the spot variable of the ViewSpotViewController to self.spot
+            vc!.spot = sender as! ParkingSpot
+        }
+    }
+    
+    @IBAction func viewSpot(_ sender: Any) {
+        performSegue(withIdentifier: "ToViewSpot", sender: self.spot)
+    }
 }
