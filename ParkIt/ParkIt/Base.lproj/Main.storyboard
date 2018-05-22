@@ -55,7 +55,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Account"/>
                                         <connections>
-                                            <segue destination="PKj-yz-iVg" kind="presentation" id="fO5-DS-mO8"/>
+                                            <segue destination="Dfi-F3-L9J" kind="presentation" id="i3L-du-BNf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0E-dZ-alA">
@@ -445,6 +445,41 @@
             </objects>
             <point key="canvasLocation" x="2578" y="-999"/>
         </scene>
+        <!--Edit Spot View Controller-->
+        <scene sceneID="Tt5-ue-67l">
+            <objects>
+                <viewController id="7I7-6l-AgA" customClass="EditSpotViewController" customModule="ParkIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nsU-Ug-Y64">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcE-j0-JEF">
+                                <rect key="frame" x="16" y="20" width="40" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="1gL-wN-oqV"/>
+                                    <constraint firstAttribute="height" constant="35" id="WgX-5j-9dq"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="backbutton"/>
+                                <connections>
+                                    <action selector="viewSpot:" destination="7I7-6l-AgA" eventType="touchUpInside" id="iCA-iE-0Xt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RcE-j0-JEF" firstAttribute="leading" secondItem="CYU-6h-gO6" secondAttribute="leading" constant="16" id="lN9-gi-bg9"/>
+                            <constraint firstItem="RcE-j0-JEF" firstAttribute="top" secondItem="CYU-6h-gO6" secondAttribute="top" id="ly9-3v-Xv0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CYU-6h-gO6"/>
+                    </view>
+                    <connections>
+                        <segue destination="bwk-ta-Zvu" kind="show" identifier="ToViewSpot" id="Pvc-cM-L5f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rWK-RW-Q1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1050" y="-63"/>
+        </scene>
         <!--View Spot-->
         <scene sceneID="jZW-1r-W2A">
             <objects>
@@ -521,7 +556,10 @@
                                     <constraint firstAttribute="height" constant="40" id="3HW-Vv-XFv"/>
                                     <constraint firstAttribute="width" constant="40" id="dv2-un-CfI"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="info"/>
+                                <state key="normal" title="Button" image="download"/>
+                                <connections>
+                                    <action selector="toEditSpot:" destination="bwk-ta-Zvu" eventType="touchUpInside" id="tbL-m2-VbH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -556,6 +594,7 @@
                         <outlet property="spotTitle" destination="u5l-aZ-HNz" id="lDO-3u-ODR"/>
                         <outlet property="userSellingLabel" destination="aH1-Mi-egt" id="6vE-Xz-ktt"/>
                         <segue destination="9ct-Du-UdI" kind="presentation" identifier="BuySpotSegue" id="KVc-dN-KkF"/>
+                        <segue destination="7I7-6l-AgA" kind="presentation" identifier="ToEditSpot" id="p1g-DC-PPK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72D-hv-JEw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -973,13 +1012,13 @@
     <resources>
         <image name="Button Logo" width="50" height="50"/>
         <image name="backbutton" width="256" height="256"/>
-        <image name="info" width="225" height="225"/>
+        <image name="download" width="225" height="225"/>
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BSr-CF-NI9"/>
+        <segue reference="RGV-Gc-H1t"/>
         <segue reference="f9p-V3-baU"/>
-        <segue reference="HOd-Ui-W0G"/>
-        <segue reference="hMK-7t-Pj2"/>
+        <segue reference="P9f-jL-eJP"/>
+        <segue reference="Pvc-cM-L5f"/>
     </inferredMetricsTieBreakers>
 </document>
