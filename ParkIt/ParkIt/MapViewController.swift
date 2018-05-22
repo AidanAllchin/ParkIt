@@ -32,6 +32,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var resultSearchController:UISearchController? = nil
     
     @IBOutlet var sideBarConstraint: NSLayoutConstraint!
+    @IBOutlet var blur: UIVisualEffectView!
+    var effect:UIVisualEffect!
     
     //Sidebar code
     @IBOutlet weak var sideBar: UIView!
@@ -39,11 +41,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBAction func openSwipe(_ sender: UIScreenEdgePanGestureRecognizer) {
         openSideBar()
     }
+    
     @IBAction func closeSwipe(_ sender: UISwipeGestureRecognizer) {
         if isSideBarHidden{
             closeSideBar()
         }
     }
+    
     @IBAction func sideBarButtonPressed(_ sender: AnyObject) {
         if isSideBarHidden {
             openSideBar()
@@ -56,12 +60,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     func openSideBar() {
         sideBarConstraint.constant = 0
-        UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+            self.blur.effect = self.effect
+        })
     }
     
     func closeSideBar() {
         sideBarConstraint.constant = -160
-        UIView.animate(withDuration: 0.3, animations:  { self.view.layoutIfNeeded() })
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+            self.blur.effect = nil
+        })
     }
     
     //Logs out when logout button pressed
@@ -79,6 +89,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
     
         super.viewDidLoad()
+        //removes blur at initialization of page
+        effect = blur.effect
+        blur.effect = nil
         
         //Instantiates the Search bar
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
