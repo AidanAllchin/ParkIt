@@ -1,9 +1,6 @@
 //
-//  ArtworkViews.swift
-//  HonoluluArt
-//
 //  Created by Will Frohlich on 3/6/18.
-//  Copyright © 2018 Ray Wenderlich. All rights reserved.
+//  Copyright © 2018 ParkIt. All rights reserved.
 //
 
 import Foundation

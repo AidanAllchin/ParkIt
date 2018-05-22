@@ -1,6 +1,10 @@
-//Wfrohllich
-
-
+//
+//  ViewModelTwo.Swift
+//  ParkIt
+//
+//  Created by Will Frohlich on 5/8/18.
+//  Copyright © 2018 ParkIt. All rights reserved.
+//
 import Foundation
 import UIKit
 
@@ -17,6 +21,10 @@ class ViewModelItem {
         return item.isOpen
     }
     
+    var isRented: Bool {
+        return item.isRented
+    }
+    
     init(item: Model) {
         self.item = item
     }
@@ -26,7 +34,7 @@ class ViewModelTwo: NSObject {
     var items = [ViewModelItem]()
     var spot:ParkingSpot = ParkingSpot()
     var availableTimes = [String]()
-    var dataArray = [Model(title: "12:00 am", isOpen: false), Model(title: "12:30 am", isOpen: false), Model(title: "1:00 am", isOpen: false), Model(title: "1:30 am", isOpen: false), Model(title: "2:00 am", isOpen: false), Model(title: "2:30 am", isOpen: false), Model(title: "3:00 am", isOpen: false), Model(title: "3:30 am", isOpen: false), Model(title: "4:00 am", isOpen: false), Model(title: "4:30 am", isOpen: false), Model(title: "5:00 am", isOpen: false), Model(title: "5:30 am", isOpen: false), Model(title: "6:00 am", isOpen: false), Model(title: "6:30 am", isOpen: false), Model(title: "7:00 am", isOpen: false), Model(title: "7:30 am", isOpen: false), Model(title: "8:00 am", isOpen: false), Model(title: "8:30 am", isOpen: false), Model(title: "9:00 am", isOpen: false), Model(title: "9:30 am", isOpen: false), Model(title: "10:00 am", isOpen: false), Model(title: "10:30 am", isOpen: false), Model(title: "11:00 am", isOpen: false), Model(title: "11:30 am", isOpen: false), Model(title: "12:00 pm", isOpen: false), Model(title: "12:30 pm", isOpen: false), Model(title: "1:00 pm", isOpen: false), Model(title: "1:30 pm", isOpen: false), Model(title: "2:00 pm", isOpen: false), Model(title: "2:30 pm", isOpen: false), Model(title: "3:00 pm", isOpen: false), Model(title: "3:30 pm", isOpen: false), Model(title: "4:00 pm", isOpen: false), Model(title: "4:30 pm", isOpen: false), Model(title: "5:00 pm", isOpen: false), Model(title: "5:30 pm", isOpen: false), Model(title: "6:00 pm", isOpen: false), Model(title: "6:30 pm", isOpen: false), Model(title: "7:00 pm", isOpen: false), Model(title: "7:30 pm", isOpen: false), Model(title: "8:00 pm", isOpen: false), Model(title: "8:30 pm", isOpen: false), Model(title: "9:00 pm", isOpen: false), Model(title: "9:30 pm", isOpen: false), Model(title: "10:00 pm", isOpen: false), Model(title: "10:30 pm", isOpen: false), Model(title: "11:00 pm", isOpen: false), Model(title: "11:30 pm", isOpen: false)]
+    var dataArray = [Model(title: "12:00 am", isOpen: false, isRented: false), Model(title: "12:30 am", isOpen: false, isRented: false), Model(title: "1:00 am", isOpen: false, isRented: false), Model(title: "1:30 am", isOpen: false, isRented: false), Model(title: "2:00 am", isOpen: false, isRented: false), Model(title: "2:30 am", isOpen: false, isRented: false), Model(title: "3:00 am", isOpen: false, isRented: false), Model(title: "3:30 am", isOpen: false, isRented: false), Model(title: "4:00 am", isOpen: false, isRented: false), Model(title: "4:30 am", isOpen: false, isRented: false), Model(title: "5:00 am", isOpen: false, isRented: false), Model(title: "5:30 am", isOpen: false, isRented: false), Model(title: "6:00 am", isOpen: false, isRented: false), Model(title: "6:30 am", isOpen: false, isRented: false), Model(title: "7:00 am", isOpen: false, isRented: false), Model(title: "7:30 am", isOpen: false, isRented: false), Model(title: "8:00 am", isOpen: false, isRented: false), Model(title: "8:30 am", isOpen: false, isRented: false), Model(title: "9:00 am", isOpen: false, isRented: false), Model(title: "9:30 am", isOpen: false, isRented: false), Model(title: "10:00 am", isOpen: false, isRented: false), Model(title: "10:30 am", isOpen: false, isRented: false), Model(title: "11:00 am", isOpen: false, isRented: false), Model(title: "11:30 am", isOpen: false, isRented: false), Model(title: "12:00 pm", isOpen: false, isRented: false), Model(title: "12:30 pm", isOpen: false, isRented: false), Model(title: "1:00 pm", isOpen: false, isRented: false), Model(title: "1:30 pm", isOpen: false, isRented: false), Model(title: "2:00 pm", isOpen: false, isRented: false), Model(title: "2:30 pm", isOpen: false, isRented: false), Model(title: "3:00 pm", isOpen: false, isRented: false), Model(title: "3:30 pm", isOpen: false, isRented: false), Model(title: "4:00 pm", isOpen: false, isRented: false), Model(title: "4:30 pm", isOpen: false, isRented: false), Model(title: "5:00 pm", isOpen: false, isRented: false), Model(title: "5:30 pm", isOpen: false, isRented: false), Model(title: "6:00 pm", isOpen: false, isRented: false), Model(title: "6:30 pm", isOpen: false, isRented: false), Model(title: "7:00 pm", isOpen: false, isRented: false), Model(title: "7:30 pm", isOpen: false, isRented: false), Model(title: "8:00 pm", isOpen: false, isRented: false), Model(title: "8:30 pm", isOpen: false, isRented: false), Model(title: "9:00 pm", isOpen: false, isRented: false), Model(title: "9:30 pm", isOpen: false, isRented: false), Model(title: "10:00 pm", isOpen: false, isRented: false), Model(title: "10:30 pm", isOpen: false, isRented: false), Model(title: "11:00 pm", isOpen: false, isRented: false), Model(title: "11:30 pm", isOpen: false, isRented: false)]
     
     var didToggleSelection: ((_ hasSelection: Bool) -> ())? {
         didSet {
@@ -54,40 +62,57 @@ class ViewModelTwo: NSObject {
         // items = dataArray.map { ViewModelItem(item: $0) }
     }
     
-    func getDataArray(spot: ParkingSpot) {
-        //Set times back to 12-hour time before comparison
+    func convertTime(timeArray: [String]) -> [String] {
+        var times = timeArray
         var currentTime = 0
-        while currentTime < availableTimes.count {
-            if (availableTimes[currentTime].range(of: ":00") != nil ) {
-                var hours = Int(availableTimes[currentTime].replacingOccurrences(of: ":00", with: ""))!
+        while currentTime < times.count {
+            if (times[currentTime].range(of: ":00") != nil ) {
+                var hours = Int(times[currentTime].replacingOccurrences(of: ":00", with: ""))!
                 if (hours > 12) {
                     hours = hours - 12
-                    availableTimes[currentTime] = String(hours) + ":00"
-                    availableTimes[currentTime] = availableTimes[currentTime] + " pm"
+                    times[currentTime] = String(hours) + ":00"
+                    times[currentTime] = times[currentTime] + " pm"
                 } else {
-                    availableTimes[currentTime] = String(hours) + ":00"
-                    availableTimes[currentTime] = availableTimes[currentTime] + " am"
+                    times[currentTime] = String(hours) + ":00"
+                    times[currentTime] = times[currentTime] + " am"
                 }
-            } else if (availableTimes[currentTime].range(of: ":30") != nil) {
-                var hours = Int(availableTimes[currentTime].replacingOccurrences(of: ":30", with: ""))!
+            } else if (times[currentTime].range(of: ":30") != nil) {
+                var hours = Int(times[currentTime].replacingOccurrences(of: ":30", with: ""))!
                 if (hours > 12) {
                     hours = hours - 12
-                    availableTimes[currentTime] = String(hours) + ":30"
-                    availableTimes[currentTime] = availableTimes[currentTime] + " pm"
+                    times[currentTime] = String(hours) + ":30"
+                    times[currentTime] = times[currentTime] + " pm"
                 } else {
-                    availableTimes[currentTime] = String(hours) + ":30"
-                    availableTimes[currentTime] = availableTimes[currentTime] + " am"
+                    times[currentTime] = String(hours) + ":30"
+                    times[currentTime] = times[currentTime] + " am"
                 }
             }
             currentTime = currentTime + 1
         }
-        
+        return times
+    }
+    
+    func getDataArray(spot: ParkingSpot) {
+        //Set times back to 12-hour time before comparison
+        availableTimes = convertTime(timeArray: availableTimes)
+        var resTimes = convertTime(timeArray: spot.reservations)
         var i = 0
         while i < dataArray.count {
             var j = 0
             while j < availableTimes.count {
                 if (availableTimes[j] == dataArray[i].title) {
                     dataArray[i].isOpen = true
+                }
+                j = j + 1
+            }
+            i = i + 1
+        }
+        i = 0
+        while i < dataArray.count {
+            var j = 0
+            while j < resTimes.count {
+                if (resTimes[j] == dataArray[i].title) {
+                    dataArray[i].isRented = true
                 }
                 j = j + 1
             }

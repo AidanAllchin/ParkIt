@@ -11,16 +11,26 @@ import MapKit
 
 class ViewSpotViewController: UIViewController {
 
+    @IBOutlet weak var spotOptions: UIButton!
+    @IBOutlet weak var spotTitle: UILabel!
     @IBOutlet weak var spotLabel: UILabel!
+    @IBOutlet weak var userSellingLabel: UILabel!
     var spot:ParkingSpot = ParkingSpot()
- 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //let gesture = UITapGestureRecognizer(target: self, action: #selector(onTapGesture(_:))
         
-        
+        spotTitle?.text = spot.title
         spotLabel?.text = spot.address
+        userSellingLabel?.text = spot.userSelling
+        spotOptions.isHidden = true
+        
+        if (spot.userSelling == (UserDefaults.standard.value(forKey: "userEmail") as! String))
+        {
+            spotOptions.isHidden = false
+        }
         
     }
     

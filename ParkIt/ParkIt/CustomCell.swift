@@ -1,4 +1,10 @@
-
+//
+//  CustomCell.Swift
+//  ParkIt
+//
+//  Created by Will Frohlich on 3/6/18.
+//  Copyright © 2018 ParkIt. All rights reserved.
+//
 
 import UIKit
 
@@ -11,7 +17,12 @@ class CustomCell: UITableViewCell {
                 self.isUserInteractionEnabled = false
                 self.backgroundColor = UIColor.gray
             }
-            else
+            else if(item?.isRented == true)
+            {
+                self.isUserInteractionEnabled = false
+                self.backgroundColor = UIColor.brown
+            }
+            else if(item?.isOpen == true)
             {
                 self.isUserInteractionEnabled = true
                 self.backgroundColor = UIColor.white
