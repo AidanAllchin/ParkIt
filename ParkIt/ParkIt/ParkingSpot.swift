@@ -79,9 +79,12 @@ class ParkingSpot: NSObject, MKAnnotation {
         self.timesAvailable = timesArray
         
         var resArray = [String]()
-        for res in dict.value(forKey: "Reservations") as! NSDictionary
+        if let resDict: NSDictionary = dict.value(forKey: "Reservations") as? NSDictionary
         {
-            resArray.append(res.value as! String)
+            for res in resDict
+            {
+                resArray.append(res.value as! String)
+            }
         }
         self.reservations = resArray
     }

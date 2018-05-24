@@ -12,6 +12,7 @@
 		CAC58B628EFCA70AC385027C /* Pods_ParkItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE28106BA5591F0B3114968 /* Pods_ParkItUITests.framework */; };
 		CD43455B6D359716BEFED282 /* Pods_ParkIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250CDFFBA075A76DB0991A90 /* Pods_ParkIt.framework */; };
 		DD2B3AE72033B7300012CE0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2B3AE62033B7300012CE0D /* LoginViewController.swift */; };
+		DD574A4920AF4D14006A05E0 /* EditSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD574A4820AF4D14006A05E0 /* EditSpotViewController.swift */; };
 		DD5B01AA206E9EBB00CB7653 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B01A9206E9EBB00CB7653 /* AccountViewController.swift */; };
 		DD631B6A202379520095A1BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD631B69202379520095A1BC /* AppDelegate.swift */; };
 		DD631B6F202379520095A1BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD631B6D202379520095A1BC /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 		DD631B7F202379520095A1BC /* ParkItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD631B7E202379520095A1BC /* ParkItTests.swift */; };
 		DD631B8A202379520095A1BC /* ParkItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD631B89202379520095A1BC /* ParkItUITests.swift */; };
 		DD6CC028205A2AF900B697BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD6CC027205A2AF900B697BE /* GoogleService-Info.plist */; };
+		DDB01FA420B4779E003C7647 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB01FA320B4779E003C7647 /* CheckBox.swift */; };
 		DDB157392098FDF7005F75EB /* CreateSpotThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB157382098FDF7005F75EB /* CreateSpotThreeViewController.swift */; };
 		DDB1573B2099041D005F75EB /* CreateSpotFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB1573A2099041D005F75EB /* CreateSpotFinishedViewController.swift */; };
 		DDEA9B9B2051A6E0002FCA6C /* ParkingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9B9A2051A6E0002FCA6C /* ParkingSpot.swift */; };
@@ -67,6 +69,7 @@
 		D360818B6817DD20CA5DFABF /* Pods-ParkIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkIt/Pods-ParkIt.release.xcconfig"; sourceTree = "<group>"; };
 		DCE28106BA5591F0B3114968 /* Pods_ParkItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2B3AE62033B7300012CE0D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DD574A4820AF4D14006A05E0 /* EditSpotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSpotViewController.swift; sourceTree = "<group>"; };
 		DD5B01A9206E9EBB00CB7653 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		DD631B66202379520095A1BC /* ParkIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD631B69202379520095A1BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		DD631B89202379520095A1BC /* ParkItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkItUITests.swift; sourceTree = "<group>"; };
 		DD631B8B202379520095A1BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD6CC027205A2AF900B697BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DDB01FA320B4779E003C7647 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		DDB157382098FDF7005F75EB /* CreateSpotThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSpotThreeViewController.swift; sourceTree = "<group>"; };
 		DDB1573A2099041D005F75EB /* CreateSpotFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSpotFinishedViewController.swift; sourceTree = "<group>"; };
 		DDEA9B9A2051A6E0002FCA6C /* ParkingSpot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingSpot.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 				F646A8482098E8D900B186E2 /* CreateSpotTwoViewController.swift */,
 				F6E012F620A5F942007F4B69 /* ViewModel.swift */,
 				F618E79A2085A33300F5692E /* ViewSpotViewController.swift */,
+				DD574A4820AF4D14006A05E0 /* EditSpotViewController.swift */,
 				C338EA3B2055C8D70031F487 /* BuySpotViewController.swift */,
 				F69D358E20ADE25000D27CDD /* BuySpotSummaryViewController.swift */,
 				F686964520AB4E820044C8D5 /* ViewModelTwo.swift */,
@@ -194,6 +199,7 @@
 				DDEA9B9C2051A6E7002FCA6C /* ParkingSpotMarkerView.swift */,
 				DDEA9BA32051A73B002FCA6C /* MapViewController.swift */,
 				DD631B6D202379520095A1BC /* Main.storyboard */,
+				DDB01FA320B4779E003C7647 /* CheckBox.swift */,
 				F6390D3620AF376D000540E9 /* SpotTableViewCell.swift */,
 				F6390D3420AF36CD000540E9 /* Account2ViewController.swift */,
 				F6E012F820A5F9B2007F4B69 /* CustomCell.xib */,
@@ -450,6 +456,7 @@
 			files = (
 				DDEA9B9B2051A6E0002FCA6C /* ParkingSpot.swift in Sources */,
 				DDB1573B2099041D005F75EB /* CreateSpotFinishedViewController.swift in Sources */,
+				DD574A4920AF4D14006A05E0 /* EditSpotViewController.swift in Sources */,
 				F69FF1F2208CFDBB006F03EA /* LocationSearchTable.swift in Sources */,
 				F6390D3720AF376D000540E9 /* SpotTableViewCell.swift in Sources */,
 				DDEA9B9D2051A6E7002FCA6C /* ParkingSpotMarkerView.swift in Sources */,
@@ -461,6 +468,7 @@
 				F6E012F520A5F939007F4B69 /* Model.swift in Sources */,
 				DD2B3AE72033B7300012CE0D /* LoginViewController.swift in Sources */,
 				DD631B6A202379520095A1BC /* AppDelegate.swift in Sources */,
+				DDB01FA420B4779E003C7647 /* CheckBox.swift in Sources */,
 				F618E79B2085A33300F5692E /* ViewSpotViewController.swift in Sources */,
 				F646A8472098C3B100B186E2 /* CreateSpotOneViewController.swift in Sources */,
 				F6390D3520AF36CD000540E9 /* Account2ViewController.swift in Sources */,
