@@ -21,6 +21,7 @@
 		DD631B7F202379520095A1BC /* ParkItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD631B7E202379520095A1BC /* ParkItTests.swift */; };
 		DD631B8A202379520095A1BC /* ParkItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD631B89202379520095A1BC /* ParkItUITests.swift */; };
 		DD6CC028205A2AF900B697BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD6CC027205A2AF900B697BE /* GoogleService-Info.plist */; };
+		DDB01FA420B4779E003C7647 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB01FA320B4779E003C7647 /* CheckBox.swift */; };
 		DDB157392098FDF7005F75EB /* CreateSpotThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB157382098FDF7005F75EB /* CreateSpotThreeViewController.swift */; };
 		DDB1573B2099041D005F75EB /* CreateSpotFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB1573A2099041D005F75EB /* CreateSpotFinishedViewController.swift */; };
 		DDEA9B9B2051A6E0002FCA6C /* ParkingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA9B9A2051A6E0002FCA6C /* ParkingSpot.swift */; };
@@ -82,6 +83,7 @@
 		DD631B89202379520095A1BC /* ParkItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkItUITests.swift; sourceTree = "<group>"; };
 		DD631B8B202379520095A1BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD6CC027205A2AF900B697BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DDB01FA320B4779E003C7647 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		DDB157382098FDF7005F75EB /* CreateSpotThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSpotThreeViewController.swift; sourceTree = "<group>"; };
 		DDB1573A2099041D005F75EB /* CreateSpotFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSpotFinishedViewController.swift; sourceTree = "<group>"; };
 		DDEA9B9A2051A6E0002FCA6C /* ParkingSpot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingSpot.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				DDEA9B9C2051A6E7002FCA6C /* ParkingSpotMarkerView.swift */,
 				DDEA9BA32051A73B002FCA6C /* MapViewController.swift */,
 				DD631B6D202379520095A1BC /* Main.storyboard */,
+				DDB01FA320B4779E003C7647 /* CheckBox.swift */,
 				F6390D3620AF376D000540E9 /* SpotTableViewCell.swift */,
 				F6390D3420AF36CD000540E9 /* Account2ViewController.swift */,
 				F6E012F820A5F9B2007F4B69 /* CustomCell.xib */,
@@ -465,6 +468,7 @@
 				F6E012F520A5F939007F4B69 /* Model.swift in Sources */,
 				DD2B3AE72033B7300012CE0D /* LoginViewController.swift in Sources */,
 				DD631B6A202379520095A1BC /* AppDelegate.swift in Sources */,
+				DDB01FA420B4779E003C7647 /* CheckBox.swift in Sources */,
 				F618E79B2085A33300F5692E /* ViewSpotViewController.swift in Sources */,
 				F646A8472098C3B100B186E2 /* CreateSpotOneViewController.swift in Sources */,
 				F6390D3520AF36CD000540E9 /* Account2ViewController.swift in Sources */,
