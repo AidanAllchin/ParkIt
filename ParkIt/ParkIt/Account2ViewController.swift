@@ -8,8 +8,37 @@
 
 import UIKit
 
-class Account2ViewController: UIViewController {
+class Account2ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableContents.count
+    }
+    
+    //TODO: Aidan Make this Array (tableContents) full of the Users Parkingspots
+    var tableContents = [ParkingSpot]()
+    @IBOutlet weak var spotTableView: UITableView!
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SpotTableViewCell") as! SpotTableViewCell
+        // Set the first row text label to the firstRowLabel data in our current array item
+        cell.spot = tableContents[indexPath.row]
+        cell.spotButton.setTitle(tableContents[indexPath.row].title, for: UIControlState.normal)
+        return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ViewSpotViewController
+        {
+            let vc = segue.destination as? ViewSpotViewController
+            vc!.spot = sender as! ParkingSpot
+        }
+    }
+    
+    func goToViewSpot(spot: ParkingSpot) {
+        performSegue(withIdentifier: "goToViewSpot", sender: spot)
+    }
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
