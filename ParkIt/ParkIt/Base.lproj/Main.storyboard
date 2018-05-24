@@ -73,12 +73,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Account"/>
-<<<<<<< HEAD
-=======
                                         <connections>
                                             <segue destination="Dfi-F3-L9J" kind="presentation" id="i3L-du-BNf"/>
                                         </connections>
->>>>>>> 8274b9a1f4dea94e41e822245a4215c2da0e3a75
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0E-dZ-alA">
                                         <rect key="frame" x="8" y="73" width="144" height="55"/>
