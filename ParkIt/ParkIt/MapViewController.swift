@@ -76,13 +76,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             self.MapViewView.sendSubview(toBack: self.blur)
         })
         
-        
-        //for subview in MapViewView.subviews {
-            //if subview is UIVisualEffectView {
-                //subview.removeFromSuperview()
-            //}
-        //}
-        print(self.blur.effect)
+        print(self.blur.effect ?? true)
         print(self.blur)
     }
     
