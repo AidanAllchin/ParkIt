@@ -10,11 +10,20 @@ import UIKit
 
 class SpotTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var spotButton: UIButton!
+    var spot:ParkingSpot = ParkingSpot()
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    @IBAction func goToSpotButton(_ sender: Any) {
+        (storyboard.instantiateViewController(withIdentifier :"AccountTwoViewController") as! Account2ViewController).goToViewSpot(spot: self.spot)
+    }
+    
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

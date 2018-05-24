@@ -50,6 +50,7 @@
                                         <constraint firstItem="Kim-lr-Uvb" firstAttribute="top" secondItem="5cm-j8-dAX" secondAttribute="top" id="3Zk-k8-leE"/>
                                         <constraint firstItem="Kim-lr-Uvb" firstAttribute="leading" secondItem="5cm-j8-dAX" secondAttribute="leading" id="FCc-HY-wxd"/>
                                         <constraint firstAttribute="trailing" secondItem="Kim-lr-Uvb" secondAttribute="trailing" id="TuJ-ve-bbe"/>
+                                        <constraint firstAttribute="bottom" secondItem="Kim-lr-Uvb" secondAttribute="bottom" id="VNM-hF-3sr"/>
                                         <constraint firstAttribute="bottom" secondItem="Kim-lr-Uvb" secondAttribute="bottom" id="a43-xf-NKz"/>
                                         <constraint firstItem="Kim-lr-Uvb" firstAttribute="leading" secondItem="5cm-j8-dAX" secondAttribute="leading" id="nnT-Ff-A1H"/>
                                         <constraint firstAttribute="trailing" secondItem="Kim-lr-Uvb" secondAttribute="trailing" id="nxp-Sj-iAb"/>
@@ -110,6 +111,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="My Reservations"/>
+                                        <connections>
+                                            <segue destination="PKj-yz-iVg" kind="presentation" id="0or-YN-bee"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -189,7 +193,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="78" id="S3l-Mt-6fg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="78" id="S3l-Mt-6fg" customClass="SpotTableViewCell" customModule="ParkIt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S3l-Mt-6fg" id="pnU-su-JdK">
@@ -200,9 +204,15 @@
                                                     <rect key="frame" x="15" y="6" width="345" height="61"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Spot"/>
+                                                    <connections>
+                                                        <action selector="goToSpotButton:" destination="S3l-Mt-6fg" eventType="touchUpInside" id="zH0-oE-nVq"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="spotButton" destination="nS0-Gc-9gz" id="gkM-aI-2QP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -224,6 +234,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qAc-D4-vwy"/>
                     </view>
+                    <connections>
+                        <outlet property="spotTableView" destination="sLG-vN-Aai" id="8EK-uQ-0te"/>
+                        <outlet property="view" destination="sLG-vN-Aai" id="Be4-Ry-zj7"/>
+                        <segue destination="bwk-ta-Zvu" kind="presentation" identifier="goToViewSpot" id="hY2-zn-z1c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SBY-jJ-wpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
