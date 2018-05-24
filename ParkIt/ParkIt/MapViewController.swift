@@ -35,18 +35,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet var blur: UIVisualEffectView!
     var effect:UIVisualEffect!
     
+    @IBOutlet var tap: UITapGestureRecognizer!
+    
+    @IBOutlet var closeSwipe: UISwipeGestureRecognizer!
+    
     //Sidebar code
     @IBOutlet weak var sideBar: UIView!
-    
-    @IBAction func openSwipe(_ sender: UIScreenEdgePanGestureRecognizer) {
-        openSideBar()
-    }
-    
-    @IBAction func closeSwipe(_ sender: UISwipeGestureRecognizer) {
-        if isSideBarHidden{
-            closeSideBar()
-        }
-    }
     
     @IBAction func sideBarButtonPressed(_ sender: AnyObject) {
         if isSideBarHidden {
@@ -57,7 +51,16 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
         isSideBarHidden = !isSideBarHidden
     }
+    
     @IBOutlet var MapViewView: UIView!
+    
+    @IBAction func onTap(_ sender: UITapGestureRecognizer) {
+        closeSideBar()
+    }
+    @IBAction func onCloseSwipe(_ sender: UISwipeGestureRecognizer) {
+        closeSideBar()
+    }
+    
     func openSideBar() {
         sideBarConstraint.constant = 0
         UIView.animate(withDuration: 0.3, animations: {
@@ -65,6 +68,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             //self.blur.effect = self.effect
             self.MapViewView.bringSubview(toFront: self.blur)
         })
+        tap.isEnabled = true
+        closeSwipe.isEnabled = true
     }
     
     
@@ -75,15 +80,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             //self.blur.effect = nil
             self.MapViewView.sendSubview(toBack: self.blur)
         })
-        
-        
-        //for subview in MapViewView.subviews {
-            //if subview is UIVisualEffectView {
-                //subview.removeFromSuperview()
-            //}
-        //}
-        print(self.blur.effect)
-        print(self.blur)
+        tap.isEnabled = false
+        closeSwipe.isEnabled = false
     }
     
     //Logs out when logout button pressed
@@ -103,8 +101,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         //removes blur at initialization of page
         effect = blur.effect
-        //blur.effect = nil
         self.MapViewView.sendSubview(toBack: self.blur)
+        
+        tap.isEnabled = false
+        closeSwipe.isEnabled = false
         
         //Instantiates the Search bar
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
