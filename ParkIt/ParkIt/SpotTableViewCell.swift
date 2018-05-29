@@ -12,6 +12,7 @@ class SpotTableViewCell: UITableViewCell {
 
     @IBOutlet weak var spotButton: UIButton!
     var spot:ParkingSpot = ParkingSpot()
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +20,7 @@ class SpotTableViewCell: UITableViewCell {
     }
 
     @IBAction func goToSpotButton(_ sender: Any) {
-        storyboard.instantiateViewController(withIdentifier :"AccountTwoViewController") as! Account2ViewController.goToViewSpot(self.spot)
+        (storyboard.instantiateViewController(withIdentifier :"AccountTwoViewController") as! Account2ViewController).goToViewSpot(spot: self.spot)
     }
     
     

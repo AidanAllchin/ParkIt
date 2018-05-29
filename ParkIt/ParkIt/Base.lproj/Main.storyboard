@@ -34,6 +34,11 @@
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dHB-ph-RXb">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="HXH-eX-e4M" appends="YES" id="90A-tJ-udD"/>
+                                                    <outletCollection property="gestureRecognizers" destination="nMq-LV-mC2" appends="YES" id="6Hx-Fd-tlk"/>
+                                                </connections>
                                             </view>
                                             <vibrancyEffect>
                                                 <blurEffect style="light"/>
@@ -73,9 +78,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Account"/>
-                                        <connections>
-                                            <segue destination="Dfi-F3-L9J" kind="presentation" id="i3L-du-BNf"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0E-dZ-alA">
                                         <rect key="frame" x="8" y="73" width="144" height="55"/>
@@ -152,14 +154,26 @@
                     <connections>
                         <outlet property="MapViewView" destination="8bC-Xf-vdC" id="WIf-KI-lpr"/>
                         <outlet property="blur" destination="4aQ-eX-rIv" id="CSh-gr-yHf"/>
+                        <outlet property="closeSwipe" destination="nMq-LV-mC2" id="ff9-lO-rYN"/>
                         <outlet property="mapView" destination="sQv-rp-wtq" id="F7L-dY-B2j"/>
                         <outlet property="sideBar" destination="yjy-0D-pKQ" id="5Nc-Ic-Xli"/>
                         <outlet property="sideBarConstraint" destination="Tyc-EJ-zCo" id="aMP-Z5-i0X"/>
+                        <outlet property="tap" destination="HXH-eX-e4M" id="86k-D2-p9F"/>
                         <segue destination="bwk-ta-Zvu" kind="presentation" identifier="ViewSpotFromAnnotation" id="FQu-n2-wMY"/>
                         <segue destination="ADo-O8-fvx" kind="show" identifier="gotoLogin" id="N9B-xv-J67"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HXH-eX-e4M">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="Z4D-RE-4vR"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="nMq-LV-mC2">
+                    <connections>
+                        <action selector="onCloseSwipe:" destination="BYZ-38-t0r" id="DnB-vh-frs"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="898" y="-93"/>
         </scene>
@@ -1068,9 +1082,9 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RGV-Gc-H1t"/>
+        <segue reference="BSr-CF-NI9"/>
         <segue reference="f9p-V3-baU"/>
         <segue reference="P9f-jL-eJP"/>
-        <segue reference="FQu-n2-wMY"/>
+        <segue reference="hMK-7t-Pj2"/>
     </inferredMetricsTieBreakers>
 </document>
