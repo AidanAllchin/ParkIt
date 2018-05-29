@@ -73,9 +73,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Account"/>
-                                        <connections>
-                                            <segue destination="Dfi-F3-L9J" kind="presentation" id="i3L-du-BNf"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0E-dZ-alA">
                                         <rect key="frame" x="8" y="73" width="144" height="55"/>
@@ -1068,9 +1065,9 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RGV-Gc-H1t"/>
+        <segue reference="BSr-CF-NI9"/>
         <segue reference="f9p-V3-baU"/>
         <segue reference="P9f-jL-eJP"/>
-        <segue reference="FQu-n2-wMY"/>
+        <segue reference="hMK-7t-Pj2"/>
     </inferredMetricsTieBreakers>
 </document>
