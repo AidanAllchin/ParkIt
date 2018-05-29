@@ -10,34 +10,30 @@ import Foundation
 import UIKit
 import MapKit
 
+//The first view controller in the create spot sequence: Opens a map with user location and asks user to enter an address.
 class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     var newSpot: ParkingSpot = ParkingSpot()
-    
     let regionRadius: CLLocationDistance = 1000
     var locationManager:CLLocationManager!
-    @IBOutlet weak var mapView: MKMapView!
     var currentLocation: CLLocationCoordinate2D = CLLocationCoordinate2D()
-    
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addressField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         mapView.delegate = self
         mapView.showsUserLocation = true
         mapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
         mapView.mapType = .hybrid
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         determineMyCurrentLocation()
     }
     
-    
+    //gets user's current location.
     func determineMyCurrentLocation() {
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -46,29 +42,24 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
-            //locationManager.startUpdatingHeading()
         }
     }
 
+    //Centers map on user location
     func centerMapOnLocation(location: MKUserLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius, regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
+    //Constantly center the map on the users location so user can't zoom out
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
-        
-        // Call stopUpdatingLocation() to stop listening for location updates,
-        // other wise this function will be called every time when user location changes.
-        
-        // manager.stopUpdatingLocation()
-        
         currentLocation = CLLocationCoordinate2D(latitude: (userLocation.coordinate.latitude), longitude: (userLocation.coordinate.longitude))
-        
         centerMapOnLocation(currentLocation, mapView: mapView)
         
     }
     
+    //General center map on location function
     func centerMapOnLocation(_ location: CLLocationCoordinate2D, mapView: MKMapView) {
         let regionRadius: CLLocationDistance = 50
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location,
@@ -76,12 +67,13 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     {
         print("Error \(error)")
     }
     
-    //To send the ParkingSpot to the next page of creation
+    //Prepare to send the unfinished ParkingSpot to the next page of creation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is CreateSpotTwoViewController
         {
@@ -90,9 +82,11 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
         }
     }
     
+    //Segue button to next page
     @IBAction func nextButton(_ sender: Any) {
         if(addressField.text != "")
         {
+            //set some of the parkingspots traits and pass the parking spot to the next page.
             newSpot.address = addressField.text!
             locationManager.stopUpdatingLocation()
             newSpot.coordinate = currentLocation

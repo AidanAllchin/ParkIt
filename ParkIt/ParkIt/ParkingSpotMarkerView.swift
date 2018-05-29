@@ -22,18 +22,11 @@ class ParkingSpotMarkerView: MKMarkerAnnotationView {
             rightCalloutAccessoryView = mapsButton
             // 2
             markerTintColor = parkingspot.markerTintColor
-            //glyphText = String(artwork.discipline.first!)
-            //get artwork
-            if let imageName = parkingspot.imageName {
-                glyphImage = UIImage(named: imageName)
-            } else {
-                glyphImage = nil
-            }
             let detailLabel = UILabel()
             //Label on the annotation
             detailLabel.numberOfLines = 0
             detailLabel.font = detailLabel.font.withSize(12)
-            detailLabel.text = parkingspot.subtitle
+            //detailLabel.text = parkingspot.subtitle
             detailCalloutAccessoryView = detailLabel
             
         }

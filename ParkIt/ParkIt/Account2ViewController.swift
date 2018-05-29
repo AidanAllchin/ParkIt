@@ -18,6 +18,7 @@ class Account2ViewController: UIViewController, UITableViewDelegate, UITableView
     var tableContents = [ParkingSpot]()
     @IBOutlet weak var spotTableView: UITableView!
     
+    //populates the cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SpotTableViewCell") as! SpotTableViewCell
         // Set the first row text label to the firstRowLabel data in our current array item
@@ -49,16 +50,5 @@ class Account2ViewController: UIViewController, UITableViewDelegate, UITableView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
