@@ -28,6 +28,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     let regionRadius: CLLocationDistance = 300
     @IBOutlet weak var mapView: MKMapView!
     
+    var accountSpots = [ParkingSpot]()
+    
     //keep UISearch bar in memory
     var resultSearchController:UISearchController? = nil
     
@@ -141,6 +143,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         //Loads in the annotations!
         loadInitialData()
         mapView.addAnnotations(parkingspots)
+        
+        //Gets the spots the user has created
+        getAccountSpots()
     }
     
     
@@ -253,12 +258,34 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
         })
   }
+    func getAccountSpots() {
+        ref?.observe(.value, with: { (snapshot) in
+            let spots: NSDictionary = (snapshot.value as! NSDictionary).value(forKey: "Spots") as! NSDictionary
+            
+            var spotName = ""
+            
+            let numSpots = spots.count
+            var currentSpotNum = numSpots - 1
+            
+            //Start cycling through all the spots and find which one has the same id as the spot that was clicked on for purchase
+            let jj = 0
+            while jj <= currentSpotNum
+            {
+                spotName = "Spot-0x" + String(format: "%04d", currentSpotNum)
+                let dict: NSDictionary = spots.value(forKey: spotName) as! NSDictionary
+                let userSelling = dict.value(forKey: "userSelling") as! String
+                
+                if (userSelling == UserDefaults.standard.value(forKey: "userEmail") as? String)
+                {
+                    self.accountSpots.append(ParkingSpot(dict: dict))
+                }
+                currentSpotNum = currentSpotNum - 1
+            }
+        })
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
-            //Code
-        //})
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -288,13 +315,21 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         checkLocationAuthorizationStatus()
     }
 
-
+    @IBAction func goToAccount(_ sender: Any) {
+        performSegue(withIdentifier: "ToAccountView", sender: self)
+    }
+    
     //Segue that transfers information about the spot to viewspotcontroller
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is ViewSpotViewController
         {
             let vc = segue.destination as? ViewSpotViewController
             vc?.spot = sender as! ParkingSpot
+        }
+        else if segue.destination is Account2ViewController
+        {
+            let vc = segue.destination as? Account2ViewController
+            vc?.tableContents = accountSpots
         }
     }
 
