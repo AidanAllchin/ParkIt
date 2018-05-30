@@ -11,6 +11,7 @@ import MapKit
 import Contacts
 import Firebase
 
+//ParkingSpot object
 class ParkingSpot: NSObject, MKAnnotation {
     //var ref:DatabaseReference?
     var databaseHandle:DatabaseHandle?
@@ -70,7 +71,6 @@ class ParkingSpot: NSObject, MKAnnotation {
         self.timeLeft = dict.value(forKey: "timeLeft") as! Float
         self.userBuying = dict.value(forKey: "userBuying") as? String
         self.userSelling = dict.value(forKey: "userSelling") as! String
-        
         var timesArray = [String]()
         for time in dict.value(forKey: "TimesAvailable") as! NSDictionary
         {
@@ -105,7 +105,7 @@ class ParkingSpot: NSObject, MKAnnotation {
         super.init()
     }
     
-    // markerTintColor for if the spot is open or not
+    // markerTintColor depending on spot availability
     var markerTintColor: UIColor  {
         if(isAvailable)
         {
@@ -117,14 +117,12 @@ class ParkingSpot: NSObject, MKAnnotation {
         }
     }
     
+    //Creating the subtitle
     var subtitle: String? {
         return "Time left: " + String(timeLeft) + "\nUser Selling: " + String(userSelling)
     }
     
-    var imageName: String? {
-        //if discipline == "Sculpture" { return "Statue" }
-        return "Flag"
-    }
+
 
 }
 

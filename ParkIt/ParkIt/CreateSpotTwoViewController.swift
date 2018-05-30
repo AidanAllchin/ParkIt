@@ -8,17 +8,19 @@
 
 import UIKit
 
+//The second view controller in the create spot sequence: allows the user to select avaliable times using a tableview.
 class CreateSpotTwoViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nextButton: UIButton?
+    //Creating a viewModel Object
     var viewModel = ViewModel()
-    
     var times = [String]()
     var spot:ParkingSpot = ParkingSpot()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //set delegates and style the tableview.
         tableView?.register(CustomCell.nib, forCellReuseIdentifier: CustomCell.identifier)
         tableView?.estimatedRowHeight = 100
         tableView?.rowHeight = UITableViewAutomaticDimension
@@ -26,11 +28,9 @@ class CreateSpotTwoViewController: UIViewController {
         tableView?.dataSource = viewModel
         tableView?.delegate = viewModel
         tableView?.separatorStyle = .none
-        
         viewModel.didToggleSelection = { [weak self] hasSelection in
             self?.nextButton?.isEnabled = hasSelection
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +39,7 @@ class CreateSpotTwoViewController: UIViewController {
     }
     
     
-    //To send the ParkingSpot to the next page of creation
+    //To send the ParkingSpot to the next page of creation (createSpot3)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is CreateSpotThreeViewController
         {

@@ -18,6 +18,7 @@ class Account2ViewController: UIViewController, UITableViewDelegate, UITableView
     var tableContents = [ParkingSpot]()
     @IBOutlet weak var spotTableView: UITableView!
     
+    //populates the cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SpotTableViewCell") as! SpotTableViewCell
         // Set the first row text label to the firstRowLabel data in our current array item

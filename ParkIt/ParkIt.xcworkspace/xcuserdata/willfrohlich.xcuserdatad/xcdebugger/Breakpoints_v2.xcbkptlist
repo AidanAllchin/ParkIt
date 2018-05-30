@@ -9,22 +9,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ParkIt/ParkingSpot.swift"
-            timestampString = "548109134.587333"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "init(title:address:isAvailable:uniqueId:coordinate:timeLeft:userBuying:userSelling:timesAvailable:reservations:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ParkIt/CreateSpotViewController.swift"
             timestampString = "546889888.762807"
             startingColumnNumber = "9223372036854775807"
@@ -113,54 +97,6 @@
             endingLineNumber = "71"
             landmarkName = "convertTime(timeArray:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ParkIt/ViewModel.swift"
-            timestampString = "548276217.213804"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "selectedItems"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ParkIt.ViewModel.init() -&gt; ParkIt.ViewModel"
-                  moduleName = "ParkIt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/willfrohlich/Desktop/School%2012/CS%20V/gitgood/ParkIt/ParkIt/ParkIt/ViewModel.swift"
-                  timestampString = "548264006.992546"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "574">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (ParkIt.Model) -&gt; ParkIt.ViewModelItem in ParkIt.ViewModel.init() -&gt; ParkIt.ViewModel"
-                  moduleName = "ParkIt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/willfrohlich/Desktop/School%2012/CS%20V/gitgood/ParkIt/ParkIt/ParkIt/ViewModel.swift"
-                  timestampString = "548264006.999742"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "35">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
