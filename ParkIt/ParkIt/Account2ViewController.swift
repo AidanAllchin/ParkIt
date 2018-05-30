@@ -23,8 +23,13 @@ class Account2ViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "SpotTableViewCell") as! SpotTableViewCell
         // Set the first row text label to the firstRowLabel data in our current array item
         cell.spot = self.tableContents[indexPath.row]
-        cell.spotButton.setTitle(self.tableContents[indexPath.row].title, for: UIControlState.normal)
+        cell.spotLabel.text = self.tableContents[indexPath.row].title
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let spot = tableContents[indexPath.row]
+        performSegue(withIdentifier: "goToViewSpot", sender: spot)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,10 +38,6 @@ class Account2ViewController: UIViewController, UITableViewDelegate, UITableView
             let vc = segue.destination as? ViewSpotViewController
             vc!.spot = sender as! ParkingSpot
         }
-    }
-    
-    func goToViewSpot(spot: ParkingSpot) {
-        performSegue(withIdentifier: "goToViewSpot", sender: spot)
     }
     
     override func viewDidLoad() {

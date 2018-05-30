@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e29-QY-3Ja">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e29-QY-3Ja">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -197,18 +197,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="77.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nS0-Gc-9gz">
-                                                    <rect key="frame" x="15" y="6" width="345" height="61"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Spot"/>
-                                                    <connections>
-                                                        <action selector="goToSpotButton:" destination="S3l-Mt-6fg" eventType="touchUpInside" id="zH0-oE-nVq"/>
-                                                    </connections>
-                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kyb-HW-mm2">
+                                                    <rect key="frame" x="31" y="27" width="313" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Kyb-HW-mm2" firstAttribute="top" secondItem="pnU-su-JdK" secondAttribute="topMargin" constant="16" id="3GO-ko-ae7"/>
+                                                <constraint firstItem="Kyb-HW-mm2" firstAttribute="leading" secondItem="pnU-su-JdK" secondAttribute="leadingMargin" constant="16" id="Sev-ti-eiV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Kyb-HW-mm2" secondAttribute="trailing" constant="16" id="rA7-P2-vYb"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Kyb-HW-mm2" secondAttribute="bottom" constant="16" id="wfG-K2-1Sx"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="spotButton" destination="nS0-Gc-9gz" id="gkM-aI-2QP"/>
+                                            <outlet property="spotLabel" destination="Kyb-HW-mm2" id="d8e-LL-7Jn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

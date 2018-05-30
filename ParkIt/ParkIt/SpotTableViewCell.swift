@@ -10,7 +10,7 @@ import UIKit
 
 class SpotTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var spotButton: UIButton!
+    @IBOutlet weak var spotLabel: UILabel!
     var spot:ParkingSpot = ParkingSpot()
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     
@@ -19,9 +19,9 @@ class SpotTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    @IBAction func goToSpotButton(_ sender: Any) {
-        (storyboard.instantiateViewController(withIdentifier :"AccountTwoViewController") as! Account2ViewController).goToViewSpot(spot: self.spot)
-    }
+    /*@IBAction func goToSpotButton(_ sender: Any) {
+        (storyboard.instantiateViewController(withIdentifier :"Account2ViewController") as! Account2ViewController).goToViewSpot(spot: self.spot)
+    }*/
     
     
     override func setSelected(_ selected: Bool, animated: Bool) {
