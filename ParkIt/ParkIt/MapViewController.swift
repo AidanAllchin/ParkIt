@@ -259,7 +259,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         })
   }
     func getAccountSpots() {
-        ref?.observe(.value, with: { (snapshot) in
+        ref?.observeSingleEvent(of: .value, with: { (snapshot) in
             let spots: NSDictionary = (snapshot.value as! NSDictionary).value(forKey: "Spots") as! NSDictionary
             
             var spotName = ""
