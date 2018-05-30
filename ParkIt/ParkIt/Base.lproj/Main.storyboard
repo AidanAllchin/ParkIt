@@ -746,7 +746,7 @@
                         <outlet property="addressLabel" destination="FdM-0q-Qnl" id="1FJ-5p-FpV"/>
                         <outlet property="coordinateLabel" destination="ah8-HG-qFi" id="eOT-PH-7b4"/>
                         <outlet property="spotTitleLabel" destination="bLV-3g-li6" id="1qg-GD-L6H"/>
-                        <segue destination="4V9-Be-pho" kind="presentation" identifier="BackHome" id="RBg-K3-R9I"/>
+                        <segue destination="4V9-Be-pho" kind="show" identifier="BackHome" id="RBg-K3-R9I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SON-4f-wNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -993,7 +993,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
-                                    <segue destination="4V9-Be-pho" kind="showDetail" id="rCg-z4-jzG"/>
+                                    <segue destination="4V9-Be-pho" kind="show" id="rCg-z4-jzG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1103,9 +1103,9 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RGV-Gc-H1t"/>
+        <segue reference="rCg-z4-jzG"/>
         <segue reference="f9p-V3-baU"/>
         <segue reference="HOd-Ui-W0G"/>
-        <segue reference="hY2-zn-z1c"/>
+        <segue reference="hMK-7t-Pj2"/>
     </inferredMetricsTieBreakers>
 </document>
