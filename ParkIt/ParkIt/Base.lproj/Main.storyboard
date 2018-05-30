@@ -685,7 +685,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="backbutton"/>
                                 <connections>
-                                    <segue destination="5Lr-qo-12t" kind="push" identifier="" id="P9f-jL-eJP"/>
+                                    <segue destination="5Lr-qo-12t" kind="show" identifier="" id="P9f-jL-eJP"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spot title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRv-WQ-5QI">
@@ -1007,7 +1007,7 @@
         <segue reference="dz5-39-Abo"/>
         <segue reference="rCg-z4-jzG"/>
         <segue reference="f9p-V3-baU"/>
-        <segue reference="HOd-Ui-W0G"/>
+        <segue reference="P9f-jL-eJP"/>
         <segue reference="hY2-zn-z1c"/>
     </inferredMetricsTieBreakers>
 </document>
