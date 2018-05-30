@@ -259,105 +259,6 @@
             </objects>
             <point key="canvasLocation" x="412" y="790.25487256371821"/>
         </scene>
-        <!--Account View Controller-->
-        <scene sceneID="NUZ-7O-Fog">
-            <objects>
-                <viewController id="Dfi-F3-L9J" customClass="AccountViewController" customModule="ParkIt" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="czT-UM-kNZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOB-fv-Jjg">
-                                <rect key="frame" x="53" y="30" width="269" height="35"/>
-                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="30"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzq-sh-gG6">
-                                <rect key="frame" x="15" y="20" width="30" height="49"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <state key="normal" title="X"/>
-                                <connections>
-                                    <segue destination="4V9-Be-pho" kind="show" animates="NO" id="BSr-CF-NI9"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spots Selling:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irC-fV-wiB">
-                                <rect key="frame" x="50" y="115" width="275" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="0.98780487804878048" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="if6-o3-H3Y" userLabel="Selling One Button">
-                                <rect key="frame" x="40" y="170" width="295" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="SellingOne"/>
-                                <connections>
-                                    <action selector="toViewSpotOne:" destination="Dfi-F3-L9J" eventType="touchUpInside" id="n3Y-MN-Urx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhJ-D2-VzF">
-                                <rect key="frame" x="40" y="226" width="295" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="SellingTwo"/>
-                                <connections>
-                                    <action selector="toViewSpotTwo:" destination="Dfi-F3-L9J" eventType="touchUpInside" id="HHf-Xb-jjd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yu-vP-l2f">
-                                <rect key="frame" x="40" y="282" width="295" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="SellingThree"/>
-                                <connections>
-                                    <action selector="toViewSpotThree:" destination="Dfi-F3-L9J" eventType="touchUpInside" id="j8m-oC-vAm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WlQ-HE-eij">
-                                <rect key="frame" x="40" y="338" width="295" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="SellingFour"/>
-                                <connections>
-                                    <action selector="toViewSpotFour:" destination="Dfi-F3-L9J" eventType="touchUpInside" id="wwD-rT-Owz"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="myT-S5-IkV" firstAttribute="trailing" secondItem="irC-fV-wiB" secondAttribute="trailing" constant="50" id="49H-f6-kn5"/>
-                            <constraint firstItem="myT-S5-IkV" firstAttribute="trailing" secondItem="xhJ-D2-VzF" secondAttribute="trailing" constant="40" id="7LM-p9-uIs"/>
-                            <constraint firstItem="xhJ-D2-VzF" firstAttribute="leading" secondItem="myT-S5-IkV" secondAttribute="leading" constant="40" id="Eho-vW-NTe"/>
-                            <constraint firstItem="irC-fV-wiB" firstAttribute="leading" secondItem="myT-S5-IkV" secondAttribute="leading" constant="50" id="GeK-4G-cQ2"/>
-                            <constraint firstItem="Mzq-sh-gG6" firstAttribute="leading" secondItem="myT-S5-IkV" secondAttribute="leading" constant="15" id="KL3-dh-Zs7"/>
-                            <constraint firstItem="if6-o3-H3Y" firstAttribute="top" secondItem="irC-fV-wiB" secondAttribute="bottom" constant="25" id="L8I-py-RdV"/>
-                            <constraint firstItem="myT-S5-IkV" firstAttribute="trailing" secondItem="if6-o3-H3Y" secondAttribute="trailing" constant="40" id="NmQ-jf-Z1l"/>
-                            <constraint firstItem="Mzq-sh-gG6" firstAttribute="top" secondItem="myT-S5-IkV" secondAttribute="top" id="Not-bg-ovY"/>
-                            <constraint firstItem="9Yu-vP-l2f" firstAttribute="leading" secondItem="myT-S5-IkV" secondAttribute="leading" constant="40" id="NwK-wr-QtV"/>
-                            <constraint firstItem="WlQ-HE-eij" firstAttribute="leading" secondItem="myT-S5-IkV" secondAttribute="leading" constant="40" id="S0Q-FM-hef"/>
-                            <constraint firstItem="9Yu-vP-l2f" firstAttribute="top" secondItem="xhJ-D2-VzF" secondAttribute="bottom" constant="20" id="Sbn-W2-seg"/>
-                            <constraint firstItem="NOB-fv-Jjg" firstAttribute="top" secondItem="myT-S5-IkV" secondAttribute="top" constant="10" id="aWr-No-Q0h"/>
-                            <constraint firstItem="NOB-fv-Jjg" firstAttribute="leading" secondItem="myT-S5-IkV" secondAttribute="leading" constant="53" id="dcK-pb-clQ"/>
-                            <constraint firstItem="myT-S5-IkV" firstAttribute="trailing" secondItem="9Yu-vP-l2f" secondAttribute="trailing" constant="40" id="f8C-Z0-e1x"/>
-                            <constraint firstItem="irC-fV-wiB" firstAttribute="top" secondItem="NOB-fv-Jjg" secondAttribute="bottom" constant="50" id="fUb-p7-G3G"/>
-                            <constraint firstItem="myT-S5-IkV" firstAttribute="trailing" secondItem="WlQ-HE-eij" secondAttribute="trailing" constant="40" id="gob-qw-N5J"/>
-                            <constraint firstItem="if6-o3-H3Y" firstAttribute="leading" secondItem="myT-S5-IkV" secondAttribute="leading" constant="40" id="ncs-MV-ifb"/>
-                            <constraint firstItem="WlQ-HE-eij" firstAttribute="top" secondItem="9Yu-vP-l2f" secondAttribute="bottom" constant="20" id="rOl-Up-bLz"/>
-                            <constraint firstItem="myT-S5-IkV" firstAttribute="trailing" secondItem="NOB-fv-Jjg" secondAttribute="trailing" constant="53" id="vnk-r4-69y"/>
-                            <constraint firstItem="xhJ-D2-VzF" firstAttribute="top" secondItem="if6-o3-H3Y" secondAttribute="bottom" constant="20" id="wWj-S9-N2D"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="myT-S5-IkV"/>
-                    </view>
-                    <connections>
-                        <outlet property="sellingFourButton" destination="WlQ-HE-eij" id="xya-Vo-M92"/>
-                        <outlet property="sellingOneButton" destination="if6-o3-H3Y" id="Vxy-US-GRP"/>
-                        <outlet property="sellingThreeButton" destination="9Yu-vP-l2f" id="nfh-R5-b90"/>
-                        <outlet property="sellingTwoButton" destination="xhJ-D2-VzF" id="lOS-hQ-7Te"/>
-                        <outlet property="usernameLabel" destination="NOB-fv-Jjg" id="47f-K8-WX8"/>
-                        <segue destination="bwk-ta-Zvu" kind="presentation" identifier="ToViewSpot" id="hMK-7t-Pj2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gBq-Ki-e60" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2578" y="-93"/>
-        </scene>
         <!--Location Search Table-->
         <scene sceneID="VHX-FR-guc">
             <objects>
@@ -1103,9 +1004,10 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="dz5-39-Abo"/>
         <segue reference="rCg-z4-jzG"/>
         <segue reference="f9p-V3-baU"/>
         <segue reference="HOd-Ui-W0G"/>
-        <segue reference="hMK-7t-Pj2"/>
+        <segue reference="hY2-zn-z1c"/>
     </inferredMetricsTieBreakers>
 </document>
