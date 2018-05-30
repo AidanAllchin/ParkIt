@@ -161,7 +161,7 @@
                         <outlet property="tap" destination="HXH-eX-e4M" id="86k-D2-p9F"/>
                         <segue destination="bwk-ta-Zvu" kind="presentation" identifier="ViewSpotFromAnnotation" id="FQu-n2-wMY"/>
                         <segue destination="ADo-O8-fvx" kind="show" identifier="gotoLogin" id="N9B-xv-J67"/>
-                        <segue destination="PKj-yz-iVg" kind="presentation" identifier="ToAccountView" id="bcu-dh-1H3"/>
+                        <segue destination="PKj-yz-iVg" kind="presentation" identifier="ToAccountView" id="OpI-1W-Ptq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -190,7 +190,7 @@
                                 <rect key="frame" x="0.0" y="190" width="375" height="477"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="78" id="S3l-Mt-6fg" customClass="SpotTableViewCell" customModule="ParkIt" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpotTableViewCell" rowHeight="78" id="S3l-Mt-6fg" customClass="SpotTableViewCell" customModule="ParkIt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S3l-Mt-6fg" id="pnU-su-JdK">
@@ -212,6 +212,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PKj-yz-iVg" id="bQr-On-OQO"/>
+                                    <outlet property="delegate" destination="PKj-yz-iVg" id="tgT-GS-ebC"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23Q-TG-uKA">
                                 <rect key="frame" x="16" y="60" width="343" height="35"/>
@@ -1098,6 +1102,6 @@
         <segue reference="RGV-Gc-H1t"/>
         <segue reference="f9p-V3-baU"/>
         <segue reference="HOd-Ui-W0G"/>
-        <segue reference="FQu-n2-wMY"/>
+        <segue reference="hY2-zn-z1c"/>
     </inferredMetricsTieBreakers>
 </document>
