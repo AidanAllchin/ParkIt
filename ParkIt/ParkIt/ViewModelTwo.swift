@@ -160,7 +160,6 @@ extension ViewModelTwo: UITableViewDelegate {
         
         // update ViewModel item
         items[indexPath.row].isSelected = true
-        
         didToggleSelection?(!selectedItems.isEmpty)
     }
     
@@ -168,7 +167,6 @@ extension ViewModelTwo: UITableViewDelegate {
         
         // update ViewModel item
         items[indexPath.row].isSelected = false
-        
         didToggleSelection?(!selectedItems.isEmpty)
     }
 }
