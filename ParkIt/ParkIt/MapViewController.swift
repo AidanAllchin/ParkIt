@@ -227,6 +227,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 
                 //create the nested dict of TimesAvailable
                 var ii = 0
+                timesAvailable = [String]()
                 while ii < timesCount
                 {
                     let timeName: String = "Time-" + String(format: "%02d", (ii))
