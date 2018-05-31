@@ -812,7 +812,7 @@
         <scene sceneID="D0v-vF-VRR">
             <objects>
                 <viewController title="CreateSpotOneViewController" id="mue-lN-skz" customClass="CreateSpotOneViewController" customModule="ParkIt" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2oQ-St-Krw">
+                    <view key="view" contentMode="scaleToFill" id="2oQ-St-Krw" userLabel="CreateOneView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -850,6 +850,14 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sI6-3d-kdS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VeS-qd-ZmQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="Address" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the address where this spot is located" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BC4-Z1-4jm">
                                 <rect key="frame" x="35" y="547" width="305" height="30"/>
                                 <nil key="textColor"/>
@@ -867,11 +875,15 @@
                             <constraint firstItem="m8z-lg-O63" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" constant="40" id="73I-xU-EDU"/>
                             <constraint firstItem="BC4-Z1-4jm" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" constant="35" id="7H0-Kp-Wyc"/>
                             <constraint firstItem="1Et-ct-rfh" firstAttribute="top" secondItem="wdU-4E-NyE" secondAttribute="bottom" constant="20" id="A0r-vK-bSX"/>
+                            <constraint firstItem="sI6-3d-kdS" firstAttribute="trailing" secondItem="6mv-Cf-1Ra" secondAttribute="trailing" id="GMM-Qe-60a"/>
                             <constraint firstItem="6mv-Cf-1Ra" firstAttribute="trailing" secondItem="wdU-4E-NyE" secondAttribute="trailing" constant="16" id="Ku3-0c-Spi"/>
                             <constraint firstItem="6mv-Cf-1Ra" firstAttribute="bottom" secondItem="oOd-GK-sIZ" secondAttribute="bottom" constant="20" id="SIR-zg-aAR"/>
                             <constraint firstItem="1Et-ct-rfh" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" constant="16" id="VEW-PK-cLM"/>
                             <constraint firstItem="b5f-AA-YsB" firstAttribute="top" secondItem="6mv-Cf-1Ra" secondAttribute="top" id="WsO-8f-vtF"/>
+                            <constraint firstItem="sI6-3d-kdS" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" id="YIF-0S-xTA"/>
+                            <constraint firstItem="sI6-3d-kdS" firstAttribute="top" secondItem="2oQ-St-Krw" secondAttribute="top" id="YUU-Pr-XN7"/>
                             <constraint firstItem="wdU-4E-NyE" firstAttribute="top" secondItem="6mv-Cf-1Ra" secondAttribute="top" constant="68" id="Yfv-Mp-Ddc"/>
+                            <constraint firstItem="sI6-3d-kdS" firstAttribute="bottom" secondItem="6mv-Cf-1Ra" secondAttribute="bottom" id="ZtF-33-f1X"/>
                             <constraint firstItem="oOd-GK-sIZ" firstAttribute="top" secondItem="BC4-Z1-4jm" secondAttribute="bottom" constant="25" id="pON-zQ-3hB"/>
                             <constraint firstItem="wdU-4E-NyE" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" constant="16" id="qjm-yv-OnK"/>
                             <constraint firstItem="oOd-GK-sIZ" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" id="r1j-cf-PO9"/>
@@ -886,7 +898,9 @@
                         <viewLayoutGuide key="safeArea" id="6mv-Cf-1Ra"/>
                     </view>
                     <connections>
+                        <outlet property="CreateOneView" destination="2oQ-St-Krw" id="z6Z-fJ-og6"/>
                         <outlet property="addressField" destination="BC4-Z1-4jm" id="GhW-49-efU"/>
+                        <outlet property="blur" destination="sI6-3d-kdS" id="mjS-Ue-uiT"/>
                         <outlet property="mapView" destination="1Et-ct-rfh" id="TmE-ZY-T2h"/>
                         <outlet property="textBottomConstraint" destination="pON-zQ-3hB" id="epa-hQ-IHn"/>
                         <outlet property="textTopConstraint" destination="uCI-JM-Rpv" id="3fS-94-sNb"/>
