@@ -273,7 +273,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let idArray = spots.allKeys as! [String]
             var currentSpotNum = 0
             
-            
             //Start cycling through all the spots and find which one has the same id as the spot that was clicked on for purchase
             let jj = 0
             while currentSpotNum < spots.count
