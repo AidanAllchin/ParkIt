@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e29-QY-3Ja">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e29-QY-3Ja">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -235,13 +235,23 @@
                                 <color key="textColor" red="0.98780487800000005" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywk-EC-f2b">
+                                <rect key="frame" x="16" y="20" width="30" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="X"/>
+                                <connections>
+                                    <segue destination="4V9-Be-pho" kind="show" id="qr1-0z-bPi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="sLG-vN-Aai" firstAttribute="top" secondItem="MAm-jD-UVC" secondAttribute="top" constant="190" id="Ecx-8W-34m"/>
                             <constraint firstItem="sLG-vN-Aai" firstAttribute="bottom" secondItem="qAc-D4-vwy" secondAttribute="bottom" id="Jv0-nc-FjR"/>
+                            <constraint firstItem="ywk-EC-f2b" firstAttribute="leading" secondItem="qAc-D4-vwy" secondAttribute="leading" constant="16" id="N6o-fj-cps"/>
                             <constraint firstItem="sLG-vN-Aai" firstAttribute="trailing" secondItem="qAc-D4-vwy" secondAttribute="trailing" id="Slr-xI-gAN"/>
                             <constraint firstItem="sLG-vN-Aai" firstAttribute="leading" secondItem="qAc-D4-vwy" secondAttribute="leading" id="YHi-td-jU2"/>
+                            <constraint firstItem="ywk-EC-f2b" firstAttribute="top" secondItem="qAc-D4-vwy" secondAttribute="top" id="mP5-02-8Et"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qAc-D4-vwy"/>
                     </view>
@@ -1070,8 +1080,7 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="p1g-DC-PPK"/>
-        <segue reference="RBg-K3-R9I"/>
+        <segue reference="qr1-0z-bPi"/>
         <segue reference="f9p-V3-baU"/>
         <segue reference="P9f-jL-eJP"/>
         <segue reference="hY2-zn-z1c"/>
