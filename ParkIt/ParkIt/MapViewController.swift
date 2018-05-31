@@ -238,6 +238,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 }
                 
                 //reservations
+                reservations = NSDictionary()
                 //this makes it so spots don't have to have a reservation to load
                 if let reservationDictionary = spot.value(forKey: "Reservations") as? NSDictionary
                 {
