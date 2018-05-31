@@ -186,8 +186,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="spotTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sLG-vN-Aai">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="spotTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sLG-vN-Aai">
                                 <rect key="frame" x="0.0" y="190" width="375" height="477"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpotTableViewCell" rowHeight="78" id="S3l-Mt-6fg" customClass="SpotTableViewCell" customModule="ParkIt" customModuleProvider="target">
@@ -205,10 +206,10 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Kyb-HW-mm2" secondAttribute="bottom" id="O3T-zS-SDZ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Kyb-HW-mm2" secondAttribute="trailing" constant="16" id="Van-JY-K5d"/>
-                                                <constraint firstItem="Kyb-HW-mm2" firstAttribute="top" secondItem="pnU-su-JdK" secondAttribute="topMargin" id="piH-GJ-fiX"/>
-                                                <constraint firstItem="Kyb-HW-mm2" firstAttribute="leading" secondItem="pnU-su-JdK" secondAttribute="leadingMargin" constant="16" id="wTO-cX-B7t"/>
+                                                <constraint firstItem="Kyb-HW-mm2" firstAttribute="top" secondItem="pnU-su-JdK" secondAttribute="topMargin" id="BLi-kz-17u"/>
+                                                <constraint firstItem="Kyb-HW-mm2" firstAttribute="leading" secondItem="pnU-su-JdK" secondAttribute="leadingMargin" constant="16" id="CgT-ky-JGL"/>
+                                                <constraint firstItem="Kyb-HW-mm2" firstAttribute="bottom" secondItem="pnU-su-JdK" secondAttribute="bottomMargin" id="pAf-9n-3m9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Kyb-HW-mm2" secondAttribute="trailing" constant="16" id="yCk-vz-VRa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -237,12 +238,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="sLG-vN-Aai" firstAttribute="top" secondItem="MAm-jD-UVC" secondAttribute="top" constant="190" id="Ecx-8W-34m"/>
-                            <constraint firstItem="sLG-vN-Aai" firstAttribute="bottom" secondItem="qAc-D4-vwy" secondAttribute="bottom" id="Jv0-nc-FjR"/>
-                            <constraint firstItem="sLG-vN-Aai" firstAttribute="trailing" secondItem="qAc-D4-vwy" secondAttribute="trailing" id="Slr-xI-gAN"/>
-                            <constraint firstItem="sLG-vN-Aai" firstAttribute="leading" secondItem="qAc-D4-vwy" secondAttribute="leading" id="YHi-td-jU2"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qAc-D4-vwy"/>
                     </view>
                     <connections>
@@ -1070,7 +1065,6 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="p1g-DC-PPK"/>
         <segue reference="RBg-K3-R9I"/>
         <segue reference="f9p-V3-baU"/>
         <segue reference="P9f-jL-eJP"/>
