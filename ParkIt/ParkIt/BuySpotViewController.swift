@@ -76,8 +76,6 @@ class BuySpotViewController: UIViewController {
             i = i + 1
         }
         
-        var numSpots = 0
-        var spotName = ""
         var changingSpotTitle = ""
         var numReservations = 0
         
@@ -85,24 +83,22 @@ class BuySpotViewController: UIViewController {
             let wholeDatabase: NSDictionary = snapshot.value as! NSDictionary
             let spots: NSDictionary = wholeDatabase.value(forKey: "Spots") as! NSDictionary
             
-            numSpots = spots.count
-            var currentSpotNum = numSpots - 1
+            var currentSpotNum = 0
+            var idArray = spots.allKeys as! [String]
             
             //Start cycling through all the spots and find which one has the same id as the spot that was clicked on for purchase
-            let jj = 0
-            while jj <= currentSpotNum
+            while currentSpotNum < spots.count
             {
-                spotName = "Spot-0x" + String(format: "%04d", currentSpotNum)
-                let dict: NSDictionary = spots.value(forKey: spotName) as! NSDictionary
-                let id = dict.value(forKey: "id") as! String
+                let spot = spots.value(forKey: idArray[currentSpotNum]) as! NSDictionary
+                let id = spot.value(forKey: "id") as! String
                 if (id == self.spot.uniqueId) {
-                    changingSpotTitle = spotName
-                    if let res: NSDictionary = dict.value(forKey: "Reservations") as? NSDictionary
+                    changingSpotTitle = id
+                    if let res: NSDictionary = spot.value(forKey: "Reservations") as? NSDictionary
                     {
                         numReservations = res.count
                     }
                 }
-                currentSpotNum = currentSpotNum - 1
+                currentSpotNum = currentSpotNum + 1
             }
             
             if (changingSpotTitle == "") {
@@ -116,27 +112,23 @@ class BuySpotViewController: UIViewController {
             var resCounter = 0
             while resCounter < times.count
             {
-                let resNumber = String(format: "%02d", numReservations+resCounter)
-                //This cycles through the existing reservations and overwrites the ones that are ""
-                /*var blankResCount = 0
-                while blankResCount < numReservations
-                {
-                    let blankResNumber = String(format: "%02d", blankResCount)
-                    //if any spots have a value for a Res-## == "", set it = to times[resCounter] and cycle resCounter
-                    if(((spots.value(forKey: changingSpotTitle) as! NSDictionary).value(forKey: "Reservations") as! NSDictionary).value(forKey: "Res-" + blankResNumber) as! String == "") {
-                        self.ref.child("Spots/\(changingSpotTitle)/Reservations/Res-" + blankResNumber).setValue(times[resCounter])
-                        //resCounter = resCounter + 1
-                        //blankResCount = blankResCount + 1
-                    }
-                    blankResCount = blankResCount + 1
-                }*/
+                var uniqueResId = ""
+                for _ in 0...32 {
+                    uniqueResId = uniqueResId + String(Int(arc4random_uniform(10)))
+                }
                 
                 //Now add the new values after the existing reservations
-                self.ref.child("Spots/\(changingSpotTitle)/Reservations/Res-" + resNumber).setValue(times[resCounter])
+                self.ref.child("Spots/\(changingSpotTitle)/Reservations/\(uniqueResId)/time").setValue(times[resCounter])
+                self.ref.child("Spots/\(changingSpotTitle)/Reservations/\(uniqueResId)/userBuying").setValue(UserDefaults.standard.value(forKey: "userEmail"))
+                
+                //Creating the nested NSDictionary's
+                let tempDict: NSDictionary = ["time": times[resCounter], "userBuying": UserDefaults.standard.value(forKey: "userEmail")]
+                let tempResDict: NSDictionary = [uniqueResId: tempDict]
+                self.spot.reservations = tempResDict
+                
                 resCounter = resCounter + 1
             }
             
-            self.spot.reservations = times
             self.tableView?.reloadData()
             self.performSegue(withIdentifier: "SummarySegue", sender: self.spot)
         })

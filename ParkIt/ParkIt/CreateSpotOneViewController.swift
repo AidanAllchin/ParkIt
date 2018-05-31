@@ -11,7 +11,8 @@ import UIKit
 import MapKit
 
 //The first view controller in the create spot sequence: Opens a map with user location and asks user to enter an address.
-class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+
+class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate {
     
     var newSpot: ParkingSpot = ParkingSpot()
     let regionRadius: CLLocationDistance = 1000
@@ -20,12 +21,36 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addressField: UITextField!
     
+    @IBOutlet var textBottomConstraint: NSLayoutConstraint!
+
+    @IBOutlet var textTopConstraint: NSLayoutConstraint!
+
+    @IBAction func moveTextFieldOnEdit(_ sender: UITextField) {
+        NSLayoutConstraint.deactivate([textBottomConstraint])
+        NSLayoutConstraint.activate([textTopConstraint])
+
+        textTopConstraint.constant = 8
+        UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()})
+    }
+    @IBAction func editingEnded(_ sender: UITextField) {
+        NSLayoutConstraint.deactivate([textTopConstraint])
+        NSLayoutConstraint.activate([textBottomConstraint])
+        UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()})
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
         mapView.showsUserLocation = true
         mapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
         mapView.mapType = .hybrid
+        NSLayoutConstraint.deactivate([textTopConstraint])
+        self.addressField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        addressField.resignFirstResponder()
+        return (true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

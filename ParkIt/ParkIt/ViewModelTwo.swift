@@ -95,7 +95,13 @@ class ViewModelTwo: NSObject {
     func getDataArray(spot: ParkingSpot) {
         //Set times back to 12-hour time before comparison
         availableTimes = convertTime(timeArray: availableTimes)
-        var resTimes = convertTime(timeArray: spot.reservations)
+        let resIdArray = spot.reservations.allKeys as! [String]
+        var timeArray = [String]()
+        for id in resIdArray
+        {
+            timeArray.append((spot.reservations.value(forKey: id) as! NSDictionary).value(forKey: "time") as! String)
+        }
+        var resTimes = convertTime(timeArray: timeArray)
         var i = 0
         while i < dataArray.count {
             var j = 0

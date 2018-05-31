@@ -2,14 +2,15 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 const fb = admin.database();
-var date = Date();
-var array = date.split(' ');
 
 exports.getFullDate = functions.https.onRequest((request, response) => {
+	var date = Date();
 	response.send(String(date));
 });
 
 exports.getMilitaryTime = functions.https.onRequest((request, response) => {
+	var date = Date();
+	var array = date.split(' ');
 	response.send(String(array[4]));
 });
 

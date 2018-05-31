@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var signinSelector: UISegmentedControl!
     
@@ -33,8 +33,15 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         self.navigationItem.hidesBackButton = true
         super.viewDidLoad()
-
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        return (true)
     }
 
     override func didReceiveMemoryWarning() {

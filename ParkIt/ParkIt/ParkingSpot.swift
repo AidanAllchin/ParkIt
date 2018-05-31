@@ -13,7 +13,6 @@ import Firebase
 
 //ParkingSpot object
 class ParkingSpot: NSObject, MKAnnotation {
-    //var ref:DatabaseReference?
     var databaseHandle:DatabaseHandle?
     
     var title: String?
@@ -25,7 +24,7 @@ class ParkingSpot: NSObject, MKAnnotation {
     var userBuying: String?
     var userSelling: String
     var timesAvailable: [String]
-    var reservations: [String]
+    var reservations: NSDictionary
     
     override init()
     {
@@ -38,7 +37,7 @@ class ParkingSpot: NSObject, MKAnnotation {
         self.userBuying = ""
         self.userSelling = ""
         self.timesAvailable = [String]()
-        self.reservations = [String]()
+        self.reservations = NSDictionary()
         
         super.init()
     }
@@ -54,7 +53,7 @@ class ParkingSpot: NSObject, MKAnnotation {
         self.userBuying = ""
         self.userSelling = ""
         self.timesAvailable = [String]()
-        self.reservations = [String]()
+        self.reservations = NSDictionary()
     }
     
     init(dict: NSDictionary)
@@ -78,18 +77,25 @@ class ParkingSpot: NSObject, MKAnnotation {
         }
         self.timesAvailable = timesArray
         
-        var resArray = [String]()
+        var finalReservations = NSDictionary()
         if let resDict: NSDictionary = dict.value(forKey: "Reservations") as? NSDictionary
         {
-            for res in resDict
+            /*var resCount = 0
+            let resIdArray = resDict.allKeys as! [String]
+            while resCount < resDict.count
             {
-                resArray.append(res.value as! String)
-            }
+                let reservation = resDict.value(forKey: resIdArray[resCount])
+                for res in resDict
+                {
+                    resArray.append(res.value as! String)
+                }
+            }*/
+            finalReservations = resDict
         }
-        self.reservations = resArray
+        self.reservations = finalReservations
     }
     
-    init(title: String, address: String, isAvailable: Bool, uniqueId: String, coordinate: CLLocationCoordinate2D, timeLeft: Float, userBuying: String, userSelling: String, timesAvailable: [String], reservations: [String]) {
+    init(title: String, address: String, isAvailable: Bool, uniqueId: String, coordinate: CLLocationCoordinate2D, timeLeft: Float, userBuying: String, userSelling: String, timesAvailable: [String], reservations: NSDictionary) {
         
         self.title = title
         self.address = address
@@ -121,8 +127,4 @@ class ParkingSpot: NSObject, MKAnnotation {
     var subtitle: String? {
         return "Time left: " + String(timeLeft) + "\nUser Selling: " + String(userSelling)
     }
-    
-
-
 }
-
