@@ -23,7 +23,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var selectedPin:MKPlacemark? = nil
     var ref:DatabaseReference!
     var databaseHandle:DatabaseHandle?
-    
     var parkingspots: [ParkingSpot] = []
     let regionRadius: CLLocationDistance = 300
     @IBOutlet weak var mapView: MKMapView!
@@ -263,7 +262,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let spots: NSDictionary = (snapshot.value as! NSDictionary).value(forKey: "Spots") as! NSDictionary
             
             var spotName = ""
-            
             let numSpots = spots.count
             var currentSpotNum = numSpots - 1
             
