@@ -45,7 +45,7 @@ class EditSpotViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is ViewSpotViewController && changesCanceled == false
+        if segue.destination is ViewSpotViewController// && changesCanceled == false
         {
             let id = spot.uniqueId
             
@@ -71,7 +71,8 @@ class EditSpotViewController: UIViewController {
         }
         else if segue.destination is UINavigationController
         {
-            let alert = UIAlertController(title: "Confirm", message: "Do you really want to delete this spot?", preferredStyle: .actionSheet)
+            let id = spot.uniqueId
+            /*let alert = UIAlertController(title: "Confirm", message: "Do you really want to delete this spot?", preferredStyle: .actionSheet)
             
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
                 self.didCancel = false
@@ -80,9 +81,11 @@ class EditSpotViewController: UIViewController {
                 self.didCancel = true
             }))
             
-            self.present(alert, animated: true)
+            self.present(alert, animated: true)*/
+            self.ref.child("Spots/\(id)").removeValue()
         }
     }
+    
     @IBAction func makeChanges(_ sender: Any) {
         changesCanceled = false
         performSegue(withIdentifier: "ToViewSpot", sender: self.spot)
