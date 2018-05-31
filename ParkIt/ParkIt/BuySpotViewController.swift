@@ -122,7 +122,7 @@ class BuySpotViewController: UIViewController {
                 self.ref.child("Spots/\(changingSpotTitle)/Reservations/\(uniqueResId)/userBuying").setValue(UserDefaults.standard.value(forKey: "userEmail"))
                 
                 //Creating the nested NSDictionary's
-                let tempDict: NSDictionary = ["time": times[resCounter], "userBuying": UserDefaults.standard.value(forKey: "userEmail")]
+                let tempDict: NSDictionary = ["time": times[resCounter], "userBuying": UserDefaults.standard.value(forKey: "userEmail")!]
                 let tempResDict: NSDictionary = [uniqueResId: tempDict]
                 self.spot.reservations = tempResDict
                 
