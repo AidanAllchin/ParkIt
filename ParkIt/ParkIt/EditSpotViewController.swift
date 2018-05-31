@@ -45,7 +45,7 @@ class EditSpotViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is ViewSpotViewController && changesCanceled == false
+        if segue.destination is ViewSpotViewController// && changesCanceled == false
         {
             let id = spot.uniqueId
             

@@ -235,8 +235,9 @@
                                 <color key="textColor" red="0.98780487800000005" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywk-EC-f2b">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywk-EC-f2b">
                                 <rect key="frame" x="16" y="20" width="30" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="X"/>
                                 <connections>
@@ -1078,9 +1079,9 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qr1-0z-bPi"/>
+        <segue reference="U9z-Q5-Hwf"/>
         <segue reference="f9p-V3-baU"/>
         <segue reference="P9f-jL-eJP"/>
-        <segue reference="hY2-zn-z1c"/>
+        <segue reference="Pvc-cM-L5f"/>
     </inferredMetricsTieBreakers>
 </document>
