@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e29-QY-3Ja">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e29-QY-3Ja">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -833,12 +833,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="Address" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the address where this spot is located" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BC4-Z1-4jm">
-                                <rect key="frame" x="35" y="547" width="305" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5f-AA-YsB">
                                 <rect key="frame" x="10" y="20" width="40" height="35"/>
                                 <constraints>
@@ -856,6 +850,16 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="Address" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the address where this spot is located" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BC4-Z1-4jm">
+                                <rect key="frame" x="35" y="547" width="305" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editingEnded:" destination="mue-lN-skz" eventType="editingDidEnd" id="ldg-eU-Lqg"/>
+                                    <action selector="moveTextFieldOnEdit:" destination="mue-lN-skz" eventType="editingDidBegin" id="fI4-3Y-fDM"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -875,6 +879,7 @@
                             <constraint firstItem="oOd-GK-sIZ" firstAttribute="trailing" secondItem="6mv-Cf-1Ra" secondAttribute="trailing" id="sLy-v7-30H"/>
                             <constraint firstItem="6mv-Cf-1Ra" firstAttribute="bottom" secondItem="1Et-ct-rfh" secondAttribute="bottom" constant="150" id="tRO-ia-1B4"/>
                             <constraint firstItem="6mv-Cf-1Ra" firstAttribute="trailing" secondItem="1Et-ct-rfh" secondAttribute="trailing" constant="16" id="tdK-ms-9f8"/>
+                            <constraint firstItem="BC4-Z1-4jm" firstAttribute="top" secondItem="6mv-Cf-1Ra" secondAttribute="top" constant="527" id="uCI-JM-Rpv"/>
                             <constraint firstItem="b5f-AA-YsB" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" constant="10" id="unU-GZ-pju"/>
                             <constraint firstItem="m8z-lg-O63" firstAttribute="top" secondItem="6mv-Cf-1Ra" secondAttribute="top" id="ysC-fE-Kb2"/>
                         </constraints>
@@ -883,6 +888,8 @@
                     <connections>
                         <outlet property="addressField" destination="BC4-Z1-4jm" id="GhW-49-efU"/>
                         <outlet property="mapView" destination="1Et-ct-rfh" id="TmE-ZY-T2h"/>
+                        <outlet property="textBottomConstraint" destination="pON-zQ-3hB" id="epa-hQ-IHn"/>
+                        <outlet property="textTopConstraint" destination="uCI-JM-Rpv" id="3fS-94-sNb"/>
                         <segue destination="5Lr-qo-12t" kind="presentation" identifier="NextCreatePage" id="HOd-Ui-W0G"/>
                     </connections>
                 </viewController>
@@ -1020,9 +1027,9 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U9z-Q5-Hwf"/>
+        <segue reference="EDz-Ne-HVZ"/>
         <segue reference="f9p-V3-baU"/>
-        <segue reference="P9f-jL-eJP"/>
+        <segue reference="HOd-Ui-W0G"/>
         <segue reference="Pvc-cM-L5f"/>
     </inferredMetricsTieBreakers>
 </document>
