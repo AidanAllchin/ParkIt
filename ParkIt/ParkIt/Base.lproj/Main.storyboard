@@ -186,9 +186,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="spotTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sLG-vN-Aai">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="spotTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sLG-vN-Aai">
                                 <rect key="frame" x="0.0" y="190" width="375" height="477"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpotTableViewCell" rowHeight="78" id="S3l-Mt-6fg" customClass="SpotTableViewCell" customModule="ParkIt" customModuleProvider="target">
@@ -238,6 +237,12 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sLG-vN-Aai" firstAttribute="leading" secondItem="qAc-D4-vwy" secondAttribute="leading" id="7IV-fO-r7v"/>
+                            <constraint firstItem="sLG-vN-Aai" firstAttribute="trailing" secondItem="qAc-D4-vwy" secondAttribute="trailing" id="HYi-pX-nt3"/>
+                            <constraint firstItem="sLG-vN-Aai" firstAttribute="top" secondItem="MAm-jD-UVC" secondAttribute="top" constant="190" id="Psg-lU-BOo"/>
+                            <constraint firstItem="sLG-vN-Aai" firstAttribute="bottom" secondItem="qAc-D4-vwy" secondAttribute="bottom" id="gaV-Sb-iy6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qAc-D4-vwy"/>
                     </view>
                     <connections>
