@@ -34,9 +34,10 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
         NSLayoutConstraint.deactivate([textBottomConstraint])
         NSLayoutConstraint.activate([textTopConstraint])
 
-        textTopConstraint.constant = 8
+        textTopConstraint.constant = 32
         UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()
             self.CreateOneView.bringSubview(toFront: self.blur)
+            //self.CreateOneView.bringSubview(toFront: self.addressField)
         })
     }
     @IBAction func editingEnded(_ sender: UITextField) {

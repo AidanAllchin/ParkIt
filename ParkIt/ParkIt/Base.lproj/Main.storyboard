@@ -855,25 +855,36 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VeS-qd-ZmQ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="Address" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the address where this spot is located" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BC4-Z1-4jm">
+                                            <rect key="frame" x="35" y="543" width="305" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="Due-Cv-nbE"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="tAq-eg-nvg"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="editingEnded:" destination="mue-lN-skz" eventType="editingDidEnd" id="ldg-eU-Lqg"/>
+                                                <action selector="moveTextFieldOnEdit:" destination="mue-lN-skz" eventType="editingDidBegin" id="fI4-3Y-fDM"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="BC4-Z1-4jm" secondAttribute="trailing" constant="35" id="UVb-eK-UzG"/>
+                                        <constraint firstItem="BC4-Z1-4jm" firstAttribute="top" secondItem="VeS-qd-ZmQ" secondAttribute="top" constant="543" id="jMm-Oc-QuI"/>
+                                        <constraint firstAttribute="bottom" secondItem="BC4-Z1-4jm" secondAttribute="bottom" constant="94" id="kFl-tY-QJF"/>
+                                        <constraint firstItem="BC4-Z1-4jm" firstAttribute="leading" secondItem="VeS-qd-ZmQ" secondAttribute="leading" constant="35" id="y9l-rO-AO6"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="Address" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the address where this spot is located" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BC4-Z1-4jm">
-                                <rect key="frame" x="35" y="547" width="305" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="editingEnded:" destination="mue-lN-skz" eventType="editingDidEnd" id="ldg-eU-Lqg"/>
-                                    <action selector="moveTextFieldOnEdit:" destination="mue-lN-skz" eventType="editingDidBegin" id="fI4-3Y-fDM"/>
-                                </connections>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6mv-Cf-1Ra" firstAttribute="trailing" secondItem="m8z-lg-O63" secondAttribute="trailing" constant="40" id="4UW-3t-KJ7"/>
                             <constraint firstItem="m8z-lg-O63" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" constant="40" id="73I-xU-EDU"/>
-                            <constraint firstItem="BC4-Z1-4jm" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" constant="35" id="7H0-Kp-Wyc"/>
                             <constraint firstItem="1Et-ct-rfh" firstAttribute="top" secondItem="wdU-4E-NyE" secondAttribute="bottom" constant="20" id="A0r-vK-bSX"/>
                             <constraint firstItem="sI6-3d-kdS" firstAttribute="trailing" secondItem="6mv-Cf-1Ra" secondAttribute="trailing" id="GMM-Qe-60a"/>
                             <constraint firstItem="6mv-Cf-1Ra" firstAttribute="trailing" secondItem="wdU-4E-NyE" secondAttribute="trailing" constant="16" id="Ku3-0c-Spi"/>
@@ -884,14 +895,11 @@
                             <constraint firstItem="sI6-3d-kdS" firstAttribute="top" secondItem="2oQ-St-Krw" secondAttribute="top" id="YUU-Pr-XN7"/>
                             <constraint firstItem="wdU-4E-NyE" firstAttribute="top" secondItem="6mv-Cf-1Ra" secondAttribute="top" constant="68" id="Yfv-Mp-Ddc"/>
                             <constraint firstItem="sI6-3d-kdS" firstAttribute="bottom" secondItem="6mv-Cf-1Ra" secondAttribute="bottom" id="ZtF-33-f1X"/>
-                            <constraint firstItem="oOd-GK-sIZ" firstAttribute="top" secondItem="BC4-Z1-4jm" secondAttribute="bottom" constant="25" id="pON-zQ-3hB"/>
                             <constraint firstItem="wdU-4E-NyE" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" constant="16" id="qjm-yv-OnK"/>
                             <constraint firstItem="oOd-GK-sIZ" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" id="r1j-cf-PO9"/>
-                            <constraint firstItem="6mv-Cf-1Ra" firstAttribute="trailing" secondItem="BC4-Z1-4jm" secondAttribute="trailing" constant="35" id="rOX-Bw-8am"/>
                             <constraint firstItem="oOd-GK-sIZ" firstAttribute="trailing" secondItem="6mv-Cf-1Ra" secondAttribute="trailing" id="sLy-v7-30H"/>
                             <constraint firstItem="6mv-Cf-1Ra" firstAttribute="bottom" secondItem="1Et-ct-rfh" secondAttribute="bottom" constant="150" id="tRO-ia-1B4"/>
                             <constraint firstItem="6mv-Cf-1Ra" firstAttribute="trailing" secondItem="1Et-ct-rfh" secondAttribute="trailing" constant="16" id="tdK-ms-9f8"/>
-                            <constraint firstItem="BC4-Z1-4jm" firstAttribute="top" secondItem="6mv-Cf-1Ra" secondAttribute="top" constant="527" id="uCI-JM-Rpv"/>
                             <constraint firstItem="b5f-AA-YsB" firstAttribute="leading" secondItem="6mv-Cf-1Ra" secondAttribute="leading" constant="10" id="unU-GZ-pju"/>
                             <constraint firstItem="m8z-lg-O63" firstAttribute="top" secondItem="6mv-Cf-1Ra" secondAttribute="top" id="ysC-fE-Kb2"/>
                         </constraints>
@@ -902,8 +910,8 @@
                         <outlet property="addressField" destination="BC4-Z1-4jm" id="GhW-49-efU"/>
                         <outlet property="blur" destination="sI6-3d-kdS" id="mjS-Ue-uiT"/>
                         <outlet property="mapView" destination="1Et-ct-rfh" id="TmE-ZY-T2h"/>
-                        <outlet property="textBottomConstraint" destination="pON-zQ-3hB" id="epa-hQ-IHn"/>
-                        <outlet property="textTopConstraint" destination="uCI-JM-Rpv" id="3fS-94-sNb"/>
+                        <outlet property="textBottomConstraint" destination="kFl-tY-QJF" id="ggG-zj-413"/>
+                        <outlet property="textTopConstraint" destination="jMm-Oc-QuI" id="RzM-kS-x7U"/>
                         <segue destination="5Lr-qo-12t" kind="presentation" identifier="NextCreatePage" id="HOd-Ui-W0G"/>
                     </connections>
                 </viewController>
@@ -1041,9 +1049,9 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RGV-Gc-H1t"/>
+        <segue reference="vyW-UG-Zrl"/>
         <segue reference="f9p-V3-baU"/>
-        <segue reference="P9f-jL-eJP"/>
+        <segue reference="HOd-Ui-W0G"/>
         <segue reference="FQu-n2-wMY"/>
     </inferredMetricsTieBreakers>
 </document>
