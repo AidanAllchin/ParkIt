@@ -157,7 +157,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     //Grabs every ParkingSpot from database and adds them to the map as annotations
     func loadInitialData() {
         var numSpots: Int = 0
-        var spotName: String = ""
+        
+        var idArray = [String]()
         
         var title: String = ""
         var address: String = ""
@@ -167,8 +168,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var timeLeft: Float = 0.0
         var userBuying: String = ""
         var userSelling: String = ""
-        var timesAvailable: [String] = [String]()
-        var reservations: [String] = [String]()
+        var timesAvailable = [String]()
+        var reservations = NSDictionary()
         
         //title
         ref?.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -177,84 +178,92 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let spots: NSDictionary = wholeDatabase.value(forKey: "Spots") as! NSDictionary
             
             numSpots = spots.count
-            var currentSpotNum = numSpots - 1
             
-            //Start cycling through all the spots and get their info from Firebase.Database
-            let jj = 0
-            while jj <= currentSpotNum
+            //Array of all spot parents
+            idArray = spots.allKeys as! [String]
+            
+            var currentSpotNum = 0
+            while currentSpotNum < numSpots
             {
-                spotName = "Spot-0x" + String(format: "%04d", currentSpotNum)
+                let spot = spots.value(forKey: idArray[currentSpotNum]) as! NSDictionary
                 
                 //Now we know which spot we're accessing, we can get all the information for it...
-                let dict: NSDictionary = spots.value(forKey: spotName) as! NSDictionary
-                title = dict.value(forKey: "title") as! String
                 
-                address = dict.value(forKey: "address") as! String
+                //title
+                title = spot.value(forKey: "title") as! String
+                
+                //address
+                address = spot.value(forKey: "address") as! String
                 
                 //isAvailable
-                let temp = dict.value(forKey: "isAvailable") as! Int
+                let temp = spot.value(forKey: "isAvailable") as! Int
+                //converting from Int to Bool
                 if(temp == 1) {
                     isAvailable = true
                 } else {
                     isAvailable = false
                 }
                 
-                //uniqueId
-                uniqueId = dict.value(forKey: "id") as! String
+                //uniqueId (also the parent of the spot)
+                uniqueId = idArray[currentSpotNum]
                 
                 //location
-                var locCompString = ""
-                locCompString = dict.value(forKey: "location") as! String
-                let coordArr = locCompString.components(separatedBy: ", ")
-                
-                location = CLLocationCoordinate2D(latitude: Double(coordArr[0])!, longitude: Double(coordArr[1])!)
+                var locationCompositeString = ""
+                locationCompositeString = spot.value(forKey: "location") as! String
+                //convert from comma-separated String to CLLocationCoordinate2D
+                let coordArray = locationCompositeString.components(separatedBy: ", ")
+                location = CLLocationCoordinate2D(latitude: Double(coordArray[0])!, longitude: Double(coordArray[1])!)
                 
                 //timeLeft
-                timeLeft = dict.value(forKey: "timeLeft") as! Float
+                timeLeft = spot.value(forKey: "timeLeft") as! Float
                 
                 //userBuying
-                userBuying = dict.value(forKey: "userBuying") as! String
+                userBuying = spot.value(forKey: "userBuying") as! String
                 
                 //userSelling
-                userSelling = dict.value(forKey: "userSelling") as! String
+                userSelling = spot.value(forKey: "userSelling") as! String
                 
-                //timesAvailabe
-                let timesDict = dict.value(forKey: "TimesAvailable") as! NSDictionary
+                //timesAvailable
+                let timesDictionary = spot.value(forKey: "TimesAvailable") as! NSDictionary
+                let timesCount = timesDictionary.count
                 
-                let timesCount = timesDict.count
-                
+                //create the nested dict of TimesAvailable
                 var ii = 0
                 while ii < timesCount
                 {
                     let timeName: String = "Time-" + String(format: "%02d", (ii))
-                    let currentTime = timesDict.value(forKey: timeName)
+                    let currentTime = timesDictionary.value(forKey: timeName)
                     timesAvailable.append(currentTime as! String)
                     
                     ii = ii + 1
                 }
                 
                 //reservations
-                //Make it so spots don't have to have a reservation to load
-                if let resDict: NSDictionary = dict.value(forKey: "Reservations") as? NSDictionary
+                //this makes it so spots don't have to have a reservation to load
+                if let reservationDictionary = spot.value(forKey: "Reservations") as? NSDictionary
                 {
-                    let resCount = resDict.count
+                    /*var reservationCount = 0
                     
-                    var jj = 0
-                    while jj < resCount
+                    let resArray = reservationDictionary.allKeys as! [String]
+
+                    while reservationCount < reservationDictionary.count
                     {
-                        let resName: String = "Res-" + String(format: "%02d", (jj))
-                        let currentRes = resDict.value(forKey: resName)
-                        reservations.append(currentRes as! String)
+                        let reservation = reservationDictionary.value(forKey: resArray[reservationCount]) as! NSDictionary
                         
-                        jj = jj + 1
-                    }
+                        reservations.append(reservation.value(forKey: "time") as! String)
+                        
+                        reservationCount = reservationCount + 1
+                    }*/
+                    reservations = reservationDictionary
                 }
                 
-                let currentSpot: ParkingSpot = ParkingSpot(title: title, address: address, isAvailable: isAvailable, uniqueId: uniqueId, coordinate: location, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling, timesAvailable: timesAvailable, reservations: reservations)
+                //create a ParkingSpot with all that stuff
+                let currentSpot = ParkingSpot(title: title, address: address, isAvailable: isAvailable, uniqueId: uniqueId, coordinate: location, timeLeft: timeLeft, userBuying: userBuying, userSelling: userSelling, timesAvailable: timesAvailable, reservations: reservations)
                 
+                //and finally add it to the map
                 self.mapView.addAnnotation(currentSpot)
                 
-                currentSpotNum = currentSpotNum - 1
+                currentSpotNum = currentSpotNum + 1
             }
         })
   }
@@ -262,24 +271,21 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         ref?.observeSingleEvent(of: .value, with: { (snapshot) in
             let spots: NSDictionary = (snapshot.value as! NSDictionary).value(forKey: "Spots") as! NSDictionary
             
-            var spotName = ""
+            let idArray = spots.allKeys as! [String]
+            var currentSpotNum = 0
             
-            let numSpots = spots.count
-            var currentSpotNum = numSpots - 1
             
             //Start cycling through all the spots and find which one has the same id as the spot that was clicked on for purchase
             let jj = 0
-            while jj <= currentSpotNum
+            while currentSpotNum < spots.count
             {
-                spotName = "Spot-0x" + String(format: "%04d", currentSpotNum)
-                let dict: NSDictionary = spots.value(forKey: spotName) as! NSDictionary
-                let userSelling = dict.value(forKey: "userSelling") as! String
-                
+                let spot = spots.value(forKey: idArray[currentSpotNum]) as! NSDictionary
+                let userSelling = spot.value(forKey: "userSelling") as! String
                 if (userSelling == UserDefaults.standard.value(forKey: "userEmail") as? String)
                 {
-                    self.accountSpots.append(ParkingSpot(dict: dict))
+                    self.accountSpots.append(ParkingSpot(dict: spot))
                 }
-                currentSpotNum = currentSpotNum - 1
+                currentSpotNum = currentSpotNum + 1
             }
         })
     }

@@ -17,7 +17,7 @@ class CreateSpotThreeViewController: UIViewController {
     var databaseHandle:DatabaseHandle?
     
     var numSpots = 0
-    var uniqueId = "0"
+    var uniqueId = ""
     
     var spot:ParkingSpot = ParkingSpot()
 
@@ -52,25 +52,24 @@ class CreateSpotThreeViewController: UIViewController {
             let vc = segue.destination as? CreateSpotFinishedViewController
             vc!.spot = sender as! ParkingSpot
             
-            let spotNumber = String(format: "%04d", (self.numSpots))
-            self.ref.child("Spots").child("Spot-0x" + spotNumber).setValue(["title": spot.title])
-            self.ref.child("Spots/Spot-0x\(spotNumber)/id").setValue(uniqueId)
-            self.ref.child("Spots/Spot-0x\(spotNumber)/address").setValue(spot.address)
+            self.ref.child("Spots").child(uniqueId).setValue(["title": spot.title])
+            self.ref.child("Spots/\(uniqueId)/id").setValue(uniqueId)
+            self.ref.child("Spots/\(uniqueId)/address").setValue(spot.address)
             let coordinates = String(spot.coordinate.latitude) + ", " + String(spot.coordinate.longitude)
-            self.ref.child("Spots/Spot-0x\(spotNumber)/location").setValue(coordinates)
-            self.ref.child("Spots/Spot-0x\(spotNumber)/timeLeft").setValue(0)
-            self.ref.child("Spots/Spot-0x\(spotNumber)/isAvailable").setValue(0)
+            self.ref.child("Spots/\(uniqueId)/location").setValue(coordinates)
+            self.ref.child("Spots/\(uniqueId)/timeLeft").setValue(0)
+            self.ref.child("Spots/\(uniqueId)/isAvailable").setValue(0)
             let userSelling = UserDefaults.standard.value(forKey: "userEmail") as! String
-            self.ref.child("Spots/Spot-0x\(spotNumber)/userSelling").setValue(userSelling)
-            self.ref.child("Spots/Spot-0x\(spotNumber)/userBuying").setValue("")
-            self.ref.child("Spots/Spot-0x\(spotNumber)/isCovered").setValue(0)
+            self.ref.child("Spots/\(uniqueId)/userSelling").setValue(userSelling)
+            self.ref.child("Spots/\(uniqueId)/userBuying").setValue("")
+            self.ref.child("Spots/\(uniqueId)/isCovered").setValue(0)
             
             //Setting timesAvailable
             var i = 0
             for time in spot.timesAvailable
             {
                 let timeNumber = String(format: "%02d", (i))
-                self.ref.child("Spots/Spot-0x\(spotNumber)/TimesAvailable/Time-" + timeNumber).setValue(time)
+                self.ref.child("Spots/\(uniqueId)/TimesAvailable/Time-" + timeNumber).setValue(time)
                 i = i + 1
             }
         }

@@ -522,7 +522,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="X"/>
                                 <connections>
-                                    <segue destination="4V9-Be-pho" kind="show" id="RGV-Gc-H1t"/>
+                                    <segue destination="4V9-Be-pho" kind="show" animates="NO" id="RGV-Gc-H1t"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="spotTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5l-aZ-HNz" userLabel="spotTitle">
@@ -1020,9 +1020,9 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U9z-Q5-Hwf"/>
+        <segue reference="RGV-Gc-H1t"/>
         <segue reference="f9p-V3-baU"/>
         <segue reference="P9f-jL-eJP"/>
-        <segue reference="Pvc-cM-L5f"/>
+        <segue reference="FQu-n2-wMY"/>
     </inferredMetricsTieBreakers>
 </document>
