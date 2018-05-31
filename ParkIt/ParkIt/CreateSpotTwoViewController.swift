@@ -53,6 +53,18 @@ class CreateSpotTwoViewController: UIViewController {
         //Changing to 24 hour time for the server before pushing to spot
         var i = 0
         while i < times.count {
+            if times[i].range(of: "12:") != nil {
+                if times[i] == "12:00 am" {
+                    times[i] = "0:00"
+                } else if times[i] == "12:30 am" {
+                    times[i] = "0:30"
+                } else if times[i] == "12:00 pm" {
+                    times[i] = "12:00"
+                } else if times[i] == "12:30 pm" {
+                    times[i] = "12:30"
+                }
+            }
+            
             if times[i].range(of: " pm") != nil {
                 times[i] = times[i].replacingOccurrences(of: " pm", with: "", options: .regularExpression)
                 var hours = 0
