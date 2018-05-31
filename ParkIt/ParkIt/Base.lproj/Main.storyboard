@@ -205,10 +205,10 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Kyb-HW-mm2" secondAttribute="bottom" id="O3T-zS-SDZ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Kyb-HW-mm2" secondAttribute="trailing" constant="16" id="Van-JY-K5d"/>
-                                                <constraint firstItem="Kyb-HW-mm2" firstAttribute="top" secondItem="pnU-su-JdK" secondAttribute="topMargin" id="piH-GJ-fiX"/>
-                                                <constraint firstItem="Kyb-HW-mm2" firstAttribute="leading" secondItem="pnU-su-JdK" secondAttribute="leadingMargin" constant="16" id="wTO-cX-B7t"/>
+                                                <constraint firstItem="Kyb-HW-mm2" firstAttribute="top" secondItem="pnU-su-JdK" secondAttribute="topMargin" id="BLi-kz-17u"/>
+                                                <constraint firstItem="Kyb-HW-mm2" firstAttribute="leading" secondItem="pnU-su-JdK" secondAttribute="leadingMargin" constant="16" id="CgT-ky-JGL"/>
+                                                <constraint firstItem="Kyb-HW-mm2" firstAttribute="bottom" secondItem="pnU-su-JdK" secondAttribute="bottomMargin" id="pAf-9n-3m9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Kyb-HW-mm2" secondAttribute="trailing" constant="16" id="yCk-vz-VRa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -246,12 +246,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="sLG-vN-Aai" firstAttribute="top" secondItem="MAm-jD-UVC" secondAttribute="top" constant="190" id="Ecx-8W-34m"/>
-                            <constraint firstItem="sLG-vN-Aai" firstAttribute="bottom" secondItem="qAc-D4-vwy" secondAttribute="bottom" id="Jv0-nc-FjR"/>
-                            <constraint firstItem="ywk-EC-f2b" firstAttribute="leading" secondItem="qAc-D4-vwy" secondAttribute="leading" constant="16" id="N6o-fj-cps"/>
-                            <constraint firstItem="sLG-vN-Aai" firstAttribute="trailing" secondItem="qAc-D4-vwy" secondAttribute="trailing" id="Slr-xI-gAN"/>
-                            <constraint firstItem="sLG-vN-Aai" firstAttribute="leading" secondItem="qAc-D4-vwy" secondAttribute="leading" id="YHi-td-jU2"/>
-                            <constraint firstItem="ywk-EC-f2b" firstAttribute="top" secondItem="qAc-D4-vwy" secondAttribute="top" id="mP5-02-8Et"/>
+                            <constraint firstItem="sLG-vN-Aai" firstAttribute="leading" secondItem="qAc-D4-vwy" secondAttribute="leading" id="7IV-fO-r7v"/>
+                            <constraint firstItem="sLG-vN-Aai" firstAttribute="trailing" secondItem="qAc-D4-vwy" secondAttribute="trailing" id="HYi-pX-nt3"/>
+                            <constraint firstItem="sLG-vN-Aai" firstAttribute="top" secondItem="MAm-jD-UVC" secondAttribute="top" constant="190" id="Psg-lU-BOo"/>
+                            <constraint firstItem="sLG-vN-Aai" firstAttribute="bottom" secondItem="qAc-D4-vwy" secondAttribute="bottom" id="gaV-Sb-iy6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qAc-D4-vwy"/>
                     </view>
