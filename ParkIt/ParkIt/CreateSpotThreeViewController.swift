@@ -29,7 +29,7 @@ class CreateSpotThreeViewController: UIViewController {
             uniqueId = uniqueId + String(Int(arc4random_uniform(10)))
         }
         
-        ref?.observe(.value, with: { (snapshot) in
+        ref?.observeSingleEvent(of: .value, with: { (snapshot) in
             //We determine how many spots there are in the database and set the name of the spot
             let wholeDatabase: NSDictionary = snapshot.value as! NSDictionary
             let spots: NSDictionary = wholeDatabase.value(forKey: "Spots") as! NSDictionary

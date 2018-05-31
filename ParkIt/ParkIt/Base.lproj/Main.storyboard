@@ -429,11 +429,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnE-e7-8UD">
-                                <rect key="frame" x="16" y="602" width="343" height="45"/>
+                                <rect key="frame" x="16" y="542" width="343" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Make Changes"/>
                                 <connections>
                                     <action selector="continueButton:" destination="qMe-xy-FMD" eventType="touchUpInside" id="cNv-eQ-Dko"/>
+                                    <action selector="makeChanges:" destination="7I7-6l-AgA" eventType="touchUpInside" id="iiU-r6-U9H"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spot Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5s1-Qr-M26">
@@ -443,13 +444,27 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yew-kk-cgS">
+                                <rect key="frame" x="16" y="605" width="343" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Delete Spot">
+                                    <color key="titleColor" red="1" green="0.069748602085306866" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueButton:" destination="qMe-xy-FMD" eventType="touchUpInside" id="DxW-XY-FYR"/>
+                                    <action selector="deleteSpot:" destination="7I7-6l-AgA" eventType="touchUpInside" id="u4A-u0-ryM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hnE-e7-8UD" firstAttribute="leading" secondItem="CYU-6h-gO6" secondAttribute="leading" constant="16" id="Fc1-hX-EAb"/>
-                            <constraint firstItem="CYU-6h-gO6" firstAttribute="bottom" secondItem="hnE-e7-8UD" secondAttribute="bottom" constant="20" id="Ijc-Qs-7DR"/>
+                            <constraint firstItem="yew-kk-cgS" firstAttribute="leading" secondItem="CYU-6h-gO6" secondAttribute="leading" constant="16" id="IV0-E7-LMT"/>
+                            <constraint firstItem="CYU-6h-gO6" firstAttribute="trailing" secondItem="yew-kk-cgS" secondAttribute="trailing" constant="16" id="fk7-j6-bma"/>
                             <constraint firstItem="RcE-j0-JEF" firstAttribute="leading" secondItem="CYU-6h-gO6" secondAttribute="leading" constant="16" id="lN9-gi-bg9"/>
                             <constraint firstItem="RcE-j0-JEF" firstAttribute="top" secondItem="CYU-6h-gO6" secondAttribute="top" id="ly9-3v-Xv0"/>
+                            <constraint firstItem="CYU-6h-gO6" firstAttribute="bottom" secondItem="hnE-e7-8UD" secondAttribute="bottom" constant="80" id="osW-U9-SrB"/>
+                            <constraint firstItem="CYU-6h-gO6" firstAttribute="bottom" secondItem="yew-kk-cgS" secondAttribute="bottom" constant="20" id="usV-nE-b1O"/>
                             <constraint firstItem="CYU-6h-gO6" firstAttribute="trailing" secondItem="hnE-e7-8UD" secondAttribute="trailing" constant="16" id="znt-TJ-yCB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CYU-6h-gO6"/>
@@ -457,6 +472,7 @@
                     <connections>
                         <outlet property="titleTextField" destination="886-Jp-HBc" id="34H-mq-3yX"/>
                         <segue destination="bwk-ta-Zvu" kind="show" identifier="ToViewSpot" id="Pvc-cM-L5f"/>
+                        <segue destination="4V9-Be-pho" kind="show" identifier="DeleteSpot" id="U9z-Q5-Hwf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWK-RW-Q1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1004,10 +1020,9 @@
         <image name="re-center" width="189" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dz5-39-Abo"/>
-        <segue reference="rCg-z4-jzG"/>
+        <segue reference="U9z-Q5-Hwf"/>
         <segue reference="f9p-V3-baU"/>
         <segue reference="P9f-jL-eJP"/>
-        <segue reference="hY2-zn-z1c"/>
+        <segue reference="Pvc-cM-L5f"/>
     </inferredMetricsTieBreakers>
 </document>
