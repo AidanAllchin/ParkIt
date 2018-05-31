@@ -21,21 +21,31 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addressField: UITextField!
     
+    @IBOutlet var CreateOneView: UIView!
+    
     @IBOutlet var textBottomConstraint: NSLayoutConstraint!
 
+    @IBOutlet var blur: UIVisualEffectView!
+    var effect:UIVisualEffect!
+    
     @IBOutlet var textTopConstraint: NSLayoutConstraint!
 
     @IBAction func moveTextFieldOnEdit(_ sender: UITextField) {
         NSLayoutConstraint.deactivate([textBottomConstraint])
         NSLayoutConstraint.activate([textTopConstraint])
 
-        textTopConstraint.constant = 8
-        UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()})
+        textTopConstraint.constant = 32
+        UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()
+            self.CreateOneView.bringSubview(toFront: self.blur)
+            //self.CreateOneView.bringSubview(toFront: self.addressField)
+        })
     }
     @IBAction func editingEnded(_ sender: UITextField) {
         NSLayoutConstraint.deactivate([textTopConstraint])
         NSLayoutConstraint.activate([textBottomConstraint])
-        UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()})
+        UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()
+            self.CreateOneView.sendSubview(toBack: self.blur)
+        })
     }
     
     override func viewDidLoad() {
@@ -46,6 +56,7 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
         mapView.mapType = .hybrid
         NSLayoutConstraint.deactivate([textTopConstraint])
         self.addressField.delegate = self
+        self.CreateOneView.sendSubview(toBack: self.blur)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
