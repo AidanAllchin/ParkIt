@@ -42,8 +42,8 @@ class Account2ViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        spotTableView?.dataSource = self
+        spotTableView?.delegate = self
         print(tableContents)
     }
 

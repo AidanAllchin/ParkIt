@@ -332,7 +332,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let vc = segue.destination as? ViewSpotViewController
             vc?.spot = sender as! ParkingSpot
         }
-        else if segue.destination is Account2ViewController
+        if segue.destination is Account2ViewController
         {
             let vc = segue.destination as? Account2ViewController
             vc?.tableContents = accountSpots
