@@ -67,7 +67,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         sideBarConstraint.constant = 0
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
-            //self.blur.effect = self.effect
             self.MapViewView.bringSubview(toFront: self.blur)
         })
         tap.isEnabled = true
