@@ -28,6 +28,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     
     var accountSpots = [ParkingSpot]()
+    var rentingSpots = [ParkingSpot]()
+    var goToRes = false
     
     //keep UISearch bar in memory
     var resultSearchController:UISearchController? = nil
@@ -144,6 +146,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         //Gets the spots the user has created
         getAccountSpots()
+        
+        //Gets the spots the user has a rental slot on
+        getResSpots()
     }
     
     
@@ -267,6 +272,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
         })
   }
+    
     func getAccountSpots() {
         ref?.observeSingleEvent(of: .value, with: { (snapshot) in
             let spots: NSDictionary = (snapshot.value as! NSDictionary).value(forKey: "Spots") as! NSDictionary
@@ -276,7 +282,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             var currentSpotNum = 0
             
             //Start cycling through all the spots and find which one has the same id as the spot that was clicked on for purchase
-            let jj = 0
             while currentSpotNum < spots.count
             {
                 let spot = spots.value(forKey: idArray[currentSpotNum]) as! NSDictionary
@@ -284,6 +289,50 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 if (userSelling == UserDefaults.standard.value(forKey: "userEmail") as? String)
                 {
                     self.accountSpots.append(ParkingSpot(dict: spot))
+                }
+                currentSpotNum = currentSpotNum + 1
+            }
+        })
+    }
+    
+    func getResSpots() {
+        ref?.observeSingleEvent(of: .value, with: { (snapshot) in
+            let spots: NSDictionary = (snapshot.value as! NSDictionary).value(forKey: "Spots") as! NSDictionary
+            
+            let idArray = spots.allKeys as! [String]
+            var currentSpotNum = 0
+            
+            //Start cycling through all the spots, then once inside start cycling through each spot's reservations
+            while currentSpotNum < spots.count
+            {
+                let spot = spots.value(forKey: idArray[currentSpotNum]) as! NSDictionary
+                if let spotRes = spot.value(forKey: "Reservations") as? NSDictionary
+                {
+                    let resIdArray = spotRes.allKeys
+                    var currentResNum = 0
+                    
+                    while currentResNum < resIdArray.count
+                    {
+                        let res = spotRes.value(forKey: resIdArray[currentResNum] as! String) as! NSDictionary
+                        let userRenting = res.value(forKey: "userBuying") as! String
+                        if (userRenting == UserDefaults.standard.value(forKey: "userEmail") as? String)
+                        {
+                            //this prevents spots from showing up more than once
+                            var add = true
+                            for rentSpot in self.rentingSpots
+                            {
+                                if (rentSpot.uniqueId == ParkingSpot(dict: spot).uniqueId)
+                                {
+                                    add = false
+                                }
+                            }
+                            if add == true
+                            {
+                                self.rentingSpots.append(ParkingSpot(dict: spot))
+                            }
+                        }
+                        currentResNum = currentResNum + 1
+                    }
                 }
                 currentSpotNum = currentSpotNum + 1
             }
@@ -322,6 +371,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
 
     @IBAction func goToAccount(_ sender: Any) {
+        goToRes = false
+        performSegue(withIdentifier: "ToAccountView", sender: self)
+    }
+    
+    @IBAction func goToReservations(_ sender: Any) {
+        goToRes = true
         performSegue(withIdentifier: "ToAccountView", sender: self)
     }
     
@@ -332,10 +387,17 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let vc = segue.destination as? ViewSpotViewController
             vc?.spot = sender as! ParkingSpot
         }
-        if segue.destination is Account2ViewController
+        if segue.destination is Account2ViewController && goToRes == false
         {
             let vc = segue.destination as? Account2ViewController
+            vc?.desc = "My reservations"
             vc?.tableContents = accountSpots
+        }
+        else if segue.destination is Account2ViewController && goToRes == true
+        {
+            let vc = segue.destination as? Account2ViewController
+            vc?.desc = "My rentals"
+            vc?.tableContents = rentingSpots
         }
     }
 

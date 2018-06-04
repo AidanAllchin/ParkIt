@@ -111,6 +111,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="My Reservations"/>
+                                        <connections>
+                                            <action selector="goToReservations:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fbn-f3-MbE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -221,7 +224,7 @@
                                     <outlet property="delegate" destination="PKj-yz-iVg" id="tgT-GS-ebC"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23Q-TG-uKA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23Q-TG-uKA">
                                 <rect key="frame" x="16" y="60" width="343" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="30"/>
@@ -255,6 +258,7 @@
                         <viewLayoutGuide key="safeArea" id="qAc-D4-vwy"/>
                     </view>
                     <connections>
+                        <outlet property="descriptionText" destination="C6N-pY-xeD" id="fib-J8-gjL"/>
                         <outlet property="spotTableView" destination="sLG-vN-Aai" id="8EK-uQ-0te"/>
                         <outlet property="usernameLabel" destination="23Q-TG-uKA" id="94f-4m-yEf"/>
                         <outlet property="view" destination="sLG-vN-Aai" id="Be4-Ry-zj7"/>

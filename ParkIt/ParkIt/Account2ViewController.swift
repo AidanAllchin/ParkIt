@@ -10,6 +10,9 @@ import UIKit
 
 class Account2ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var descriptionText: UILabel!
+    
+    var desc = ""
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableContents.count
@@ -45,7 +48,8 @@ class Account2ViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         spotTableView?.dataSource = self
         spotTableView?.delegate = self
-        usernameLabel.text = UserDefaults.standard.value(forKey: "userEmail") as! String
+        usernameLabel.text = UserDefaults.standard.value(forKey: "userEmail") as? String
+        descriptionText.text = desc
         print(tableContents)
     }
 
