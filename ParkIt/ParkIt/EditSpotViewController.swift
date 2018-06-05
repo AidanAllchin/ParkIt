@@ -11,6 +11,7 @@ import Firebase
 
 class EditSpotViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
     
     var ref:DatabaseReference!
     var databaseHandle:DatabaseHandle?
@@ -19,20 +20,21 @@ class EditSpotViewController: UIViewController {
     var didCancel: Bool = false
     var changesCanceled: Bool = false
     
+    var spots = NSDictionary()
+    
     var spot = ParkingSpot()
 
     override func viewDidLoad() {
         ref = Database.database().reference()
         super.viewDidLoad()
         titleTextField.text = spot.title
+        addressTextField.text = spot.address
         didCancel = false
         
         ref?.observeSingleEvent(of: .value, with: { (snapshot) in
             //We determine how many spots there are in the database and set the name of the spot
             let wholeDatabase: NSDictionary = snapshot.value as! NSDictionary
-            let spots: NSDictionary = wholeDatabase.value(forKey: "Spots") as! NSDictionary
-            
-            self.numSpots = spots.count
+            self.spots = wholeDatabase.value(forKey: "Spots") as! NSDictionary
         })
         // Do any additional setup after loading the view.
     }
@@ -43,14 +45,17 @@ class EditSpotViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is ViewSpotViewController && changesCanceled == false
+        if segue.destination is ViewSpotViewController// && changesCanceled == false
         {
-            let spotNumber = String(format: "%04d", (self.numSpots - 1))
-
+            let id = spot.uniqueId
+            
             if (titleTextField.text != "")
             {
                 spot.title = titleTextField.text
-                self.ref.child("Spots/Spot-0x\(spotNumber)/Title").setValue(spot.title)
+                self.ref.child("Spots/\(id)/title").setValue(spot.title)
+            } else if (addressTextField.text != "") {
+                spot.address = addressTextField.text!
+                self.ref.child("Spots/\(id)/address").setValue(spot.address)
             } else {
                 let alert = UIAlertController(title: "Title Empty", message: "Please enter a valid title before continuing", preferredStyle: .alert)
                 
@@ -64,8 +69,9 @@ class EditSpotViewController: UIViewController {
             //Set the spot variable of the ViewSpotViewController to self.spot
             vc!.spot = sender as! ParkingSpot
         }
-        else// if segue.destination is UINavigationController
+        else if segue.destination is UINavigationController
         {
+            let id = spot.uniqueId
             /*let alert = UIAlertController(title: "Confirm", message: "Do you really want to delete this spot?", preferredStyle: .actionSheet)
             
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
@@ -76,8 +82,10 @@ class EditSpotViewController: UIViewController {
             }))
             
             self.present(alert, animated: true)*/
+            self.ref.child("Spots/\(id)").removeValue()
         }
     }
+    
     @IBAction func makeChanges(_ sender: Any) {
         changesCanceled = false
         performSegue(withIdentifier: "ToViewSpot", sender: self.spot)

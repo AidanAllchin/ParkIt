@@ -32,21 +32,28 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     //keep UISearch bar in memory
     var resultSearchController:UISearchController? = nil
     
+    //The left constraint of the side bar that is used to bring the sidebar on or off the page
     @IBOutlet var sideBarConstraint: NSLayoutConstraint!
+    //The blur that is shown when the side bar is out
     @IBOutlet var blur: UIVisualEffectView!
     var effect:UIVisualEffect!
     
+    //This is a tap gesture recognizer for clicking off the sidebar
     @IBOutlet var tap: UITapGestureRecognizer!
     
+    //This is a swipe gesture recognizer for swiping off the sidebar
     @IBOutlet var closeSwipe: UISwipeGestureRecognizer!
     
-    //Sidebar code
+    //Sidebar that controls sidebar as a view
     @IBOutlet weak var sideBar: UIView!
     
+    //THis function is called when the button is pressed to open or close the sidebar
     @IBAction func sideBarButtonPressed(_ sender: AnyObject) {
+        //if side bar is closed
         if isSideBarHidden {
             openSideBar()
         }
+        //if side bar is open
         else {
             closeSideBar()
         }
@@ -227,6 +234,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 
                 //create the nested dict of TimesAvailable
                 var ii = 0
+                timesAvailable = [String]()
                 while ii < timesCount
                 {
                     let timeName: String = "Time-" + String(format: "%02d", (ii))
@@ -237,6 +245,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 }
                 
                 //reservations
+                reservations = NSDictionary()
                 //this makes it so spots don't have to have a reservation to load
                 if let reservationDictionary = spot.value(forKey: "Reservations") as? NSDictionary
                 {
@@ -330,7 +339,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let vc = segue.destination as? ViewSpotViewController
             vc?.spot = sender as! ParkingSpot
         }
-        else if segue.destination is Account2ViewController
+        if segue.destination is Account2ViewController
         {
             let vc = segue.destination as? Account2ViewController
             vc?.tableContents = accountSpots

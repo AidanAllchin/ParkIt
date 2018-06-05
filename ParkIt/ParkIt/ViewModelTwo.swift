@@ -72,6 +72,9 @@ class ViewModelTwo: NSObject {
                     hours = hours - 12
                     times[currentTime] = String(hours) + ":00"
                     times[currentTime] = times[currentTime] + " pm"
+                } else if (hours == 12) {
+                    times[currentTime] = String(hours) + ":00"
+                    times[currentTime] = times[currentTime] + " pm"
                 } else {
                     times[currentTime] = String(hours) + ":00"
                     times[currentTime] = times[currentTime] + " am"
@@ -80,6 +83,9 @@ class ViewModelTwo: NSObject {
                 var hours = Int(times[currentTime].replacingOccurrences(of: ":30", with: ""))!
                 if (hours > 12) {
                     hours = hours - 12
+                    times[currentTime] = String(hours) + ":30"
+                    times[currentTime] = times[currentTime] + " pm"
+                } else if (hours == 12) {
                     times[currentTime] = String(hours) + ":30"
                     times[currentTime] = times[currentTime] + " pm"
                 } else {
