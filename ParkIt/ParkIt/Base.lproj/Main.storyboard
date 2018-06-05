@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e29-QY-3Ja">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e29-QY-3Ja">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -224,9 +224,8 @@
                                     <outlet property="delegate" destination="PKj-yz-iVg" id="tgT-GS-ebC"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23Q-TG-uKA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23Q-TG-uKA">
                                 <rect key="frame" x="16" y="60" width="343" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -244,7 +243,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="X"/>
                                 <connections>
-                                    <segue destination="4V9-Be-pho" kind="show" id="qr1-0z-bPi"/>
+                                    <segue destination="4V9-Be-pho" kind="show" animates="NO" id="qr1-0z-bPi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -253,7 +252,10 @@
                             <constraint firstItem="sLG-vN-Aai" firstAttribute="leading" secondItem="qAc-D4-vwy" secondAttribute="leading" id="7IV-fO-r7v"/>
                             <constraint firstItem="sLG-vN-Aai" firstAttribute="trailing" secondItem="qAc-D4-vwy" secondAttribute="trailing" id="HYi-pX-nt3"/>
                             <constraint firstItem="sLG-vN-Aai" firstAttribute="top" secondItem="MAm-jD-UVC" secondAttribute="top" constant="190" id="Psg-lU-BOo"/>
+                            <constraint firstItem="qAc-D4-vwy" firstAttribute="trailing" secondItem="23Q-TG-uKA" secondAttribute="trailing" constant="16" id="djj-hO-kGR"/>
+                            <constraint firstItem="23Q-TG-uKA" firstAttribute="leading" secondItem="qAc-D4-vwy" secondAttribute="leading" constant="16" id="gLw-SW-tAb"/>
                             <constraint firstItem="sLG-vN-Aai" firstAttribute="bottom" secondItem="qAc-D4-vwy" secondAttribute="bottom" id="gaV-Sb-iy6"/>
+                            <constraint firstItem="23Q-TG-uKA" firstAttribute="top" secondItem="qAc-D4-vwy" secondAttribute="top" constant="40" id="pTd-yk-Wdl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qAc-D4-vwy"/>
                     </view>
@@ -1101,8 +1103,7 @@
         <image name="reserved" width="800" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dz5-39-Abo"/>
-        <segue reference="RBg-K3-R9I"/>
+        <segue reference="qr1-0z-bPi"/>
         <segue reference="f9p-V3-baU"/>
         <segue reference="P9f-jL-eJP"/>
         <segue reference="hY2-zn-z1c"/>
