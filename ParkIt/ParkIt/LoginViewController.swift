@@ -33,11 +33,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         self.navigationItem.hidesBackButton = true
         super.viewDidLoad()
+        //sets up delegates for both text fields
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         // Do any additional setup after loading the view.
     }
     
+    //Closes any keyboard open when return is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()

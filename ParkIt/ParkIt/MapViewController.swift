@@ -19,7 +19,6 @@ protocol HandleMapSearch {
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
-    var isSideBarHidden = true
     var selectedPin:MKPlacemark? = nil
     var ref:DatabaseReference!
     var databaseHandle:DatabaseHandle?
@@ -39,6 +38,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     //The blur that is shown when the side bar is out
     @IBOutlet var blur: UIVisualEffectView!
     var effect:UIVisualEffect!
+    
+    //Variable to track if side bar is open or not
+    var isSideBarHidden = true
     
     //This is a tap gesture recognizer for clicking off the sidebar
     @IBOutlet var tap: UITapGestureRecognizer!
@@ -64,31 +66,40 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var MapViewView: UIView!
     
+    //This function is called when a user taps outside of the sidebar while open
     @IBAction func onTap(_ sender: UITapGestureRecognizer) {
         closeSideBar()
     }
+    
+    //This function is called when a user swipes outside of the sidebar while open
     @IBAction func onCloseSwipe(_ sender: UISwipeGestureRecognizer) {
         closeSideBar()
     }
     
+    //This function opens the sidebar
     func openSideBar() {
+        //Sets the left edge constraint to the left edge of the screen
         sideBarConstraint.constant = 0
+        //Animates the constraint change as well as bring the blur to the front
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
             self.MapViewView.bringSubview(toFront: self.blur)
         })
+        //Enables the tap and swipe functionality to close the sidebar
         tap.isEnabled = true
         closeSwipe.isEnabled = true
     }
     
-    
+    //This function closes the side bar
     func closeSideBar() {
+        //Sets the left edge constraint to a negative number, making the side bar invisible
         sideBarConstraint.constant = -160
+        //Animates the constraint change as well as pushing the blur to the back
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
-            //self.blur.effect = nil
             self.MapViewView.sendSubview(toBack: self.blur)
         })
+        //Disables the tap and swipe functionality
         tap.isEnabled = false
         closeSwipe.isEnabled = false
     }
@@ -108,10 +119,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
     
         super.viewDidLoad()
-        //removes blur at initialization of page
+        
+        //Sets blur effect then sends it to the back
         effect = blur.effect
         self.MapViewView.sendSubview(toBack: self.blur)
         
+        //disables the tap and swipe off of sidebar functionality
         tap.isEnabled = false
         closeSwipe.isEnabled = false
         

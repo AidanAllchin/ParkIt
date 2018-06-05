@@ -23,26 +23,36 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
     
     @IBOutlet var CreateOneView: UIView!
     
+    //The constraints for the bottom and top of the text field
     @IBOutlet var textBottomConstraint: NSLayoutConstraint!
-
-    @IBOutlet var blur: UIVisualEffectView!
-    var effect:UIVisualEffect!
-    
     @IBOutlet var textTopConstraint: NSLayoutConstraint!
 
+    //Blur effect for when text field is pressed
+    @IBOutlet var blur: UIVisualEffectView!
+    var effect:UIVisualEffect!
+
+    //A function that moves the text field when it is being edited
     @IBAction func moveTextFieldOnEdit(_ sender: UITextField) {
+        //Disables the constraint connecting the text to the bottom of the view and enables the constraint
+        //connecting it to the top of the view
         NSLayoutConstraint.deactivate([textBottomConstraint])
         NSLayoutConstraint.activate([textTopConstraint])
 
+        //Moves the text field to the top
         textTopConstraint.constant = 32
+        //Animates the change as well as bringing the blur to front
         UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()
             self.CreateOneView.bringSubview(toFront: self.blur)
-            //self.CreateOneView.bringSubview(toFront: self.addressField)
         })
     }
+    
+    //Moves text field back after editing has ended
     @IBAction func editingEnded(_ sender: UITextField) {
+        //Disables the constraint connecting the text to the Top of the view and enables the constraint
+        //connecting it to the bottom of the view
         NSLayoutConstraint.deactivate([textTopConstraint])
         NSLayoutConstraint.activate([textBottomConstraint])
+        //Animates The change as well as pushing the blur to the back
         UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()
             self.CreateOneView.sendSubview(toBack: self.blur)
         })
@@ -54,12 +64,17 @@ class CreateSpotOneViewController: UIViewController, MKMapViewDelegate, CLLocati
         mapView.showsUserLocation = true
         mapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
         mapView.mapType = .hybrid
+        //Deactivates the top constraint
         NSLayoutConstraint.deactivate([textTopConstraint])
+        //Creates the delegate for the text field
         self.addressField.delegate = self
+        //Sends blur to back
         self.CreateOneView.sendSubview(toBack: self.blur)
     }
     
+    //This function closes the keyboard when return is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //closes keyboard
         addressField.resignFirstResponder()
         return (true)
     }
