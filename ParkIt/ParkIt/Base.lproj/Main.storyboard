@@ -225,8 +225,8 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23Q-TG-uKA">
-                                <rect key="frame" x="16" y="60" width="343" height="35"/>
-                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="30"/>
+                                <rect key="frame" x="16" y="60" width="343" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1103,7 +1103,7 @@
         <image name="reserved" width="800" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RGV-Gc-H1t"/>
+        <segue reference="qr1-0z-bPi"/>
         <segue reference="f9p-V3-baU"/>
         <segue reference="P9f-jL-eJP"/>
         <segue reference="hY2-zn-z1c"/>

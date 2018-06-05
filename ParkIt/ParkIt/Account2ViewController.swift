@@ -12,13 +12,14 @@ class Account2ViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var descriptionText: UILabel!
     
+    //This gets set in MapViewController depending on if this page is for MyReservations or Account
     var desc = ""
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableContents.count
     }
     
-    //TODO: Aidan Make this Array (tableContents) full of the Users Parkingspots
+    //tableContents is also set in MapViewController to either the user's reservations or the spots they own
     var tableContents = [ParkingSpot]()
     @IBOutlet weak var spotTableView: UITableView!
     
@@ -44,6 +45,7 @@ class Account2ViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    //Setting up the TableView and text
     override func viewDidLoad() {
         super.viewDidLoad()
         spotTableView?.dataSource = self
