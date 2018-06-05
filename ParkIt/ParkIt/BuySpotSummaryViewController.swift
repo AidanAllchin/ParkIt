@@ -14,10 +14,7 @@ class BuySpotSummaryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(spotTitle)
-
-        // Do any additional setup after loading the view.
+        //print(spotTitle)
     }
 
     override func didReceiveMemoryWarning() {

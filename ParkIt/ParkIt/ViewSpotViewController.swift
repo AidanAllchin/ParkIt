@@ -34,6 +34,7 @@ class ViewSpotViewController: UIViewController {
         
     }
     
+    //Sends the coordinates to the maps app through lauchOptions then opens the app
     @IBAction func getDirections(_ sender: Any) {
         let coordinate = spot.coordinate
         let regionDistance:CLLocationDistance = 1000
@@ -50,7 +51,7 @@ class ViewSpotViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //Segue that transfers information about the spot to viewspotcontroller
+    //Segue that transfers information about the spot to ViewSpotViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is BuySpotViewController
         {

@@ -28,8 +28,8 @@ class BuySpotViewController: UIViewController {
         tableView?.estimatedRowHeight = 80
         tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.allowsMultipleSelection = true
-        tableView?.dataSource = viewModelTwo// as! UITableViewDataSource
-        tableView?.delegate = viewModelTwo// as! UITableViewDelegate
+        tableView?.dataSource = viewModelTwo
+        tableView?.delegate = viewModelTwo
         tableView?.separatorStyle = .none
         
         ref = Database.database().reference()
@@ -76,8 +76,8 @@ class BuySpotViewController: UIViewController {
             i = i + 1
         }
         
-        var changingSpotTitle = ""
-        var numReservations = 0
+        //The id of the spot that's going to be changed
+        var changingSpotId = ""
         
         ref?.observeSingleEvent(of: .value, with: { (snapshot) in
             let wholeDatabase: NSDictionary = snapshot.value as! NSDictionary
@@ -92,16 +92,12 @@ class BuySpotViewController: UIViewController {
                 let spot = spots.value(forKey: idArray[currentSpotNum]) as! NSDictionary
                 let id = spot.value(forKey: "id") as! String
                 if (id == self.spot.uniqueId) {
-                    changingSpotTitle = id
-                    if let res: NSDictionary = spot.value(forKey: "Reservations") as? NSDictionary
-                    {
-                        numReservations = res.count
-                    }
+                    changingSpotId = id
                 }
                 currentSpotNum = currentSpotNum + 1
             }
             
-            if (changingSpotTitle == "") {
+            if (changingSpotId == "") {
                 let alert = UIAlertController(title: "ID Failure", message: "The id for the spot could not be found.", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Whoops", style: .default, handler: nil))
@@ -109,21 +105,27 @@ class BuySpotViewController: UIViewController {
                 self.present(alert, animated: true)
             }
             
+            //For every reservaton the user has selected
             var resCounter = 0
             while resCounter < times.count
             {
+                //Creating a unique id for the reservation
                 var uniqueResId = ""
                 for _ in 0...32 {
                     uniqueResId = uniqueResId + String(Int(arc4random_uniform(10)))
                 }
                 
-                //Now add the new values after the existing reservations
-                self.ref.child("Spots/\(changingSpotTitle)/Reservations/\(uniqueResId)/time").setValue(times[resCounter])
-                self.ref.child("Spots/\(changingSpotTitle)/Reservations/\(uniqueResId)/userBuying").setValue(UserDefaults.standard.value(forKey: "userEmail"))
+                //Now add the new values after the existing reservations to the database
+                //This is changing the spot online in order for it to update across all devices
+                self.ref.child("Spots/\(changingSpotId)/Reservations/\(uniqueResId)/time").setValue(times[resCounter])
+                self.ref.child("Spots/\(changingSpotId)/Reservations/\(uniqueResId)/userBuying").setValue(UserDefaults.standard.value(forKey: "userEmail"))
                 
                 //Creating the nested NSDictionary's
                 let tempDict: NSDictionary = ["time": times[resCounter], "userBuying": UserDefaults.standard.value(forKey: "userEmail")!]
                 let tempResDict: NSDictionary = [uniqueResId: tempDict]
+                
+                //Set the new nested dictionary of reservations to the spot's reservations
+                //This is changing the spot offline in order to access the correct thing before the database finishes updating
                 self.spot.reservations = tempResDict
                 
                 resCounter = resCounter + 1

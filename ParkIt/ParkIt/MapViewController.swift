@@ -1,4 +1,4 @@
-//
+//  The home screen of the app. Handles initialization of all spots, adds spot annotations to map, creates sidebar, location search functionality, and prepares information for account spots and reserved spots.
 //  MapViewController.swift
 //  ParkIt
 //
