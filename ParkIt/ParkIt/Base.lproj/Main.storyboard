@@ -1101,10 +1101,9 @@
         <image name="reserved" width="800" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dz5-39-Abo"/>
-        <segue reference="RBg-K3-R9I"/>
+        <segue reference="U9z-Q5-Hwf"/>
         <segue reference="f9p-V3-baU"/>
         <segue reference="P9f-jL-eJP"/>
-        <segue reference="hY2-zn-z1c"/>
+        <segue reference="Pvc-cM-L5f"/>
     </inferredMetricsTieBreakers>
 </document>

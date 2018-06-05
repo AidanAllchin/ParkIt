@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import MapKit
 
-class CreateSpotThreeViewController: UIViewController {
+class CreateSpotThreeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var titleField: UITextField!
     
     var ref:DatabaseReference!
@@ -24,6 +24,8 @@ class CreateSpotThreeViewController: UIViewController {
     override func viewDidLoad() {
         ref = Database.database().reference()
         super.viewDidLoad()
+        //sets up delegates for the text field
+        self.titleField.delegate = self
         
         for _ in 0...32 {
             uniqueId = uniqueId + String(Int(arc4random_uniform(10)))
@@ -38,6 +40,12 @@ class CreateSpotThreeViewController: UIViewController {
         })
         
         // Do any additional setup after loading the view.
+    }
+    
+    //Closes any keyboard open when return is pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        titleField.resignFirstResponder()
+        return (true)
     }
 
     override func didReceiveMemoryWarning() {

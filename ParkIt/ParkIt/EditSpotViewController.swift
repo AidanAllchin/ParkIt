@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class EditSpotViewController: UIViewController {
+class EditSpotViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     
@@ -27,6 +27,9 @@ class EditSpotViewController: UIViewController {
     override func viewDidLoad() {
         ref = Database.database().reference()
         super.viewDidLoad()
+        //sets up delegates for both text fields
+        self.titleTextField.delegate = self
+        self.addressTextField.delegate = self
         titleTextField.text = spot.title
         addressTextField.text = spot.address
         didCancel = false
@@ -37,6 +40,13 @@ class EditSpotViewController: UIViewController {
             self.spots = wholeDatabase.value(forKey: "Spots") as! NSDictionary
         })
         // Do any additional setup after loading the view.
+    }
+    
+    //Closes any keyboard open when return is pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        titleTextField.resignFirstResponder()
+        addressTextField.resignFirstResponder()
+        return (true)
     }
 
     override func didReceiveMemoryWarning() {
