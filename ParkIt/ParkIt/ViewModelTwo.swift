@@ -62,6 +62,7 @@ class ViewModelTwo: NSObject {
         // items = dataArray.map { ViewModelItem(item: $0) }
     }
     
+    //Takes in an array of times in military time and converts it to 24-hour time with "am" and "pm"
     func convertTime(timeArray: [String]) -> [String] {
         var times = timeArray
         var currentTime = 0
@@ -135,12 +136,12 @@ class ViewModelTwo: NSObject {
 }
 
 
-
 extension ViewModelTwo: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
+    //Populates each cell with CustomCells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier, for: indexPath) as? CustomCell {
             cell.item = items[indexPath.row]

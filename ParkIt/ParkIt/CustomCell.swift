@@ -1,4 +1,4 @@
-//
+//  Setting traits for custom cells for use in BuySpotViewController and CreateSpotTwoViewController
 //  CustomCell.Swift
 //  ParkIt
 //

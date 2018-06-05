@@ -1,4 +1,4 @@
-//
+//  The home screen of the app. Handles initialization of all spots, adds spot annotations to map, creates sidebar, location search functionality, and prepares information for account spots and reserved spots.
 //  MapViewController.swift
 //  ParkIt
 //
@@ -267,18 +267,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 //this makes it so spots don't have to have a reservation to load
                 if let reservationDictionary = spot.value(forKey: "Reservations") as? NSDictionary
                 {
-                    /*var reservationCount = 0
-                    
-                    let resArray = reservationDictionary.allKeys as! [String]
-
-                    while reservationCount < reservationDictionary.count
-                    {
-                        let reservation = reservationDictionary.value(forKey: resArray[reservationCount]) as! NSDictionary
-                        
-                        reservations.append(reservation.value(forKey: "time") as! String)
-                        
-                        reservationCount = reservationCount + 1
-                    }*/
                     reservations = reservationDictionary
                 }
                 
@@ -293,10 +281,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         })
   }
     
+    //This gets all the spots that the user owns and sets it to accountSpots so that the program is ready for the user to click the "Account" button
     func getAccountSpots() {
         ref?.observeSingleEvent(of: .value, with: { (snapshot) in
             let spots: NSDictionary = (snapshot.value as! NSDictionary).value(forKey: "Spots") as! NSDictionary
-            
 
             let idArray = spots.allKeys as! [String]
             var currentSpotNum = 0
@@ -315,6 +303,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         })
     }
     
+    //This gets all the spots that the user owns a rental slot on and sets it to rentingSpots so that the program is ready for the user to click the "MyReservations" button
     func getResSpots() {
         ref?.observeSingleEvent(of: .value, with: { (snapshot) in
             let spots: NSDictionary = (snapshot.value as! NSDictionary).value(forKey: "Spots") as! NSDictionary

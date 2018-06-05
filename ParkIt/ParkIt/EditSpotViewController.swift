@@ -34,12 +34,12 @@ class EditSpotViewController: UIViewController, UITextFieldDelegate {
         addressTextField.text = spot.address
         didCancel = false
         
+        //Does all the database stuff first and downloads it locally to ensure actions complete before the next function is called.
         ref?.observeSingleEvent(of: .value, with: { (snapshot) in
             //We determine how many spots there are in the database and set the name of the spot
             let wholeDatabase: NSDictionary = snapshot.value as! NSDictionary
             self.spots = wholeDatabase.value(forKey: "Spots") as! NSDictionary
         })
-        // Do any additional setup after loading the view.
     }
     
     //Closes any keyboard open when return is pressed
@@ -59,6 +59,7 @@ class EditSpotViewController: UIViewController, UITextFieldDelegate {
         {
             let id = spot.uniqueId
             
+            //Make sure both the title and address are set to something, and if so, sets the database values to the new values.
             if (titleTextField.text != "")
             {
                 spot.title = titleTextField.text
@@ -82,6 +83,9 @@ class EditSpotViewController: UIViewController, UITextFieldDelegate {
         else if segue.destination is UINavigationController
         {
             let id = spot.uniqueId
+            //SAVE!!!!!
+            //This is the code to confirm that you want to delete a spot. It isn't working yet, but save this code!
+            
             /*let alert = UIAlertController(title: "Confirm", message: "Do you really want to delete this spot?", preferredStyle: .actionSheet)
             
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
@@ -97,6 +101,7 @@ class EditSpotViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func makeChanges(_ sender: Any) {
+        //changesCanceled is for the deletion confirmation code, which isn't functional yet.
         changesCanceled = false
         performSegue(withIdentifier: "ToViewSpot", sender: self.spot)
     }
